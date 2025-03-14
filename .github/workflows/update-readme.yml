@@ -20,27 +20,27 @@ jobs:
       - name: List files in the working directory
         run: ls -la
 
-      # Шаг 3: Проверить наличие README.md
-      - name: Check if README.md exists
+      # Шаг 3: Проверить наличие README.MD
+      - name: Check if README.MD exists
         run: |
-          if [ ! -f README.md ]; then
-            echo "README.md not found!"
+          if [ ! -f README.MD ]; then
+            echo "README.MD not found!"
             exit 1
           else
-            echo "README.md found!"
+            echo "README.MD found!"
           fi
 
-      # Шаг 4: Обновить дату в README.md
+      # Шаг 4: Обновить дату в README.MD
       - name: Update last modification date in README
         run: |
           DATE=$(date +"%Y-%m-%d")
-          sed -i "s/\\*Last modification date: .*/\\*Last modification date: **$DATE**/" README.md
+          sed -i "s/\\*Last modification date: .*/\\*Last modification date: **$DATE**/" README.MD
 
       # Шаг 5: Зафиксировать изменения и отправить их
       - name: Commit and push changes
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add README.md
+          git add README.MD
           git commit -m "Update last modification date to $DATE" || exit 0
           git push
