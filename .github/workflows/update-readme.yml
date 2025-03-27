@@ -5,22 +5,17 @@ on:
     branches:
       - main
       - gh-pages
-  schedule:
-    - cron: '0 0 * * *'
 
 jobs:
   update-readme:
     runs-on: ubuntu-latest
     steps:
-      # Шаг 1: Выгрузить репозиторий
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      # Шаг 2: Проверить содержимое рабочей директории
       - name: List files in the working directory
         run: ls -la
 
-      # Шаг 3: Проверить наличие README.MD
       - name: Check if README.MD exists
         run: |
           if [ ! -f README.MD ]; then
@@ -30,13 +25,11 @@ jobs:
             echo "README.MD found!"
           fi
 
-      # Шаг 4: Обновить дату в README.MD
       - name: Update last modification date in README
         run: |
           DATE=$(date +"%Y-%m-%d")
           sed -i "s/\\*Last modification date: .*/\\*Last modification date: **$DATE**/" README.MD
 
-      # Шаг 5: Зафиксировать изменения и отправить их
       - name: Commit and push changes
         run: |
           git config --global user.name "github-actions[bot]"
