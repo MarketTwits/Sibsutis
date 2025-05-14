@@ -1,0 +1,188 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+ <meta charset="utf-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <meta name="description" content="">
+ <meta name="author" content="do.sibsutis.ru">
+
+ <title>Контрольная работа. Функциональное и логическое программирование</title>
+
+ <link rel="icon" type="image/png" href="../lib/css/favicon.png">
+ <!-- Bootstrap Core CSS -->
+ <link href="../lib/css/bootstrap.css" rel="stylesheet">
+
+ <!-- Custom CSS -->
+ <link href="../lib/css/scrolling-nav.css" rel="stylesheet">
+
+ <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+ <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+ <!--[if lt IE 9]>
+ <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+ <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+ <![endif]-->
+</head>
+
+<!-- The #page-top ID is part of the scrolling feature - the data-spy and data-target are part of the built-in Bootstrap scrollspy function -->
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+ <!-- Navigation -->
+<nav class="navbar navbar-default navbar-fixed-top">
+ <div class="container">
+ <!-- Brand and toggle get grouped for better mobile display -->
+ <div class="navbar-header">
+ <li class="hidden"> <a class="page-scroll" href="#page-top"></a> </li>
+
+ <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+ <span class="icon-bar"></span>
+ <span class="icon-bar"></span>
+ <span class="icon-bar"></span>
+ </button>
+
+ <a class="navbar-brand " href="../index.htm">
+ <text class = "hidden-xs">Функциональное и логическое программирование</text>
+ <text class = "visible-xs">Ф и ЛП</text>
+ </a>
+ </div>
+
+ <!-- Collect the nav links, forms, and glyphicon glyphicon-list-alt content for toggling -->
+ <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+ <!-- <ul class="nav navbar-nav">
+ <li><a href="#"></a></li>
+ </ul> -->
+
+ <ul class="nav navbar-nav navbar-right">
+ <li class="dropdown">
+ <button type="button" class="navbar-toggle dropdown-toggle hidden-xs" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+ <span class="icon-bar"></span>
+ <span class="icon-bar"></span>
+ <span class="icon-bar"></span>
+ </button>
+ <a class = "dropdown-toggle visible-xs" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Материалы</a>
+  
+ <ul class="dropdown-menu">
+  
+ <li><a href="../index.htm">Аннотация курса</a></li>
+  
+ <li role="separator" class="divider"></li>
+  
+ <li><a href="lec_index.htm">Теория</a></li>
+  
+<li><a href="c_work.htm">Контрольная работа</a></li>
+ 
+ <li><a href="labs.htm">Лабораторные работы</a></li>
+ 
+ <li role="separator" class="divider"></li>
+     
+   
+  <li><a href="lit.htm">Литература</a></li>
+  
+
+  <!--li><a href="q.htm">Вопросы для самопроверки</a></li-->			
+   </ul>
+ </li>
+ </ul>
+ </div><!-- /.navbar-collapse -->
+ </div><!-- /.container-fluid -->
+</nav>
+
+
+ <div id="intro" class="section content-section ">
+ 
+<div class="container">
+ <div class="row">
+ <div class="col-lg-12">
+
+ 
+ <div class="page-header">
+  <h3>Контрольная работа</h3>
+ </div>
+
+
+<h2>Методические указания и задание на выполнение контрольной работы </h2>
+
+<br>
+
+
+
+<div class="row">
+     <div class="col-md-5">
+  
+<a class="btn btn-primary btn-block" href="Labs/Instruction.pdf" target="_blank">Скачать руководство по настройке ПО в формате PDF </a>
+  
+        </div>
+    </div>
+
+<br>
+<h3>Динамические базы данных в языке SWI-PROLOG</h3>
+ <div class="row">
+<div class="col-lg-7">
+<div class="alert alert-warning"><h4><br></h4>Выбор варианта осуществляется по последней цифре пароля.</div></div></div><br>
+<p>
+Присылаемый на проверку архив должен содержать 3 файла:</p>
+<ul>
+<li>файл отчета, содержащий титульный лист, условие задачи, исходный текст программы и результаты работы программы (можно в виде скриншотов);
+<li>файл с исходным текстом программы на языке SWI-PROLOG;
+<li>файл базы данных, с которым работает программа (не менее 10 строк).
+</li></ul>
+<p><b>Задание на контрольную работу</b></p>
+<p>Напишите на языке SWI-PROLOG программу для работы с базой данных по заданию. Начальная база данных должна храниться в файле. В программе должно присутствовать меню из 5 пунктов, реализующих следующие возможности: </p>
+<p>1.	просмотр содержимого динамической базы данных (при запуске программы динамическая база данных должна заполняться из файла базы данных только один раз и только в этом пункте); </p>
+<p>2.	добавления записи в динамическую базу данных (за один вход в этот пункт должна быть возможность добавления нескольких записей);</p>
+<p>3.	удаления записи из динамической базы данных (за один вход в этот пункт должна быть возможность удаления нескольких записей);</p>
+<p>4.	выполнения запроса к динамической базе данных по заданию;</p>
+<p>5.	выход из программы с сохранением содержимого динамической базы данных в исходный файл базы данных (сохранение должно быть только один раз и только в этом пункте).</p><br>
+<p><b><i>Варианты заданий</i></b></p>
+<p>0.	Создайте базу данных об игрушках: название, стоимость. Получите названия всех наиболее дорогих игрушек (цены которых отличаются от самой дорогой не более, чем на 100 рублей). </p>
+<p>1.	Создайте базу данных городского транспорта: название транспорта, номер маршрута, список остановок. Определите, на каких маршрутах можно добраться от одной остановки до другой без пересадок. Названия остановок вводятся с клавиатуры.</p>
+<p>2.	Создайте базу данных об итогах сессии по 4 дисциплинам студентов определенной группы. Сформируйте список студентов на отчисление, имеющих не менее двух двоек.</p>
+<p>3.	Создайте базу данных с расписанием движения самолетов: номер рейса, пункт прибытия, стоимость билета. Определите все рейсы до города, название которого вводится с клавиатуры, с минимальной стоимостью билета.</p>
+<p>4.	Создайте базу данных с книжным каталогом: Ф.И.О. автора, название книги, издательство, год издания. Найдите все книги, изданные в издательстве, название которого вводится с клавиатуры, позже года, который также вводится с клавиатуры.</p>
+<p>5.	Создайте базу данных о товарах: наименование товара, фасовка, стоимость. Найдите все товары с минимальной стоимостью. </p>
+<p>6.	Создайте базу данных о сотрудниках: Ф.И.О., должность, оклад. Сформируйте список сотрудников с окладом выше среднего по предприятию (средний оклад выведите на экран).</p>
+<p>7.	Создайте базу данных об итогах сессии по 5 дисциплинам студентов определенной группы. Сформируйте список студентов, не имеющих двоек и сдавших экзамены на 4 и 5 не менее чем по трем предметам.</p>
+<p>8.	Создайте базу данных об игрушках: название, стоимость, возрастные границы. Получите названия всех самых дешевых игрушек, подходящих ребенку 3 лет. </p>
+<p>9.	Создайте базу данных о металлах: наименование, удельная проводимость. Определите все металлы с максимальной проводимостью. </p>
+
+
+
+<br>
+
+
+ 
+
+
+<br>		
+
+ </div>
+ </div>
+
+ </div>
+ </div>
+ </div>
+
+ <!--Меню навигации-->
+ <div aria-label="..." class = "nav-menu">
+ <ul class="pager background-transition-slow">
+ <li title="Наверх" style = "margin-right:15px; "><a class = "glyphicon glyphicon-menu-up page-scroll" href="#page-top"></a></li>
+ </ul>
+ </div>
+
+ </div>
+ <!-- jQuery -->
+ <script src="../lib/js/jquery.js"></script>
+
+ <!-- Bootstrap Core JavaScript -->
+ <script src="../lib/js/bootstrap.min.js"></script>
+
+ <!-- Scrolling Nav JavaScript -->
+ <script src="../lib/js/jquery.easing.min.js"></script>
+ <script src="../lib/js/scrolling-nav.js"></script>
+
+</body>
+
+</html>

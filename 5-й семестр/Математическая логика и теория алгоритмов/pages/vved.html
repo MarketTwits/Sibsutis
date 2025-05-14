@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="do.sibsutis.ru">
+
+    <title>Лекция 2. Математическая логика и теория алгоритмов</title>
+	
+	
+	<link rel="icon" type="image/png" href="../lib/css/favicon.png">
+    <!-- Bootstrap Core CSS -->
+    <link href="../lib/css/bootstrap.css" rel="stylesheet">
+	
+    <!-- Custom CSS -->
+    <link href="../lib/css/scrolling-nav.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<!-- The #page-top ID is part of the scrolling feature - the data-spy and data-target are part of the built-in Bootstrap scrollspy function -->
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top" >
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <li class="hidden"> <a class="page-scroll" href="#page-top"></a> </li>
+	  
+	  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+	  
+      <a class="navbar-brand " href="../index.html"> 
+						<text class = "hidden-xs">Математическая логика и теория алгоритмов</text> 
+						<text class = "visible-xs">МЛиТА</text>
+	  </a>
+    </div>
+
+    <!-- Collect the nav links, forms, and glyphicon glyphicon-list-alt content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      
+	  <!-- <ul class="nav navbar-nav">
+		<li><a href="#"></a></li> 
+      </ul> -->
+	
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+		<button type="button" class="navbar-toggle dropdown-toggle hidden-xs" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" >
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		</button>	      
+		<a class = "dropdown-toggle visible-xs" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Материалы</a>
+	
+	
+	<ul class="dropdown-menu">
+	
+		<li><a href="../index.html">Аннотация курса</a></li>
+	
+		<li role="separator" class="divider"></li>
+	
+		<li><a href="lec_index.html">Теория</a></li>
+		
+		<li><a href="work.html">Рабочая программа</a></li>
+		
+		<li><a href="c_work.html">Контрольная работа</a></li>
+		
+		<li><a href="quest.html">Задачи</a></li>
+		
+		<li role="separator" class="divider"></li>
+		
+		<li><a href="lit.html">Литература</a></li>
+
+
+ 
+    </ul>
+	
+	
+ </li>
+  </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+
+    <!-- Intro Section -->
+	<!-- Секция с информацией "Уважаемый слушатель"	 -->
+    <div id="intro" class="section content-section ">
+        <div class="container">
+             <div class="row">
+                <div class="col-lg-12">	
+
+
+					<!-- содержание -->	
+					<div class="page-header">
+									
+					<h3>Введение</h3>
+												
+					</div>
+					
+					
+					
+<P>
+
+Развитие науки напрямую связано с необходимостью решать повседневные, бытовые  проблемы человека в различных сферах жизни. Геометрия возникла  и развивалась в связи с необходимостью строить здания, поиск неизвестных величин дал толчок развитию алгебры. 
+<P>
+
+Логика (от греч. logos – слово, понятие, рассуждение, разум) – это наука о законах и операциях правильного мышления. Логика складывалась как  наука (особенно в Древней Греции) в результате исследования методов рассуждений, применяемых для убедительного обоснования утверждений. Установившиеся в Греции демократические формы жизни потребовали развития искусства убеждения - ораторского искусства, риторики. Появились учителя риторики - <i>софисты</i>, учившие не только доказывать истинные утверждения, но и искусно их опровергать. Понятия <i>истины</i>, <i>лжи</i> и <i>противоречия</i>, а также причины истинности или ложности заключений, полученных из истинных посылок, надолго стали предметом изучения в логике. 
+<P>
+
+Стройную научную систему логики впервые разработал великий греческий учёный Аристотель (ученик Платона, воспитатель Александра Македонского). В своём логическом своде «Органон» («Категории», «Об истолковании», «Аналитики» 1-я и 2-я, «Топика») он создал раздел формальной логики <i>силлогистику</i>. Его труды оказали влияние на развитие логической науки во всём мире. В Европе до 17 века вся логика развивалась на основе аристотелевского учения. 
+<P>
+
+В последние сто лет в логике произошла научная революция и на смену традиционной логике пришла современная логика, называемая также математической или символической логикой. В основе математической логики полoжены идеи Г. Лейбница (1646-1716) о возможности представить доказательство как математическое вычисление. Дж. Буль (1815-1864) истолковал умозаключение как результат решения логических равенств, после чего теория умозаключения приобрела вид своеобразной алгебры. 
+<P>
+
+Основными разделами современной математической логики (её <i>классического</i> варианта) являются <i>логика высказываний</i>, идущая от Дж. Буля и не охватывающая силлогистику Аристотеля, и значительно более широкая <i>логика предикатов</i>, содержащая силлогистику как часть. Современный вид математическая логика приобрела в 1880-е годы в трудах немецкого логика, математика и философа Г. Фреге(1848-1925). Он дал первую аксиоматику логики высказываний и предикатов и сделал попытку свести математику к логике. 
+<P>
+Значительный вклад в развитие логики внесли:Б.Рассел (Russel), А.Н.Уайтхед (Whitehead), Д.Гилберт (Hilbert), К.Гедель (Godel), А.Тарский, А.Черч (Church).
+<P>
+
+В современной логике логические процессы изучаются путем их отображения в формализованных языках или логических исчислениях. Построение исчисления отличается особой тщательностью, с которой формулируются его синтаксические и семантические правила, отсутствием исключений, характерных для естественного языка. Исследованием формального строения логических исчислений, правил образования и преобразования занимается логический синтаксис. Отношения между исчислениями и содержательными областями, служащими их интерпретациями или моделями, исследуются логической семантикой.
+<P>
+
+Современная логика слагается из большого числа логических систем, описывающих отдельные фрагменты, или типы содержательных рассуждений. В данном курсе будут рассмотрены классические исчисление высказываний и исчисление предикатов первого порядка.
+<P>
+<div class="row">
+			<div class="col col-md-8">
+				<table class="table table-bordered table-condensed">
+<tr>
+   <td>Аристотель</td>
+   <td>Г. Лейбниц</td>
+   <td>Дж. Буль</td>
+   <td>Г. Фреге</td>
+   <td>Б.Рассел</td>
+  
+</tr>
+<tr>
+   <td><IMG src=peoples/ar.jpg ></td>
+   <td><IMG src=peoples/le.jpg ></td>
+   <td><IMG src=peoples/BOOLE.jpg ></td>
+   <td><IMG src=peoples/frege.jpg ></td>
+   <td><IMG src=peoples/rus.jpeg ></td>
+ 
+</tr>
+
+<tr>
+ <td>А.Н.Уайтхед</td>
+   <td>Д.Гилберт</td>
+   <td>К.Гедель</td>
+   <td>А.Тарский</td>
+   <td>А.Черч</td>
+</tr>
+
+<tr>
+  <td><IMG src=peoples/any.jpeg ></td>
+   <td><IMG src=peoples/hilbertD.jpg ></td>
+   <td><IMG src=peoples/GoedelK.jpg ></td>
+   <td><IMG src=peoples/tar.jpeg ></td>
+   <td><IMG src=peoples/cher.jpeg ></td>
+</tr>
+
+</table>
+</div>
+</div>
+										
+					
+					<br>	
+					<br>	
+				</div>
+			</div>
+        </div>
+    </div>
+	
+	<!--Меню навигации по лекциям -->	
+	<div aria-label="..." class = "nav-menu">
+	  <ul class="pager  background-transition-slow" >
+		 <li title="Наверх" style = "margin-right:15px;	"><a class = "glyphicon glyphicon-menu-up page-scroll" href="#page-top" ></a></li>
+		 <li title="В содержание"><a class = "glyphicon glyphicon-menu-left page-scroll" href="lec_index.html" ></a></li>
+		 <li title="В содержание"><a class = "glyphicon glyphicon-list-alt" href="lec_index.html" ></a></li>
+		 <li title="К следующей лекции"><a class = "glyphicon glyphicon-menu-right page-scroll" href="lec1.html" ></a></li>
+	  </ul>
+	</div>
+	<!---->
+	
+	</div>
+    <!-- jQuery -->
+    <script src="../lib/js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../lib/js/bootstrap.min.js"></script>
+
+    <!-- Scrolling Nav JavaScript -->
+    <script src="../lib/js/jquery.easing.min.js"></script>
+    <script src="../lib/js/scrolling-nav.js"></script>
+
+</body>
+
+</html>
