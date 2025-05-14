@@ -1,0 +1,397 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="do.sibsutis.ru">
+
+  <title>Лабораторная работа. Физика</title>
+	
+	<link rel="icon" type="image/png" href="../lib/css/favicon.png">
+  <!-- Bootstrap Core CSS -->
+  <link href="../lib/css/bootstrap.css" rel="stylesheet">
+	
+  <!-- Custom CSS -->
+  <link href="../lib/css/scrolling-nav.css" rel="stylesheet">
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+
+<!-- The #page-top ID is part of the scrolling feature - the data-spy and data-target are part of the built-in Bootstrap scrollspy function -->
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+  <!-- Navigation -->
+<nav class="navbar navbar-default navbar-fixed-top">
+ <div class="container">
+  <!-- Brand and toggle get grouped for better mobile display -->
+  <div class="navbar-header">
+   <li class="hidden"> <a class="page-scroll" href="#page-top"></a> </li>
+	 
+	 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+   </button>
+	 
+   <a class="navbar-brand " href="../index.htm"> 
+  <text class = "hidden-xs">Физика</text> 
+  <text class = "visible-xs">Физика</text>
+	 </a>
+  </div>
+
+  <!-- Collect the nav links, forms, and glyphicon glyphicon-list-alt content for toggling -->
+  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+   
+	 <!-- <ul class="nav navbar-nav">
+		<li><a href="#"></a></li> 
+   </ul> -->
+	
+   <ul class="nav navbar-nav navbar-right">
+    <li class="dropdown">
+		<button type="button" class="navbar-toggle dropdown-toggle hidden-xs" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		</button>	   
+		<a class = "dropdown-toggle visible-xs" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Материалы</a>
+     <ul class="dropdown-menu">
+    <li><a href="../index.htm">Аннотация курса</a></li>
+      <li role="separator" class="divider"></li>
+  
+ <li><a href="lec_index.htm">Теория</a></li>
+   
+ <li><a href="c_work.htm">Контрольная работа</a></li>
+
+<li><a href="Practika.htm">Практические задания</a></li>
+<li><a href="labs.htm">Лабораторные работы</a></li> 
+      <li role="separator" class="divider"></li>
+    
+      <li><a href="lit.htm">Литература</a></li>
+      <!--li><a href="q.htm">Вопросы для самопроверки</a></li-->			
+     </ul>
+ </li>
+ </ul>
+  </div><!-- /.navbar-collapse -->
+ </div><!-- /.container-fluid -->
+</nav>
+
+
+  <div id="intro" class="section content-section ">
+    <div class="container">
+       <div class="row">
+        <div class="col-lg-12">	
+
+
+<!-- содержание -->	
+<div class="page-header">				
+<h3>Лабораторная работа 2</h3>
+</div>
+<!--начало-->
+<P><b><i>Изучение температурной зависимости электропроводности полупроводников</i></b></P>
+
+<P>1. Цель работы</P></B>
+
+<P>Изучить зависимость электропроводности полупроводникового образца от температуры. Определить ширину запрещенной зоны</P>
+
+<B><P>2. Теоретическое введение</P></B>
+
+<P>Электропроводность <IMG align="middle" SRC="Polupr/Image6.gif"> материалов определяется выражением:</P>
+<P><IMG align="middle" SRC="Polupr/Image7.gif">&nbsp;&nbsp;&nbsp;&nbsp;(1)</P>
+
+<P>где q<SUP>+</SUP> и q<SUP>-</SUP> - соответственно величина заряда положительных и отрицательных носителей электрического заряда, n<SUP>+</SUP> и n<SUP>-</SUP> - концентрация соответственно положительных и отрицательных носителей заряда, &#181;<SUP>+</SUP> и &#181;<SUP>-</SUP> - подвижности положительных и отрицательных носителей заряда.</P>
+<P>В нашей задаче исследуется собственная электропроводность полупроводника. Поэтому положительными носителями заряда являются дырки, а отрицательными- электроны. Следовательно,</P>
+<P>|q<SUP>+</sup>| = |q<SUP>-</sup>| = e</P>
+
+<P>и, поскольку полупроводник собственный, то n<SUP>+</SUP> = n<SUP>-</SUP> = n</P>
+
+<P>Тогда <IMG align="middle" SRC="Polupr/Image8.gif">&nbsp;&nbsp;&nbsp;(2)</P>
+<P>Здесь &#181;<SUB>n</SUB> и &#181;<SUB>p</SUB>- подвижность электронов проводимости и дырок, соответственно.</P>
+<P>Строго говоря, от температуры зависят и концентрация, и подвижности носителей заряда. Однако, во многих случаях в узком диапазоне температур зависимостью подвижностей от температуры можно пренебречь и считать подвижности постоянными, не зависящими от температуры. В данной работе рассматривается именно этот случай.</P>
+<P>Зависимость концентрации собственных носителей от температуры описывается экспонентой:</P>
+<P><IMG align="middle" SRC="Polupr/Image9.gif">&nbsp;&nbsp;&nbsp;(3)</P>
+
+<P>Здесь <I>E<SUB>g</SUB> - </I> ширина запрещенной зоны, <I>k</I>- постоянная Больцмана, <I>T-</I> температура образца, <I>n<SUB>0</SUB>-</I> концентрация носителей при высоких температурах.</P>
+<P>Отсюда <IMG align="middle" SRC="Polupr/Image10.gif">&nbsp;&nbsp;&nbsp;(4)</P>
+
+<P>Обозначим   <B> <I>n<SUB>0</SUB> e(&#181;<SUB>n</sub>+&#181;<sub>p</sub>&#41;&#61;</SUB><IMG align="middle" SRC="Polupr/Image11.gif" WIDTH=21 HEIGHT=22></B></I>   и условно назовем это электропроводностью образца при бесконечно большой температуре.  В результате получим выражение для электропроводности образца:</P>
+
+<P><IMG align="middle" SRC="Polupr/Image12.gif">&nbsp;&nbsp;&nbsp;(5)</P>
+
+<P>Таким образом, зависимость электропроводности собственного полупроводника от температуры является экспоненциальной. Уравнение (5) поддается экспериментальной проверке и позволяет определить ширину запрещенной зоны полупроводника <B><I>E<SUB>g</SUB> </B></I>. Именно это и является целью данной лабораторной работы. </P>
+<P>Прологарифмируем формулу (5). Получим:</P>
+
+<P><IMG align="middle" SRC="Polupr/Image13.gif">&nbsp;&nbsp;&nbsp;(6)</P>
+
+<P>Отсюда следует, что график зависимости <IMG align="middle" SRC="Polupr/Image14.gif" WIDTH=30 HEIGHT=17> от <IMG align="middle" SRC="Polupr/Image15.gif" WIDTH=18 HEIGHT=42> представляет собой прямую линию, что легко проверить практически. Для вычисления ширины запрещенной зоны <I>E<SUB>g</SUB> </I> поступим следующим образом. Построим прямую (6). В уравнении (6) имеем два неизвестных: ширину запрещенной зоны <I>E<SUB>g</SUB> </I> и логарифм электропроводности при бесконечно большой температуре <I>ln<FONT FACE="Symbol">&#115;</FONT>
+</I><SUB>0</SUB>. Возьмем на прямой (6) две произвольные точки. Уравнение (6) для этих точек запишется как</P>
+<P><IMG align="middle" SRC="Polupr/Image16.gif">&nbsp;&nbsp;&nbsp;(7)</P>
+<P>Решив эту систему относительно<B> <I>E<SUB>g</I></SUB>  </B>получим:</P>
+
+<P><IMG align="middle" SRC="Polupr/Image17.gif">&nbsp;&nbsp;&nbsp;(8)</P>
+<P>Формула (8) является рабочей для вычисления ширины запрещенной зоны полупроводника.</P>
+
+<P>В данной работе полупроводниковый образец выполнен в виде параллелепипеда, имеющего длину <B><I>l</B></I>, ширину <B><I>a</I> </B>и высоту <B><I>b</I>.</B> Для вычисления электропроводности образца воспользуемся законом Ома. Электрическое сопротивление образца по закону Ома равно</P>
+<P><IMG align="middle" SRC="Polupr/Image18.gif" WIDTH=46 HEIGHT=42>&nbsp;&nbsp;&nbsp;(9)</P>
+<P>где <I>U-</I> электрическое напряжение на образце, <I>I-</I> сила тока через образец. Приняв во внимание геометрию образца и связь электропроводности и удельного сопротивления <IMG align="middle" SRC="Polupr/Image19.gif"> найдем выражение для электропроводности  полупроводникового образца</P>
+
+<P><IMG align="middle" SRC="Polupr/Image21.gif">&nbsp;&nbsp;&nbsp;(10)</P>
+<P>где <B><I>S=ab</B>-</I> площадь поперечного сечения образца.</P>
+<B><P>3.  Описание лабораторной установки</P></B>
+
+<P>Схема лабораторной установки приведена на рис.1. </P>
+
+<P><IMG align="middle" SRC="Polupr/Image22.gif"></P>
+<P>Сила тока источника (1) не зависит от сопротивления нагрузки. Нагрузкой источника является образец (2). Сила тока, протекающего через образец, регистрируется миллиамперметром (3), а напряжение на образце измеряется при помощи вольтметра (4). Образец наклеен на электроизолирующую теплопроводную пластину и помещен в печь (5) с маслом. Туда же помещен термометр (6) для измерения температуры образца.</P>
+<P>&nbsp;</P>
+
+<B><P>4. Задание</P></B>
+Выполняется по вариантам.<br />
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width=160
+ style='width:120.0pt;margin-left:4.65pt;border-collapse:collapse;mso-yfti-tbllook:
+ 1184;mso-padding-alt:0cm 0cm 0cm 0cm'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;height:15.0pt'>
+  <td width=64 nowrap style='width:48.0pt;border:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:15.0pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span style='font-family:"Arial","sans-serif";
+  color:black'>Вариант</span><span style='font-family:"Arial","sans-serif"'><o:p></o:p></span></p>
+  </td>
+  <td width=96 nowrap style='width:72.0pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt;height:15.0pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span style='font-family:"Arial","sans-serif";
+  color:black'>Сила тока, мА</span><span style='font-family:"Arial","sans-serif"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1;height:15.0pt'>
+  <td width=64 nowrap valign=bottom style='width:48.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:15.0pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-family:"Arial","sans-serif";
+  color:black'>1</span><span style='font-family:"Arial","sans-serif"'><o:p></o:p></span></p>
+  </td>
+  <td width=96 nowrap valign=bottom style='width:72.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:15.0pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-family:"Arial","sans-serif";
+  color:black'>3</span><span style='font-family:"Arial","sans-serif"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:2;height:15.0pt'>
+  <td width=64 nowrap valign=bottom style='width:48.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:15.0pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-family:"Arial","sans-serif";
+  color:black'>2</span><span style='font-family:"Arial","sans-serif"'><o:p></o:p></span></p>
+  </td>
+  <td width=96 nowrap valign=bottom style='width:72.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:15.0pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-family:"Arial","sans-serif";
+  color:black'>3,8</span><span style='font-family:"Arial","sans-serif"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:3;height:15.0pt'>
+  <td width=64 nowrap valign=bottom style='width:48.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:15.0pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-family:"Arial","sans-serif";
+  color:black'>3</span><span style='font-family:"Arial","sans-serif"'><o:p></o:p></span></p>
+  </td>
+  <td width=96 nowrap valign=bottom style='width:72.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:15.0pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-family:"Arial","sans-serif";
+  color:black'>4,6</span><span style='font-family:"Arial","sans-serif"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:4;height:15.0pt'>
+  <td width=64 nowrap valign=bottom style='width:48.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:15.0pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-family:"Arial","sans-serif";
+  color:black'>4</span><span style='font-family:"Arial","sans-serif"'><o:p></o:p></span></p>
+  </td>
+  <td width=96 nowrap valign=bottom style='width:72.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:15.0pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-family:"Arial","sans-serif";
+  color:black'>5,4</span><span style='font-family:"Arial","sans-serif"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:5;height:15.0pt'>
+  <td width=64 nowrap valign=bottom style='width:48.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:15.0pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-family:"Arial","sans-serif";
+  color:black'>5</span><span style='font-family:"Arial","sans-serif"'><o:p></o:p></span></p>
+  </td>
+  <td width=96 nowrap valign=bottom style='width:72.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:15.0pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-family:"Arial","sans-serif";
+  color:black'>6,2</span><span style='font-family:"Arial","sans-serif"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:6;height:15.0pt'>
+  <td width=64 nowrap valign=bottom style='width:48.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:15.0pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-family:"Arial","sans-serif";
+  color:black'>6</span><span style='font-family:"Arial","sans-serif"'><o:p></o:p></span></p>
+  </td>
+  <td width=96 nowrap valign=bottom style='width:72.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:15.0pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-family:"Arial","sans-serif";
+  color:black'>7</span><span style='font-family:"Arial","sans-serif"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:7;height:15.0pt'>
+  <td width=64 nowrap valign=bottom style='width:48.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:15.0pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-family:"Arial","sans-serif";
+  color:black'>7</span><span style='font-family:"Arial","sans-serif"'><o:p></o:p></span></p>
+  </td>
+  <td width=96 nowrap valign=bottom style='width:72.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:15.0pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-family:"Arial","sans-serif";
+  color:black'>7,8</span><span style='font-family:"Arial","sans-serif"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:8;height:15.0pt'>
+  <td width=64 nowrap valign=bottom style='width:48.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:15.0pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-family:"Arial","sans-serif";
+  color:black'>8</span><span style='font-family:"Arial","sans-serif"'><o:p></o:p></span></p>
+  </td>
+  <td width=96 nowrap valign=bottom style='width:72.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:15.0pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-family:"Arial","sans-serif";
+  color:black'>8,6</span><span style='font-family:"Arial","sans-serif"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:9;height:15.0pt'>
+  <td width=64 nowrap valign=bottom style='width:48.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:15.0pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-family:"Arial","sans-serif";
+  color:black'>9</span><span style='font-family:"Arial","sans-serif"'><o:p></o:p></span></p>
+  </td>
+  <td width=96 nowrap valign=bottom style='width:72.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:15.0pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-family:"Arial","sans-serif";
+  color:black'>9,4</span><span style='font-family:"Arial","sans-serif"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:10;mso-yfti-lastrow:yes;height:15.0pt'>
+  <td width=64 nowrap valign=bottom style='width:48.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:15.0pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-family:"Arial","sans-serif";
+  color:black'>10</span><span style='font-family:"Arial","sans-serif"'><o:p></o:p></span></p>
+  </td>
+  <td width=96 nowrap valign=bottom style='width:72.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:15.0pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-family:"Arial","sans-serif";
+  color:black'>10</span><span style='font-family:"Arial","sans-serif"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+<OL>
+
+</B><LI>Установить силу тока через образец в соответствии с вариантом. Записать силу тока в отчет по лабораторной работе.</LI>
+<LI>Изменяйте температуру образца от 25<SUP>0</SUP>С до 80<SUP>0</SUP>С через 5<SUP>0</SUP>С, каждый раз записывая напряжение на образце. Полученные данные занесите в таблицу в отчете по лабораторной работе.</LI>
+<LI>Вычислить по формуле (10) электропроводности образца при всех температурах. Прологарифмировать полученные значения электропроводности.</LI>
+<LI>Вычислите абсолютные температуры образца Т= t+273, К. Все данные занесите в таблицу измерений.</LI>
+<LI>Построить график зависимости<B> <I>ln<FONT FACE="Symbol">&#115;</FONT>
+</I> </B>от 1<FONT FACE="Symbol">&#47;</FONT>
+Т. </LI>
+<LI>На графике выбрать две точки в диапазоне температур от 40<SUP>0</SUP>С до 80<SUP>0</SUP>С. Определить для этих точек по графику величины <B><I>ln<FONT FACE="Symbol">&#115;</FONT>
+</I> </B>и 1<FONT FACE="Symbol">&#47;</FONT>
+<FONT FACE="Symbol">&#84;</FONT>
+ и вычислить по формуле (8) ширину запрещенной зоны полупроводника.</LI></OL>
+
+
+<B><P>5. Контрольные вопросы</P>
+<OL>
+
+</B><LI>Вывести формулу для собственной электропроводности полупроводника.</LI>
+<LI>Почему для проверки температурной зависимости электропроводности полупроводников строится график зависимости <B><I>ln<FONT FACE="Symbol">&#115;</FONT>
+</B> </I>от <FONT FACE="Symbol">&#49;</FONT>
+<FONT FACE="Symbol">&#47;</FONT>
+<FONT FACE="Symbol">&#84;</FONT>
+<B>.</B>?</LI>
+<LI>Вывести формулу для вычисления ширины запрещенной зоны полупроводника.</LI></OL>
+
+<B><P>6. Литература</P>
+<OL>
+
+</B><LI>Савельев И.В. Курс общей физики.- М.: Наука, 1979,- т.3,&#167;
+57,58,59.</LI>
+<LI>Айзенцон А.Е. Курс физики.- М.: Высшая школа, 1996.- Гл.19 &#167;
+19.3</LI></OL>
+
+<br><br>
+<!--конец-->
+      
+				
+
+
+				</div>
+			</div>
+			
+      </div>
+    </div>
+  </div>
+	
+	<!--Меню навигации по Темам -->	
+	<div aria-label="..." class = "nav-menu">
+	 <ul class="pager background-transition-slow">
+		 <li title="Наверх" style = "margin-right:15px;	"><a class = "glyphicon glyphicon-menu-up page-scroll" href="#page-top"></a></li>
+		 <li title="Назад"><a class = "glyphicon glyphicon-menu-left page-scroll" href="difrac.htm"></a></li>
+		 <li title="В содержание"><a class = "glyphicon glyphicon-list-alt" href="labs.htm"></a></li>
+		 <li title="К следующей лекции"><a class = "glyphicon glyphicon-menu-right page-scroll" href="labs.htm"></a></li>
+	 </ul>
+	</div>
+	<!---->
+	
+	</div>
+  <!-- jQuery -->
+  <script src="../lib/js/jquery.js"></script>
+
+  <!-- Bootstrap Core JavaScript -->
+  <script src="../lib/js/bootstrap.min.js"></script>
+
+  <!-- Scrolling Nav JavaScript -->
+  <script src="../lib/js/jquery.easing.min.js"></script>
+  <script src="../lib/js/scrolling-nav.js"></script>
+
+</body>
+
+</html>

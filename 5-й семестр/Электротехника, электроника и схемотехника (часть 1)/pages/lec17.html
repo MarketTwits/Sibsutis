@@ -1,0 +1,1091 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="do.sibsutis.ru">
+
+    <title>Лекция 17. Электротехника, электроника и схемотехника (часть 1)</title>
+
+	<link rel="icon" type="image/png" href="../lib/css/favicon.png">
+    <!-- Bootstrap Core CSS -->
+    <link href="../lib/css/bootstrap.css" rel="stylesheet">
+	
+    <!-- Custom CSS -->
+    <link href="../lib/css/scrolling-nav.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<!-- The #page-top ID is part of the scrolling feature - the data-spy and data-target are part of the built-in Bootstrap scrollspy function -->
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+		<!-- Navigation -->
+		<nav class="navbar navbar-default navbar-fixed-top">
+			<div class="container">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<li class="hidden"> <a class="page-scroll" href="#page-top"></a> </li>
+
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+
+					<a class="navbar-brand " href="../index.html"> 
+						<text class = "hidden-xs">Электротехника, электроника и схемотехника (часть 1)</text> 
+						<text class = "visible-xs">ЭЭиЭ1</text>
+					</a>
+				</div>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+					<!-- <ul class="nav navbar-nav">
+<li><a href="#"></a></li> 
+	</ul> -->
+
+					<ul class="nav navbar-nav navbar-right">
+						<li class="dropdown">
+							<button type="button" class="navbar-toggle dropdown-toggle hidden-xs" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" >
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>       
+							<a class = "dropdown-toggle visible-xs" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Материалы</a>
+          <ul class="dropdown-menu">
+		  
+            <li><a href="../index.html">Аннотация курса</a></li>
+			
+            <li role="separator" class="divider"></li>
+			
+            <li><a href="lec_index.html">Теория</a></li>
+			
+            <li><a href="c_work.html">Контрольная работа</a></li>
+		
+			<li><a href="uch_pos.html">Учебные пособия</a></li>
+			
+            
+			
+            <li role="separator" class="divider"></li>
+			
+            <li><a href="lit.html">Литература</a></li>
+			
+          </ul>
+						</li>
+					</ul>
+				</div><!-- /.navbar-collapse -->
+			</div><!-- /.container-fluid -->
+		</nav>
+
+
+    <!-- Intro Section -->
+	<!-- Секция с информацией "Уважаемый слушатель"	 -->
+    <div id="intro" class="section content-section ">
+        <div class="container">
+             <div class="row">
+                <div class="col-lg-12">	
+
+
+					<!-- содержание -->	
+					<div class="page-header">				
+					<h3><a href="lec17.html#17">Глава 17. Фильтрующие цепи и их синтез</a></h3>
+						<a href="lec17.html#17.1" class=punkt>17.1. Классификация фильтров</a><br>
+						<a href="lec17.html#17.2" class=punkt>17.2. Аппроксимация характеристик фильтров нижних частот</a><br>
+						<a href="lec17.html#17.3" class=punkt>17.3. Реализация фильтров нижних частот</a><br>
+						<a href="lec17.html#17.4" class=punkt>17.4. Переход от фильтров нижних частот к другим типам фильтров</a><br>
+						<a href="lec17.html#17.5" class=punkt>17.5. Резонаторные фильтры</a><br>
+						<a href="lec17.html#17.6" class=punkt>Вопросы и задания для самопроверки</a><br>
+						
+					</div>
+					
+					<a class="anchor" name="17"></a>
+					<h3>Глава 17. Фильтрующие цепи и их синтез</h3>
+					<a class="anchor" name="17.1"></a>
+					<h3>17.1. Классификация фильтров</h3>
+				
+
+<P>Электрический фильтр – это устройство, которое практически не ослабляет спектральные составляющие сигнала в заданной полосе частот и значительно ослабляет (подавляет) все спектральные составляющие вне этой полосы.</P>
+<P>Полоса частот, в которой ослабление мало, называется <I>полосой пропускания</I>. Полоса частот, в которой ослабление велико, называется <I>полосой непропускания </I>(<I>задерживания</I>). Между этими полосами находится переходная область.</P>
+<P>По расположению полосы пропускания на шкале частот различают следующие фильтры:<br>
+<ul>
+<li>нижних частот (ФНЧ), в которых полоса пропускания располагается на шкале частот от <IMG SRC="images\lec16_17\f1.gif" WIDTH=15 HEIGHT=15 > = 0 до некоторой граничной частоты <IMG SRC="images\lec16_17\Image123.gif" WIDTH=64 HEIGHT=25 >, а полоса непропускания (задерживания) – от частоты <IMG SRC="images\lec16_17\Image124.gif" WIDTH=61 HEIGHT=25 > до бесконечно больших частот (рис. 17.1, <I>а</I>);</li>
+<li>верхних частот (ФВЧ) с полосой пропускания от частоты <IMG SRC="images\lec16_17\Image123.gif" WIDTH=64 HEIGHT=25 > до бесконечно больших частот и полосой непропускания от частоты  <IMG SRC="images\lec16_17\f1.gif" WIDTH=15 HEIGHT=15 > = 0 до <IMG SRC="images\lec16_17\Image124.gif" WIDTH=61 HEIGHT=25 > (рис. 17.1, <I>б</I>);</li>
+<li>полосовые (ПФ), в которых полоса пропускания <IMG SRC="images\lec16_17\Image125.gif" WIDTH=88 HEIGHT=25 > располагается между полосами непропускания <IMG SRC="images\lec16_17\Image126.gif" WIDTH=64 HEIGHT=25 > и <IMG SRC="images\lec16_17\Image127.gif" WIDTH=69 HEIGHT=28 > (рис.&nbsp;17.1, <I>в</I>);</li>
+<li>заграждающие (режекторные) (ЗФ или РФ), в которых между полосами пропускания <IMG SRC="images\lec16_17\Image128.gif" WIDTH=75 HEIGHT=32 > и <IMG SRC="images\lec16_17\Image129.gif" WIDTH=94 HEIGHT=36 > находится полоса непропускания <IMG SRC="images\lec16_17\Image130.gif" WIDTH=84 HEIGHT=28 > (рис. 17.1, <I>г</I>);</li>
+<li>многополосные, имеющие несколько полос пропускания.</li>
+</ul>
+<P>На рис. 17.1, <I>а</I>—<I>г</I> показаны также условные обозначения фильтров каждого типа в соответствии с ГОСТ.</P>
+<table>
+<tr>
+<td><IMG SRC="images\lec16_17\f26.gif" WIDTH=492 HEIGHT=317><td>
+</tr>
+<tr>
+<td>Рис. 17.1<td>
+</tr>
+</table>
+<P>В соответствии с используемой элементной базой к настоящему моменту выделились несколько классов фильтров. Исторически первыми (и все еще широко применяемыми) являются пассивные фильтры, содержащие элементы <I>L</I> и <I>С</I>. Они носят название <I>LC</I>-фильтров.</P>
+<P>Во многих случаях на практике требовалась крайне высокая избирательность (различие ослаблений в полосах пропускания и непропускания в десятки тысяч раз). Это привело к появлению фильтров с механическими резонаторами: кварцевых, магнитострикционных, электромеханических.</P>
+<P>По-видимому, самые значительные достижения в области теории и проектирования фильтров связаны с успехами микроэлектроники. Требования микроминиатюризации радиоэлектронной аппаратуры заставили отказаться от использования индуктивностей, которые имеют большие габаритные размеры, особенно на низких частотах, и не поддаются исполнению в микроминиатюрном виде. Появились активные <I>RC</I>-фильтры, состоящие из резисторов, конденсаторов и активных приборов (например, транзисторов). Эти фильтры могут быть выполнены в виде микромодульной конструкции или интегральной схемы. Применение активных <I>RC</I>-фильтров ограничивается пока сравнительно небольшим диапазоном частот до десятков (иногда сотен) килогерц.</P>
+<P>Разработка цифровых систем связи и достижения в области цифровых вычислительных машин стимулировали создание фильтров на базе элементов цифровой и вычислительной техники – цифровых фильтров. В силу специфики элементной базы цифровых фильтров не будем далее упоминать о них, хотя расчет таких фильтров производится методами теории электрических цепей. Заинтересованные читатели могут обратиться к специальной литературе по цифровым фильтрам.</P>
+<P>В идеальном случае (идеальный фильтр) характеристика рабочего ослабления, например для ФНЧ, имеет вид, показанный на рис. 17.2, <I>а</I>. С рабочим ослаблением связана рабочая амплитудно-частотная характеристика (АЧХ): <IMG SRC="images\lec16_17\Image131.gif" WIDTH=173 HEIGHT=33 >. На рис.&nbsp;17.2, <I>б</I> изображена АЧХ идеального фильтра нижних частот.</P>
+<table>
+<tr>
+<td><IMG SRC="images\lec16_17\f27.gif" WIDTH=292 HEIGHT=126><td>
+</tr>
+<tr>
+<td>Рис. 17.2<td>
+</tr>
+</table>
+<P>Реальные фильтры (т.&nbsp;е. фильтры, состоящие из реальных элементов) имеют характеристики рабочего ослабления и амплитудно-частотную, отличные от идеальных.</P>
+<P>Требования к электрическим характеристикам фильтров задаются в виде допустимых пределов изменения этих характеристик. Так, рабочее ослабление в полосе пропускания не должно превышать некоторого максимального допустимого значения<I> А</I><SUB>р<I>max</I></SUB>, а в полосе непропускания не должно быть ниже некоторого минимально допустимого значения <I>А</I><SUB>р<I>min</I></SUB>. Нетрудно изобразить эти требования графически, как это сделано на рис. 17.3, <I>а</I> для ФНЧ. На этом рисунке <IMG SRC="images\lec16_17\Image132.gif" WIDTH=28 HEIGHT=25 > и <IMG SRC="images\lec16_17\Image133.gif" WIDTH=26 HEIGHT=25 > – граничные частоты полос пропускания и непропускания.</P>
+<table>
+<tr>
+<td><IMG SRC="images\lec16_17\f28.gif" WIDTH=475 HEIGHT=204><td>
+</tr>
+<tr>
+<td>Рис. 16.3<td>
+</tr>
+</table>
+<P>Зная требования к <I>А</I><SUB>р</SUB>, можно пересчитать их в требования к АЧХ или, как это принято в теории фильтров, в требования к квадрату АЧХ (рис. 17.3, <I>б</I>):<br>
+<IMG SRC="images\lec16_17\Image134.gif" WIDTH=318 HEIGHT=65></P>
+<P>Характеристики проектируемых фильтров должны "укладываться" в эти требования (рис. 17.3, <I>а</I> и <I>б</I>).</P>
+<P>Помимо требований к частотной зависимости рабочего ослабления (а значит, и к АЧХ) могут задаваться также требования к фазочастотной характеристике фильтра (скажем, допустимые отклонения от линейного закона) и величине нелинейных искажений (обусловленных, например, наличием железа в катушках индуктивности). Могут предъявляться требования и к другим характеристикам и параметрам фильтра. Ниже будем учитывать только требования к рабочему ослаблению и АЧХ.</P>
+<P>Идеальные частотные характеристики фильтра (см. рис. 17.2, <I>а</I>) заведомо нереализуемы. Частотные характеристики реальных фильтров могут лишь приближаться к ним с той или иной степенью точности в зависимости от сложности схемы фильтра.</P>
+
+<a class="anchor" name="17.2"></a>
+					<h3>17.2. Аппроксимация характеристик фильтров нижних частот</h3>
+
+<P><B>Функция фильтрации.</B> В общем виде электрические фильтры описываются передаточной функцией вида:<br>
+<IMG SRC="images\lec16_17\Image135.gif" WIDTH=360 HEIGHT=60 >(17.1)</p>
+<P>Квадрат амплитудно-частотной характеристики таких фильтров<br>
+<IMG SRC="images\lec16_17\Image136.gif" WIDTH=428 HEIGHT=60 >(17.2)<br>
+и, следовательно, рабочее ослабление<br>
+<IMG SRC="images\lec16_17\Image137.gif" WIDTH=424 HEIGHT=60 >(17.3)<br>
+могут при надлежащем выборе степени полинома (порядка фильтра) и коэффициентов <I>d<SUB>k</I></SUB> удовлетворить заданным требования (см. рис. 17.3).</P>
+<P>В теории фильтров принято иметь дело не с обычной угловой частотой <IMG SRC="images\lec16_17\f1.gif" WIDTH=15 HEIGHT=15 >, а с <I>нормированной частотой</I> <IMG SRC="images\lec16_17\Image138.gif" WIDTH=88 HEIGHT=25 >, где <IMG SRC="images\lec16_17\Image139.gif" WIDTH=28 HEIGHT=25 >&nbsp;– нормирующая частота. Обычно в качестве нормирующей частоты выбирают граничную частоту полосы пропускания <IMG SRC="images\lec16_17\Image132.gif" WIDTH=28 HEIGHT=25 >, так что <IMG SRC="images\lec16_17\Image140.gif" WIDTH=225 HEIGHT=25 >.</P>
+<P>В теории электрических фильтров вместо формул (17.2) и (17.3) используют другие, также универсальные для любого типа фильтра:<br>
+<IMG SRC="images\lec16_17\Image141.gif" WIDTH=232 HEIGHT=53 >(17.4)<br>
+<IMG SRC="images\lec16_17\Image142.gif" WIDTH=253 HEIGHT=30 >(17.5)</p>
+<P>Функция <IMG SRC="images\lec16_17\Image143.gif" WIDTH=64 HEIGHT=29 > называется функцией фильтрации, а <IMG SRC="images\lec16_17\f29.gif" WIDTH=8 HEIGHT=19 > – коэффициентом неравномерности ослабления. В общем случае <IMG SRC="images\lec16_17\f30.gif" WIDTH=34 HEIGHT=19 > – это дробно-рациональная функция с вещественными коэффициентами (в частности полином), удовлетворяющая условиям: –1 <IMG SRC="images\lec16_17\f31.gif" WIDTH=11 HEIGHT=19 > <IMG SRC="images\lec16_17\Image144.gif" WIDTH=64 HEIGHT=30 > <IMG SRC="images\lec16_17\f31.gif" WIDTH=11 HEIGHT=19 > 1 в полосе пропускания и <IMG SRC="images\lec16_17\Image145.gif" WIDTH=64 HEIGHT=30 ALIGN="MIDDLE"> >> 1 в полосе непропускания фильтра.</P>
+<P>В зависимости от вида  функции фильтрации получают различные типы фильтров. Если в качестве функции фильтрации используют полиномы, то фильтры называются полиномиальными. Среди полиномиальных фильтров широкое использование нашли <I>фильтры Баттерворта и Чебышева</I>. Если <IMG SRC="images\lec16_17\f30.gif" WIDTH=34 HEIGHT=19 > – дробно-рациональная функция, например, дробь Золотарева, то получают <I>фильтр Золотарева</I>. Все эти три типа фильтров будут рассмотрены в этой главе.</P>
+<P>Следует отметить, что имеет смысл подробно изучать только фильтры нижних частот, т.&nbsp;к. другие типы фильтров (верхних частот, полосовые и заграждающие) могут быть легко получены из ФНЧ с помощью замены переменной (частоты). Для этого во всех выражениях, содержащих переменную <IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 >, нужно произвести замену переменной таким образом, чтобы характеристики ФНЧ <I>А</I><SUB>р</SUB>(<IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 >) и |<I>H</I><SUB>р</SUB>(<I>j<IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 ></I>)|<SUP>2</SUP> преобразовались в характеристики соответствующего фильтра. Подобная замена переменной <IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 > называется <I>преобразованием частоты</I>, а исходный ФНЧ – <I>фильтром НЧ-прототипа</I>.</P>
+<P>Преобразование частоты позволяет установить соответствие между частотами полос пропускания и непропускания НЧ-прототипа и частотами фильтров верхних частот, полосового или заграждающего, а также преобразовать схему ФНЧ в схемы ФВЧ, ПФ или ЗФ. Более подробно вопросы, связанные с преобразованием частоты, будут рассматриваться в § 17.5.</P>
+<P><B>Фильтры Баттерворта.</B> Если в выражениях, описывающих квадрат АЧХ фильтра (17.4) и его рабочее ослабление (17.5), в качестве функции фильтрации используются <I>полиномы Баттерворта</I> <IMG SRC="images\lec16_17\f30.gif" WIDTH=34 HEIGHT=19 > = <I>B<SUB>m</I></SUB>(<IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 >) = <IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 ><I><SUP>m</I></SUP> (по имени автора, предложившего использовать их для "конструирования" частотных характеристик фильтра), то такие фильтры называются <I>фильтрами Баттерворта</I>.</P>
+<P>Из формул (17.4) и (17.5) следует, что для фильтров Баттерворта на частоте <IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 > = 0 значение квадрата АЧХ равно единице, а рабочего ослабления – нулю. С ростом частоты квадрат АЧХ фильтра Баттерворта уменьшается и падает до нуля на бесконечно большой частоте. Рабочее ослабление плавно растет до бесконечно большого значения. Таким образом, выражения (17.4) и (17.5) приближенно воспроизводят характеристики идеального фильтра.</P>
+<P>Чтобы эти характеристики "вписывались" в предъявляемые к фильтру требования (см. рис. 17.3), необходимо иметь рабочее ослабление (17.5) в полосе пропускания меньшее <I>А</I><SUB>р<I>max</I></SUB>, а в полосе непропускания большее <I>А</I><SUB>р<I>min</I></SUB>. Первому условию можно удовлетворить, если потребовать на граничной частоте полосы пропускания (<IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 > = 1) выполнения равенства <I>А</I><SUB>р</SUB>(<IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 >)<SUB><IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 >=1</SUB> = <I>А</I><SUB>р<I>max</I></SUB> или |<I>H</I><SUB>р</SUB>(<I>j<IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 ></I>)|<IMG SRC="images\lec16_17\Image147.gif" WIDTH=29 HEIGHT=30 > = <IMG SRC="images\lec16_17\Image148.gif" WIDTH=74 HEIGHT=28 >. Отсюда с учетом (17.5) или (17.4) имеем 1&nbsp;+&nbsp;<IMG SRC="images\lec16_17\f29.gif" WIDTH=8 HEIGHT=19 ><SUP>2 </SUP>= <IMG SRC="images\lec16_17\Image149.gif" WIDTH=68 HEIGHT=28 > и <IMG SRC="images\lec16_17\f29.gif" WIDTH=8 HEIGHT=19 ><SUP>2 </SUP>= <IMG SRC="images\lec16_17\Image149.gif" WIDTH=68 HEIGHT=28 > – 1. Вычисленный таким способом коэффициент <IMG SRC="images\lec16_17\f29.gif" WIDTH=8 HEIGHT=19 >:<br>
+<IMG SRC="images\lec16_17\Image150.gif" WIDTH=142 HEIGHT=32 >(17.6)<br>
+называется <I>коэффициентом неравномерности ослабления</I> в полосе пропускания фильтра.</P>
+<P>В формуле (17.6) величина <I>А</I><SUB>р<I>max</I></SUB> имеет размерность непер. Если воспользоваться значениями <I>А</I><SUB>р<I>max</I></SUB> в децибелах, то<br>
+<IMG SRC="images\lec16_17\Image151.gif" WIDTH=161 HEIGHT=32 >(17.7)</p>
+<P>С учетом введенных обозначений квадрат АЧХ фильтра Баттерворта запишется в виде<br>
+<IMG SRC="images\lec16_17\Image152.gif" WIDTH=240 HEIGHT=42 >(17.8)</p>
+<P>Эта функция удовлетворяет свойствам квадрата АЧХ реальных четырехполюсников, и поэтому ей можно сопоставить физически осуществимый электрический фильтр.</P>
+<P>Рабочее ослабление фильтра Баттерворта:<br>
+<IMG SRC="images\lec16_17\Image153.gif" WIDTH=424 HEIGHT=41 >(17.9)</p>
+<table>
+<tr>
+<td><IMG SRC="images\lec16_17\f33.gif" WIDTH=513 HEIGHT=204><td>
+</tr>
+<tr>
+<td>Рис. 17.4<td>
+</tr>
+</table>
+<P>Крутизна частотных характеристик (17.8) и (17.9) зависит от степени <I>m</I> (порядка фильтра). Чем больше степень <I>m</I>, тем выше крутизна характеристик. На рис. 17.4, <I>а</I>, и <I>б</I> показаны графики рабочего ослабления и квадрата АЧХ фильтра Баттерворта для различных <I>m</I>. Таким образом, для удовлетворения требований в полосе непропускания необходимо выбрать соответствующий порядок фильтра <I>m</I>. Его легко определить из условия: на граничной  частоте  полосы  непропускания:  <IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 ><SUB>з</SUB>&nbsp; <I>А</I><SUB>р</SUB>(<IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 ><SUB>з</SUB>)&nbsp;<IMG SRC="images\lec16_17\f34.gif" WIDTH=9 HEIGHT=19 >&nbsp;<I>А</I><SUB>р<I>min</I></SUB>  или |<I>H</I><SUB>р</SUB>&nbsp;(<I>j<IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 ></I>)|<IMG SRC="images\lec16_17\Image154.gif" WIDTH=42 HEIGHT=33 > <IMG SRC="images\lec16_17\f31.gif" WIDTH=11 HEIGHT=19 ><IMG SRC="images\lec16_17\Image155.gif" WIDTH=65 HEIGHT=28 >. С учетом этого условия получим 1 + <IMG SRC="images\lec16_17\f29.gif" WIDTH=8 HEIGHT=19 ><SUP>2</SUP><IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 ><IMG SRC="images\lec16_17\Image156.gif" WIDTH=24 HEIGHT=30 > &gt; <IMG SRC="images\lec16_17\Image155.gif" WIDTH=65 HEIGHT=28 >, откуда <IMG SRC="images\lec16_17\Image157.gif" WIDTH=38 HEIGHT=30 ><IMG SRC="images\lec16_17\f34.gif" WIDTH=9 HEIGHT=19 ><IMG SRC="images\lec16_17\Image158.gif" WIDTH=149 HEIGHT=33 >. Логарифмируя обе части неравенства, придем к выражению<br>
+<IMG SRC="images\lec16_17\Image159.gif" WIDTH=220 HEIGHT=57></P>
+<P>Из него находим окончательно<br>
+<P><I>m</I> <IMG SRC="images\lec16_17\f34.gif" WIDTH=9 HEIGHT=19 ><IMG SRC="images\lec16_17\Image160.gif" WIDTH=213 HEIGHT=57 >(17.10)</p>
+<P>Величина <I>А</I><SUB>р<I>min</I></SUB> входит в формулу в неперах. Если вычислять ее в децибелах, то:<br>
+<I>m</I> <IMG SRC="images\lec16_17\f34.gif" WIDTH=9 HEIGHT=19 > <IMG SRC="images\lec16_17\Image161.gif" WIDTH=229 HEIGHT=57 >(17.11)</p>
+<P>Передаточную функцию фильтра Баттерворта можно получить из (17.8), если положить <I>j<IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 ></I> = <I>p</I>:<br>
+<IMG SRC="images\lec16_17\Image162.gif" WIDTH=392 HEIGHT=60 >(17.12)<br>
+и разложить знаменатель полученной функции на произведение сомножителей.</P>
+<P>Вычислим корни знаменателя, т.&nbsp;е. полюсы функции <I>H</I><SUB>р</SUB>(<I>p</I>) X <I>H</I><SUB>р</SUB>(–<I>p</I>), отдельно для четных и нечетных значений <I>m</I>. Для четных значений <I>m</I>:<br>
+<IMG SRC="images\lec16_17\Image163.gif" WIDTH=116 HEIGHT=30 >  и  <IMG SRC="images\lec16_17\Image164.gif" WIDTH=134 HEIGHT=52 > <I>k</I> = 1, 2, ..., 2<I>m</I>.</P>
+<P>Так как:<br>
+<IMG SRC="images\lec16_17\Image165.gif" WIDTH=392 HEIGHT=30>,<br>
+имеем:<br>
+<IMG SRC="images\lec16_17\Image166.gif" WIDTH=466 HEIGHT=113 >(17.13)</p>
+<P>Для нечетных значений <I>m</I>:<br>
+<IMG SRC="images\lec16_17\Image167.gif" WIDTH=413 HEIGHT=53></P>
+<P>Выражение (17.12) примет вид:<br>
+<IMG SRC="images\lec16_17\Image168.gif" WIDTH=437 HEIGHT=54>.</P>
+<P>Половина полюсов функции <I>H</I><SUB>р</SUB>(<I>p</I>)<I>H</I><SUB>р</SUB>(–<I>p</I>) лежит в левой полуплоскости комплексной переменной <I>p</I> и может быть отнесена к передаточной функции реализуемого фильтра <I>H</I><SUB>р</SUB>(<I>p</I>). Другая половина полюсов, являясь зеркальным отражением первой, располагается в правой полуплоскости и относится к <I>H</I><SUB>р</SUB>(–<I>p</I>).</P>
+<P>Построенная из полюсов, лежащих в левой полуплоскости, передаточная функция фильтра Баттерворта является полиномиальной передаточной функцией типа (17.1):<br>
+<IMG SRC="images\lec16_17\Image169.gif" WIDTH=360 HEIGHT=54>,<br>
+где <I>H</I> = 1/<IMG SRC="images\lec16_17\f29.gif" WIDTH=8 HEIGHT=19 >.</P>
+
+<P><B>Пример. </B>Найти выражения для частотной характеристики и передаточной функции фильтра нижних частот Баттерворта, удовлетворяющего следующим требованиям: <I>А</I><SUB>р<I>max</I></SUB> = 3 дБ; <I>А</I><SUB>р<I>min</I></SUB>  = 12,2 дБ; <I>f</I><SUB>п</SUB> = 159 кГц; <I>f</I><SUB>з</SUB> = 318 кГц.</P>
+<P>Определим нормированную частоту <IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 ><SUB>з</SUB> = <I>f</I><SUB>з</SUB>/<I>f</I><SUB>n</SUB>  = 2 и по формуле (17.7) коэффициент неравномерности ослабления <IMG SRC="images\lec16_17\f29.gif" WIDTH=8 HEIGHT=19 ><SUP>2</SUP> = 10<SUP>0,1&#215;3</SUP> – 1 = 1. Порядок фильтра найдем согласно (17.11):<br>
+<IMG SRC="images\lec16_17\Image170.gif" WIDTH=237 HEIGHT=28>.</P>
+<P>Выберем <I>m</I> = 2. Тогда в соответствии с (17.8) и (17.9):<br>
+<IMG SRC="images\lec16_17\Image171.gif" WIDTH=310 HEIGHT=42>.</P>
+<P>Найдем передаточную функцию фильтра <I>H</I><SUB>р</SUB>(<I>p</I>). Значения полюсов функции |<I>H</I><SUB>р</SUB>(<I>p</I>)|<SUP>2</SUP> = <I>H</I><SUB>р</SUB>(<I>p</I>)<I>H</I><SUB>р</SUB>(–<I>p</I>) = 1/
+(1 + <I>р</I><SUP>4</SUP>) вычислим из формулы (17.13): <I>p</I><SUB>1</SUB>&nbsp;= 0,707 + <I>j</I>0,707; <I>p</I><SUB>2</SUB>&nbsp;= – 0,707 + <I>j</I>0,707; <I>p</I><SUB>3</SUB>&nbsp;= – 0,707 – <I>j</I>0,707; <I>p</I><SUB>4</SUB> = 0,707 –&nbsp;<I>j</I>0,707. Расположение полюсов в комплексной плоскости показано на рис.&nbsp;17.5, <I>а</I>.</P>
+<table>
+<tr>
+<td><IMG SRC="images\lec16_17\f36.gif" WIDTH=362 HEIGHT=181><td>
+</tr>
+<tr>
+<td>Рис. 17.5<td>
+</tr>
+</table>
+
+<P>По теореме Виета из полюсов в левой полуплоскости <I>p</I><SUB>2</SUB> и <I>p</I><SUB>3</SUB> формируем передаточную функцию:<br>
+<IMG SRC="images\lec16_17\Image172.gif" WIDTH=334 HEIGHT=46>.</P>
+
+<P>Используя введенное ранее обозначение <I>B<SUB>m</I></SUB>(<IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 >) = <IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 ><I><SUP>m</I></SUP> полинома Баттерворта, можно представить частотные характеристики (17.8) и (17.9) фильтра Баттерворта в следующей форме:<br>
+<IMG SRC="images\lec16_17\Image173.gif" WIDTH=332 HEIGHT=113 >(17.14)</p>
+<P>Фильтры Баттерворта называют также фильтрами с максимально плоским ослаблением в полосе пропускания (см. рис. 17.4, <I>а</I>).</P>
+<P><B>Полиномиальные фильтры Чебышева.</B> Если в качестве функции фильтрации в (17.4) и (17.5) использовать полином Чебышева, обозначаемый <IMG SRC="images\lec16_17\f35.gif" WIDTH=16 HEIGHT=17 >(<IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 >
+) = <I>T<SUB>m</I></SUB>(<IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 >
+), то формулы (17.14) примут вид:<BR>
+<IMG SRC="images\lec16_17\Image174.gif" WIDTH=318 HEIGHT=117 >(17.15)<BR>
+где <I>T<SUB>m</I></SUB>(<IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 >) – полином Чебышева степени (порядка) <I>m</I>; <IMG SRC="images\lec16_17\f29.gif" WIDTH=8 HEIGHT=19 > – коэффициент неравномерности, определяемый (17.6) или (17.7).</P>
+<P>Фильтры с частотными характеристиками (17.15) называются <I>фильтрами Чебышева</I>. Проанализируем частотные характеристики фильтра Чебышева. Для этого вначале рассмотрим свойства полиномов <I>T<SUB>m</I></SUB>(<IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 >). Ниже приведены шесть первых полиномов Чебышева:<BR>
+<IMG SRC="images\lec16_17\Image175.gif" WIDTH=152 HEIGHT=77 ALIGN="MIDDLE">    <IMG SRC="images\lec16_17\Image176.gif" WIDTH=245 HEIGHT=85 > (17.16 а)</P>
+<P>Любой полином Чебышева при <I>m</I> <IMG SRC="images\lec16_17\f34.gif" WIDTH=9 HEIGHT=19 > 2 может быть вычислен по рекуррентной формуле <I>T<SUB>m</I></SUB>(<IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 >
+) = 2<IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 >
+<I>T<SUB>m</I>–1</SUB>(<IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 >
+) – <I>T<SUB>m</I>–2</SUB>(<IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 >
+). Таким образом, выражения (17.15) удовлетворяют общим выражениям (17.1) – (17.3) характеристик полиномиальных фильтров.</P>
+<P>Существует единая тригонометрическая форма записи полиномов Чебышева в интервале –1 <IMG SRC="images\lec16_17\f31.gif" WIDTH=11 HEIGHT=19 >
+ <IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 >
+ <IMG SRC="images\lec16_17\f31.gif" WIDTH=11 HEIGHT=19 >
+ 1:</P>
+<IMG SRC="images\lec16_17\Image177.gif" WIDTH=209 HEIGHT=26 >(17.16)</p>
+<P>Действительно, <I>T</I><SUB>0</SUB>(<IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 >
+) = cos0arccos<IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 >
+ = 1; <I>T</I><SUB>1</SUB>(<IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 >
+) = cos1arccos<IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 >
+ = =&nbsp;<IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 >
+; <I>T</I><SUB>2</SUB>(<IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 >
+) = cos2arccos<IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 >
+ = 2cos<SUP>2</SUP>arccos<IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 >
+ – 1 =&nbsp;2<IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 >
+<SUP>2</SUP> – 1. Вне интервала –1 <IMG SRC="images\lec16_17\f31.gif" WIDTH=11 HEIGHT=19 >
+&nbsp;<IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 >
+&nbsp;<IMG SRC="images\lec16_17\f31.gif" WIDTH=11 HEIGHT=19 >
+ 1 полиномы <I>T<SUB>m</I></SUB>(<IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 >
+) также представляются в тригонометрической форме:</P>
+<IMG SRC="images\lec16_17\Image178.gif" WIDTH=190 HEIGHT=26 >(17.16 в)</p>
+<P>Анализ поведения полиномов Чебышева показывает, что в интервале –1 <IMG SRC="images\lec16_17\f31.gif" WIDTH=11 HEIGHT=19 >
+&nbsp;<IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 >
+&nbsp;<IMG SRC="images\lec16_17\f31.gif" WIDTH=11 HEIGHT=19 >
+ 1 угол <IMG SRC="images\lec16_17\f37.gif" WIDTH=11 HEIGHT=19 > = arccos<IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 >
+ изменяется от –<IMG SRC="images\lec16_17\f38.gif" WIDTH=13 HEIGHT=15 > (при <IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 >
+ = –1) до 0 (при <IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 >
+ = 1), поэтому полином <I>T<SUB>m</I></SUB>(<IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 >) = cos<I>m<IMG SRC="images\lec16_17\f37.gif" WIDTH=11 HEIGHT=19 ></I> ровно <I>m</I> раз принимает значения, равные нулю, и <I>m</I> + 1 раз достигает значений, равных +1 или –1 и чередующихся друг с другом. Вне интервала –1 <IMG SRC="images\lec16_17\f31.gif" WIDTH=11 HEIGHT=19 >
+&nbsp;<IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 >
+&nbsp;<IMG SRC="images\lec16_17\f31.gif" WIDTH=11 HEIGHT=19 >
+ 1 полином <I>T<SUB>m</I></SUB>(<IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 >
+) согласно формуле (17.16 в) монотонно возрастает. В качестве примера на рис. 17.6, <I>а</I> изображен график полинома Чебышева <I>T</I><SUB>4</SUB>(<IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 >), т. е. полинома четвертого порядка.</P>
+<table>
+<tr>
+<td><IMG SRC="images\lec16_17\f39.gif" WIDTH=239 HEIGHT=379><td>
+</tr>
+<tr>
+<td>Рис. 17.6<td>
+</tr>
+</table>
+
+
+<P>В соответствии с (17.15) рабочее ослабление <I>A</I><SUB>p</SUB>(<IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 >) фильтра Чебышева на тех частотах <IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 >, где полином <I>T<SUB>m</I></SUB>(<IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 >) обращается в нуль, также обращается в нуль. На частотах, на которых <I>T<SUB>m</I></SUB>(<IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 >) равен <IMG SRC="images\lec16_17\f40.gif" WIDTH=9 HEIGHT=15 >1, рабочее ослабление достигает величины:<br>
+<IMG SRC="images\lec16_17\Image179.gif" WIDTH=305 HEIGHT=68></P>
+<P>С ростом значений полинома <I>T<SUB>m</I></SUB>(<IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 >) на частотах <IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 > &gt; 1 рабочее ослабление <I>A</I><SUB>p</SUB>(<IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 >) также монотонно растет. На рис. 17.6, <I>б</I> приведен график рабочего ослабления фильтра Чебышева четвертого порядка.</P>
+<P>Фильтры Чебышева называют также фильтрами с равноволновой характеристикой ослабления в полосе пропускания.</P>
+<P>На рис. 17.7 показаны частотные зависимости квадрата АЧХ фильтра Чебышева для различных значений <I>m</I>, полученные для |<I>H</I><SUB>р</SUB>(<I>j<IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 ></I>)|<SUP>2</SUP> из (17.15). Подобные зависимости могут быть построены для рабочего ослабления фильтра.</P>
+<table>
+<tr>
+<td><img SRC="images\lec16_17\f41.gif" width=277 height=176><td>
+</tr>
+<tr>
+<td>Рис. 17.7<td>
+</tr>
+</table>
+
+<P>Чтобы характеристики фильтра отвечали требованиям в полосе непропускания, необходимо выбрать порядок фильтра <I>m</I> из условия |<I>H</I><SUB>р</SUB>(<I>j<IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 ></I>)|<IMG SRC="images\lec16_17\Image154.gif" WIDTH=42 HEIGHT=33 > <IMG SRC="images\lec16_17\f31.gif" WIDTH=11 HEIGHT=19 >
+ <IMG SRC="images\lec16_17\Image180.gif" WIDTH=73 HEIGHT=28 >. Для полосы непропускания <I>T<SUB>m</I></SUB>(<IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 >
+) определяется формулой (17.16 в), следовательно, 1&nbsp;+&nbsp;<IMG SRC="images\lec16_17\f29.gif" WIDTH=8 HEIGHT=19 ><SUP>2</SUP>сh<SUP>2</SUP><I>m X </I>Arch<IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 ><SUB>з</SUB> <IMG SRC="images\lec16_17\f34.gif" WIDTH=9 HEIGHT=19 > <IMG SRC="images\lec16_17\Image180.gif" WIDTH=73 HEIGHT=28 >. Отсюда сh<I>m</I>Arch<IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 ><SUB>з</SUB><IMG SRC="images\lec16_17\f34.gif" WIDTH=9 HEIGHT=19 >
+<IMG SRC="images\lec16_17\Image181.gif" WIDTH=152 HEIGHT=37 >. Далее <I>m</I>Arch<IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 >
+<SUB>з</SUB> <IMG SRC="images\lec16_17\f34.gif" WIDTH=9 HEIGHT=19 >
+<IMG SRC="images\lec16_17\Image182.gif" WIDTH=164 HEIGHT=37 > и <I>m</I> <IMG SRC="images\lec16_17\f34.gif" WIDTH=9 HEIGHT=19 >
+ <IMG SRC="images\lec16_17\Image183.gif" WIDTH=290 HEIGHT=34 >.</P>
+<P>В этой формуле величина <I>A</I><SUB>p<I>min</I></SUB> измеряется в неперах. При использовании единицы децибел порядок фильтра вычисляется из выражения:</P>
+<P><I>m</I> <IMG SRC="images\lec16_17\f34.gif" WIDTH=9 HEIGHT=19 >
+ <IMG SRC="images\lec16_17\Image184.gif" WIDTH=260 HEIGHT=60 >(17.17 a)</p>
+<P>Сравнивая частотные характеристики фильтров Баттерворта и Чебышева, следует указать, что полиномы Чебышева являются полиномами наилучшего приближения. Это означает, что при одинаковом значении <I>m</I> из всех полиномиальных фильтров, ослабления которых в полосе пропускания не превышают <I>A</I><SUB>p<I>max</I></SUB>, наибольшие значения ослабления в полосе непропускания имеет фильтр Чебышева. В частности, рабочее ослабление фильтра Чебышева в полосе непропускания может превышать (и весьма значительно) рабочее ослабление фильтра Баттерворта при равных значениях <I>m</I> и <I>A</I><SUB>p<I>max</I></SUB>. Однако характеристика рабочего ослабления фильтра Баттерворта имеет в полосе пропускания монотонный характер и легче поддается корректированию для устранения искажений передаваемых сигналов.</P>
+<P>Выбор типа полиномиальных фильтров определяется конкретными условиями их применения в аппаратуре связи и радиотехнических устройствах.</P>
+<P>Для получения передаточной функции фильтра Чебышева поступим аналогично тому, как делали это для фильтров Баттерворта. Заменим оператор <I>j<IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 >
+</I> на оператор <I>р</I> и перейдем от функции |<I>H</I><SUB>р</SUB>(<I>j<IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 >
+</I>)|<SUP>2</SUP> к функции:<br>
+<IMG SRC="images\lec16_17\Image185.gif" WIDTH=428 HEIGHT=37>.</P>
+<P>Представим полином <I>T<SUB>m</I></SUB>(<IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 >) в виде (17.16 б) и найдем полюсы функции |<I>H</I><SUB>р</SUB>(<I>p</I>)|<SUP>2</SUP>, решив уравнение:<br>
+<IMG SRC="images\lec16_17\Image186.gif" WIDTH=252 HEIGHT=30 >(17.17 б)</p>
+<P>Поскольку согласно (17.16 а) коэффициент при старшем члене полинома Чебышева <I>T<SUB>m</I></SUB>(<IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 >
+) равен 2<I><SUP>m</I>–1</SUP>, то коэффициент при старшем члене полинома в левой части приведенного выше уравнения равен <IMG SRC="images\lec16_17\f29.gif" WIDTH=8 HEIGHT=19 >
+<SUP>2</SUP>2<SUP>2(<I>m</I>–1)</SUP>.</P>
+<P>Корни уравнения (17.17 б), как можно доказать, определяются аналитически следующим выражением:<Br>
+<IMG SRC="images\lec16_17\Image187.gif" WIDTH=473 HEIGHT=49 >(17.18)<br>
+где <IMG SRC="images\lec16_17\Image188.gif" WIDTH=173 HEIGHT=28 >.</P>
+<P>Из корней в левой полуплоскости составляются сомножители (<I>p</I> -&nbsp;<I>p<SUB>i</I></SUB>), и по теореме Виета строится передаточная функция фильтра:<br>
+<IMG SRC="images\lec16_17\Image169.gif" WIDTH=360 HEIGHT=54 >,<br>
+где <IMG SRC="images\lec16_17\Image189.gif" WIDTH=140 HEIGHT=30 >.</P>
+
+<P><B>Пример.</B> Построить передаточную функцию фильтра Чебышева второго порядка (<I>m</I> = 2), рабочее ослабление в полосе пропускания (от 0 до 159 кГц) которого не превышает величину <I>A</I><SUB>p<I>max</I></SUB>  = 3 дБ. Граничная частота полосы непропускания 318 кГц.</P>
+<P>Коэффициент неравномерности <IMG SRC="images\lec16_17\f29.gif" WIDTH=8 HEIGHT=19 > такого фильтра согласно (17.7) равен 1. Рабочее ослабление на частоте <IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 ><SUB>з</SUB> =&nbsp;318/159 = 2 составляет <I>A</I><SUB>p</SUB>(<IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 >
+)<SUB><IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 >=2</SUB> =&nbsp;10lg(1 + ch<SUP>2</SUP>2Arch2) =&nbsp;17 дБ, что почти на 5 дБ превышает рабочее ослабление на этой же частоте фильтра Баттерворта второго порядка (см. предыдущий пример).</P>
+<P>Расчет полюсов функции <I>H</I><SUB>p</SUB>(<I>p</I>)<I>H</I><SUB>p</SUB>(–<I>p</I>) по формулам (17.18) дает величины: <I>p</I><SUB>1</SUB> = 0,322 + <I>j</I>0,777; <I>p</I><SUB>2</SUB> = 0,322 – <I>j</I>0,777; <I>p</I><SUB>3</SUB> = –0,322 – <I>j</I>0,777; <I>p</I><SUB>4</SUB> =&nbsp;–0,322 + <I>j</I>0,777. Расположение полюсов в комплексной плоскости показано на рис. 17.5, <I>б</I>.</P>
+<P>Передаточная функция фильтра:</P>
+<IMG SRC="images\lec16_17\Image190.gif" WIDTH=409 HEIGHT=46 >.</P>
+
+<P>В заключение отметим, что для полиномиальных фильтров в справочниках составлены весьма полные таблицы полюсов и коэффициентов передаточных функций для различных величин <I>A</I><SUB>p<I>max</I></SUB> и <I>m</I>. Порядок же фильтров <I>m</I> определяется по специальным графикам, исходя из заданных величин <I>A</I><SUB>p<I>max</I></SUB>, <I>A</I><SUB>p<I>min</I></SUB> и <IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 >
+<SUB>з</SUB>.</P>
+<P><B>Фильтры со всплесками ослабления (на основе дробей Чебышева и Золотарева).</B> Частотные характеристики полиномиальных фильтров, описываемые выражениями (17.1)—(17.3), имеют монотонный характер в полосе непропускания. В частности, рабочее ослабление таких фильтров монотонно возрастает по мере удаления от полосы пропускания (рис.&nbsp;17.4, <I>а</I> и 17.6, <I>б</I>).</P>
+<P>При "жестких" требованиях к частотным характеристикам (малая переходная область между полосами пропускания и непропускания и большая величина рабочего ослабления в полосе непропускания) порядок фильтра <I>m</I> может получиться очень большим даже в случае применения полинома Чебышева. Это приведет к существенному усложнению фильтра и к излишнему "расходу" элементов.</P>
+
+<table>
+<tr>
+<td><IMG SRC="images\lec16_17\f42.gif" WIDTH=522 HEIGHT=204><td>
+</tr>
+<tr>
+<td>Рис. 17.8<td>
+</tr>
+</table>
+
+<P>В таких случаях целесообразно применять <I>фильтры со всплесками рабочего ослабления</I> в полосе непропускания (рис. 17.8, <I>а</I>). На частотах всплеска <IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 >
+<SUB><IMG SRC="images\lec16_17\f2.gif" WIDTH=11 HEIGHT=19 >1</SUB>, <IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 >
+<SUB><IMG SRC="images\lec16_17\f2.gif" WIDTH=11 HEIGHT=19 >2</SUB> и т. д. рабочее ослабление фильтра стремится к бесконечности; за счет этого возрастает крутизна характеристики ослабления в переходной области. Соответственно АЧХ фильтра на частотах <IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 >
+<SUB><IMG SRC="images\lec16_17\f2.gif" WIDTH=11 HEIGHT=19 >1</SUB>, <IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 >
+<SUB><IMG SRC="images\lec16_17\f2.gif" WIDTH=11 HEIGHT=19 >2</SUB> и т. д. будет обращаться в нуль (рис. 17.8, <I>б</I>).</P>
+<P>Для выполнения указанных условий в выражениях (17.2)—(17.3) используют рациональные дроби вида:<br>
+<IMG SRC="images\lec16_17\Image191.gif" WIDTH=446 HEIGHT=61 >(17.19)</p>
+<IMG SRC="images\lec16_17\Image192.gif" WIDTH=446 HEIGHT=64 >(17.20)</p>
+<P>Действительно, когда <IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 > принимает значения <IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 >
+<SUB><IMG SRC="images\lec16_17\f2.gif" WIDTH=11 HEIGHT=19 >1</SUB>, <IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 >
+<SUB><IMG SRC="images\lec16_17\f2.gif" WIDTH=11 HEIGHT=19 >2</SUB>, ..., <IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 >
+<SUB><IMG SRC="images\lec16_17\f2.gif" WIDTH=11 HEIGHT=19 >n</SUB>,  |<I>H</I><SUB>р</SUB>(<I>j<IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 >
+</I>)|<SUP>2</SUP> = 0 и <I>A</I><SUB>р</SUB>(<IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 >) <IMG SRC="images\lec16_17\f22.gif" WIDTH=17 HEIGHT=19 > <IMG SRC="images\lec16_17\f2.gif" WIDTH=11 HEIGHT=19 >.</P>
+<P>Передаточная функция таких фильтров является дробно-рациональной:<br>
+<IMG SRC="images\lec16_17\Image193.gif" WIDTH=402 HEIGHT=61 >(17.21)<br>
+и кроме полюсов <I>p</I><SUB>1</SUB>, <I>p</I><SUB>2</SUB>, ...,  <I>p<SUB>m</I></SUB> имеет нули:<br>
+<IMG SRC="images\lec16_17\Image194.gif" WIDTH=386 HEIGHT=25 >.</P>
+<P>Фильтры со всплесками рабочего ослабления называют еще фильтрами с нулями передачи.</P>
+<P>Среди фильтров со всплесками ослабления наиболее широкое распространение получили фильтры, построенные на основе дробей Чебышева и Золотарева. Чтобы получить частотные характеристики фильтра на основе дробей Чебышева, нужно в формулах (17.14) или (17.15) использовать в качестве функции фильтрации дробь Чебышева. Обозначая ее Ф<I><SUB>m</I></SUB>(<IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 >
+), получим:<br>
+<IMG SRC="images\lec16_17\Image195.gif" WIDTH=322 HEIGHT=117 >(17.22)</p>
+<P>В качестве примера укажем дробь Чебышева пятого порядка, для которой построены графики <I>A</I><SUB>р</SUB>(<IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 >) и |<I>H</I><SUB>р</SUB>(<I>j<IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 ></I>)|<SUP>2</SUP>  на рис. 17.8, <I>а</I> и <I>б</I>:<br>
+<IMG SRC="images\lec16_17\Image196.gif" WIDTH=289 HEIGHT=63>,<br>
+где a<SUB>0</SUB>, a<SUB>1</SUB> и a<SUB>2</SUB> – коэффициенты, связанные с частотами всплеска <IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 >
+<SUB><IMG SRC="images\lec16_17\f2.gif" WIDTH=11 HEIGHT=19 >1</SUB> и <IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 >
+<SUB><IMG SRC="images\lec16_17\f2.gif" WIDTH=11 HEIGHT=19 >2</SUB>.</P>
+<P>Очевидно, что подстановка этой дроби в (17.22) приведет после некоторых преобразований к выражениям общего вида (17.19) и (17.20).</P>
+<P>В полосе пропускания дробь Чебышева ведет себя так же, как и полином Чебышева, т. е. рабочее ослабление фильтра носит равноволновый характер. На частотах всплеска <IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 >
+<SUB><IMG SRC="images\lec16_17\f2.gif" WIDTH=11 HEIGHT=19 >
+1</SUB> и <IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 >
+<SUB><IMG SRC="images\lec16_17\f2.gif" WIDTH=11 HEIGHT=19 >
+2</SUB> дробь Чебышева обращается в бесконечность, что приводит к бесконечно большому рабочему ослаблению.</P>
+<P>Следует отметить, что дробь Чебышева является дробью наилучшего приближения. Это означает, что фильтр на основе дроби Чебышева на любой частоте полосы непропускания имеет большее значение рабочего ослабления по сравнению с фильтрами на основе других дробей (и полиномов, как частных случаев дробей) при прочих равных условиях (при одинаковых порядках <I>m</I>, при таком же количестве и расположении частот всплеска и тех же величинах <I>A</I><SUB>p<I>max</I></SUB>).</P>
+<P>Частным случаем дробей Чебышева являются дроби Золотарева:<br>
+<IMG SRC="images\lec16_17\Image197.gif" WIDTH=394 HEIGHT=46 >(17.23)<br>
+где <IMG SRC="images\lec16_17\Image198.gif" WIDTH=268 HEIGHT=46 >, <IMG SRC="images\lec16_17\Image199.gif" WIDTH=185 HEIGHT=26 >, значение <I>S</I> равно 0 для четных <I>m</I> и равно 1 для нечетных <I>m</I>; <I>m</I> – порядок дроби; <IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 ><SUB>0<I>V</I></SUB>, <IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 >
+<I><SUB><IMG SRC="images\lec16_17\f2.gif" WIDTH=11 HEIGHT=19 >V</I></SUB> – нули и полюсы дроби, связанные соотношением <IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 >
+<SUB><IMG SRC="images\lec16_17\f2.gif" WIDTH=11 HEIGHT=19 >V</SUB> = <IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 >
+<SUB>з/<IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 >
+0V</SUB>.</P>
+<P>Используя в качестве функции фильтрации в (17.14) и (17.15) дроби Золотарева, получим:<br>
+<IMG SRC="images\lec16_17\Image200.gif" WIDTH=321 HEIGHT=117 >(17.24)</p>
+<P>Из формул (17.23) и (17.24) следует, что нули функции <I>A</I><SUB>р</SUB>(<IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 >
+) совпадают с нулями дроби Золотарева, а всплески функции <I>A</I><SUB>р</SUB>(<IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 >
+)&nbsp;– с полюсами этой же дроби. Нули и полюсы дроби Золотарева можно рассчитывать, однако обычно их определяют по каталогам для операторных передаточных функций ФНЧ. На рис.&nbsp;17.9 показан график <I>A</I><SUB>р</SUB>(<IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 >
+) для фильтра Золотарева пятого порядка.</P>
+<table>
+<tr>
+<td><IMG SRC="images\lec16_17\f43.gif" WIDTH=279 HEIGHT=180><td>
+</tr>
+<tr>
+<td>Рис. 16.8<td>
+</tr>
+</table>
+<P>Дроби Золотарева так же, как и полиномы Чебышева, дают равноволновую характеристику рабочего ослабления фильтра в полосе пропускания. Однако в полосе непропускания у фильтров Золотарева значения всех минимумов рабочего ослабления оказываются одинаковыми и равными значению рабочего ослабления на частоте <IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 ><SUB>з</SUB>. Такие фильтры называются также <I>фильтрами с изоэкстремальными характеристиками</I> рабочего ослабления.</P>
+<P>Фильтры с характеристиками Золотарева можно рассматривать как частный случай фильтров с характеристиками Чебышева, когда значения минимумов ослабления фильтра в полосе непропускания выравнены, а число всплесков – максимально возможное при выбранном значении <I>m</I>.</P>
+
+<a class="anchor" name="17.3"></a>
+					<h3>17.3. Реализация фильтров нижних частот</h3>
+
+<P><B>Лестничные полиномиальные <I>LC</I>-фильтры.</B> Любые из рассмотренных выше фильтров, как полиномиальные, так и со всплесками ослабления могут быть реализованы в виде пассивных <I>LC</I>-цепей.</P>
+<P>Пассивные <I>LC</I>-фильтры обычно представляют собой реактивный лестничный четырехполюсник, включенный между генератором с активным внутренним сопротивление <I>R</I><SUB>г</SUB> и нагрузкой с активным сопротивлением <I>R</I><SUB>н</SUB> (рис. 17.10). Входное сопротивление реактивного четырехполюсника, нагруженного на сопротивление <I>R</I><SUB>н</SUB>, обозначено на рисунке <I>Z</I><SUB>вх1</SUB>(<I>р</I>).</P>
+
+<table>
+<tr>
+<td><IMG SRC="images\lec16_17\f44.gif" WIDTH=236 HEIGHT=127><td>
+</tr>
+<tr>
+<td>Рис. 17.10<td>
+</tr>
+</table>
+
+<P>Если фильтр со стороны зажимов 1—1' рассматривать как двухполюсник, образованный реактивным четырехполюсником и нагрузкой <I>R</I><SUB>н</SUB>, то, зная выражение <I>Z</I><SUB>вх1</SUB>(<I>р</I>), можно реализовать данный двухполюсник одним из известных в теории цепей методов синтеза двухполюсников. Таким образом, задача реализации фильтра сводится к реализации двухполюсника по его заданному входному сопротивлению. Идея данного подхода принадлежит С.&nbsp;Дарлингтону и метод реализации фильтров называется <I>методом Дарлингтона</I>.</P>
+<P>На входе фильтра имеет место несогласованность, которую можно оценить, введя в рассмотрение коэффициент отражения (16.25)<br>
+<IMG SRC="images\lec16_17\Image201.gif" WIDTH=189 HEIGHT=53 >(17.25)</p>
+<P>Решая (17.25) относительно <I>Z</I><SUB>вх1</SUB>(<I>р</I>), получаем:<br>
+<IMG SRC="images\lec16_17\Image202.gif" WIDTH=200 HEIGHT=53 >(17.26)</p>
+<P>В (17.26) неизвестным является коэффициент отражения <IMG SRC="images\lec16_17\f20.gif" WIDTH=11 HEIGHT=19 >(<I>р</I>). В свою очередь, коэффициент отражения <IMG SRC="images\lec16_17\f20.gif" WIDTH=11 HEIGHT=19 >(<I>р</I>) связан с передаточной функцией <I>H</I><SUB>p</SUB>(<I>р</I>) = <I>w</I>(<I>р</I>)/
+<I>v</I>(<I>р</I>) соотношением (16.26 а):<br>
+<IMG SRC="images\lec16_17\Image203.gif" WIDTH=360 HEIGHT=80 >(17.27)</p>
+<P>Из (17.27) следует, что знаменатель у <IMG SRC="images\lec16_17\f20.gif" WIDTH=11 HEIGHT=19 >(<I>р</I>) такой же, как и у <I>H</I><SUB>p</SUB>(<I>р</I>): им является полином <I>v</I>(<I>р</I>). Остается найти нули правой части выражения (17.7) и половину из них "приписать" полиному числителя <IMG SRC="images\lec16_17\f20.gif" WIDTH=11 HEIGHT=19 >(<I>р</I>). Последний формируется из нулей по теореме Виета.</P>
+
+<P><B>Пример. </B>Реализовать фильтр нижних частот Баттерворта второго порядка из примера (стр. 450) в виде пассивной <I>LC</I>-схемы. Внутреннее сопротивление генератора 1 кОм.</P>
+<P>В примере была получена передаточная функция Баттерворта второго порядка <I>H</I><SUB>p</SUB>(<I>p</I>) = 1/(<I>p</I><SUP>2</SUP> + 1,41<I>p</I> + 1) для нормированных значений частоты <IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 >
+ =&nbsp;<IMG SRC="images\lec16_17\f1.gif" WIDTH=15 HEIGHT=15 >/<IMG SRC="images\lec16_17\f1.gif" WIDTH=15 HEIGHT=15 ><SUB>н</SUB> = <IMG SRC="images\lec16_17\f1.gif" WIDTH=15 HEIGHT=15 >/(2<IMG SRC="images\lec16_17\f38.gif" WIDTH=13 HEIGHT=15 >&#215;159&#215;
+10<SUP>3</SUP>) = <IMG SRC="images\lec16_17\f1.gif" WIDTH=15 HEIGHT=15 >/
+10<SUP>6</SUP>, где <IMG SRC="images\lec16_17\f1.gif" WIDTH=15 HEIGHT=15 >
+<SUB>н</SUB> = <IMG SRC="images\lec16_17\f1.gif" WIDTH=15 HEIGHT=15 >
+<SUB>п </SUB>= 2<IMG SRC="images\lec16_17\f38.gif" WIDTH=13 HEIGHT=15 ><I>f</I><SUB>п</SUB>. Реализация нормированной передаточной функции приведет к схеме с нормированными значениями реактивных элементов (обозначим их <IMG SRC="images\lec16_17\Image204.gif" WIDTH=38 HEIGHT=25 >), которые затем необходимо денормировать для получения реальных значений.</P>
+<P>В соответствии с (17.27)<br>
+<IMG SRC="images\lec16_17\Image205.gif" WIDTH=358 HEIGHT=96></P>
+<P>Нули этой функции <I>p</I><SUB>01,&nbsp;02,&nbsp;03,&nbsp;04</SUB> = 0. Полином числителя <IMG SRC="images\lec16_17\f20.gif" WIDTH=11 HEIGHT=19 >
+(<I>р</I>) в соответствии с теоремой Виета равен (<I>p</I> – <I>p</I><SUB>01</SUB>)&#215;
+(<I>p</I> – <I>p</I><SUB>02</SUB>) = <I>p</I><SUP>2</SUP>. Отсюда <IMG SRC="images\lec16_17\f20.gif" WIDTH=11 HEIGHT=19 >
+(<I>р</I>) = <I>p</I><SUP>2/</SUP>(<I>p</I><SUP>2</SUP> + 1,41<I>p</I> +&nbsp;1).</P>
+<P>Согласно (17.26)<br>
+<IMG SRC="images\lec16_17\Image206.gif" WIDTH=418 HEIGHT=54>.</P>
+<P>Реализацию двухполюсника со входным сопротивлением <I>Z</I><SUB>вх1</SUB>(<I>p</I>) осуществим разложением в цепную (лестничную) дробь по методу Кауэра. Представим <I>Z</I><SUB>вх1</SUB>(<I>p</I>) = 1/
+<I>Y</I><SUB>вх1</SUB>(<I>p</I>) и проведем разложение проводимости:<br>
+<IMG SRC="images\lec16_17\Image207.gif" WIDTH=357 HEIGHT=75><br>
+<IMG SRC="images\lec16_17\Image208.gif" WIDTH=330 HEIGHT=79><br>
+<IMG SRC="images\lec16_17\Image209.gif" WIDTH=166 HEIGHT=72></P>
+<P>Процесс разложения закончен. Входное сопротивление <I>Z</I><SUB>вх1</SUB>(<I>p</I>), представленное цепной дробью, имеет вид:</P>
+<IMG SRC="images\lec16_17\Image210.gif" WIDTH=442 HEIGHT=65>.</P>
+<table>
+<tr>
+<td><IMG SRC="images\lec16_17\f45.gif" WIDTH=240 HEIGHT=100><td>
+</tr>
+<tr>
+<td>Рис. 17.11<td>
+</tr>
+</table>
+<P>Схема двухполюсника, входное сопротивление которого соответствует данной цепной (лестничной) дроби, приведена на рис. 17.11. Нормированные значения элементов <IMG SRC="images\lec16_17\Image211.gif" WIDTH=17 HEIGHT=22 > = 1,41&#215;
+10<SUP>–3</SUP>, <IMG SRC="images\lec16_17\Image212.gif" WIDTH=16 HEIGHT=21 > = 1,41&#215;
+10<SUP>3</SUP>. Активная проводимость нагрузки не нормируется и равна <I>G</I><SUB>н </SUB>= 10<SUP>–3</SUP> См, т.&nbsp;е. сопротивление нагрузки  <I>R</I><SUB>н </SUB>= 1 кОм. Денормировать значения элементов можно следующим образом. Комплексная проводимость нормированной емкости <IMG SRC="images\lec16_17\Image213.gif" WIDTH=189 HEIGHT=26 >, откуда ненормированное значение емкости <IMG SRC="images\lec16_17\Image214.gif" WIDTH=76 HEIGHT=26 >= 1,41&#215;10<SUP>–3/</SUP>10<SUP>6</SUP> =nbsp;1,41&#215;10<SUP>–9</SUP> Ф = 1,41 нФ.</P>
+<P>Подобным образом комплексное сопротивление нормированной индуктивности <IMG SRC="images\lec16_17\Image215.gif" WIDTH=186 HEIGHT=25 > или <IMG SRC="images\lec16_17\Image216.gif" WIDTH=74 HEIGHT=25 > = 1,41&#215;10<SUP>3/</SUP>10<SUP>6</SUP> = 1,41&#215;
+10<SUP>–3</SUP> Гн =&nbsp;1,41 мГн.</P>
+
+<P>Аналогично рассмотренному примеру решается задача реализации фильтра любого порядка. Например, полиномиальный ФНЧ пятого порядка (<I>m</I> = 5) реализуется в виде одной из двух схем, показанных на рис.&nbsp;17.12, <I>а</I> и <I>б</I>. Количество реактивных элементов определяется порядком фильтра <I>m</I>. Отличие фильтра Баттерворта от фильтра Чебышева будет заключаться в этом случае только в разных значениях реактивных элементов, получаемых в процессе реализации соответствующих передаточных функций.</P>
+
+<table>
+<tr>
+<td><IMG SRC="images\lec16_17\f46.gif" WIDTH=439 HEIGHT=107><td>
+</tr>
+<tr>
+<td>Рис. 17.12<td>
+</tr>
+</table>
+
+<P><B>Лестничные фильтры со всплесками ослабления.</B> По подобной схеме осуществляется и реализация передаточных функций фильтров со всплесками ослабления (Чебышева или Золотарева). Разложение входного сопротивления таких фильтров в цепную дробь приведет к схемам, содержащим резонансные контуры, в которых резонансы происходят на частотах <IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 >
+<SUB><IMG SRC="images\lec16_17\f2.gif" WIDTH=11 HEIGHT=19 >1</SUB>, <IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 >
+<SUB><IMG SRC="images\lec16_17\f2.gif" WIDTH=11 HEIGHT=19 >2</SUB>, ... Наличие этих контуров и обеспечивает бесконечно большое затухание на частотах всплеска.</P>
+
+<table>
+<tr>
+<td><IMG SRC="images\lec16_17\f48.gif" WIDTH=505 HEIGHT=142><td>
+</tr>
+<tr>
+<td>Рис. 17.13<td>
+</tr>
+</table>
+
+<P>Так, ФНЧ пятого порядка со всплесками ослабления на частотах <IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 >
+<SUB><IMG SRC="images\lec16_17\f2.gif" WIDTH=11 HEIGHT=19 >1</SUB> и <IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 >
+<SUB><IMG SRC="images\lec16_17\f2.gif" WIDTH=11 HEIGHT=19 >2</SUB> реализуется в виде одной из схем, приведенных на рис.&nbsp;17.13, <I>а</I> и <I>б</I>. И в первой и во второй схемах контуры рассчитаны на резонансные частоты <IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 >
+<SUB><IMG SRC="images\lec16_17\f2.gif" WIDTH=11 HEIGHT=19 >1</SUB> и <IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 >
+<SUB><IMG SRC="images\lec16_17\f2.gif" WIDTH=11 HEIGHT=19 >2</SUB>. В первой схеме в параллельных контурах происходят резонансы токов; сопротивления контуров принимают бесконечно большие значения. В результате на частотах резонансов <IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 >
+<SUB><IMG SRC="images\lec16_17\f2.gif" WIDTH=11 HEIGHT=19 >1</SUB> и <IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 >
+<SUB><IMG SRC="images\lec16_17\f2.gif" WIDTH=11 HEIGHT=19 >2</SUB> наблюдается "обрыв" продольных ветвей фильтра и сигнал от генератора в нагрузку не поступает, т. е. фильтр вносит бесконечно большое ослабление. Во второй схеме в последовательных контурах происходят резонансы напряжений; сопротивления контуров обращаются в нуль. Таким образом, здесь на частотах <IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 >
+<SUB><IMG SRC="images\lec16_17\f2.gif" WIDTH=11 HEIGHT=19 >1</SUB> и <IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 >
+<SUB><IMG SRC="images\lec16_17\f2.gif" WIDTH=11 HEIGHT=19 >2</SUB> поперечные ветви "закорачивают" нагрузку и сигнал на выход фильтра не поступает. Таким образом, имеет место бесконечно большое ослабление.</P>
+<P><B>Реализация лестничных фильтров по каталогам.</B> Из изложенного следует, что синтез фильтров представляет собой сложную процедуру, поэтому разработчики фильтров пытались облегчить ее. В результате были созданы обширные каталоги фильтров, применение которых значительно облегчает процедуру синтеза ФНЧ. Табл. 17.1 представляет собой страницу из такого каталога, где приведены нормированные элементы фильтра Золотарева четвертого порядка. В этой таблице <IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 >
+<I><SUB>s</I></SUB>, <I>A<SUB>s</I></SUB>, <IMG SRC="images\lec16_17\f47.gif" WIDTH=9 HEIGHT=19 ><I>A<SUB>s</I></SUB> – нормированная граничная частота полосы задерживания, минимальное ослабление в полосе задерживания, максимальное ослабление в полосе пропускания соответственно. Аналогичные каталоги существуют и для фильтров Баттерворта и Чебышева.</P>
+<P>Таблица 17.1<br>
+Параметры элементов фильтров Золотарева четвертого порядка</P>
+<div class="row">
+			<div class="col col-md-8">
+				<table class="table table-bordered table-condensed">
+<TR><TD WIDTH="12%" HEIGHT=25>
+<P><IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 > <I><SUB>s</I></SUB></TD>
+<TD WIDTH="12%" HEIGHT=25>
+<I><P>A<SUB>s</I></SUB>, дБ</TD>
+<TD WIDTH="12%" HEIGHT=25>
+<I><P>С</I><SUB>1</SUB></TD>
+<TD WIDTH="15%" HEIGHT=25>
+<I><P>С</I><SUB>2</SUB></TD>
+<TD WIDTH="10%" HEIGHT=25>
+<I><P>L</I><SUB>2</SUB></TD>
+<TD WIDTH="14%" HEIGHT=25>
+<P><IMG SRC="images\lec16_17\Image272.gif" WIDTH=32 HEIGHT=24></TD>
+<TD WIDTH="11%" HEIGHT=25>
+<I><P>С</I><SUB>3</SUB></TD>
+<TD WIDTH="13%" HEIGHT=25>
+<I><P>L</I><SUB>4</SUB></TD>
+</TR>
+<TR><TD COLSPAN=8 HEIGHT=33>
+<P>при <IMG SRC="images\lec16_17\f47.gif" WIDTH=9 HEIGHT=19 > <I>A<SUB>s</I></SUB> = 0,028 дБ</TD>
+</TR>
+<TR><TD WIDTH="12%">
+<P>3,98</P>
+<P>3,39</P>
+<P>2,96</P>
+<P>2,63</TD>
+<TD WIDTH="12%">
+<P>56</P>
+<P>50</P>
+<P>45</P>
+<P>41</TD>
+<TD WIDTH="12%">
+<P>0,7020</P>
+<P>0,6871</P>
+<P>0,6697</P>
+<P>0,6497</TD>
+<TD WIDTH="15%">
+<P>0,04232</P>
+<P>0,05952</P>
+<P>0,08025</P>
+<P>0,1049</TD>
+<TD WIDTH="10%">
+<P>1,241</P>
+<P>1,215</P>
+<P>1,186</P>
+<P>1,152</TD>
+<TD WIDTH="14%">
+<P>4,364244</P>
+<P>3,718173</P>
+<P>3,241901</P>
+<P>2,876673</TD>
+<TD WIDTH="11%">
+<P>1,282</P>
+<P>1,272</P>
+<P>1,261</P>
+<P>1,248</TD>
+<TD WIDTH="13%">
+<P>0,7429</P>
+<P>0,7440</P>
+<P>0,7451</P>
+<P>0,7465</TD>
+</TR>
+<TR><TD COLSPAN=8 HEIGHT=34>
+<P>при <IMG SRC="images\lec16_17\f47.gif" WIDTH=9 HEIGHT=19 > <I>A<SUB>s</I></SUB> = 0,044 дБ</TD>
+</TR>
+<TR><TD WIDTH="12%">
+<P>3,76</P>
+<P>3,23</P>
+<P>2,84</P>
+<P>2,45</TD>
+<TD WIDTH="12%">
+<P>56</P>
+<P>50</P>
+<P>45</P>
+<P>40</TD>
+<TD WIDTH="12%">
+<P>0,7575</P>
+<P>0,7422</P>
+<P>0,7245</P>
+<P>0,6968</TD>
+<TD WIDTH="15%">
+<P>0,044585</P>
+<P>0,06339</P>
+<P>0,08436</P>
+<P>0,1183</TD>
+<TD WIDTH="10%">
+<P>1,282</P>
+<P>1,256</P>
+<P>1,226</P>
+<P>1,287</TD>
+<TD WIDTH="14%">
+<P>4,124781</P>
+<P>3,544141</P>
+<P>3,109875</P>
+<P>2,677264</TD>
+<TD WIDTH="11%">
+<P>1,326</P>
+<P>1,316</P>
+<P>1,305</P>
+<P>1,287</TD>
+<TD WIDTH="13%">
+<P>0,8018</P>
+<P>0,8027</P>
+<P>0,8037</P>
+<P>0,8052</TD>
+</TR>
+<TR><TD COLSPAN=8 HEIGHT=31>
+<P>при <IMG SRC="images\lec16_17\f47.gif" WIDTH=9 HEIGHT=19 > <I>A<SUB>s</I></SUB> = 0,099 дБ</TD>
+</TR>
+<TR><TD WIDTH="12%">
+<P>3,39</P>
+<P>2,96</P>
+<P>2,53</P>
+<P>2,22</TD>
+<TD WIDTH="12%">
+<P>56</P>
+<P>51</P>
+<P>45</P>
+<P>40</TD>
+<TD WIDTH="12%">
+<P>0,8775</P>
+<P>0,8612</P>
+<P>0,8357</P>
+<P>0,8057</TD>
+<TD WIDTH="15%">
+<P>0,05363</P>
+<P>0,07202</P>
+<P>0,1017</P>
+<P>0,1382</TD>
+<TD WIDTH="10%">
+<P>1,349</P>
+<P>1,321</P>
+<P>1,278</P>
+<P>1,229</TD>
+<TD WIDTH="14%">
+<P>3,718173</P>
+<P>3,241901</P>
+<P>2,773213</P>
+<P>2,427221</TD>
+<TD WIDTH="11%">
+<P>1,400</P>
+<P>0,390</P>
+<P>1,373</P>
+<P>1,354</TD>
+<TD WIDTH="13%">
+<P>0,9292</P>
+<P>0,9297</P>
+<P>0,9304</P>
+<P>0,9311</TD>
+</TR>
+<TR><TD COLSPAN=8 HEIGHT=32>
+<P>при <IMG SRC="images\lec16_17\f47.gif" WIDTH=9 HEIGHT=19 > <I>A<SUB>s</I></SUB> = 0,177 дБ</TD>
+</TR>
+<TR><TD WIDTH="12%">
+<P>3,09</P>
+<P>2,73</P>
+<P>2,37</P>
+<P>2,09</TD>
+<TD WIDTH="12%">
+<P>55</P>
+<P>50</P>
+<P>45</P>
+<P>40</TD>
+<TD WIDTH="12%">
+<P>0,9807</P>
+<P>0,9630</P>
+<P>0,9356</P>
+<P>0,9040</TD>
+<TD WIDTH="15%">
+<P>0,063309</P>
+<P>0,08273</P>
+<P>0,1141</P>
+<P>0,1522</TD>
+<TD WIDTH="10%">
+<P>1,382</P>
+<P>1,353</P>
+<P>1,308</P>
+<P>1,257</TD>
+<TD WIDTH="14%">
+<P>3,386078</P>
+<P>2,988543</P>
+<P>2,588050</P>
+<P>2,286311</TD>
+<TD WIDTH="11%">
+<P>1,443</P>
+<P>1,432</P>
+<P>1,414</P>
+<P>1,394</TD>
+<TD WIDTH="13%">
+<P>1,041</P>
+<P>1,041</P>
+<P>1,041</P>
+<P>1,041</TD>
+</TR>
+<TR><TD COLSPAN=8 HEIGHT=156>
+<P><IMG SRC="images\lec16_17\Image273.gif" WIDTH=391 HEIGHT=128></TD>
+</TR>
+<TR><TD WIDTH="12%" HEIGHT=29>
+<P><IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 > <I><SUB>s</I></SUB></TD>
+<TD WIDTH="12%" HEIGHT=29>
+<I><P>A<SUB>s</I></SUB>, дБ</TD>
+<TD WIDTH="12%" HEIGHT=29>
+<I><P>L</I><SUB>1</SUB></TD>
+<TD WIDTH="15%" HEIGHT=29>
+<I><P>L</I><SUB>2</SUB></TD>
+<TD WIDTH="10%" HEIGHT=29>
+<I><P>С</I><SUB>2</SUB></TD>
+<TD WIDTH="14%" HEIGHT=29>
+<P><IMG SRC="images\lec16_17\Image272.gif" WIDTH=32 HEIGHT=24></TD>
+<TD WIDTH="11%" HEIGHT=29>
+<I><P>L</I><SUB>3</SUB></TD>
+<TD WIDTH="13%" HEIGHT=29>
+<I><P>С</I><SUB>4</SUB></TD>
+</TR>
+</TABLE>
+</div>
+</div>
+<P>Процедура синтеза ФНЧ с помощью каталогов может выглядеть следующим образом:<br>
+1.&nbsp;По формуле (17.17 а) определяем порядок фильтра<I> m</I>. Если число <I>m</I> четное, то в числитель данной формулы добавляем слагаемое в соответствии с выражением (17.40) и уточняем порядок фильтра.<br>
+2.&nbsp;Из каталога фильтров выбираем таблицы, соответствующие данному порядку.<br>
+3.&nbsp;Из данных таблиц выбираем строку, для которой с минимально возможным отклонением выполняются неравенства<br>
+<IMG SRC="images\lec16_17\Image217.gif" WIDTH=338 HEIGHT=28></P>
+<P>Нормированные элементы данной строки и будут нормированными элементами фильтра, схема которого приведена на рисунке к данной таблице. При этом, обозначения элементов вверху таблицы относятся к схеме <I>а</I>, а внизу – к схеме <I>б</I>. Истинные значения элементов получаются путем денормирования.</P>
+<P><B>Активные RC-фильтры.</B> Фильтры, представляющие собой комбинацию пассивной <I>RC</I>-цепи и активного элемента, называются активными <I>RC</I>-фильтрами. В качестве активного элемента чаще всего используются операционные усилители с двумя входами: инвертирующим и неинвертирующим.</P>
+<P>Реализация передаточных функций фильтров на активных <I>RC</I>-цепях осуществляется следующим образом. Заданную функцию <I>H</I><SUB>p</SUB>(<I>p</I>) порядка <I>m</I> разбивают на произведение передаточных функций не выше второго порядка, т.&nbsp;е. <I>H</I><SUB>p</SUB>(<I>p</I>)=<I>H</I><SUB>p1</SUB>(<I>p</I>)<I>H</I><SUB>p2</SUB>(<I>p</I>) ... <I>H</I><SUB>p<I>k</I></SUB>(<I>p</I>). Каждую передаточную функцию <I>H</I><SUB>p<I>i</I></SUB>(<I>p</I>) реализуют в виде <I>ARC</I>-звена первого или второго порядка. Схему <I>ARC</I>-фильтра получают путем каскадного соединения звеньев.</P>
+
+<P><B>Пример. </B>Пусть задана передаточная функция полиномиального фильтра Чебышева пятого порядка.<br>
+<IMG SRC="images\lec16_17\Image218.gif" WIDTH=464 HEIGHT=44>.</P>
+<P>Полюсы этой функции (корни знаменателя): <I>р</I><SUB>1</SUB> = –0,177; <I>р</I><SUB>2,3 </SUB> = –0,143 <IMG SRC="images\lec16_17\f40.gif" WIDTH=9 HEIGHT=15 >
+ <IMG SRC="images\lec16_17\f40.gif" WIDTH=9 HEIGHT=15 >&nbsp;<I>j</I>0,597; <I>р</I><SUB>4,5 </SUB> = –0,0547 <IMG SRC="images\lec16_17\f40.gif" WIDTH=9 HEIGHT=15 >
+ <I>j</I>0,966. Вещественный полюс <I>р</I><SUB>1</SUB> дает по теореме Виета сомножитель первого порядка (<I>р</I> – <I>р</I><SUB>1</SUB>) = <I>р</I> + 0,177; первая пара комплексно-сопряженных полюсов <I>р</I><SUB>2</SUB> и <I>р</I><SUB>3</SUB> – сомножитель второго порядка (<I>р</I> – <I>р</I><SUB>2</SUB>)&#215;(<I>р</I>&nbsp;– <I>р</I><SUB>3</SUB>) =  <I>р</I><SUP>2</SUP> + 0,286<I>р</I> + 0,377; вторая пара полюсов <I>р</I><SUB>4</SUB> и <I>р</I><SUB>5</SUB> – сомножитель (<I>р</I> – <I>р</I><SUB>4</SUB>)(<I>р</I>&nbsp;– <I>р</I><SUB>5</SUB>) =  <I>р</I><SUP>2</SUP> + 0,110<I>р</I> + 0,936. Тогда<br>
+<IMG SRC="images\lec16_17\Image219.gif" WIDTH=502 HEIGHT=111></P>
+<P>Таким образом, фильтр Чебышева пятого порядка может быть реализован двумя звеньями с передаточными функциями второго порядка и одним звеном с передаточной функцией первого порядка.</P>
+
+<P>В практике проектирования активных <I>RC</I>-фильтров используется большое число схем, реализующих передаточные функции первого и второго порядка. Один из способов построения таких схем показан на рис. 17.14, <I>а</I>. Пассивная часть схемы представлена в виде цепи из элементов <I>R</I> и <I>С</I>. Между зажимами <I>2</I> и <I>3</I> включен операционный усилитель, в котором использован инвертирующий вход. Примером пассивной <I>RC</I>-цепи является схема, приведенная на рис. 17.14, <I>б</I>. Передаточная функция изображенной на рис.&nbsp;17.14, <I>б</I> активной <I>RC</I>-цепи была получена ранее (см. § 3.11) и имеет вид:<br>
+<IMG SRC="images\lec16_17\Image220.gif" WIDTH=428 HEIGHT=54 >(17.28)</p>
+
+<table>
+<tr>
+<td><IMG SRC="images\lec16_17\f49.gif" WIDTH=538 HEIGHT=168><td>
+</tr>
+<tr>
+<td>Рис. 17.14<td>
+</tr>
+</table>
+
+<P>Для реализации в виде такой цепи полиномиального фильтрового звена второго порядка с передаточной функцией<br>
+<IMG SRC="images\lec16_17\Image221.gif" WIDTH=242 HEIGHT=54 >(17.29)</p>
+<P>нужно выбрать проводимости <I>Y</I><SUB>1</SUB>, <I>Y</I><SUB>3</SUB> и <I>Y</I><SUB>4</SUB> активными: <I>G</I><SUB>1</SUB>, <I>G</I><SUB>3</SUB> и <I>G</I><SUB>4</SUB>, а проводимости <I>Y</I><SUB>2</SUB> и <I>Y</I><SUB>5</SUB> – емкостными: <I>pC</I><SUB>2</SUB> и <I>pC</I><SUB>5</SUB>. Тогда (17.28) запишется в следующей форме:<br>
+<IMG SRC="images\lec16_17\Image222.gif" WIDTH=417 HEIGHT=54 >(17.30)</p>
+<P>Сопоставление коэффициентов при <I>р</I> в соответствующих степенях и свободных членов из (17.30), выраженных через элементы фильтра, с заданными числовыми значениями коэффициентов при <I>р</I> и свободных членов из (17.29) позволяет определить значения элементов фильтра.</P>
+
+<P><B>Пример. </B>Реализовать фильтр нижних частот Баттерворта второго порядка из примера в виде активной <I>RC</I>-цепи.</P>
+<P>Передаточная функция НЧ фильтра Баттерворта второго порядка была получена ранее (см. пример на стр. 450) <I>H</I><SUB>p</SUB>(<I>p</I>) = 1/
+(<I>p</I><SUP>2</SUP> + 1,41<I>p</I> + 1). Для сопоставления с ней передаточной функции (17.30) представим последнюю в виде, когда коэффициент при <I>p</I><SUP>2</SUP> равен 1:<br>
+<IMG SRC="images\lec16_17\Image223.gif" WIDTH=342 HEIGHT=65>.</P>
+<P>Приравнивая коэффициенты при <I>р</I> и свободные члены этих передаточных функций, получаем три уравнения с шестью неизвестными <I>G</I><SUB>1</SUB>, <I>G</I><SUB>2</SUB>, <I>G</I><SUB>3</SUB>, <I>G</I><SUB>4</SUB>, <I>C</I><SUB>1</SUB> и <I>C</I><SUB>2</SUB>: <IMG SRC="images\lec16_17\Image224.gif" WIDTH=117 HEIGHT=26 >; <IMG SRC="images\lec16_17\Image225.gif" WIDTH=193 HEIGHT=26 >; <IMG SRC="images\lec16_17\Image226.gif" WIDTH=120 HEIGHT=26 >.</P>
+<P>Следует учесть, что в уравнения входят нормированные значения емкостей <IMG SRC="images\lec16_17\Image227.gif" WIDTH=22 HEIGHT=24 > и <IMG SRC="images\lec16_17\Image228.gif" WIDTH=22 HEIGHT=25 >, так как коэффициенты передаточной функции фильтра Баттерворта получены для нормированной частоты <IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 > = <IMG SRC="images\lec16_17\f1.gif" WIDTH=15 HEIGHT=15 >/<IMG SRC="images\lec16_17\f1.gif" WIDTH=15 HEIGHT=15 ><SUB>н</SUB> (где <IMG SRC="images\lec16_17\f1.gif" WIDTH=15 HEIGHT=15 ><SUB>н</SUB> = <IMG SRC="images\lec16_17\f1.gif" WIDTH=15 HEIGHT=15 >'<SUB>п</SUB> = 2<IMG SRC="images\lec16_17\f38.gif" WIDTH=13 HEIGHT=15 >
+<I>f</I><SUB>п</SUB> =&nbsp;2<IMG SRC="images\lec16_17\f38.gif" WIDTH=13 HEIGHT=15 >&#215;159&#215;10<SUP>3</SUP> =  10<SUP>6 </SUP>рад/с).</P>
+<P>Поскольку искомых величин больше, чем уравнений, зададимся частью из них. Выберем приемлемые значения проводимостей <I>G</I><SUB>1</SUB>, <I>G</I><SUB>3 </SUB>и  <I>G</I><SUB>4</SUB>, например <I>G</I><SUB>1</SUB>&nbsp;= <I>G</I><SUB>3 </SUB>= <I>G</I><SUB>4</SUB> = 10<SUP>–3 </SUP>См, т. е. <I>R</I><SUB>1</SUB>&nbsp;= <I>R</I><SUB>3 </SUB>= <I>R</I><SUB>4</SUB> = 1 кОм. Далее из второго уравнения легко получить <IMG SRC="images\lec16_17\Image229.gif" WIDTH=292 HEIGHT=26 >, а из первого и третьего уравнений – <IMG SRC="images\lec16_17\Image230.gif" WIDTH=206 HEIGHT=26  >. Денормированные значения емкостей <IMG SRC="images\lec16_17\Image231.gif" WIDTH=106 HEIGHT=26 >2,13 нФ, <IMG SRC="images\lec16_17\Image232.gif" WIDTH=106 HEIGHT=26 >0,47 нФ.</P>
+<P>Схема фильтра приведена на рис. 17.15.</P>
+
+<table>
+<tr>
+<td><IMG SRC="images\lec16_17\f50.gif" WIDTH=246 HEIGHT=133><td>
+</tr>
+<tr>
+<td>Рис. 17.15<td>
+</tr>
+</table>
+
+
+<P>Реализация фильтров со всплесками ослабления, передаточные функции которых описываются выражением (17.21), осуществляется так же, как и реализация полиномиальных фильтров. Передаточная функция (17.21) разбивается на произведение простейших (первого и второго порядков) передаточных функций; последние реализуются в виде фильтровых <I>RC</I>-звеньев первого и второго порядков, соединяемых каскадно в общую схему фильтра.</P>
+<P>Для реализации передаточных функций второго порядка с нулем передачи <I>H</I><SUB>p<I>i</I></SUB>(<I>p</I>) = (<I>p</I><SUP>2</SUP> + a
+<SUB>0</SUB>)/(<I>p</I><SUP>2</SUP> + <I>b</I><SUB>1</SUB><I>p</I> + a
+<SUB>0</SUB>) используются специальные фильтровые <I>ARC</I>-звенья.</P>
+<P>Более подробно методику синтеза активных <I>RC</I>-фильтров со всплесками ослабления можно изучить, обратившись к специальной литературе.</P>
+
+<a class="anchor" name="17.4"></a>
+					<h3>17.4. Переход от фильтров нижних частот к другим типам фильтров</h3>
+
+<P><B>Преобразование шкалы частот ФНЧ.</B> Для синтеза фильтров верхних частот (полосовых или заграждающих) и, в частности, для нахождения их передаточных функций, можно было бы заново повторить все преобразования, примененные к фильтрам нижних частот. Однако такой подход нерационален. Обычно для расчета ФВЧ, ПФ или ЗФ используют преобразование шкалы частот ФНЧ-прототипа.</P>
+
+<table>
+<tr>
+<td><IMG SRC="images\lec16_17\f51.gif" WIDTH=540 HEIGHT=370></td>
+</tr>
+<tr>
+<td>Рис. 17.16</td>
+</tr>
+</table>
+
+<P>На рис. 17.16 приведены характеристики ослабления фильтров: нижних частот (<I>а</I>), верхних частот (<I>б</I>) полосового (<I>в</I>) и заграждающего (<I>г</I>). Для ФНЧ эта характеристика построена как для положительных, так и для отрицательных частот. Шкала частот для каждого фильтра помечена для удобства буквенными обозначениями: "нч", "вч", "пф", "зф".</P>
+<P>Из рис. 17.16, <I>а</I> и <I>б</I> видно, что характеристика ослабления ФНЧ в отрицательной области частот повторяет характеристику ФВЧ. Преобразовать характеристику ФНЧ в характеристику ФВЧ можно с помощью замены переменной:<br>
+<IMG SRC="images\lec16_17\Image233.gif" WIDTH=152 HEIGHT=33 >(17.31)<br>
+где <IMG SRC="images\lec16_17\f1.gif" WIDTH=15 HEIGHT=15 ><SUB>n</SUB> – граничная частота полосы пропускания ФНЧ и ФВЧ.</P>
+<P>График зависимости (17.31) представляет собой нижнюю ветвь гиперболы. На рис. 17.17 приведены характеристика ослабления ФНЧ, график преобразующей функции (17.31) и характеристика ослабления ФВЧ. Действительно, такое преобразование частоты приводит к соответствию: частоты <IMG SRC="images\lec16_17\f1.gif" WIDTH=15 HEIGHT=15 >
+<SUB>н.ч</SUB> = —<IMG SRC="images\lec16_17\f2.gif" WIDTH=11 HEIGHT=19 >
+ частоте <IMG SRC="images\lec16_17\f1.gif" WIDTH=15 HEIGHT=15 >
+<SUB>в.ч</SUB> = 0; частоты <IMG SRC="images\lec16_17\f1.gif" WIDTH=15 HEIGHT=15 >
+<SUB>н.ч </SUB>= —<IMG SRC="images\lec16_17\f1.gif" WIDTH=15 HEIGHT=15 >
+<SUB>п</SUB>  частоте <IMG SRC="images\lec16_17\f1.gif" WIDTH=15 HEIGHT=15 >
+<SUB>в.ч </SUB>= <IMG SRC="images\lec16_17\f1.gif" WIDTH=15 HEIGHT=15 >
+<SUB>п</SUB>; частоты <IMG SRC="images\lec16_17\f1.gif" WIDTH=15 HEIGHT=15 >
+<SUB>н.ч </SUB>= 0 частоте <IMG SRC="images\lec16_17\f1.gif" WIDTH=15 HEIGHT=15 >
+<SUB>в.ч </SUB>= <IMG SRC="images\lec16_17\f2.gif" WIDTH=11 HEIGHT=19 >
+.</P>
+
+<table>
+<tr>
+<td><IMG SRC="images\lec16_17\f52.gif" WIDTH=408 HEIGHT=531></td>
+</tr>
+<tr>
+<td>Рис. 17.17</td>
+</tr>
+</table>
+
+<P>Чтобы из характеристики ФНЧ получить характеристику ПФ (рис.&nbsp;17.16, <I>в</I>), необходима замена переменной:<br>
+<IMG SRC="images\lec16_17\Image234.gif" WIDTH=392 HEIGHT=62 >(17.32)<br>
+где <IMG SRC="images\lec16_17\Image235.gif" WIDTH=228 HEIGHT=32 >; <IMG SRC="images\lec16_17\f1.gif" WIDTH=15 HEIGHT=15 ><SUB>п1</SUB> и <IMG SRC="images\lec16_17\f1.gif" WIDTH=15 HEIGHT=15 ><SUB>п2</SUB> – граничные частоты полосы пропускания ПФ; <IMG SRC="images\lec16_17\f1.gif" WIDTH=15 HEIGHT=15 ><SUB>з1</SUB> и <IMG SRC="images\lec16_17\f1.gif" WIDTH=15 HEIGHT=15 ><SUB>з2</SUB> – граничные частоты полосы нерпопускания ПФ.</P>
+<P>График функции (17.32) описывается более сложной кривой, чем у ФВЧ. На рис. 17.18 показано как происходит преобразование шкалы частот ФНЧ в шкалу частот ПФ с помощью преобразования частоты (17.32). Данное преобразование приводит к соответствию частоты <IMG SRC="images\lec16_17\f1.gif" WIDTH=15 HEIGHT=15 >
+<SUB>н.ч</SUB> = —<IMG SRC="images\lec16_17\f2.gif" WIDTH=11 HEIGHT=19 >
+ частоте <IMG SRC="images\lec16_17\f1.gif" WIDTH=15 HEIGHT=15 >
+<SUB>п.ф</SUB> = 0, частоты <IMG SRC="images\lec16_17\f1.gif" WIDTH=15 HEIGHT=15 >
+<SUB>н.ч</SUB> = 0 частоте <IMG SRC="images\lec16_17\f1.gif" WIDTH=15 HEIGHT=15 >
+<SUB>п.ф</SUB> = <IMG SRC="images\lec16_17\f1.gif" WIDTH=15 HEIGHT=15 >
+<SUB>0</SUB>, частоты <IMG SRC="images\lec16_17\f1.gif" WIDTH=15 HEIGHT=15 >
+<SUB>н.ч</SUB> = <IMG SRC="images\lec16_17\f2.gif" WIDTH=11 HEIGHT=19 >
+  частоте <IMG SRC="images\lec16_17\f1.gif" WIDTH=15 HEIGHT=15 >
+<SUB>п.ф</SUB> = <IMG SRC="images\lec16_17\f2.gif" WIDTH=11 HEIGHT=19 >
+.</P>
+
+<table>
+<tr>
+<td><IMG SRC="images\lec16_17\f53.gif" WIDTH=454 HEIGHT=553></td>
+</tr>
+<tr>
+<td>Рис. 17.18</td>
+</tr>
+</table>
+
+<P>Характеристику (рис. 17.16, <I>г</I>) заграждающего фильтра можно получить из характеристики ФНЧ, применяя преобразование частоты:<br>
+<IMG SRC="images\lec16_17\Image236.gif" WIDTH=150 HEIGHT=65>(17.33)</p>
+<P><B>Преобразование схем пассивных <I>LC</I>-фильтров</B>. Замена переменных (2.31) и (2.32) в выражении для квадрата АЧХ |<I>H</I><SUB>p</SUB>(<I>j<IMG SRC="images\lec16_17\f1.gif" WIDTH=15 HEIGHT=15 ></I>)|<SUP>2</SUP> фильтра нижних частот приводит при реализации этой функции к преобразованию схемы ФНЧ в схемы ФВЧ и ПФ. Индуктивное сопротивление ФНЧ <I>j<IMG SRC="images\lec16_17\f1.gif" WIDTH=15 HEIGHT=15 ></I><SUB>н.ч</SUB><I>L</I><SUB>н.ч</SUB> переходит при преобразовании частот (17.31) в сопротивление:<br>
+<IMG SRC="images\lec16_17\Image237.gif" WIDTH=583 HEIGHT=34>,<br>
+т. е. в емкостное сопротивление ФВЧ, где <I>C</I><SUB>в.ч</SUB> = 1/<IMG SRC="images\lec16_17\f1.gif" WIDTH=15 HEIGHT=15 >
+<SUB>п</SUB><SUP>2</SUP><I>L</I><SUB>н.ч</SUB>.</P>
+<P>Емкостная проводимость:<br>
+<IMG SRC="images\lec16_17\Image238.gif" WIDTH=456 HEIGHT=62><br>
+переходит в индуктивную проводимость фильтра ВЧ с индуктивностью <I>L</I><SUB>в.ч</SUB> = 1/
+<IMG SRC="images\lec16_17\f1.gif" WIDTH=15 HEIGHT=15 >
+<SUB>п</SUB><SUP>2</SUP><I>C</I><SUB>н.ч</SUB>.</P>
+<P>Преобразование частоты (17.32) приводит к замене индуктивного сопротивления ФНЧ:<br>
+<IMG SRC="images\lec16_17\Image239.gif" WIDTH=561 HEIGHT=62></P>
+<P>сопротивлением последовательного контура в ПФ с элементами <I>L</I><SUB>п.ф1</SUB> = <I>L</I><SUB>н.ч</SUB> и <I>C</I><SUB>п.ф1</SUB> = 1/
+(<IMG SRC="images\lec16_17\f1.gif" WIDTH=15 HEIGHT=15 >
+<SUB>0</SUB><SUP>2</SUP><I>L</I><SUB>н.ч</SUB>).</P>
+<P>Емкостная проводимость ФНЧ:<br>
+<IMG SRC="images\lec16_17\Image240.gif" WIDTH=565 HEIGHT=62><br>
+заменяется в ПФ проводимостью параллельного контура с элементами <I>C</I><SUB>п.ф2</SUB> = <I>C</I><SUB>н.ч</SUB> и <I>L</I><SUB>п.ф2</SUB> = 1/
+(<IMG SRC="images\lec16_17\f1.gif" WIDTH=15 HEIGHT=15 >
+<SUB>0</SUB><SUP>2</SUP><I>C</I><SUB>н.ч</SUB>).</P>
+<P>Нетрудно убедиться также, что индуктивный элемент ФНЧ преобразуется в ЗФ в параллельный колебательный контур с резонансной частотой <IMG SRC="images\lec16_17\f1.gif" WIDTH=15 HEIGHT=15 ><SUB>0</SUB>, а емкость ФНЧ – в последовательный колебательный контур с той же резонансной частотой.</P>
+
+<P><B>Пример. </B>Рассчитать полосовой фильтр с характеристиками Баттерворта, удовлетворяющий требованиям: <I>А</I><SUB>p<I>max</I></SUB> = 3 дБ; <I>А</I><SUB>p<I>min</I></SUB>=12,2 дБ; <I>f</I><SUB>п1</SUB>=1241&nbsp;кГц; <I>f</I><SUB>п2</SUB> = 1400 кГц; <I>f</I><SUB>з1</SUB> = 1168,5 кГц; <I>f</I><SUB>з2</SUB> = 1486 кГц.</P>
+<P>Для решения поставленной задачи нужно сначала построить фильтр НЧ-прототипа, а затем с помощью преобразования частоты перейти к ПФ.</P>
+<P>Пересчитаем требования ПФ (рис. 17.16, <I>в</I>) в требования к НЧ-прототипу (см. рис. 17.16, <I>а</I>). Воспользуемся формулой (17.32): <I>f</I><SUB>0</SUB> = <IMG SRC="images\lec16_17\Image241.gif" WIDTH=56 HEIGHT=26 > = <IMG SRC="images\lec16_17\Image242.gif" WIDTH=48 HEIGHT=24 > =&nbsp;1734,4 кГц; <I>f</I><SUB>п </SUB>=<I> f</I><SUB>п2</SUB> – <I>f</I><SUB>0</SUB><SUP>2</SUP>/<I>f</I><SUB>п2 </SUB>=<I> f</I><SUB>п2</SUB> – <I>f</I><SUB>п1</SUB>= 159 кГц; <I>f</I><SUB>з </SUB>=<I> f</I><SUB>з2</SUB> – <I>f</I><SUB>0</SUB><SUP>2</SUP>/<I>f</I><SUB>з2 </SUB>= =&nbsp;<I>f</I><SUB>з2</SUB>&nbsp;– <I>f</I><SUB>з1</SUB>= 318 кГц. В качестве нормирующей частоты выберем <I>f</I><SUB>н</SUB> = <I>f</I><SUB>п</SUB>. Тогда нормированные частоты <IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 >
+<SUB>п </SUB>= 1  и <IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 >
+<SUB>з </SUB>= <I>f</I><SUB>з</SUB>/<I>f</I><SUB>п </SUB>= 2. Итак, требования к НЧ-прототипу имеют вид: <I>А</I><SUB>p<I>max</I></SUB> = 3 дБ; <I>А</I><SUB>p<I>min</I></SUB> = 12,2 дБ; <I>f</I><SUB>п</SUB> = 159 кГц (<IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 >
+<SUB>п </SUB>= 1); <I>f</I><SUB>з</SUB> = 318 кГц (<IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 ><SUB>з </SUB>= 2).</P>
+<P>В примере для такого НЧ-фильтра были получены квадрат АЧХ |<I>H</I><SUB>p</SUB>(<I>j<IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 >
+</I>)|<SUP>2</SUP>&nbsp;= 1/(1 + <IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 >
+<SUP>4</SUP>), рабочее ослабление <I>А</I><SUB>p</SUB> = 10lg(1 + <IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 ><SUP>4</SUP>) и передаточная функция <I>H</I><SUB>p</SUB>(<I>p</I>) = 1/(<I>p</I><SUP>2</SUP> + 1,41<I>p</I> + 1).</P>
+<P>В другом примере этот фильтр был реализован в виде схемы, изображенной на рис. 17.11 с элементами <I>L</I><SUB>н.ч</SUB> =&nbsp;1,41&nbsp;мГн и <I>С</I><SUB>н.ч</SUB> = 1,41 нФ.</P>
+<P>При переходе к требуемому полосовому фильтру необходимо индуктивность продольного плеча <I>L</I><SUB>н.ч</SUB> фильтра НЧ-прототипа заменить последовательным контуром с элементами <I>L</I><SUB>п.ф1</SUB> =&nbsp;<I>L</I><SUB>н.ч</SUB> =&nbsp;1,41&nbsp;мГн и <I>С</I><SUB>п.ф1</SUB> =&nbsp;<IMG SRC="images\lec16_17\Image243.gif" WIDTH=121 HEIGHT=30 > =&nbsp;6&#215;10<SUP>–12</SUP> Ф = 6,0 пФ.</P>
+<P>Вместо емкости <I>С</I><SUB>н.ч</SUB> в поперечном плече полосового фильтра будет включен параллельный контур с элементами <I>С</I><SUB>п.ф2</SUB> =&nbsp;<I>С</I><SUB>н.ч</SUB> =&nbsp;1,41&nbsp;нФ и <I>L</I><SUB>п.ф2</SUB> =&nbsp;<IMG SRC="images\lec16_17\Image244.gif" WIDTH=121 HEIGHT=30 > = 6&#215;10<SUP>–6</SUP> Гн = 6 мкГн.</P>
+<P>Схема искомого полосового фильтра приведена на рис. 17.19.</P>
+
+<table>
+<tr>
+<td><IMG SRC="images\lec16_17\f54.gif" WIDTH=307 HEIGHT=106></td>
+</tr>
+<tr>
+<td>Рис. 17.19</td>
+</tr>
+</table>
+
+
+<P><B>Преобразование передаточных функций активных RC-фильтров.</B> В активных <I>RC</I>-фильтрах для того, чтобы перейти от передаточной функции ФНЧ-прототипа к передаточным функциям ФВЧ и ПФ, следует осуществить замену комплексной переменной <I>р</I>. Из (17.31) получаем для ФВЧ<br>
+<IMG SRC="images\lec16_17\Image245.gif" WIDTH=148 HEIGHT=30 >  или  <IMG SRC="images\lec16_17\Image246.gif" WIDTH=148 HEIGHT=28 >(17.34)<br>
+где <IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 ><SUB>н.ч</SUB> = <IMG SRC="images\lec16_17\f1.gif" WIDTH=15 HEIGHT=15 ><SUB>н.ч/<IMG SRC="images\lec16_17\f1.gif" WIDTH=15 HEIGHT=15 >п</SUB> и <IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 >
+<SUB>в.ч</SUB> = <IMG SRC="images\lec16_17\f1.gif" WIDTH=15 HEIGHT=15 ><SUB>в.ч/
+<IMG SRC="images\lec16_17\f1.gif" WIDTH=15 HEIGHT=15 >п</SUB>.</P>
+<P>Заменяя в (17.34) оператор <I>j<IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 ></I> на оператор <I>р</I>, запишем преобразование переменной <I>р</I> в выражении нормированной по частоте передаточной функции ФНЧ-прототипа:<br>
+<IMG SRC="images\lec16_17\Image247.gif" WIDTH=104 HEIGHT=25 >(17.35)</p>
+<P>Передаточная функция полиномиального звена второго порядка ФНЧ имеет вид:<br>
+<IMG SRC="images\lec16_17\Image248.gif" WIDTH=305 HEIGHT=57 >(17.36)</p>
+<P>Замена переменной (17.35) в этом выражении приводит к передаточной функции полиномиального звена второго порядка ФВЧ:<br>
+<IMG SRC="images\lec16_17\Image249.gif" WIDTH=302 HEIGHT=62 >(17.37)</p>
+<P>Для реализации звена с передаточной функцией (17.37) может быть использована схема рис. 17.14, <I>б</I>, в которой следует выбрать проводимости <I>Y</I><SUB>2</SUB> и <I>Y</I><SUB>5</SUB> – активными, т. е. <I>Y</I><SUB>2</SUB> = <I>G</I><SUB>2</SUB> и <I>Y</I><SUB>5</SUB> = <I>G</I><SUB>5</SUB>, а проводимости <I>Y</I><SUB>1</SUB>, <I>Y</I><SUB>3</SUB> и <I>Y</I><SUB>4</SUB> – емкостными, т. е. <I>Y</I><SUB>1</SUB> = <I>pC</I><SUB>1</SUB>; <I>Y</I><SUB>3</SUB> = <I>pC</I><SUB>3</SUB> и <I>Y</I><SUB>4</SUB> = <I>pC</I><SUB>4</SUB>. Подставляя эти значения проводимостей в выражение (17.28), получаем передаточную функцию<br>
+<IMG SRC="images\lec16_17\Image250.gif" WIDTH=472 HEIGHT=60 >(17.38)<br>
+<I>ARC</I>-звена ФВЧ второго порядка, схема которого дана на рис.&nbsp;17.20. Значения элементов схемы будут найдены, если приравнять коэффициенты из (17.37) и (17.38) при соответствующих степенях <I>р</I>.</P>
+
+<table border=0>
+<tr>
+<tdcolspan=2><IMG SRC="images\lec16_17\f55.gif" WIDTH=561 HEIGHT=152></td>
+</tr>
+<tr>
+<td>Рис. 17.20</td>
+<td>Рис. 17.21</td>
+</tr>
+</table>
+
+<P>Для перехода от НЧ-прототипа к полосовому фильтру воспользуемся (17.33):<br>
+<IMG SRC="images\lec16_17\Image251.gif" WIDTH=248 HEIGHT=34 > или <IMG SRC="images\lec16_17\Image252.gif" WIDTH=254 HEIGHT=34 >(17.39)<br>
+где <IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 ><SUB>н.ч</SUB> = <IMG SRC="images\lec16_17\f1.gif" WIDTH=15 HEIGHT=15 ><SUB>н.ч</sub><IMG SRC="images\lec16_17\f1.gif" WIDTH=15 HEIGHT=15 ><sub>п</SUB>; <IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 ><SUB>п.ф</SUB> = <IMG SRC="images\lec16_17\f1.gif" WIDTH=15 HEIGHT=15 >
+<SUB>п.ф</sub>/<IMG SRC="images\lec16_17\f1.gif" WIDTH=15 HEIGHT=15 >
+<sub>п</SUB>; <IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 >
+<SUB>0</SUB> = <IMG SRC="images\lec16_17\f1.gif" WIDTH=15 HEIGHT=15 >
+<SUB>0</sub>/<IMG SRC="images\lec16_17\f1.gif" WIDTH=15 HEIGHT=15 ><sub>
+п</SUB>.</P>
+<P>Вводя переменную <I>p</I> = <I>j<IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 ></I> и учитывая, что <I>p</I><SUP>2</SUP> = –<IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 ><SUP>2</SUP>, находим из (17.39):<br>
+<IMG SRC="images\lec16_17\Image253.gif" WIDTH=217 HEIGHT=34 >(17.40)</p>
+<P>Такая замена переменной <I>p</I><SUB>н.ч</SUB> в (17.36) приводит к передаточной функции полосового фильтра:<br>
+<IMG SRC="images\lec16_17\Image254.gif" WIDTH=466 HEIGHT=65 >(17.41)<br>
+где <I>b</I>'<SUB>4</SUB> = <I>b</I><SUB>2</SUB>; <I>b</I>'<SUB>3</SUB> = <I>b</I><SUB>1</SUB>; <I>b</I>'<SUB>2</SUB> = 2<I>b</I><SUB>2<IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 >0</SUB><SUP>2</SUP> + <I>b</I><SUB>0</SUB>; <I>b</I>'<SUB>1</SUB> = <I>b</I><SUB>1<IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 >
+0</SUB><SUP>2</SUP>; <I>b</I>'<SUB>0</SUB> = <I>b</I><SUB>2<IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 >0</SUB><SUP>4</SUP>.</P>
+<P>Видим, что при переходе к ПФ порядок передаточной функции удваивается. Передаточную функцию (17.41) можно разбить на произведение передаточных функций второго порядка и каждую из них реализовать отдельной <I>ARC-</I>схемой.</P>
+<P>Запишем передаточную функцию ПФ второго порядка:<br>
+<IMG SRC="images\lec16_17\Image255.gif" WIDTH=394 HEIGHT=60 >(17.42)</p>
+<P>Подобную передаточную функцию имеет <I>ARC</I>-схема, изображенная на рис. 17.14, <I>б</I> при <I>Y</I><SUB>1</SUB> = <I>G</I><SUB>1</SUB>, <I>Y</I><SUB>2</SUB> = <I>G</I><SUB>2</SUB>, <I>Y</I><SUB>5</SUB> = <I>G</I><SUB>5</SUB> и <I>Y</I><SUB>3</SUB> = =&nbsp;<I>pC</I><SUB>3</SUB>, <I>Y</I><SUB>4</SUB> = <I>pC</I><SUB>4</SUB>. Действительно, из (17.28) находим:<br>
+<IMG SRC="images\lec16_17\Image256.gif" WIDTH=508 HEIGHT=60 >(17.43)</p>
+<P>Элементы схемы фильтра (рис. 17.21) определяются сопоставлением (17.42) и (17.43).</P>
+<P><B>Порядок синтеза ФВЧ, ПФ и ЗФ.</B> С помощью преобразования частоты был осуществлен переход от ФНЧ к другим типам фильтра. Однако для их синтеза этого недостаточно, так как исходными при синтезе ФВЧ, ПФ и ЗФ являются требования не к ФНЧ, а к данным фильтрам. Поэтому вначале требуется выполнять обратный переход. Сформулируем порядок синтеза ФВЧ, ПФ, ЗФ:<br>
+1)&nbsp;по заданным требованиям к ФВЧ, ПФ и ЗФ необходимо определить требования к ФНЧ;<br>
+2)&nbsp;решить задачу аппроксимации для ФНЧ (получить квадрат АЧХ или операторную передаточную функцию);<br>
+3)&nbsp;реализовать квадрат АЧХ в виде лестничного ФНЧ и перейти с помощью преобразования частоты к схеме требуемого типа фильтра (если выбрана пассивная схема фильтра);<br>
+4) используя соответствующее преобразование частоты, перейти от операторной передаточной функции ФНЧ к операторной передаточной функции искомого фильтра и реализовать его в виде <I>ARC</I>-схемы (если выбран активный RCфильтр).</P>
+<P>Рассмотрим более подробно первый пункт.</P>
+<P>Пусть заданы требования к ФВЧ, т. е. заданы <IMG SRC="images\lec16_17\f1.gif" WIDTH=15 HEIGHT=15 ><SUB>пв.ч</SUB>, <IMG SRC="images\lec16_17\f1.gif" WIDTH=15 HEIGHT=15 ><SUB>зв.ч</SUB>, <I>А</I><SUB>р<I>max</I></SUB> и <I>А</I><SUB>р<I>min </I></SUB>(см. рис. 17.17). Определим требования к ФНЧ. Если в выражение (17.31) вместо <IMG SRC="images\lec16_17\f1.gif" WIDTH=15 HEIGHT=15 >
+<SUB>в.ч</SUB> подставить <IMG SRC="images\lec16_17\f1.gif" WIDTH=15 HEIGHT=15 >
+<SUB>пв.ч</SUB>, то согласно рис. 17.17 получим<br>
+<IMG SRC="images\lec16_17\Image257.gif" WIDTH=197 HEIGHT=33></P>
+<P>Откуда:<br>
+<IMG SRC="images\lec16_17\Image258.gif" WIDTH=317 HEIGHT=33></P>
+<P>Величины <I>А</I><SUB>р<I>max</I></SUB> и <I>А</I><SUB>р<I>min </I></SUB>остаются для ФНЧ такими же как и для ФВЧ. Таким образом получены требования к ФНЧ. По найденным требованиям к ФНЧ решаем задачу аппроксимации одним из методов, изложенных выше.</P>
+<P>Пусть заданы требования к ПФ, т. е. известны <IMG SRC="images\lec16_17\f1.gif" WIDTH=15 HEIGHT=15 >
+<SUB>з1</SUB>, <IMG SRC="images\lec16_17\f1.gif" WIDTH=15 HEIGHT=15 >
+<SUB>п1</SUB>, <IMG SRC="images\lec16_17\f1.gif" WIDTH=15 HEIGHT=15 >
+<SUB>п2</SUB>, <IMG SRC="images\lec16_17\f1.gif" WIDTH=15 HEIGHT=15 >
+<SUB>з2</SUB>, а также ослабление в полосе пропускания <I>А</I><SUB>р<I>max</I></SUB> и в полосе задерживания <I>А</I><SUB>р<I>min </I></SUB>(см. рис. 17.18). Подставим в выражение (17.32) последовательно граничные частоты полос пропускания и задерживания полосового фильтра. Как видно из рис. 17.18, в результате такой подстановки получим:<br>
+<IMG SRC="images\lec16_17\Image259.gif" WIDTH=357 HEIGHT=30></P>
+<P>Учитывая, что<br>
+<IMG SRC="images\lec16_17\Image260.gif" WIDTH=226 HEIGHT=33></P>
+<P>получим окончательно:<br>
+<IMG SRC="images\lec16_17\Image261.gif" WIDTH=324 HEIGHT=28></P>
+<P>Требования по ослаблению к ФНЧ-прототипу остаются такими же, как и к ПФ. Следовательно, имеются все исходные данные для решения задачи аппроксимации ФНЧ.</P>
+<P>Аналогично решается задача для ЗФ. Граничные частоты для ПП и ПЗ фильтров рассчитываются по формулам</P>
+<IMG SRC="images\lec16_17\Image262.gif" WIDTH=433 HEIGHT=33></P>
+
+<a class="anchor" name="17.5"></a>
+					<h3>17.5. Резонаторные фильтры</h3>
+
+<P>В многоканальных системах передачи разделение каналов по частоте осуществляется с помощью полосовых фильтров. Чтобы сигналы одного канала не попадали в другой, ПФ должны иметь высокую избирательность. Добротность резонансных контуров таких фильтров Q&nbsp;&gt; 20 ...&nbsp;25<I>f</I><SUB>0/
+</SUB>(<I>f</I><SUB>п2</SUB> – <I>f</I><SUB>п1</SUB>). Так, для фильтра с <I>f</I><SUB>0</SUB> =&nbsp;62 кГц и полосой пропускания <I>f</I><SUB>п2</SUB> – <I>f</I><SUB>п1</SUB> = 4 кГц  <I>Q</I> &gt; 300, в то же время для фильтра с <I>f</I><SUB>0</SUB>&nbsp;= 106 кГц и <I>f</I><SUB>п2</SUB> – <I>f</I><SUB>п1</SUB> = 4 кГц  <I>Q</I> &gt; 1500.</P>
+<P>В радиосвязи используются еще более высокие частоты (десятки и сотни мегагерц) и для построения избирательных фильтров нужны резонаторы с добротностью в тысячи и десятки тысяч единиц. Такие значения добротности никогда не обеспечиваются в <I>LC</I>-резонаторах (их добротность не превышает сотен единиц), поэтому в фильтрах применяют высокодобротные механические резонаторы, пьезоэлектрические, магнитострикционные и электромеханические.</P>
+<P>В <I>пьезоэлектрических фильтрах </I>роль резонатора выполняет пластинка, вырезанная специальным образом из материала, обладающего пьезоэлектрическим эффектом (например, из кристалла кварца). Пьезоэффект кварцевой пластинки заключается в появлении на ее поверхностях электрических зарядов при механическом воздействии на пластинку. Существует и обратный пьезоэффект – возникновение механических колебаний пьезопластинки при помещении ее в переменное электрическое поле.</P>
+<P>Если пьезопластинку поместить между металлическими обкладками и подать на обкладки переменное напряжение, то пластинка начнет совершать механические колебания. На поверхностях пластинки возникнут электрические заряды и во внешней цепи потечет ток. При совпадении частоты переменного напряжения и частоты собственных колебаний пластинки возникает механический резонанс; амплитуда колебаний достигнет максимума и ток во внешней цепи будет максимальным. Таким образом, механический резонанс в кварцевой пластине подобен резонансу напряжений в последовательном колебательном контуре.</P>
+<P>Эквивалентная схема пьезоэлектрического (в частности, кварцевого) резонатора (рис. 17.22) помимо эквивалентных индуктивности <I>L</I> и емкости <I>C</I> резонатора содержит емкость кварцедержателя <I>C</I><SUB>к</SUB>, т. е. обкладок, между которыми помещена кварцевая пластинка.</P>
+
+<table border=0>
+<tr>
+<tdcolspan=2><IMG SRC="images\lec16_17\f56.gif" WIDTH=520 HEIGHT=89></td>
+</tr>
+<tr><p>
+<td width=300>Рис. 17.22</td>
+<td width=120>Рис. 17.23</td>
+</p></tr>
+</table>
+
+<P>Пьезоэлектрические фильтры с кварцевыми резонаторами называют <I>кварцевыми</I>. Добротность кварцевых резонаторов достигает 10 ... 20 тыс. ед. Кварцевые фильтры могут быть построены по мостовой схеме (рис.&nbsp;17.23).</P>
+<P><I>Магнитострикционные фильтры</I> строятся на основе резонаторов из ферромагнитного материала, обладающего магнитострикционным эффектом (например, из сплава никеля с кобальтом). Магнитострикционный эффект состоит в том, что стержень из ферромагнетика, помещенный в переменное магнитное поле, изменяет свои геометрические размеры. Обратный эффект – изменение магнитной проницаемости стержня при механическом воздействии на него. Если, например, никель-кобальтовый стержень поместить внутрь катушки индуктивности, создающей переменное магнитное поле, его геометрические размеры начнут меняться. При этом будет меняться и его магнитная проницаемость. В катушке индуктивности наведется ЭДС, направленная против ЭДС генератора и уменьшающая ток во внешней цепи. При механическом резонансе амплитуда колебаний стержня будет максимальной, а ток во внешней цепи – минимальный. Таким образом, механический резонанс магнитострикционного стержня подобен резонансу токов параллельного колебательного контура.</P>
+<P>Эквивалентная схема резонатора приведена на рис. 17.24 и включает в себя элементы <I>L</I><SUB>м</SUB> и <I>С</I><SUB>м</SUB> эквивалентного резонатору контура, а также индуктивность <I>L</I><SUB>0</SUB>, учитывающую рассеяние магнитного потока при замыкании его через воздух.</P>
+<P>Добротность магнитострикционных резонаторов ниже, чем кварцевых, и составляет 5 ... 10 тыс. ед. Магнитострикционные фильтры строятся по мостовой схеме (рис. 17.25).</P>
+
+<table border=0>
+<tr>
+<tdcolspan=2><IMG SRC="images\lec16_17\f57.gif" WIDTH=328 HEIGHT=67></td>
+</tr>
+<tr>
+<tdcolspan=2>Рис. 17.25</td>
+</tr>
+<tr>
+<td><IMG SRC="images\lec16_17\f58.gif" WIDTH=153 HEIGHT=64></td>
+<td><IMG SRC="images\lec16_17\f59.gif" WIDTH=310 HEIGHT=114></td>
+</tr>
+<tr>
+<td>Рис. 17.25</td>
+<td>Рис. 17.26</td>
+</tr>
+</table>
+<P>В <I>электромеханических фильтрах</I> резонаторами являются металлические тела (диски, шарики, стержни, пластинки), соединенные металлическими связками. На рис. 17.26 изображен трехрезонаторный стержневой электромеханический фильтр. Возбуждаются колебания в фильтре с помощью входного магнитострикционного преобразователя (МСП); снимаются колебания с выхода фильтра с помощью выходного МСП. Электромеханические фильтры являются также высокодобротными.</P>
+<P>Кроме рассмотренных существуют и другие типы фильтров: фильтры с переключаемыми конденсаторами, кварцевые фильтры на поверхностных акустических волнах (ПАВ) и др. С некоторыми из них можно ознакомиться в [2] и специальной литературе.</P>
+
+<a class="anchor" name="17.6"></a>
+					<h3>Вопросы и задания для самопроверки</h3>
+
+<OL>
+<P><LI>Что такое электрический фильтр? Какие типы фильтров существуют?</LI></P>
+<P><LI>Характеристика рабочего ослабления фильтра изображена на рис. 17.3. Определить тип фильтра.</LI></P>
+<P>Ответ: ФНЧ Чебышева 5 порядка.</P>
+<P><LI>Какой вид имеют функции фильтрации фильтров Баттерворта, Чебышева, Золотарева?</LI></P>
+<P><LI>Привести графики <I>A</I><SUB>p</SUB>(<IMG SRC="images\lec16_17\f32.gif" WIDTH=13 HEIGHT=19 >
+) ФНЧ третьего порядка Баттерворта, Чебышева и Золотарева.</LI></P>
+<P><LI>Рассчитать коэффициент неравномерности ослабления в полосе пропускания и порядок фильтра Баттерворта, удовлетворяющего требованиям: <I>A</I><SUB>p<I>max</I></SUB> = 2 дБ; <I>A</I><SUB>p<I>min</I></SUB> = 25 дБ; <I>f</I><SUB>п</SUB> = 15 кГц; <I>f</I><SUB>з</SUB>&nbsp;= 26 кГц.</LI></P>
+<P><B></B>Ответ:<IMG SRC="images\lec16_17\f29.gif" WIDTH=8 HEIGHT=19 >
+ = 0,765; <I>m</I> = 6.</P>
+<P><LI>Найти выражение для передаточной функции ФНЧ Баттерворта, удовлетворяющего требованиям, приведенным в задаче 5.</LI></P>
+<P>Ответ:<IMG SRC="images\lec16_17\Image263.gif" WIDTH=424 HEIGHT=85>.</P>
+<P><LI>Рассчитать порядок и найти операторную передаточную функцию ФНЧ Чебышева, удовлетворяющего требованиям: <I>A</I><SUB>p<I>max</I></SUB> = =&nbsp;1,25 дБ; <I>A</I><SUB>p<I>min</I></SUB> = 30 дБ; <I>f</I><SUB>п</SUB> = 10<SUP>5</SUP> кГц; <I>f</I><SUB>з</SUB> = 2,5&#215;10<SUP>5</SUP> кГц.</LI></P>
+<P><B></B>Ответ:<I>m</I> = 3;  <IMG SRC="images\lec16_17\Image264.gif" WIDTH=372 HEIGHT=53 >.</P>
+<P><LI>Привести <I>LC</I>-схемы фильтров, имеющих характеристики, изображенные на рис. 17.4.</LI></P>
+<P><LI>Привести <I>LC</I>-схему фильтра, характеристика которого изображена на рис. 17.3.</LI></P>
+<P><LI>Привести <I>LC</I>-схему фильтра НЧ Золотарева, а также график зависимости его рабочего ослабления от частоты.</LI></P>
+<P><LI>Каков алгоритм расчета фильтров методом Дарлингтона?</LI></P>
+<P><LI>Реализовать ФНЧ Баттерворта третьего порядка, имеющего передаточную функцию<br> <IMG SRC="images\lec16_17\Image265.gif" WIDTH=266 HEIGHT=32>,<br> в виде пассивной <I>LC</I>-схемы. Внутреннее сопротивление генератора <IMG SRC="images\lec16_17\Image266.gif" WIDTH=58 HEIGHT=26 >. </LI></P>
+<P>Ответ:<IMG SRC="images\lec16_17\Image267.gif" WIDTH=56 HEIGHT=29 >, <IMG SRC="images\lec16_17\Image268.gif" WIDTH=47 HEIGHT=23 >, <IMG SRC="images\lec16_17\Image269.gif" WIDTH=57 HEIGHT=29 >.</P>
+<P><LI>Какие фильтры называются активными <I>RC</I>-фильтрами?</LI></P>
+<P><LI>Какие передаточные функции имеют <I>RC</I>-фильтровые звенья первого и второго порядков? Как получить передаточную функцию фильтра более высокого порядка?</LI></P>
+<P><LI>Реализовать активный <I>RC</I>-фильтр, имеющий передаточную функцию, приведенную в задаче 12.</LI></P>
+<P><LI>Как осуществить переход от ФНЧ к ФВЧ, ПФ, ЗФ?</LI></P>
+<P><LI>Доказать, что при переходе от ФНЧ к ЗФ индуктивность фильтра-прототипа преобразуется в параллельный контур в ЗФ, а емкость – в последовательный контур?</LI></P>
+<P><LI>Привести схемы <I>LC</I>-фильтров, имеющих характеристики, изображенные на рис. 17.16, <I>б</I>, <I>в</I>, <I>г</I>.</LI></P>
+<P><LI>Рассчитать ФВЧ с максимально плоской характеристикой ослабления, удовлетворяющий требованиям: <I>A</I><SUB>p<I>max</I></SUB> = 1,5 дБ; <I>A</I><SUB>p<I>min</I></SUB> = 20 дБ; <IMG SRC="images\lec16_17\Image270.gif" WIDTH=110 HEIGHT=30 >; <IMG SRC="images\lec16_17\Image271.gif" WIDTH=144 HEIGHT=29 >.</LI></P>
+<P><LI>Как осуществляется переход от схемы НЧ-прототипа к схемам ФВЧ и ПФ в активных <I>RC</I>-фильтрах?</LI></P>
+<P><LI>Какие высокодобротные механические резонаторы используются для построения фильтров?</LI></P></OL>
+					
+					<br>	
+					<br>	
+				</div>
+			</div>
+        </div>
+    </div>
+	
+	<!--Меню навигации по лекциям -->	
+	<div aria-label="..." class = "nav-menu">
+	  <ul class="pager  background-transition-slow" >
+		 <li title="Наверх" style = "margin-right:15px;	"><a class = "glyphicon glyphicon-menu-up page-scroll" href="#page-top" ></a></li>
+		 <li title="К предыдущей лекции"><a class = "glyphicon glyphicon-menu-left page-scroll" href="lec16.html" ></a></li>
+		 <li title="В содержание"><a class = "glyphicon glyphicon-list-alt" href="lec_index.html" ></a></li>
+		 <li title="К следующей лекции"><a class = "glyphicon glyphicon-menu-right page-scroll" href="lec18.html" ></a></li>
+	  </ul>
+	</div>
+	<!---->
+	
+	</div>
+    <!-- jQuery -->
+    <script src="../lib/js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../lib/js/bootstrap.min.js"></script>
+
+    <!-- Scrolling Nav JavaScript -->
+    <script src="../lib/js/jquery.easing.min.js"></script>
+    <script src="../lib/js/scrolling-nav.js"></script>
+
+</body>
+
+</html>
