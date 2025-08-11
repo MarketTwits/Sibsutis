@@ -1,0 +1,66 @@
+# OS-specific files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Swap and temporary files
+*.swp
+*.swo
+*.tmp
+.tmp/
+.tmp*/
+
+# IDE/editor settings
+# Ignore all IDEA project files, but keep .idea/icon.svg
+.idea/*
+!.idea/
+!.idea/icon.svg
+*.iml
+*.ipr
+*.iws
+.vscode/
+*.code-workspace
+
+# Node/Web build artifacts (safe even if not used)
+node_modules/
+bower_components/
+dist/
+build/
+out/
+coverage/
+.nyc_output/
+
+# Caches
+.cache/
+.cache-loader/
+.parcel-cache/
+.sass-cache/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Archives
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.rar
+
+# macOS metadata
+.AppleDouble
+.LSOverride
+Icon?
+.Spotlight-V100
+.Trashes
