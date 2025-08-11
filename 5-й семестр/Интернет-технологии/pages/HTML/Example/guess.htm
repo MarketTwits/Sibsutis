@@ -1,4 +1,4 @@
-<HTML><HEAD><title>GUESS</title>
+п»ї<HTML><HEAD><title>GUESS</title>
 <SCRIPT LANGUAGE="JavaScript">
 //------------------RANDOM NUMBERS----------------------------
 var js_mult1=3141
@@ -41,13 +41,13 @@ function guessnum()
     document.forms[0].guess.value = num // visual feedback in case of NaN
 
     nGuesses++ // increase the guess count
-    response = "Ваше число  "
+    response = "Р’Р°С€Рµ С‡РёСЃР»Рѕ  "
     
-    if (num < myNumber)    response = response + "меньше чем загаданное"
-    if (num > myNumber)    response = response + "больше чем загаданное"
+    if (num < myNumber)    response = response + "РјРµРЅСЊС€Рµ С‡РµРј Р·Р°РіР°РґР°РЅРЅРѕРµ"
+    if (num > myNumber)    response = response + "Р±РѕР»СЊС€Рµ С‡РµРј Р·Р°РіР°РґР°РЅРЅРѕРµ"
     if (num == myNumber) 
     {
-        response = response + "совпало с загаданным!! Загадаем новое число."
+        response = response + "СЃРѕРІРїР°Р»Рѕ СЃ Р·Р°РіР°РґР°РЅРЅС‹Рј!! Р—Р°РіР°РґР°РµРј РЅРѕРІРѕРµ С‡РёСЃР»Рѕ."
         nGuesses = 0
         myNumber = random(100)+1
     }
@@ -63,7 +63,7 @@ function giveup()
     var response
     
     nGuesses = 0
-    response = "Загаданное число равно " + myNumber +".  Загадаем новое число."
+    response = "Р—Р°РіР°РґР°РЅРЅРѕРµ С‡РёСЃР»Рѕ СЂР°РІРЅРѕ " + myNumber +".  Р—Р°РіР°РґР°РµРј РЅРѕРІРѕРµ С‡РёСЃР»Рѕ."
     myNumber = random(100)+1
     document.forms[1].result.value=response
     document.forms[1].guesses.value=nGuesses
@@ -75,13 +75,13 @@ function giveup()
 <BODY bgcolor="ffffff" link="0000ff" vlink="770077"
     onLoad="document.forms[0].guess.focus(); document.forms[0].guess.select()">
     
-<FONT COLOR="007777"><H1>Отгадай число</H1></FONT>
+<FONT COLOR="007777"><H1>РћС‚РіР°РґР°Р№ С‡РёСЃР»Рѕ</H1></FONT>
 
 <BLOCKQUOTE>
-    Скрипт случайным образом выбирает число между 1 и 100. Игрок должен отгадать это число
-    за минимальное количество попыток.<p>
+    РЎРєСЂРёРїС‚ СЃР»СѓС‡Р°Р№РЅС‹Рј РѕР±СЂР°Р·РѕРј РІС‹Р±РёСЂР°РµС‚ С‡РёСЃР»Рѕ РјРµР¶РґСѓ 1 Рё 100. РРіСЂРѕРє РґРѕР»Р¶РµРЅ РѕС‚РіР°РґР°С‚СЊ СЌС‚Рѕ С‡РёСЃР»Рѕ
+    Р·Р° РјРёРЅРёРјР°Р»СЊРЅРѕРµ РєРѕР»РёС‡РµСЃС‚РІРѕ РїРѕРїС‹С‚РѕРє.<p>
     <FONT COLOR="770000">
-    Число задано от 1 до 100.  Ваш выбор?
+    Р§РёСЃР»Рѕ Р·Р°РґР°РЅРѕ РѕС‚ 1 РґРѕ 100.  Р’Р°С€ РІС‹Р±РѕСЂ?
     </FONT>
 </BLOCKQUOTE>
     
@@ -91,28 +91,30 @@ function giveup()
 </SCRIPT>
     
 <FORM onSubmit="guessnum(); return false">
-Ваш выбор: <INPUT TYPE="text" NAME="guess" SIZE=5>
-<INPUT TYPE="button" VALUE="     Проверить...   " onClick="guessnum()">
-<INPUT TYPE="button" VALUE="  Ответ  " onClick="giveup()">
+Р’Р°С€ РІС‹Р±РѕСЂ: <INPUT TYPE="text" NAME="guess" SIZE=5>
+<INPUT TYPE="button" VALUE="     РџСЂРѕРІРµСЂРёС‚СЊ...   " onClick="guessnum()">
+<INPUT TYPE="button" VALUE="  РћС‚РІРµС‚  " onClick="giveup()">
 </FORM>
 
 <FORM><PRE>
-Число попыток: <INPUT TYPE="text" NAME="guesses" SIZE=3>
-    Результат: <INPUT TYPE="text" NAME="result" SIZE=50>
+Р§РёСЃР»Рѕ РїРѕРїС‹С‚РѕРє: <INPUT TYPE="text" NAME="guesses" SIZE=3>
+    Р РµР·СѓР»СЊС‚Р°С‚: <INPUT TYPE="text" NAME="result" SIZE=50>
 </PRE></FORM>
     
 <BR><BR>
 
-<FONT COLOR="007777"><H2>Замечания</H2></FONT>
+<FONT COLOR="007777"><H2>Р—Р°РјРµС‡Р°РЅРёСЏ</H2></FONT>
 
-После загрузки происходит установка указателя в форме командой 
+РџРѕСЃР»Рµ Р·Р°РіСЂСѓР·РєРё РїСЂРѕРёСЃС…РѕРґРёС‚ СѓСЃС‚Р°РЅРѕРІРєР° СѓРєР°Р·Р°С‚РµР»СЏ РІ С„РѕСЂРјРµ РєРѕРјР°РЅРґРѕР№ 
 <PRE><FONT COLOR="770000">    onLoad="document.forms[0].guess.focus()"
 </FONT></PRE>
 </blockquote>
-Для обработки чисел используется функция преобразования типа:
+Р”Р»СЏ РѕР±СЂР°Р±РѕС‚РєРё С‡РёСЃРµР» РёСЃРїРѕР»СЊР·СѓРµС‚СЃСЏ С„СѓРЅРєС†РёСЏ РїСЂРµРѕР±СЂР°Р·РѕРІР°РЅРёСЏ С‚РёРїР°:
 <FONT color="770000" SIZE=3><PRE>
     var num = parseInt(thisform.guess.value)
     thisform.guess.value = num
 </pre></font>
 </BODY>
 </HTML>
+
+
