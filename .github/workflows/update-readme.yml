@@ -5,6 +5,7 @@ on:
     branches:
       - main
       - gh-pages
+  workflow_dispatch:  # Позволяет запускать workflow вручную из GitHub UI
 
 jobs:
   update-readme:
