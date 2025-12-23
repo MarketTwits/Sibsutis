@@ -51,13 +51,6 @@ pnpm-debug.log*
 .env.*
 !.env.example
 
-# Archives
-*.zip
-*.tar
-*.tar.gz
-*.tgz
-*.rar
-
 # macOS metadata
 .AppleDouble
 .LSOverride
