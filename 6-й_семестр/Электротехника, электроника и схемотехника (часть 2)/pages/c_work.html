@@ -1,0 +1,1262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="do.sibsutis.ru">
+
+    <title>Контрольная работа. Электротехника, электроника и схемотехника (часть 2)</title>
+	
+	<link rel="icon" type="image/png" href="../lib/css/favicon.png">
+    <!-- Bootstrap Core CSS -->
+    <link href="../lib/css/bootstrap.css" rel="stylesheet">
+	
+    <!-- Custom CSS -->
+    <link href="../lib/css/scrolling-nav.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<!-- The #page-top ID is part of the scrolling feature - the data-spy and data-target are part of the built-in Bootstrap scrollspy function -->
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top" >
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <li class="hidden"> <a class="page-scroll" href="#page-top"></a> </li>
+	  
+	  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+	  
+      <a class="navbar-brand " href="../index.html"> 
+						<text class = "hidden-xs">Электротехника, электроника и схемотехника (часть 2)</text> 
+						<text class = "visible-xs">ЭЭиС2</text>
+	  </a>
+    </div>
+
+    <!-- Collect the nav links, forms, and glyphicon glyphicon-list-alt content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      
+	  <!-- <ul class="nav navbar-nav">
+		<li><a href="#"></a></li> 
+      </ul> -->
+	
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+		<button type="button" class="navbar-toggle dropdown-toggle hidden-xs" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" >
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		</button>	      
+		<a class = "dropdown-toggle visible-xs" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Материалы</a>
+	
+	
+	<ul class="dropdown-menu">
+	
+		<li><a href="../index.html">Аннотация курса</a></li>
+	
+		<li role="separator" class="divider"></li>
+	
+		<li><a href="lec_index.html">Теория</a></li>
+		
+		<li><a href="c_work.html">Контрольная работа</a></li>
+		
+		<li><a href="labs.html">Лабораторные работы</a></li>
+		
+		<li><a href="quest.html">Вопросы</a></li>
+		
+		<li role="separator" class="divider"></li>
+		
+		<li><a href="lit.html">Литература</a></li>
+
+
+ 
+    </ul>
+	
+	
+ </li>
+  </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+
+    <!-- Intro Section -->
+	<!-- Секция с информацией "Уважаемый слушатель"	 -->
+    <div id="intro" class="section content-section ">
+        <div class="container">
+             <div class="row">
+                <div class="col-lg-12">	
+
+
+					
+
+					<!-- содержание -->	
+					<div class="page-header">				
+					<h3>Методические рекомендации по написанию и оформлению контрольной работы</h3>
+					
+						<h3><a href="c_work.html#0">Введение</a></h3>
+						&emsp;<a href="c_work.html#0.1">Выбор варианта задания</a><br>
+						<h3><a href="c_work.html#1">Методические указания</a></h3>
+						&emsp;<a href="c_work.html#1.1">Физические основы электроники</a><br>
+						&emsp;<a href="c_work.html#1.2">Литература</a><br>
+						&emsp;<a href="c_work.html#1.3">Общие замечания к выполнению контрольной работы</a><br>
+						&emsp;<a href="c_work.html#1.4">Цель выполнения контрольной работы</a><br>
+						&emsp;<a href="c_work.html#1.5">Содержание задач контрольной работы</a><br>
+						&emsp;<a href="c_work.html#1.6">ПРИЛОЖЕНИЕ 1</a><br>
+						&emsp;<a href="c_work.html#1.7">ПРИЛОЖЕНИЕ 2</a><br>
+						
+						
+						</div>
+					
+					<a class="anchor" name="0"></a>
+					<h3>Введение</h3>
+					
+<a class="anchor" name="0.1"></a>					
+<h3>Выбор варианта задания</h3>
+  <P>Вариант задания для задач 1,2 определяется по двум последним цифрам студенческого пароля, если они до 50. Если две последние цифры больше 50, то вариант задания определяется как две последние цифры минус 50.</P>
+  <P><u><b>Задача 1.</b></u></P>
+  <P>По выходным характеристикам полевого транзистора (приложение 2, см. стр. 6-12) построить передаточную характеристику при указанном напряжении стока. Определить дифференциальные параметры S, R<SUB>i</SUB>, &#109; полевого транзистора и построить их зависимости от напряжения на затворе. </P>
+  <P>Сделать выводы о зависимости параметров транзистора от режима работы.</P>
+  <P>Исходные данные для задачи берутся из таблицы П.1.1 приложения 1.</P>
+  <P><u><b>Задача 2.</b></u></P>
+  <P>Используя характеристики заданного биполярного (приложение 2, см. стр. 12-19) транзистора определить h-параметры биполярного транзистора и построить зависимости этих параметров от тока базы. </P>
+  <P>Сделать выводы о зависимости параметров транзистора от режима работы.</P>
+  <P>Исходные данные для задачи берем из таблицы П.1.2 приложения 1.</P>
+  <P><u><b>Задача 3.</b></u></P>
+  <P>В соответствии с предпоследней цифрой студенческого пароля выберите принципиальную схему логического элемента и приведите исходные данные вашего варианта задачи по разделу “Цифровые элементы и устройства”, указанные в таблице 1. Варианты принципиальных схем приведены на рисунке 1.</P>
+  <P>Таблица 1</P>
+	<div class="row">
+	<div class="col col-md-8">
+	<table class="table table-bordered table-condensed table-hover table-striped">
+  <TR>
+   <TD WIDTH="20%" VALIGN="MIDDLE" HEIGHT=129><P></P>
+    <P>цифра студенческого пароля</TD>
+   <TD WIDTH="24%" VALIGN="MIDDLE" HEIGHT=129><P>Принципиальная схема элемента</TD>
+   <TD WIDTH="18%" VALIGN="MIDDLE" HEIGHT=129><P>Напряжение питания, В.</TD>
+   <TD WIDTH="21%" VALIGN="MIDDLE" HEIGHT=129><P>Пороговые напряженияМДП</P>
+    <P>транзисторов VT1 и VT2</TD>
+   <TD WIDTH="17%" VALIGN="MIDDLE" HEIGHT=129><P>Уровень входного напряжения, В.</TD>
+  </TR>
+  <TR>
+   <TD WIDTH="20%" VALIGN=top  HEIGHT=22><P>0</TD>
+   <TD WIDTH="24%" VALIGN=top  HEIGHT=22><P>Рис. 1а</TD>
+   <TD WIDTH="18%" VALIGN=top  HEIGHT=22><P>9</TD>
+   <TD WIDTH="21%" VALIGN=top  HEIGHT=22><P>1</TD>
+   <TD WIDTH="17%" VALIGN=top  HEIGHT=22><P>0,5</TD>
+  </TR>
+  <TR>
+   <TD WIDTH="20%" VALIGN=top  HEIGHT=22><P>1</TD>
+   <TD WIDTH="24%" VALIGN=top  HEIGHT=22><P>Рис. 16</TD>
+   <TD WIDTH="18%" VALIGN=top  HEIGHT=22><P>9</TD>
+   <TD WIDTH="21%" VALIGN=top  HEIGHT=22><P>1</TD>
+   <TD WIDTH="17%" VALIGN=top  HEIGHT=22><P>1</TD>
+  </TR>
+  <TR>
+   <TD WIDTH="20%" VALIGN=top  HEIGHT=22><P>2</TD>
+   <TD WIDTH="24%" VALIGN=top  HEIGHT=22><P>Рис. 1в</TD>
+   <TD WIDTH="18%" VALIGN=top  HEIGHT=22><P>9</TD>
+   <TD WIDTH="21%" VALIGN=top  HEIGHT=22><P>1</TD>
+   <TD WIDTH="17%" VALIGN=top  HEIGHT=22><P>2</TD>
+  </TR>
+  <TR>
+   <TD WIDTH="20%" VALIGN=top  HEIGHT=22><P>3</TD>
+   <TD WIDTH="24%" VALIGN=top  HEIGHT=22><P>Рис. 1а</TD>
+   <TD WIDTH="18%" VALIGN=top  HEIGHT=22><P>5</TD>
+   <TD WIDTH="21%" VALIGN=top  HEIGHT=22><P>2</TD>
+   <TD WIDTH="17%" VALIGN=top  HEIGHT=22><P>1</TD>
+  </TR>
+  <TR>
+   <TD WIDTH="20%" VALIGN=top  HEIGHT=22><P>4</TD>
+   <TD WIDTH="24%" VALIGN=top  HEIGHT=22><P>Рис. 1в</TD>
+   <TD WIDTH="18%" VALIGN=top  HEIGHT=22><P>5</TD>
+   <TD WIDTH="21%" VALIGN=top  HEIGHT=22><P>2</TD>
+   <TD WIDTH="17%" VALIGN=top  HEIGHT=22><P>3</TD>
+  </TR>
+  <TR>
+   <TD WIDTH="20%" VALIGN=top  HEIGHT=22><P>5</TD>
+   <TD WIDTH="24%" VALIGN=top  HEIGHT=22><P>Рис. 16</TD>
+   <TD WIDTH="18%" VALIGN=top  HEIGHT=22><P>5</TD>
+   <TD WIDTH="21%" VALIGN=top  HEIGHT=22><P>2</TD>
+   <TD WIDTH="17%" VALIGN=top  HEIGHT=22><P>4</TD>
+  </TR>
+  <TR>
+   <TD WIDTH="20%" VALIGN=top  HEIGHT=22><P>6</TD>
+   <TD WIDTH="24%" VALIGN=top  HEIGHT=22><P>Рис. 1в</TD>
+   <TD WIDTH="18%" VALIGN=top  HEIGHT=22><P>12</TD>
+   <TD WIDTH="21%" VALIGN=top  HEIGHT=22><P>3</TD>
+   <TD WIDTH="17%" VALIGN=top  HEIGHT=22><P>0,5</TD>
+  </TR>
+  <TR>
+   <TD WIDTH="20%" VALIGN=top  HEIGHT=22><P>7</TD>
+   <TD WIDTH="24%" VALIGN=top  HEIGHT=22><P>Рис. 1а</TD>
+   <TD WIDTH="18%" VALIGN=top  HEIGHT=22><P>12</TD>
+   <TD WIDTH="21%" VALIGN=top  HEIGHT=22><P>3</TD>
+   <TD WIDTH="17%" VALIGN=top  HEIGHT=22><P>4</TD>
+  </TR>
+  <TR>
+   <TD WIDTH="20%" VALIGN=top  HEIGHT=22><P>8</TD>
+   <TD WIDTH="24%" VALIGN=top  HEIGHT=22><P>Рис. 16</TD>
+   <TD WIDTH="18%" VALIGN=top  HEIGHT=22><P>12</TD>
+   <TD WIDTH="21%" VALIGN=top  HEIGHT=22><P>3</TD>
+   <TD WIDTH="17%" VALIGN=top  HEIGHT=22><P>2</TD>
+  </TR>
+  <TR>
+   <TD WIDTH="20%" VALIGN=top  HEIGHT=23><P>9</TD>
+   <TD WIDTH="24%" VALIGN=top  HEIGHT=23><P>Рис. 1в</TD>
+   <TD WIDTH="18%" VALIGN=top  HEIGHT=23><P>9</TD>
+   <TD WIDTH="21%" VALIGN=top  HEIGHT=23><P>2</TD>
+   <TD WIDTH="17%" VALIGN=top  HEIGHT=23><P>3</TD>
+  </TR>
+  </TABLE>
+  </div>
+  </div>
+  <br>
+  <P>Укажите на схеме полярность источника питания, соответствующую вашему варианту. Укажите, какую логическую функцию выполняет элемент. Поясните назначение каждого транзистора. Приведите таблицу истинности. Приведите вид передаточной характеристики рассматриваемого Вами логического элемента. Используя данные задания Вашего варианта, приведите на передаточных характеристиках эпюру входного напряжения и определите, в каком логическом состоянии находится цепь, рассматриваемого вами элемента.</P>
+  <P><IMG SRC="img/Image2206.gif" WIDTH=507 HEIGHT=225></P>
+  <B><U> </B></U>
+  <P>Рис. 1 – схемы логических элементов</P>
+  
+  <P><u><b>Задача 4.</b></u></P>
+  <P>В соответствии со второй цифрой пароля выберете принципиальную схему устройства на основе идеального операционного усилителя и приведите исходные данные вашего варианта в соответствии с таблицей 2. Варианты схем приведены на рисунке 2.</P>
+<P>Таблица 2</P>
+
+<div class="row">
+	<div class="col col-md-8">
+	<table class="table table-bordered table-condensed table-hover table-striped">
+  <TR>
+   <TD WIDTH="20%" VALIGN=top ROWSPAN=2  HEIGHT=44><P>цифра студенческого пароля</TD>
+   <TD WIDTH="17%" VALIGN="MIDDLE" ROWSPAN=2  HEIGHT=44><P>Схема устройства</TD>
+   <TD WIDTH="19%" VALIGN=top ROWSPAN=2  HEIGHT=44><P>Напряжение питания операционного усилителя, В.</TD>
+   <TD WIDTH="28%" VALIGN=top COLSPAN=3  HEIGHT=44>
+   <P>Номиналы резисторов, кОм.
+   </TD>
+   <TD WIDTH="16%" VALIGN=top ROWSPAN=2  HEIGHT=44><P>Амплитуда входного напряжения, мВ</TD>
+  </TR>
+  <TR>
+   <TD WIDTH="9%" VALIGN=top  HEIGHT=30><P>R<SUB>1</SUB></TD>
+   <TD WIDTH="9%" VALIGN=top  HEIGHT=30><P>R<SUB>2</SUB></TD>
+   <TD WIDTH="9%" VALIGN=top  HEIGHT=30><P>R<SUB>3</SUB></TD>
+  </TR>
+  <TR>
+   <TD WIDTH="20%" VALIGN=top  HEIGHT=22><P>0</TD>
+   <TD WIDTH="17%" VALIGN=top  HEIGHT=22><P>Рис. 2а</TD>
+   <TD WIDTH="19%" VALIGN=top  HEIGHT=22><P>±6</TD>
+   <TD WIDTH="9%" VALIGN=top  HEIGHT=22><P>1</TD>
+   <TD WIDTH="9%" VALIGN=top  HEIGHT=22><P>10</TD>
+   <TD WIDTH="9%" VALIGN=top  HEIGHT=22><P>0,82</TD>
+   <TD WIDTH="16%" VALIGN=top  HEIGHT=22><P>100</TD>
+  </TR>
+  <TR>
+   <TD WIDTH="20%" VALIGN=top  HEIGHT=22><P>1</TD>
+   <TD WIDTH="17%" VALIGN=top  HEIGHT=22><P>Рис. 26</TD>
+   <TD WIDTH="19%" VALIGN=top  HEIGHT=22><P>±9</TD>
+   <TD WIDTH="9%" VALIGN=top  HEIGHT=22><P>2</TD>
+   <TD WIDTH="9%" VALIGN=top  HEIGHT=22><P>11</TD>
+   <TD WIDTH="9%" VALIGN=top  HEIGHT=22><P>1,8</TD>
+   <TD WIDTH="16%" VALIGN=top  HEIGHT=22><P>200</TD>
+  </TR>
+  <TR>
+   <TD WIDTH="20%" VALIGN=top  HEIGHT=22><P>2</TD>
+   <TD WIDTH="17%" VALIGN=top  HEIGHT=22><P>Рис. 2а</TD>
+   <TD WIDTH="19%" VALIGN=top  HEIGHT=22><P>±12</TD>
+   <TD WIDTH="9%" VALIGN=top  HEIGHT=22><P>3</TD>
+   <TD WIDTH="9%" VALIGN=top  HEIGHT=22><P>33</TD>
+   <TD WIDTH="9%" VALIGN=top  HEIGHT=22><P>2,7</TD>
+   <TD WIDTH="16%" VALIGN=top  HEIGHT=22><P>150</TD>
+  </TR>
+  <TR>
+   <TD WIDTH="20%" VALIGN=top  HEIGHT=22><P>3</TD>
+   <TD WIDTH="17%" VALIGN=top  HEIGHT=22><P>Рис. 26</TD>
+   <TD WIDTH="19%" VALIGN=top  HEIGHT=22><P>±15</TD>
+   <TD WIDTH="9%" VALIGN=top  HEIGHT=22><P>10</TD>
+   <TD WIDTH="9%" VALIGN=top  HEIGHT=22><P>100</TD>
+   <TD WIDTH="9%" VALIGN=top  HEIGHT=22><P>9,1</TD>
+   <TD WIDTH="16%" VALIGN=top  HEIGHT=22><P>250</TD>
+  </TR>
+  <TR>
+   <TD WIDTH="20%" VALIGN=top  HEIGHT=22><P>4</TD>
+   <TD WIDTH="17%" VALIGN=top  HEIGHT=22><P>Рис. 2а</TD>
+   <TD WIDTH="19%" VALIGN=top  HEIGHT=22><P>±10</TD>
+   <TD WIDTH="9%" VALIGN=top  HEIGHT=22><P>11</TD>
+   <TD WIDTH="9%" VALIGN=top  HEIGHT=22><P>330</TD>
+   <TD WIDTH="9%" VALIGN=top  HEIGHT=22><P>12</TD>
+   <TD WIDTH="16%" VALIGN=top  HEIGHT=22><P>60</TD>
+  </TR>
+  <TR>
+   <TD WIDTH="20%" VALIGN=top  HEIGHT=22><P>5</TD>
+   <TD WIDTH="17%" VALIGN=top  HEIGHT=22><P>Рис. 26</TD>
+   <TD WIDTH="19%" VALIGN=top  HEIGHT=22><P>±12</TD>
+   <TD WIDTH="9%" VALIGN=top  HEIGHT=22><P>4,7</TD>
+   <TD WIDTH="9%" VALIGN=top  HEIGHT=22><P>470</TD>
+   <TD WIDTH="9%" VALIGN=top  HEIGHT=22><P>4,3</TD>
+   <TD WIDTH="16%" VALIGN=top  HEIGHT=22><P>20</TD>
+  </TR>
+  <TR>
+   <TD WIDTH="20%" VALIGN=top  HEIGHT=22><P>6</TD>
+   <TD WIDTH="17%" VALIGN=top  HEIGHT=22><P>Рис. 2а</TD>
+   <TD WIDTH="19%" VALIGN=top  HEIGHT=22><P>±8</TD>
+   <TD WIDTH="9%" VALIGN=top  HEIGHT=22><P>6,8</TD>
+   <TD WIDTH="9%" VALIGN=top  HEIGHT=22><P>680</TD>
+   <TD WIDTH="9%" VALIGN=top  HEIGHT=22><P>5,1</TD>
+   <TD WIDTH="16%" VALIGN=top  HEIGHT=22><P>50</TD>
+  </TR>
+  <TR>
+   <TD WIDTH="20%" VALIGN=top  HEIGHT=22><P>7</TD>
+   <TD WIDTH="17%" VALIGN=top  HEIGHT=22><P>Рис. 26</TD>
+   <TD WIDTH="19%" VALIGN=top  HEIGHT=22><P>±13</TD>
+   <TD WIDTH="9%" VALIGN=top  HEIGHT=22><P>82</TD>
+   <TD WIDTH="9%" VALIGN=top  HEIGHT=22><P>820</TD>
+   <TD WIDTH="9%" VALIGN=top  HEIGHT=22><P>6,8</TD>
+   <TD WIDTH="16%" VALIGN=top  HEIGHT=22><P>300</TD>
+  </TR>
+  <TR>
+   <TD WIDTH="20%" VALIGN=top  HEIGHT=22><P>8</TD>
+   <TD WIDTH="17%" VALIGN=top  HEIGHT=22><P>Рис. 2а</TD>
+   <TD WIDTH="19%" VALIGN=top  HEIGHT=22><P>±9</TD>
+   <TD WIDTH="9%" VALIGN=top  HEIGHT=22><P>10</TD>
+   <TD WIDTH="9%" VALIGN=top  HEIGHT=22><P>1000</TD>
+   <TD WIDTH="9%" VALIGN=top  HEIGHT=22><P>8,2</TD>
+   <TD WIDTH="16%" VALIGN=top  HEIGHT=22><P>10</TD>
+  </TR>
+  <TR>
+   <TD WIDTH="20%" VALIGN=top  HEIGHT=23><P>9</TD>
+   <TD WIDTH="17%" VALIGN=top  HEIGHT=23><P>Рис. 26</TD>
+   <TD WIDTH="19%" VALIGN=top  HEIGHT=23><P>±7</TD>
+   <TD WIDTH="9%" VALIGN=top  HEIGHT=23><P>3,3</TD>
+   <TD WIDTH="9%" VALIGN=top  HEIGHT=23><P>47</TD>
+   <TD WIDTH="9%" VALIGN=top  HEIGHT=23><P>10</TD>
+   <TD WIDTH="16%" VALIGN=top  HEIGHT=23><P>40</TD>
+  </TR>
+  </TABLE>
+  </div>
+  </div>
+  <br>
+  <P>Изобразите передаточную характеристику устройства, соответствующего Вашему варианту. Поясните назначение каждого элемента устройства. Определите коэффициент усиления Вашего устройства и амплитуду выходного напряжения. Укажите, какое входное сопротивление имеет рассматриваемое Вами устройство. Приведите примерный вид амплитудно-частотной характеристики (АЧХ) Вашего устройства и причины отклонения реальной АЧХ от идеальной.</P>
+  
+  <P><IMG SRC="img/Image2207.gif" WIDTH=619 HEIGHT=228></P>
+  <P>Рис. 2 - Схемы устройств на основе операционного усилителя к задаче 2</P>
+  
+  <a class="anchor" name="0.2"></a>
+	
+	
+	<a class="anchor" name="1"></a>
+	<h3>Методические указания</h3> 
+	<a class="anchor" name="1.1"></a>
+	<P><b>Физические основы электроники</b></P>
+				  <P>Методические указания к выполнению домашнего задания на тему<br>
+				&quot;Параметры полевого и биполярного транзисторов&quot;</P>
+				  <P></P>
+				  <P> В методических указаниях даны варианты домашнего задания на тему параметры полевого и биполярного транзисторов. </P>
+				  <P>В задании требуется определить параметры полевого и биполярного транзисторов по статическим характеристикам в зависимости от режима работы. </P>
+				  <P> Рассмотрены примеры выполнения задач контрольной работы.</P>
+				  
+				  <a class="anchor" name="1.2"></a>
+				  <P><b>Литература</b></P>
+				  <P>1 Игнатов А.Н. и др. Основы электроники: Учебное пособие / СибГУТИ. Новосибирск, 2005 г.</P>
+				  <P>2 Радиоматериалы, радиокомпоненты и электроника: Петров К.С.: СПб.: Питер, 2003. Стр. 208-318.</P>
+				  <P>3 Электронные , квантовые приборы и микроэлектроника. Под редакцией Федорова Н.Д. - М.: Радио и связь, 1998. Стр.70-145.</P>
+				  <P>4 Электронные приборы. Под редакцией Шишкина Г.Г. -М.: Энергоатомиздат, 1989. Стр.140-197.</P>
+				  <P>5 Батушев В.А. Электронные приборы. -М.: Высшая школа, 1980. Стр.93-166</P>
+				  <P>6 Савиных В.Л Физические основы электроники. Конспект лекций. Электронная версия. 2006 г.</P>
+				  <a class="anchor" name="1.3"></a>
+				  <P><b>Общие замечания к выполнению контрольной работы</b></P>
+				  <P>При выполнении работы необходимо соблюдать следующие правила:</P>
+				  <P>1. В работе обязательно должен быть указан год издания методического пособия, которым пользовался студент,  вариант задания и должны быть записаны условия задач.</P>
+				  <P>2. Решение задач должно сопровождаться подробными пояснениями по каждому пункту задания.</P>
+				  <P>3. Все графические построения надо выполнять  отчетливо и аккуратно.</P>
+				  <P>4. Все величины, определяемые из графиков, должны быть указаны на рисунке.</P>
+				  <P>5. Если по заданию требуется построить какую-либо характеристику прибора, то данные для построения должны быть сведены в таблицу.</P>
+				  <P>6. Обозначения определяемых величин должны быть одинаковыми с обозначениями, принятыми в задании.</P>
+				  <P> 7. Если работа не допущена к зачету, то исправление решения задач или их новое решение производятся с пометкой "работа над ошибками". </P>
+				  <P></P>
+				  
+				  <a class="anchor" name="1.4"></a>
+				  <P><b>Цель выполнения контрольной работы</b></P>
+				  <P>Контрольная работа призвана закрепить теоретический материал курса, посвященный свойствам полевых и биполярных транзисторов. Основное внимание уделено определению параметров транзисторов по статическим характеристикам и их зависимостей от режима работы.</P>
+				  
+				  
+				 <a class="anchor" name="1.5"></a> 
+				  <B>  
+				  <P>Примеры решения задач контрольной работы</P>
+				  <P>Задача 1:</B> По выходным характеристикам полевого транзистора (приложение 2) построить передаточную характеристику при указанном напряжении стока. Определить дифференциальные параметры S, R<SUB>i</SUB>, &#109; полевого транзистора и построить их зависимости от напряжения на затворе. Сделать выводы о зависимости параметров транзистора от режима работы.Исходные данные для задачи берем из таблицы П.1.1 приложения 1. Задача 2: Используя характеристики заданного биполярного транзистора определить h-параметры биполярного транзистора и построить зависимости этих параметров от тока базы. Сделать выводы о зависимости параметров транзистора от режима работы.Исходные данные для задачи берем из таблицы П.1.2 приложения 1.</P>
+				  <P>Выбор варианта задания</P>
+				  <P>Вариант задания определяется по двум последним цифрам номера студенческого билета, если они до 50. Если две последние цифры больше 50, то вариант задания определяется как две последние цифры минус 50.</P>
+				  <P><b>Пример решения задачи 1</b></P>
+				  <P>Приведены выходные характеристики полевого транзистора с р-каналом типа КП103 (рисунок 1.1). Построим характеристику прямой передачи и определим параметры при напряжении сток-исток U<SUB>СИ0</SUB>=-6 В. Напряжение отсечки транзистора U<SUB>ЗИ0</SUB>=4 В.</P>
+				  <P><IMG SRC="img/Image2235.gif" WIDTH=586 HEIGHT=468></P>
+				  <P>Рисунок 1.1</P>
+				  <P>Для построения характеристики прямой передачи определяем ток стока при U<SUB>ЗИ</SUB>=0 В; 0,5 В и т.д. (рисунок 1.1). Результаты заносим в таблицу 1.1.</P>
+				  <P>Таблица 1.1</P>
+				  <div class="row">
+	<div class="col col-md-8">
+	<table class="table table-bordered table-condensed table-hover table-striped">
+				  <TR>
+				   <TD WIDTH="13%" VALIGN=top><P>U<SUB>ЗИ</SUB>, В</TD>
+				   <TD WIDTH="10%" VALIGN=top><P>0</TD>
+				   <TD WIDTH="11%" VALIGN=top><P>0,5</TD>
+				   <TD WIDTH="11%" VALIGN=top><P>1,0</TD>
+				   <TD WIDTH="12%" VALIGN=top><P>1,5</TD>
+				   <TD WIDTH="12%" VALIGN=top><P>2,0</TD>
+				   <TD WIDTH="10%" VALIGN=top><P>2,5</TD>
+				   <TD WIDTH="12%" VALIGN=top><P>3,0</TD>
+				   <TD WIDTH="10%" VALIGN=top><P>4</TD>
+				  </TR>
+				  <TR>
+				   <TD WIDTH="13%" VALIGN=top><P>I<SUB>C</SUB>, мА</TD>
+				   <TD WIDTH="10%" VALIGN=top><P>4,0</TD>
+				   <TD WIDTH="11%" VALIGN=top><P>3,13</TD>
+				   <TD WIDTH="11%" VALIGN=top><P>2,31</TD>
+				   <TD WIDTH="12%" VALIGN=top><P>1,6</TD>
+				   <TD WIDTH="12%" VALIGN=top><P>1,05</TD>
+				   <TD WIDTH="10%" VALIGN=top><P>0,61</TD>
+				   <TD WIDTH="12%" VALIGN=top><P>0,3</TD>
+				   <TD WIDTH="10%" VALIGN=top><P>0</TD>
+				  </TR>
+				  </TABLE>
+				  </div>
+				  </div>
+				  <P><IMG SRC="img/Image2236.gif" WIDTH=309 HEIGHT=469></P>
+				  <P><br>
+				  По полученным результатам строим характеристику прямой передачи (рисунок 1.2).По выходным характеристикам определяем крутизну в 6-8 точках и строим её зависимость от напряжении на затворе. В нашем примере сначала находим крутизну при напряжении на затворе U<SUB>ЗИ</SUB>=0,25 В. Для этого, относительно этой точки берем приращение напряжения &#68; U<SUB>ЗИ</SUB>=0,25 В. Определяем токи при напряжениях U&#162; <SUB>ЗИ</SUB>=0 В и U&#178; <SUB>ЗИ</SUB>=0,5 В. Они равны соответственно I&#162; <SUB>С</SUB>=4 мА и I&#178; <SUB>С</SUB>=3,13 мА (рисунок 1.1). Затем вычисляем крутизну</P>
+				 <P><IMG SRC="img/Image2237.gif" WIDTH=178 HEIGHT=90> &#9; =1,74 мА/В.</P>
+
+				 <P> Аналогично проделываем эту  операцию для U<SUB>ЗИ</SUB>=0,75В; 1,25 В и т.д. Определяем приращение тока стока<IMG SRC="img/Image194.gif" WIDTH=14 HEIGHT=17>I<SUB>C</SUB> и результаты вычислений заносим в таблицу 1.2. Строим график S=f(U<SUB>ЗИ</SUB>) (рисунок 1.3) </P>
+				  <P>Таблица 1.2</P>
+				 <div class="row">
+	<div class="col col-md-8">
+	<table class="table table-bordered table-condensed table-hover table-striped">
+				  <TR>
+				   <TD WIDTH="14%" VALIGN=top><P>U<SUB>ЗИ</SUB>, В</TD>
+				   <TD WIDTH="11%" VALIGN=top><P>0,25</TD>
+				   <TD WIDTH="13%" VALIGN=top><P>0,75</TD>
+				   <TD WIDTH="13%" VALIGN=top><P>1,25</TD>
+				   <TD WIDTH="13%" VALIGN=top><P>1,75</TD>
+				   <TD WIDTH="13%" VALIGN=top><P>2,25</TD>
+				   <TD WIDTH="13%" VALIGN=top><P>2,75</TD>
+				   <TD WIDTH="13%" VALIGN=top><P>4</TD>
+				  </TR>
+				  <TR>
+				   <TD WIDTH="14%" VALIGN=top><P><IMG SRC="img/Image194.gif" WIDTH=14 HEIGHT=17>I<SUB>C</SUB>, мА</TD>
+				   <TD WIDTH="11%" VALIGN=top><P>0,87</TD>
+				   <TD WIDTH="13%" VALIGN=top><P>0,82</TD>
+				   <TD WIDTH="13%" VALIGN=top><P>0,71</TD>
+				   <TD WIDTH="13%" VALIGN=top><P>0,55</TD>
+				   <TD WIDTH="13%" VALIGN=top><P>0,44</TD>
+				   <TD WIDTH="13%" VALIGN=top><P>0,31</TD>
+				   <TD WIDTH="13%" VALIGN=top><P>0</TD>
+				  </TR>
+				  <TR>
+				   <TD WIDTH="14%" VALIGN=top><P>S, мА&#47; В</TD>
+				   <TD WIDTH="11%" VALIGN=top><P>1,74</TD>
+				   <TD WIDTH="13%" VALIGN=top><P>1,64</TD>
+				   <TD WIDTH="13%" VALIGN=top><P>1,42</TD>
+				   <TD WIDTH="13%" VALIGN=top><P>1,1</TD>
+				   <TD WIDTH="13%" VALIGN=top><P>0,88</TD>
+				   <TD WIDTH="13%" VALIGN=top><P>0,62</TD>
+				   <TD WIDTH="13%" VALIGN=top><P>0</TD>
+				  </TR>
+				  </TABLE>
+				  </div>
+				  </div>
+				  <P></P>
+				  <P>Для определения выходного сопротивления R<SUB>i</SUB> задаемся приращением &#68; U<SUB>СИ</SUB>=&#177; 2 В относительно напряжения U<SUB>СИ</SUB>= - 6 В (рисунок 1.4). Определяем приращение тока &#68; I<SUB>C</SUB> стока при напряжении на затворе 0 В, вычисляем значение <IMG SRC="img/Image2238.gif" WIDTH=156 HEIGHT=45 align="middle">. Результат заносим в таблицу 1.3. Аналогично проделываем для U<SUB>ЗИ</SUB>=0,5 В; 1,0 В и т.д. На рисунке 1.3 cтроим зависимость R<SUB>i</SUB>=f(U<SUB>ЗИ</SUB>).</P>
+				  <P>Таблица 1.3</P>
+				  <P>
+				  
+				  <div class="row">
+	<div class="col col-md-8">
+	<table class="table table-bordered table-condensed table-hover table-striped">
+				   <TR>
+				   <TD WIDTH="13%" VALIGN=top><P>U<SUB>ЗИ</SUB>, В</TD>
+				   <TD WIDTH="13%" VALIGN=top><P>0</TD>
+				   <TD WIDTH="13%" VALIGN=top><P>0,5</TD>
+				   <TD WIDTH="13%" VALIGN=top><P>1,0</TD>
+				   <TD WIDTH="13%" VALIGN=top><P>1,5</TD>
+				   <TD WIDTH="13%" VALIGN=top><P>2,0</TD>
+				   <TD WIDTH="13%" VALIGN=top><P>2,5</TD>
+				   <TD WIDTH="13%" VALIGN=top><P>3,0</TD>
+				   </TR>
+				   <TR>
+				   <TD WIDTH="13%" VALIGN=top><P>&#68; I<SUB>С</SUB>, мА</TD>
+				   <TD WIDTH="13%" VALIGN=top><P>0,14</TD>
+				   <TD WIDTH="13%" VALIGN=top><P>0,1</TD>
+				   <TD WIDTH="13%" VALIGN=top><P>0,07</TD>
+				   <TD WIDTH="13%" VALIGN=top><P>0,06</TD>
+				   <TD WIDTH="13%" VALIGN=top><P>0,05</TD>
+				   <TD WIDTH="13%" VALIGN=top><P>0,045</TD>
+				   <TD WIDTH="13%" VALIGN=top><P>0,04</TD>
+				   </TR>
+				   <TR>
+				   <TD WIDTH="13%" VALIGN=top><P>R<SUB>i</SUB>, кОм</TD>
+				   <TD WIDTH="13%" VALIGN=top><P>28</TD>
+				   <TD WIDTH="13%" VALIGN=top><P>39,2</TD>
+				   <TD WIDTH="13%" VALIGN=top><P>54,8</TD>
+				   <TD WIDTH="13%" VALIGN=top><P>65,6</TD>
+				   <TD WIDTH="13%" VALIGN=top><P>77</TD>
+				   <TD WIDTH="13%" VALIGN=top><P>88,9</TD>
+				   <TD WIDTH="13%" VALIGN=top><P>100</TD>
+				   </TR>
+				   <TR>
+				   <TD WIDTH="13%" VALIGN=top><P>S,мА&#47; В</TD>
+				   <TD WIDTH="13%" VALIGN=top><P>1,85</TD>
+				   <TD WIDTH="13%" VALIGN=top><P>1,7</TD>
+				   <TD WIDTH="13%" VALIGN=top><P>1,5</TD>
+				   <TD WIDTH="13%" VALIGN=top><P>1,25</TD>
+				   <TD WIDTH="13%" VALIGN=top><P>1,0</TD>
+				   <TD WIDTH="13%" VALIGN=top><P>0,75</TD>
+				   <TD WIDTH="13%" VALIGN=top><P>0,5</TD>
+				   </TR>
+				   <TR>
+				   <TD WIDTH="13%" VALIGN=top><P>&#109; </TD>
+				   <TD WIDTH="13%" VALIGN=top><P>51,8</TD>
+				   <TD WIDTH="13%" VALIGN=top><P>66,6</TD>
+				   <TD WIDTH="13%" VALIGN=top><P>82,2</TD>
+				   <TD WIDTH="13%" VALIGN=top><P>82</TD>
+				   <TD WIDTH="13%" VALIGN=top><P>77</TD>
+				   <TD WIDTH="13%" VALIGN=top><P>66,6</TD>
+				   <TD WIDTH="13%" VALIGN=top><P>50</TD>
+				   </TR>
+				  </TABLE>
+				  </div>
+				  </div>
+				  
+				  </P>
+				  <P><IMG SRC="img/Image2239.gif" WIDTH=612 HEIGHT=442></P>
+				  <P>Рисунок 1.3</P>
+				  <P>Из рисунка 1.3 определяем значение крутизны для тех же величин U<SUB>ЗИ</SUB>, что и R<SUB>i</SUB>. Результат так же заносим в таблицу 1.3.В заключении определяем коэффициент усиления транзистора &#109; = S&#215; R<SUB>i</SUB>. Результат так же заносим в таблицу 1.3 и строим зависимость &#109; =f(U<SUB>ЗИ</SUB>) (рисунок 1.3).</P>
+				  <P><IMG SRC="img/Image2240.gif" WIDTH=564 HEIGHT=468>&nbsp;</P>
+				  <P>Рисунок 1.4</P>
+				  
+				  <P><b>Пример решения задачи 2</b></P>
+				  <P>Определим h-параметры для транзистора КТ315А при напряжении на коллекторе U<SUB>КЭ</SUB>=5 В. Например, найдем параметр h<SUB>11Э</SUB> в точке А при токе базы I<SUB>Б0</SUB>=350 мкА. На входных характеристиках (рисунок 2.1) при напряжении на коллекторе U<SUB>КЭ</SUB>=10 В (хотя задано напряжение на коллекторе U<SUB>КЭ</SUB>=5 В выбираем напряжение U<SUB>КЭ</SUB>=10 В, т.к. в активном режиме входные характеристики практически совпадают) задаемся приращением тока базы &#68; I<SUB>Б</SUB>= &#177; 50=100 мкА относительно рабочей точки I<SUB>Б0</SUB>=350 мкА. Соответствующее приращение напряжения база-эмиттер составит &#68; U<SUB>БЭ</SUB>=0,018 В. Тогда входное сопротивление</P>
+				  <P><IMG SRC="img/Image2241.gif" WIDTH=340 HEIGHT=45>.</P>
+				  <P>Результаты заносим в таблицу 2.1.</P>
+				  <P>Таблица 2.1</P>
+				  <div class="row">
+	<div class="col col-md-8">
+	<table class="table table-bordered table-condensed table-hover table-striped">
+				  <TR>
+				   <TD WIDTH="14%" VALIGN=top><P>I<SUB>Б0</SUB>, мкА</TD>
+				   <TD WIDTH="14%" VALIGN=top><P>50</TD>
+				   <TD WIDTH="14%" VALIGN=top><P>150</TD>
+				   <TD WIDTH="14%" VALIGN=top><P>250</TD>
+				   <TD WIDTH="14%" VALIGN=top><P>350</TD>
+				   <TD WIDTH="14%" VALIGN=top><P>450</TD>
+				   <TD WIDTH="14%" VALIGN=top><P>550</TD>
+				  </TR>
+				  <TR>
+				   <TD WIDTH="14%" VALIGN=top><P>&#68; U<SUB>БЭ</SUB>, В</TD>
+				   <TD WIDTH="14%" VALIGN=top>&nbsp;</TD>
+				   <TD WIDTH="14%" VALIGN=top>&nbsp;</TD>
+				   <TD WIDTH="14%" VALIGN=top>&nbsp;</TD>
+				   <TD WIDTH="14%" VALIGN=top><P>0,018</TD>
+				   <TD WIDTH="14%" VALIGN=top>&nbsp;</TD>
+				   <TD WIDTH="14%" VALIGN=top>&nbsp;</TD>
+				  </TR>
+				  <TR>
+				   <TD WIDTH="14%" VALIGN=top><P>h<SUB>11</SUB>, Ом</TD>
+				   <TD WIDTH="14%" VALIGN=top>&nbsp;</TD>
+				   <TD WIDTH="14%" VALIGN=top>&nbsp;</TD>
+				   <TD WIDTH="14%" VALIGN=top>&nbsp;</TD>
+				   <TD WIDTH="14%" VALIGN=top><P>180</TD>
+				   <TD WIDTH="14%" VALIGN=top>&nbsp;</TD>
+				   <TD WIDTH="14%" VALIGN=top>&nbsp;</TD>
+				  </TR>
+				  </TABLE>
+				  </div>
+				  
+				  <P>Аналогично находим h<SUB>11Э</SUB> в других точках при токах базы 50, 150, 250, 450 и 550 мкА и строим зависимость h<SUB>11Э</SUB>=f(I<SUB>Б</SUB>), &#916;I<SUB>Б</SUB>=const . Пример зависимости приведен на рисунке 2.4. </P>
+				  
+				  <P><IMG SRC="img/Image2242.gif" WIDTH=477 HEIGHT=357></P>
+				  <P>Рисунок 2.1</P>
+				  <P><IMG SRC="img/Image2243.gif" WIDTH=600 HEIGHT=399></P>
+				  <P>Рисунок 2.2</P>
+				  <P>По выходным характеристикам находим параметры h<SUB>21Э</SUB> и h<SUB>22Э </SUB>при том же токе базы и заданном напряжении U<SUB>КЭ0</SUB>=5 В. Определение параметра h<SUB>21Э</SUB> показано на рисунке 2.2.Задаемся приращением тока базы относительно рабочей точки также &#68; I<SUB>Б</SUB>= &#177; 50=100 мкА и соответствующее приращение тока коллектора составляет &#68; I<SUB>К</SUB>= 5,8 мА. Коэффициент передачи тока базы составит</P>
+				  <P><IMG SRC="img/Image2244.gif" WIDTH=442 HEIGHT=48>.</P>
+				  <P>Аналогично определяем этот параметр и при других токах базы. Результаты помещаем в таблицу 2.2 и строим зависимость h<SUB>21</SUB>=f(I<SUB>Б</SUB>) (рисунок 2.4).</P>
+				  <P>Таблица 2.2</P>
+				  <div class="row">
+	<div class="col col-md-8">
+	<table class="table table-bordered table-condensed table-hover table-striped">
+				  <TR>
+				   <TD WIDTH="12%" VALIGN=top><P>I<SUB>Б0</SUB>, мкА</TD>
+				   <TD WIDTH="12%" VALIGN=top><P>50</TD>
+				   <TD WIDTH="13%" VALIGN=top><P>150</TD>
+				   <TD WIDTH="13%" VALIGN=top><P>250</TD>
+				   <TD WIDTH="13%" VALIGN=top><P>350</TD>
+				   <TD WIDTH="13%" VALIGN=top><P>450</TD>
+				   <TD WIDTH="13%" VALIGN=top><P>550</TD>
+				   <TD WIDTH="13%" VALIGN=top>&nbsp;</TD>
+				  </TR>
+				  <TR>
+				   <TD WIDTH="12%" VALIGN=top><P>&#68; I<SUB>K</SUB>, мА</TD>
+				   <TD WIDTH="12%" VALIGN=top>&nbsp;</TD>
+				   <TD WIDTH="13%" VALIGN=top>&nbsp;</TD>
+				   <TD WIDTH="13%" VALIGN=top>&nbsp;</TD>
+				   <TD WIDTH="13%" VALIGN=top><P>5,8</TD>
+				   <TD WIDTH="13%" VALIGN=top>&nbsp;</TD>
+				   <TD WIDTH="13%" VALIGN=top>&nbsp;</TD>
+				   <TD WIDTH="13%" VALIGN=top>&nbsp;</TD>
+				  </TR>
+				  <TR>
+				   <TD WIDTH="12%" VALIGN=top><P>h<SUB>21</SUB>, </TD>
+				   <TD WIDTH="12%" VALIGN=top>&nbsp;</TD>
+				   <TD WIDTH="13%" VALIGN=top>&nbsp;</TD>
+				   <TD WIDTH="13%" VALIGN=top>&nbsp;</TD>
+				   <TD WIDTH="13%" VALIGN=top><P>58</TD>
+				   <TD WIDTH="13%" VALIGN=top>&nbsp;</TD>
+				   <TD WIDTH="13%" VALIGN=top>&nbsp;</TD>
+				   <TD WIDTH="13%" VALIGN=top>&nbsp;</TD>
+				  </TR>
+				  </TABLE>
+				  </div>
+				  </div>
+				  <P>На рисунке 2.3 показано определение выходной проводимости h<SUB>22Э</SUB>. Около точки А с напряжением U<SUB>КЭ</SUB>=5 В задаемся приращением напряжения коллектор-эмиттер &#68; U<SUB>КЭ</SUB>=&#177; 2 В. Соответствующее приращение тока коллектора составляет &#68; I<SUB>К</SUB>=1 мА. Выходная проводимость равна</P>
+				  <P><IMG SRC="img/Image2245.gif" WIDTH=384 HEIGHT=48>.</P>
+				  <P><IMG SRC="img/Image2246.gif" WIDTH=536 HEIGHT=401></P>
+				  <P>Рисунок 2.3</P>
+				  <P>Результаты помещаем в таблицу 2.3.</P>
+				  <P>Таблица 2.3</P>
+				 <div class="row">
+	<div class="col col-md-8">
+	<table class="table table-bordered table-condensed table-hover table-striped">
+				  <TR>
+				   <TD WIDTH="23%" VALIGN=top><P>I<SUB>Б0</SUB>, мкА</TD>
+				   <TD WIDTH="13%" VALIGN=top><P>100</TD>
+				   <TD WIDTH="13%" VALIGN=top><P>200</TD>
+				   <TD WIDTH="13%" VALIGN=top><P>300</TD>
+				   <TD WIDTH="13%" VALIGN=top><P>400</TD>
+				   <TD WIDTH="13%" VALIGN=top><P>500</TD>
+				   <TD WIDTH="13%" VALIGN=top><P>600</TD>
+				  </TR>
+				  <TR>
+				   <TD WIDTH="23%" VALIGN=top><P>&#68; I<SUB>K</SUB>, мА</TD>
+				   <TD WIDTH="13%" VALIGN=top>&nbsp;</TD>
+				   <TD WIDTH="13%" VALIGN=top>&nbsp;</TD>
+				   <TD WIDTH="13%" VALIGN=top><P>1</TD>
+				   <TD WIDTH="13%" VALIGN=top>&nbsp;</TD>
+				   <TD WIDTH="13%" VALIGN=top>&nbsp;</TD>
+				   <TD WIDTH="13%" VALIGN=top>&nbsp;</TD>
+				  </TR>
+				  <TR>
+				   <TD WIDTH="23%" VALIGN=top><P>h<SUB>22</SUB>, Сим&#215; 10<SUP>-3</SUP></TD>
+				   <TD WIDTH="13%" VALIGN=top>&nbsp;</TD>
+				   <TD WIDTH="13%" VALIGN=top>&nbsp;</TD>
+				   <TD WIDTH="13%" VALIGN=top><P>0,25</TD>
+				   <TD WIDTH="13%" VALIGN=top>&nbsp;</TD>
+				   <TD WIDTH="13%" VALIGN=top>&nbsp;</TD>
+				   <TD WIDTH="13%" VALIGN=top>&nbsp;</TD>
+				  </TR>
+				  </TABLE>
+				  </div>
+				  </div>
+				  <P>Строим зависимость h<SUB>22Э</SUB>=f(I<SUB>Б</SUB>) (рисунок 2.4).</P>
+				  <P><IMG SRC="img/Image2247.gif" WIDTH=567 HEIGHT=455></P>
+				  <P>Рисунок 2.4</P>
+				  <P>Параметр h<SUB>12Э</SUB> по характеристикам обычно не определяется, так как входные характеристики для рабочего режима практически сливаются, и определение параметра даёт очень большую погрешность.</P>
+				  <P></P>
+				  <B>
+				  
+				  <a class="anchor" name="1.6"></a>
+				  <P>ПРИЛОЖЕНИЕ 1. </B>Варианты заданий.</P>
+				  <P> Таблица П.1.1. Варианты задания для полевых транзисторов</P>
+				  
+				 <div class="row">
+	<div class="col col-md-8">
+	<table class="table table-bordered table-condensed table-hover table-striped">
+				   <TR>
+				   <TD WIDTH="12%" VALIGN=top><P>№ </P>
+					<P>вар</TD>
+				   <TD WIDTH="15%" VALIGN=top><P>Тип </P>
+					<P>ПТ</TD>
+				   <TD WIDTH="12%" VALIGN=top><P>U<SUB>СИ0</SUB>, В</TD>
+				   <TD WIDTH="10%" VALIGN=top><P>U<SUB>ЗИ0</SUB>, В</TD>
+				   <TD WIDTH="14%" VALIGN=top><P>№ </P>
+					<P>вар</TD>
+				   <TD WIDTH="15%" VALIGN=top><P>Тип </P>
+					<P>ПТ</TD>
+				   <TD WIDTH="12%" VALIGN=top><P>U<SUB>СИ0</SUB>, В</TD>
+				   <TD WIDTH="12%" VALIGN=top><P>U<SUB>ЗИ0</SUB>, В</TD>
+				   </TR>
+				   <TR>
+				   <TD WIDTH="12%" VALIGN=top><P>1</TD>
+				   <TD WIDTH="15%" VALIGN=top><P>КП 302А</TD>
+				   <TD WIDTH="12%" VALIGN=top><P>12</TD>
+				   <TD WIDTH="10%" VALIGN=top><P>-8</TD>
+				   <TD WIDTH="14%" VALIGN=top><P>26</TD>
+				   <TD WIDTH="15%" VALIGN=top><P>КП 303А</TD>
+				   <TD WIDTH="12%" VALIGN=top><P>8</TD>
+				   <TD WIDTH="12%" VALIGN=top><P>-2,5</TD>
+				   </TR>
+				   <TR>
+				   <TD WIDTH="12%" VALIGN=top><P>2</TD>
+				   <TD WIDTH="15%" VALIGN=top><P>КП 303А</TD>
+				   <TD WIDTH="12%" VALIGN=top><P>4</TD>
+				   <TD WIDTH="10%" VALIGN=top><P>-2,5</TD>
+				   <TD WIDTH="14%" VALIGN=top><P>27</TD>
+				   <TD WIDTH="15%" VALIGN=top><P>КП 303Б</TD>
+				   <TD WIDTH="12%" VALIGN=top><P>8</TD>
+				   <TD WIDTH="12%" VALIGN=top><P>-3,2</TD>
+				   </TR>
+				   <TR>
+				   <TD WIDTH="12%" VALIGN=top><P>3</TD>
+				   <TD WIDTH="15%" VALIGN=top><P>КП 303Б</TD>
+				   <TD WIDTH="12%" VALIGN=top><P>4</TD>
+				   <TD WIDTH="10%" VALIGN=top><P>-3,2</TD>
+				   <TD WIDTH="14%" VALIGN=top><P>28</TD>
+				   <TD WIDTH="15%" VALIGN=top><P>КП 303Д</TD>
+				   <TD WIDTH="12%" VALIGN=top><P>18</TD>
+				   <TD WIDTH="12%" VALIGN=top><P>-8</TD>
+				   </TR>
+				   <TR>
+				   <TD WIDTH="12%" VALIGN=top><P>4</TD>
+				   <TD WIDTH="15%" VALIGN=top><P>КП 303Д</TD>
+				   <TD WIDTH="12%" VALIGN=top><P>10</TD>
+				   <TD WIDTH="10%" VALIGN=top><P>-8</TD>
+				   <TD WIDTH="14%" VALIGN=top><P>29</TD>
+				   <TD WIDTH="15%" VALIGN=top><P>КП 303Е</TD>
+				   <TD WIDTH="12%" VALIGN=top><P>16</TD>
+				   <TD WIDTH="12%" VALIGN=top><P>-8</TD>
+				   </TR>
+				   <TR>
+				   <TD WIDTH="12%" VALIGN=top><P>5</TD>
+				   <TD WIDTH="15%" VALIGN=top><P>КП 303Е</TD>
+				   <TD WIDTH="12%" VALIGN=top><P>10</TD>
+				   <TD WIDTH="10%" VALIGN=top><P>-8</TD>
+				   <TD WIDTH="14%" VALIGN=top><P>30</TD>
+				   <TD WIDTH="15%" VALIGN=top><P>КП 303В</TD>
+				   <TD WIDTH="12%" VALIGN=top><P>9</TD>
+				   <TD WIDTH="12%" VALIGN=top><P>-3,2</TD>
+				   </TR>
+				   <TR>
+				   <TD WIDTH="12%" VALIGN=top><P>6</TD>
+				   <TD WIDTH="15%" VALIGN=top><P>КП 303В</TD>
+				   <TD WIDTH="12%" VALIGN=top><P>5</TD>
+				   <TD WIDTH="10%" VALIGN=top><P>-3,2</TD>
+				   <TD WIDTH="14%" VALIGN=top><P>31</TD>
+				   <TD WIDTH="15%" VALIGN=top><P>КП 307Ж</TD>
+				   <TD WIDTH="12%" VALIGN=top><P>9</TD>
+				   <TD WIDTH="12%" VALIGN=top><P>-4</TD>
+				   </TR>
+				   <TR>
+				   <TD WIDTH="12%" VALIGN=top><P>7</TD>
+				   <TD WIDTH="15%" VALIGN=top><P>КП 307Ж</TD>
+				   <TD WIDTH="12%" VALIGN=top><P>5</TD>
+				   <TD WIDTH="10%" VALIGN=top><P>-4</TD>
+				   <TD WIDTH="14%" VALIGN=top><P>32</TD>
+				   <TD WIDTH="15%" VALIGN=top><P>КП 307В</TD>
+				   <TD WIDTH="12%" VALIGN=top><P>9</TD>
+				   <TD WIDTH="12%" VALIGN=top><P>-3,2</TD>
+				   </TR>
+				   <TR>
+				   <TD WIDTH="12%" VALIGN=top><P>8</TD>
+				   <TD WIDTH="15%" VALIGN=top><P>КП 307В</TD>
+				   <TD WIDTH="12%" VALIGN=top><P>7</TD>
+				   <TD WIDTH="10%" VALIGN=top><P>-3,2</TD>
+				   <TD WIDTH="14%" VALIGN=top><P>33</TD>
+				   <TD WIDTH="15%" VALIGN=top><P>КП 312А</TD>
+				   <TD WIDTH="12%" VALIGN=top><P>8</TD>
+				   <TD WIDTH="12%" VALIGN=top><P>-3,6</TD>
+				   </TR>
+				   <TR>
+				   <TD WIDTH="12%" VALIGN=top><P>9</TD>
+				   <TD WIDTH="15%" VALIGN=top><P>КП 312А</TD>
+				   <TD WIDTH="12%" VALIGN=top><P>6</TD>
+				   <TD WIDTH="10%" VALIGN=top><P>-3,6</TD>
+				   <TD WIDTH="14%" VALIGN=top><P>34</TD>
+				   <TD WIDTH="15%" VALIGN=top><P>КП 903 А</TD>
+				   <TD WIDTH="12%" VALIGN=top><P>18</TD>
+				   <TD WIDTH="12%" VALIGN=top><P>-8</TD>
+				   </TR>
+				   <TR>
+				   <TD WIDTH="12%" VALIGN=top><P>10</TD>
+				   <TD WIDTH="15%" VALIGN=top><P>КП 903 А</TD>
+				   <TD WIDTH="12%" VALIGN=top><P>10</TD>
+				   <TD WIDTH="10%" VALIGN=top><P>-8</TD>
+				   <TD WIDTH="14%" VALIGN=top><P>35</TD>
+				   <TD WIDTH="15%" VALIGN=top><P>КП 903 Б</TD>
+				   <TD WIDTH="12%" VALIGN=top><P>9</TD>
+				   <TD WIDTH="12%" VALIGN=top><P>-4</TD>
+				   </TR>
+				   <TR>
+				   <TD WIDTH="12%" VALIGN=top><P>11</TD>
+				   <TD WIDTH="15%" VALIGN=top><P>КП 903 Б</TD>
+				   <TD WIDTH="12%" VALIGN=top><P>5</TD>
+				   <TD WIDTH="10%" VALIGN=top><P>-4</TD>
+				   <TD WIDTH="14%" VALIGN=top><P>36</TD>
+				   <TD WIDTH="15%" VALIGN=top><P>КП 903 В</TD>
+				   <TD WIDTH="12%" VALIGN=top><P>18</TD>
+				   <TD WIDTH="12%" VALIGN=top><P>-6</TD>
+				   </TR>
+				   <TR>
+				   <TD WIDTH="12%" VALIGN=top><P>12</TD>
+				   <TD WIDTH="15%" VALIGN=top><P>КП 903 В</TD>
+				   <TD WIDTH="12%" VALIGN=top><P>10</TD>
+				   <TD WIDTH="10%" VALIGN=top><P>-6</TD>
+				   <TD WIDTH="14%" VALIGN=top><P>37</TD>
+				   <TD WIDTH="15%" VALIGN=top><P>КП 302А</TD>
+				   <TD WIDTH="12%" VALIGN=top><P>18</TD>
+				   <TD WIDTH="12%" VALIGN=top><P>-8</TD>
+				   </TR>
+				   <TR>
+				   <TD WIDTH="12%" VALIGN=top><P>13</TD>
+				   <TD WIDTH="15%" VALIGN=top><P>КП 302А</TD>
+				   <TD WIDTH="12%" VALIGN=top><P>14</TD>
+				   <TD WIDTH="10%" VALIGN=top><P>-8</TD>
+				   <TD WIDTH="14%" VALIGN=top><P>38</TD>
+				   <TD WIDTH="15%" VALIGN=top><P>КП 303А</TD>
+				   <TD WIDTH="12%" VALIGN=top><P>9</TD>
+				   <TD WIDTH="12%" VALIGN=top><P>-2,5</TD>
+				   </TR>
+				   <TR>
+				   <TD WIDTH="12%" VALIGN=top><P>14</TD>
+				   <TD WIDTH="15%" VALIGN=top><P>КП 303А</TD>
+				   <TD WIDTH="12%" VALIGN=top><P>6</TD>
+				   <TD WIDTH="10%" VALIGN=top><P>-2,5</TD>
+				   <TD WIDTH="14%" VALIGN=top><P>39</TD>
+				   <TD WIDTH="15%" VALIGN=top><P>КП 303Б</TD>
+				   <TD WIDTH="12%" VALIGN=top><P>10</TD>
+				   <TD WIDTH="12%" VALIGN=top><P>-3,2</TD>
+				   </TR>
+				   <TR>
+				   <TD WIDTH="12%" VALIGN=top><P>15</TD>
+				   <TD WIDTH="15%" VALIGN=top><P>КП 303Б</TD>
+				   <TD WIDTH="12%" VALIGN=top><P>6</TD>
+				   <TD WIDTH="10%" VALIGN=top><P>-3,2</TD>
+				   <TD WIDTH="14%" VALIGN=top><P>40</TD>
+				   <TD WIDTH="15%" VALIGN=top><P>КП 303Д</TD>
+				   <TD WIDTH="12%" VALIGN=top><P>20</TD>
+				   <TD WIDTH="12%" VALIGN=top><P>-8</TD>
+				   </TR>
+				   <TR>
+				   <TD WIDTH="12%" VALIGN=top><P>16</TD>
+				   <TD WIDTH="15%" VALIGN=top><P>КП 303Д</TD>
+				   <TD WIDTH="12%" VALIGN=top><P>14</TD>
+				   <TD WIDTH="10%" VALIGN=top><P>-8</TD>
+				   <TD WIDTH="14%" VALIGN=top><P>41</TD>
+				   <TD WIDTH="15%" VALIGN=top><P>КП 303Е</TD>
+				   <TD WIDTH="12%" VALIGN=top><P>20</TD>
+				   <TD WIDTH="12%" VALIGN=top><P>-8</TD>
+				   </TR>
+				   <TR>
+				   <TD WIDTH="12%" VALIGN=top><P>17</TD>
+				   <TD WIDTH="15%" VALIGN=top><P>КП 303Е</TD>
+				   <TD WIDTH="12%" VALIGN=top><P>12</TD>
+				   <TD WIDTH="10%" VALIGN=top><P>-8</TD>
+				   <TD WIDTH="14%" VALIGN=top><P>42</TD>
+				   <TD WIDTH="15%" VALIGN=top><P>КП 303В</TD>
+				   <TD WIDTH="12%" VALIGN=top><P>11</TD>
+				   <TD WIDTH="12%" VALIGN=top><P>-3,2</TD>
+				   </TR>
+				   <TR>
+				   <TD WIDTH="12%" VALIGN=top><P>18</TD>
+				   <TD WIDTH="15%" VALIGN=top><P>КП 303В</TD>
+				   <TD WIDTH="12%" VALIGN=top><P>7</TD>
+				   <TD WIDTH="10%" VALIGN=top><P>-3,2</TD>
+				   <TD WIDTH="14%" VALIGN=top><P>43</TD>
+				   <TD WIDTH="15%" VALIGN=top><P>КП 307Ж</TD>
+				   <TD WIDTH="12%" VALIGN=top><P>11</TD>
+				   <TD WIDTH="12%" VALIGN=top><P>-4</TD>
+				   </TR>
+				   <TR>
+				   <TD WIDTH="12%" VALIGN=top><P>19</TD>
+				   <TD WIDTH="15%" VALIGN=top><P>КП 307Ж</TD>
+				   <TD WIDTH="12%" VALIGN=top><P>7</TD>
+				   <TD WIDTH="10%" VALIGN=top><P>-4</TD>
+				   <TD WIDTH="14%" VALIGN=top><P>44</TD>
+				   <TD WIDTH="15%" VALIGN=top><P>КП 307В</TD>
+				   <TD WIDTH="12%" VALIGN=top><P>10</TD>
+				   <TD WIDTH="12%" VALIGN=top><P>-3,2</TD>
+				   </TR>
+				   <TR>
+				   <TD WIDTH="12%" VALIGN=top><P>20</TD>
+				   <TD WIDTH="15%" VALIGN=top><P>КП 307В</TD>
+				   <TD WIDTH="12%" VALIGN=top><P>8</TD>
+				   <TD WIDTH="10%" VALIGN=top><P>-3,2</TD>
+				   <TD WIDTH="14%" VALIGN=top><P>45</TD>
+				   <TD WIDTH="15%" VALIGN=top><P>КП 312А</TD>
+				   <TD WIDTH="12%" VALIGN=top><P>9</TD>
+				   <TD WIDTH="12%" VALIGN=top><P>-3,6</TD>
+				   </TR>
+				   <TR>
+				   <TD WIDTH="12%" VALIGN=top><P>21</TD>
+				   <TD WIDTH="15%" VALIGN=top><P>КП 312А</TD>
+				   <TD WIDTH="12%" VALIGN=top><P>7</TD>
+				   <TD WIDTH="10%" VALIGN=top><P>-3,6</TD>
+				   <TD WIDTH="14%" VALIGN=top><P>46</TD>
+				   <TD WIDTH="15%" VALIGN=top><P>КП 903 А</TD>
+				   <TD WIDTH="12%" VALIGN=top><P>22</TD>
+				   <TD WIDTH="12%" VALIGN=top><P>-8</TD>
+				   </TR>
+				   <TR>
+				   <TD WIDTH="12%" VALIGN=top><P>22</TD>
+				   <TD WIDTH="15%" VALIGN=top><P>КП 903 А</TD>
+				   <TD WIDTH="12%" VALIGN=top><P>14</TD>
+				   <TD WIDTH="10%" VALIGN=top><P>-8</TD>
+				   <TD WIDTH="14%" VALIGN=top><P>47</TD>
+				   <TD WIDTH="15%" VALIGN=top><P>КП 903 Б</TD>
+				   <TD WIDTH="12%" VALIGN=top><P>11</TD>
+				   <TD WIDTH="12%" VALIGN=top><P>-4</TD>
+				   </TR>
+				   <TR>
+				   <TD WIDTH="12%" VALIGN=top><P>23</TD>
+				   <TD WIDTH="15%" VALIGN=top><P>КП 903 Б</TD>
+				   <TD WIDTH="12%" VALIGN=top><P>7</TD>
+				   <TD WIDTH="10%" VALIGN=top><P>-4</TD>
+				   <TD WIDTH="14%" VALIGN=top><P>48</TD>
+				   <TD WIDTH="15%" VALIGN=top><P>КП 903 В</TD>
+				   <TD WIDTH="12%" VALIGN=top><P>22</TD>
+				   <TD WIDTH="12%" VALIGN=top><P>-6</TD>
+				   </TR>
+				   <TR>
+				   <TD WIDTH="12%" VALIGN=top><P>24</TD>
+				   <TD WIDTH="15%" VALIGN=top><P>КП 903 В</TD>
+				   <TD WIDTH="12%" VALIGN=top><P>14</TD>
+				   <TD WIDTH="10%" VALIGN=top><P>-6</TD>
+				   <TD WIDTH="14%" VALIGN=top><P>49</TD>
+				   <TD WIDTH="15%" VALIGN=top><P>КП 302А</TD>
+				   <TD WIDTH="12%" VALIGN=top><P>20</TD>
+				   <TD WIDTH="12%" VALIGN=top><P>-8</TD>
+				   </TR>
+				   <TR>
+				   <TD WIDTH="12%" VALIGN=top><P>25</TD>
+				   <TD WIDTH="15%" VALIGN=top><P>КП 302А</TD>
+				   <TD WIDTH="12%" VALIGN=top><P>16</TD>
+				   <TD WIDTH="10%" VALIGN=top><P>-8</TD>
+				   <TD WIDTH="14%" VALIGN=top><P>50</TD>
+				   <TD WIDTH="15%" VALIGN=top><P>КП 303А</TD>
+				   <TD WIDTH="12%" VALIGN=top><P>10</TD>
+				   <TD WIDTH="12%" VALIGN=top><P>-2,5</TD>
+				   </TR>
+				  </TABLE>
+				  </div>
+				  </div>
+				  </P>
+				  
+				  <P>&nbsp;</P>
+				  <P> Таблица П.1.2. Варианты задания для биполярных транзисторов</P>
+				  
+				  <div class="row">
+	<div class="col col-md-8">
+	<table class="table table-bordered table-condensed table-hover table-striped">
+				  <TR>
+				   <TD WIDTH="8%" VALIGN=top><P>№ </P>
+					<P>вар</TD>
+				   <TD WIDTH="13%" VALIGN=top><P>Тип</P>
+					<P> БТ</TD>
+				   <TD WIDTH="10%" VALIGN=top><P>U<SUB>КЭ</SUB>, </P>
+					<P>В</TD>
+				   <TD WIDTH="10%" VALIGN=top><P>№</P>
+					<P> вар</TD>
+				   <TD WIDTH="13%" VALIGN=top><P>Тип </P>
+					<P>БТ</TD>
+				   <TD WIDTH="11%" VALIGN=top><P>U<SUB>КЭ</SUB>, </P>
+					<P>В</TD>
+				   <TD WIDTH="11%" VALIGN=top><P>№</P>
+					<P> вар</TD>
+				   <TD WIDTH="14%" VALIGN=top><P>Тип</P>
+					<P>БТ</TD>
+				   <TD WIDTH="9%" VALIGN=top><P>U<SUB>КЭ</SUB>,В</TD>
+				  </TR>
+				  <TR>
+				   <TD WIDTH="8%" VALIGN=top><P>1</TD>
+				   <TD WIDTH="13%" VALIGN=top><P>КТ601А</TD>
+				   <TD WIDTH="10%" VALIGN=top><P>30</TD>
+				   <TD WIDTH="10%" VALIGN=top><P>18</TD>
+				   <TD WIDTH="13%" VALIGN=top><P>КТ819А</TD>
+				   <TD WIDTH="11%" VALIGN=top><P>6</TD>
+				   <TD WIDTH="11%" VALIGN=top><P>35</TD>
+				   <TD WIDTH="14%" VALIGN=top><P>КТ608А</TD>
+				   <TD WIDTH="9%" VALIGN=top><P>6</TD>
+				  </TR>
+				  <TR>
+				   <TD WIDTH="8%" VALIGN=top><P>2</TD>
+				   <TD WIDTH="13%" VALIGN=top><P>КТ602А</TD>
+				   <TD WIDTH="10%" VALIGN=top><P>15</TD>
+				   <TD WIDTH="10%" VALIGN=top><P>19</TD>
+				   <TD WIDTH="13%" VALIGN=top><P>КТ902А</TD>
+				   <TD WIDTH="11%" VALIGN=top><P>20</TD>
+				   <TD WIDTH="11%" VALIGN=top><P>36</TD>
+				   <TD WIDTH="14%" VALIGN=top><P>КТ815А</TD>
+				   <TD WIDTH="9%" VALIGN=top><P>6</TD>
+				  </TR>
+				  <TR>
+				   <TD WIDTH="8%" VALIGN=top><P>3</TD>
+				   <TD WIDTH="13%" VALIGN=top><P>КТ603А</TD>
+				   <TD WIDTH="10%" VALIGN=top><P>30</TD>
+				   <TD WIDTH="10%" VALIGN=top><P>20</TD>
+				   <TD WIDTH="13%" VALIGN=top><P>КТ903А</TD>
+				   <TD WIDTH="11%" VALIGN=top><P>25</TD>
+				   <TD WIDTH="11%" VALIGN=top><P>37</TD>
+				   <TD WIDTH="14%" VALIGN=top><P>КТ817А</TD>
+				   <TD WIDTH="9%" VALIGN=top><P>7</TD>
+				  </TR>
+				  <TR>
+				   <TD WIDTH="8%" VALIGN=top><P>4</TD>
+				   <TD WIDTH="13%" VALIGN=top><P>КТ605А</TD>
+				   <TD WIDTH="10%" VALIGN=top><P>6</TD>
+				   <TD WIDTH="10%" VALIGN=top><P>21</TD>
+				   <TD WIDTH="13%" VALIGN=top><P>КТ601А</TD>
+				   <TD WIDTH="11%" VALIGN=top><P>50</TD>
+				   <TD WIDTH="11%" VALIGN=top><P>38</TD>
+				   <TD WIDTH="14%" VALIGN=top><P>КТ819А</TD>
+				   <TD WIDTH="9%" VALIGN=top><P>3</TD>
+				  </TR>
+				  <TR>
+				   <TD WIDTH="8%" VALIGN=top><P>5</TD>
+				   <TD WIDTH="13%" VALIGN=top><P>КТ608А</TD>
+				   <TD WIDTH="10%" VALIGN=top><P>3</TD>
+				   <TD WIDTH="10%" VALIGN=top><P>22</TD>
+				   <TD WIDTH="13%" VALIGN=top><P>КТ602А</TD>
+				   <TD WIDTH="11%" VALIGN=top><P>25</TD>
+				   <TD WIDTH="11%" VALIGN=top><P>39</TD>
+				   <TD WIDTH="14%" VALIGN=top><P>КТ902А</TD>
+				   <TD WIDTH="9%" VALIGN=top><P>30</TD>
+				  </TR>
+				  <TR>
+				   <TD WIDTH="8%" VALIGN=top><P>6</TD>
+				   <TD WIDTH="13%" VALIGN=top><P>КТ815А</TD>
+				   <TD WIDTH="10%" VALIGN=top><P>3</TD>
+				   <TD WIDTH="10%" VALIGN=top><P>23</TD>
+				   <TD WIDTH="13%" VALIGN=top><P>КТ603А</TD>
+				   <TD WIDTH="11%" VALIGN=top><P>50</TD>
+				   <TD WIDTH="11%" VALIGN=top><P>40</TD>
+				   <TD WIDTH="14%" VALIGN=top><P>КТ903А</TD>
+				   <TD WIDTH="9%" VALIGN=top><P>35</TD>
+				  </TR>
+				  <TR>
+				   <TD WIDTH="8%" VALIGN=top><P>7</TD>
+				   <TD WIDTH="13%" VALIGN=top><P>КТ817А</TD>
+				   <TD WIDTH="10%" VALIGN=top><P>4</TD>
+				   <TD WIDTH="10%" VALIGN=top><P>24</TD>
+				   <TD WIDTH="13%" VALIGN=top><P>КТ605А</TD>
+				   <TD WIDTH="11%" VALIGN=top><P>10</TD>
+				   <TD WIDTH="11%" VALIGN=top><P>41</TD>
+				   <TD WIDTH="14%" VALIGN=top><P>КТ601А</TD>
+				   <TD WIDTH="9%" VALIGN=top><P>70</TD>
+				  </TR>
+				  <TR>
+				   <TD WIDTH="8%" VALIGN=top><P>8</TD>
+				   <TD WIDTH="13%" VALIGN=top><P>КТ819А</TD>
+				   <TD WIDTH="10%" VALIGN=top><P>5</TD>
+				   <TD WIDTH="10%" VALIGN=top><P>25</TD>
+				   <TD WIDTH="13%" VALIGN=top><P>КТ608А</TD>
+				   <TD WIDTH="11%" VALIGN=top><P>5</TD>
+				   <TD WIDTH="11%" VALIGN=top><P>42</TD>
+				   <TD WIDTH="14%" VALIGN=top><P>КТ602А</TD>
+				   <TD WIDTH="9%" VALIGN=top><P>35</TD>
+				  </TR>
+				  <TR>
+				   <TD WIDTH="8%" VALIGN=top><P>9</TD>
+				   <TD WIDTH="13%" VALIGN=top><P>КТ902А</TD>
+				   <TD WIDTH="10%" VALIGN=top><P>15</TD>
+				   <TD WIDTH="10%" VALIGN=top><P>26</TD>
+				   <TD WIDTH="13%" VALIGN=top><P>КТ815А</TD>
+				   <TD WIDTH="11%" VALIGN=top><P>5</TD>
+				   <TD WIDTH="11%" VALIGN=top><P>43</TD>
+				   <TD WIDTH="14%" VALIGN=top><P>КТ603А</TD>
+				   <TD WIDTH="9%" VALIGN=top><P>70</TD>
+				  </TR>
+				  <TR>
+				   <TD WIDTH="8%" VALIGN=top><P>10</TD>
+				   <TD WIDTH="13%" VALIGN=top><P>КТ903А</TD>
+				   <TD WIDTH="10%" VALIGN=top><P>20</TD>
+				   <TD WIDTH="10%" VALIGN=top><P>27</TD>
+				   <TD WIDTH="13%" VALIGN=top><P>КТ817А</TD>
+				   <TD WIDTH="11%" VALIGN=top><P>6</TD>
+				   <TD WIDTH="11%" VALIGN=top><P>44</TD>
+				   <TD WIDTH="14%" VALIGN=top><P>КТ605А</TD>
+				   <TD WIDTH="9%" VALIGN=top><P>14</TD>
+				  </TR>
+				  <TR>
+				   <TD WIDTH="8%" VALIGN=top><P>11</TD>
+				   <TD WIDTH="13%" VALIGN=top><P>КТ601А</TD>
+				   <TD WIDTH="10%" VALIGN=top><P>40</TD>
+				   <TD WIDTH="10%" VALIGN=top><P>28</TD>
+				   <TD WIDTH="13%" VALIGN=top><P>КТ819А</TD>
+				   <TD WIDTH="11%" VALIGN=top><P>7</TD>
+				   <TD WIDTH="11%" VALIGN=top><P>45</TD>
+				   <TD WIDTH="14%" VALIGN=top><P>КТ608А</TD>
+				   <TD WIDTH="9%" VALIGN=top><P>7</TD>
+				  </TR>
+				  <TR>
+				   <TD WIDTH="8%" VALIGN=top><P>12</TD>
+				   <TD WIDTH="13%" VALIGN=top><P>КТ602А</TD>
+				   <TD WIDTH="10%" VALIGN=top><P>20</TD>
+				   <TD WIDTH="10%" VALIGN=top><P>29</TD>
+				   <TD WIDTH="13%" VALIGN=top><P>КТ902А</TD>
+				   <TD WIDTH="11%" VALIGN=top><P>25</TD>
+				   <TD WIDTH="11%" VALIGN=top><P>46</TD>
+				   <TD WIDTH="14%" VALIGN=top><P>КТ815А</TD>
+				   <TD WIDTH="9%" VALIGN=top><P>7</TD>
+				  </TR>
+				  <TR>
+				   <TD WIDTH="8%" VALIGN=top><P>13</TD>
+				   <TD WIDTH="13%" VALIGN=top><P>КТ603А</TD>
+				   <TD WIDTH="10%" VALIGN=top><P>40</TD>
+				   <TD WIDTH="10%" VALIGN=top><P>30</TD>
+				   <TD WIDTH="13%" VALIGN=top><P>КТ903А</TD>
+				   <TD WIDTH="11%" VALIGN=top><P>30</TD>
+				   <TD WIDTH="11%" VALIGN=top><P>47</TD>
+				   <TD WIDTH="14%" VALIGN=top><P>КТ817А</TD>
+				   <TD WIDTH="9%" VALIGN=top><P>3</TD>
+				  </TR>
+				  <TR>
+				   <TD WIDTH="8%" VALIGN=top><P>14</TD>
+				   <TD WIDTH="13%" VALIGN=top><P>КТ605А</TD>
+				   <TD WIDTH="10%" VALIGN=top><P>8</TD>
+				   <TD WIDTH="10%" VALIGN=top><P>31</TD>
+				   <TD WIDTH="13%" VALIGN=top><P>КТ601А</TD>
+				   <TD WIDTH="11%" VALIGN=top><P>60</TD>
+				   <TD WIDTH="11%" VALIGN=top><P>48</TD>
+				   <TD WIDTH="14%" VALIGN=top><P>КТ819А</TD>
+				   <TD WIDTH="9%" VALIGN=top><P>4</TD>
+				  </TR>
+				  <TR>
+				   <TD WIDTH="8%" VALIGN=top><P>15</TD>
+				   <TD WIDTH="13%" VALIGN=top><P>КТ608А</TD>
+				   <TD WIDTH="10%" VALIGN=top><P>4</TD>
+				   <TD WIDTH="10%" VALIGN=top><P>32</TD>
+				   <TD WIDTH="13%" VALIGN=top><P>КТ602А</TD>
+				   <TD WIDTH="11%" VALIGN=top><P>30</TD>
+				   <TD WIDTH="11%" VALIGN=top><P>49</TD>
+				   <TD WIDTH="14%" VALIGN=top><P>КТ902А</TD>
+				   <TD WIDTH="9%" VALIGN=top><P>35</TD>
+				  </TR>
+				  <TR>
+				   <TD WIDTH="8%" VALIGN=top><P>16</TD>
+				   <TD WIDTH="13%" VALIGN=top><P>КТ815А</TD>
+				   <TD WIDTH="10%" VALIGN=top><P>4</TD>
+				   <TD WIDTH="10%" VALIGN=top><P>33</TD>
+				   <TD WIDTH="13%" VALIGN=top><P>КТ603А</TD>
+				   <TD WIDTH="11%" VALIGN=top><P>60</TD>
+				   <TD WIDTH="11%" VALIGN=top><P>50</TD>
+				   <TD WIDTH="14%" VALIGN=top><P>КТ903А</TD>
+				   <TD WIDTH="9%" VALIGN=top><P>15</TD>
+				  </TR>
+				  <TR>
+				   <TD WIDTH="8%" VALIGN=top><P>17</TD>
+				   <TD WIDTH="13%" VALIGN=top><P>КТ817А</TD>
+				   <TD WIDTH="10%" VALIGN=top><P>5</TD>
+				   <TD WIDTH="10%" VALIGN=top><P>34</TD>
+				   <TD WIDTH="13%" VALIGN=top><P>КТ605А</TD>
+				   <TD WIDTH="11%" VALIGN=top><P>12</TD>
+				   <TD WIDTH="11%" VALIGN=top>&nbsp;</TD>
+				   <TD WIDTH="14%" VALIGN=top>&nbsp;</TD>
+				   <TD WIDTH="9%" VALIGN=top>&nbsp;</TD>
+				  </TR>
+				  </TABLE>
+				  </div>
+				  </div>
+				  </P>
+				  <a class="anchor" name="1.7"></a>
+				  <P><b>ПРИЛОЖЕНИЕ 2.</b> </B>Характеристики транзисторов</P>
+
+				  <P><IMG SRC="img/Image2208.gif" WIDTH=540 HEIGHT=379></P>
+				  <P>Рисунок П.2.1</P>
+				  <P><IMG SRC="img/Image2209.gif" WIDTH=519 HEIGHT=377></P>
+				  <P>Рисунок П.2.2</P>
+				  <P></P>
+				  <P><IMG SRC="img/Image2210.gif" WIDTH=534 HEIGHT=383></P>
+				  <P>Рисунок П.2.3</P>
+				  <P><IMG SRC="img/Image2211.gif" WIDTH=536 HEIGHT=381></P>
+				  <P>Рисунок П.2.4</P>
+				  <P><IMG SRC="img/Image2212.gif" WIDTH=523 HEIGHT=381></P>
+				  <P>Рисунок П.2.5</P>
+				  <P><IMG SRC="img/Image2213.gif" WIDTH=516 HEIGHT=379></P>
+				  <P>Рисунок П.2.6</P>
+				  <P><IMG SRC="img/Image2214.gif" WIDTH=527 HEIGHT=351></P>
+				  <P>Рисунок П.2.7</P>
+				  <P><IMG SRC="img/Image2215.gif" WIDTH=527 HEIGHT=381></P>
+				  <P>Рисунок П.2.8</P>
+				  <P><IMG SRC="img/Image2216.gif" WIDTH=530 HEIGHT=383></P>
+				  <P>Рисунок П.2.9</P>
+				  <P><IMG SRC="img/Image2217.gif" WIDTH=508 HEIGHT=346></P>
+				  <P>Рисунок П.2.10</P>
+				  <P><IMG SRC="img/Image2218.gif" WIDTH=510 HEIGHT=346></P>
+				  <P>Рисунок П.2.11</P>
+				  <P><IMG SRC="img/Image2219.gif" WIDTH=508 HEIGHT=344></P>
+				  <P>Рисунок П.2.12</P>
+				  <P><IMG SRC="img/Image2220.gif" WIDTH=577 HEIGHT=425></P>
+				  <P>Рисунок П.2.13</P>
+				  <P><IMG SRC="img/Image2221.gif" WIDTH=584 HEIGHT=425></P>
+				  <P>Рисунок П.2.14</P>
+				  <P><IMG SRC="img/Image2222.gif" WIDTH=630 HEIGHT=397></P>
+				  <P>Рисунок П.2.15  Рисунок П.2.16</P>
+				  <P><IMG SRC="img/Image2223.gif" WIDTH=575 HEIGHT=421></P>
+				  <P>Рисунок П.2.17</P>
+				  <P><IMG SRC="img/Image2224.gif" WIDTH=578 HEIGHT=425></P>
+				  <P>Рисунок П.2.18</P>
+				  <P><IMG SRC="img/Image2225.gif" WIDTH=628 HEIGHT=397></P>
+				  <P> Рисунок П.2.19           Рисунок П.2.20</P>
+				  <P><IMG SRC="img/Image2226.gif" WIDTH=576 HEIGHT=423></P>
+				  <P>Рисунок П.2.21</P>
+				  <P><IMG SRC="img/Image2227.gif" WIDTH=591 HEIGHT=372></P>
+				  <P>Рисунок П.2.22</P>
+				  <P><IMG SRC="img/Image2228.gif" WIDTH=580 HEIGHT=403>&nbsp;  <br>
+				  Рисунок П.2.23         Рисунок П.2.24 </P>
+				  
+				  <P><IMG SRC="img/Image2229.gif" WIDTH=575 HEIGHT=423></P>
+				  <P>Рисунок П.2.25</P>
+				  <P><IMG SRC="img/Image2230.gif" WIDTH=582 HEIGHT=423></P>
+				  <P>Рисунок П.2.26</P>
+				  <P><IMG SRC="img/Image2231.gif" WIDTH=599 HEIGHT=401> <br>
+				  Рисунок П.2.27         Рисунок П.2.28</P>
+				  <DIR> 
+				  <P><IMG SRC="img/Image2232.gif" WIDTH=599 HEIGHT=377></P>
+				  <P>Рисунок П.2.29</P>
+				  <P><IMG SRC="img/Image2233.gif" WIDTH=595 HEIGHT=379></P>
+				  <P>Рисунок П.2.30</P>
+				<P><IMG SRC="img/Image2234.gif" WIDTH=584 HEIGHT=401>
+				  <br>
+				  Рисунок П.2.31 Рисунок П.2.32</P>				
+					
+
+<br>
+					<br>					
+
+				</div>
+			</div>
+        </div>
+    </div>
+	
+	<!--Меню навигации по лекциям -->	
+	<div aria-label="..." class = "nav-menu">
+	  <ul class="pager  background-transition-slow" >
+		 <li title="Наверх" style = "margin-right:15px;	"><a class = "glyphicon glyphicon-menu-up page-scroll" href="#page-top" ></a></li>
+		 <!--li title="К предыдущей лекции"><a class = "glyphicon glyphicon-menu-left page-scroll" href="lec_index.html" ></a></li-->
+		 <!--li title="В содержание"><a class = "glyphicon glyphicon-list-alt" href="lec_index.htm" ></a></li>
+		 <li title="К следующей лекции"><a class = "glyphicon glyphicon-menu-right page-scroll" href="lec2.htm" ></a></li-->
+	  </ul>
+	</div>
+	<!---->
+	
+	</div>
+    <!-- jQuery -->
+    <script src="../lib/js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../lib/js/bootstrap.min.js"></script>
+
+    <!-- Scrolling Nav JavaScript -->
+    <script src="../lib/js/jquery.easing.min.js"></script>
+    <script src="../lib/js/scrolling-nav.js"></script>
+
+</body>
+
+</html>

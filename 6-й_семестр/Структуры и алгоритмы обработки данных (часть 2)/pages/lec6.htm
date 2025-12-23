@@ -1,0 +1,739 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="do.sibsutis.ru">
+
+    <title>Лекция 6. Конспект лекций</title>
+	
+	<link rel="icon" type="image/png" href="../lib/css/favicon.png">
+    <!-- Bootstrap Core CSS -->
+    <link href="../lib/css/bootstrap.css" rel="stylesheet">
+	
+    <!-- Custom CSS -->
+    <link href="../lib/css/scrolling-nav.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<!-- The #page-top ID is part of the scrolling feature - the data-spy and data-target are part of the built-in Bootstrap scrollspy function -->
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top" >
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <li class="hidden"> <a class="page-scroll" href="#page-top"></a> </li>
+	  
+	  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+	  
+      <a class="navbar-brand " href="../index.htm"> 
+						<text class = "hidden-xs">Структуры и алгоритмы обработки данных (часть 2)</text> 
+						<text class = "visible-xs">САОД2</text>
+	  </a>
+    </div>
+
+    <!-- Collect the nav links, forms, and glyphicon glyphicon-list-alt content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      
+	  <!-- <ul class="nav navbar-nav">
+		<li><a href="#"></a></li> 
+      </ul> -->
+	
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+		<button type="button" class="navbar-toggle dropdown-toggle hidden-xs" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" >
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		</button>	      
+		<a class = "dropdown-toggle visible-xs" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Материалы</a>
+          <ul class="dropdown-menu">
+            <li><a href="../index.htm">Аннотация курса</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="lec_index.htm">Теория</a></li>
+            <li><a href="questns.htm">Экзаменационное задание</a></li>
+           <li role="separator" class="divider"></li>
+            <li><a href="course_work.htm">Курсовой проект</a></li>
+                        <li role="separator" class="divider"></li>
+            <li><a href="labs.htm">Лабораторные работы</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="lit.htm">Литература</a></li>
+          </ul>
+ </li>
+  </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+
+    <!-- Intro Section -->
+	<!-- Секция с информацией "Уважаемый слушатель"	 -->
+    <div id="intro" class="section content-section ">
+        <div class="container">
+             <div class="row">
+                <div class="col-lg-12">	
+
+
+<!-- содержание -->	
+<div class="page-header">
+<h3>Глава 6 АВЛ-дерево </h3>
+<p><a href="lec6.htm#1" class=punkt>1 Определение дерева оптимального поиска</a>
+<br><a href="lec6.htm#2" class=punkt>2 Точный алгоритм построения ДОП</a>
+<br><a href="lec6.htm#3" class=punkt>3 Приближенные алгоритмы построения ДОП</a>
+</div>
+<!--начало--> 
+<a name=1></a>
+<h3>1 Определение дерева оптимального поиска</h3>
+<P>До
+сих пор предполагалось, что частота обращения ко всем вершинам дерева
+поиска одинакова. Однако встречаются ситуации, когда известна
+информация о вероятностях обращения к отдельным ключам. Обычно для
+таких ситуаций характерно постоянство ключей, т.е. в дерево не
+включаются новые вершины и не исключаются старые и структура дерева
+остается неизменной. Эту ситуацию иллюстрирует сканер транслятора,
+который определяет, является ли каждое слово программы
+(идентификатор) служебным. Статистические измерения на сотнях
+транслируемых программ могут в этом случае дать точную информацию об
+относительных частотах появления в тексте отдельных ключей.
+<P>Припишем
+каждой вершине дерева <I>V<SUB>i</SUB></I>
+вес <I>w<SUB>i</SUB></I>, пропорциональный
+частоте поиска этой вершины (например, если из каждых 100 операций
+поиска 15 операций приходятся на вершину <I>V<SUB>1</SUB></I>,
+то <I>w<SUB>1</SUB></I>=15). Сумма весов
+всех вершин дает вес дерева <I>W</I>.
+Каждая вершина <I>V<SUB>i</SUB></I>
+расположена на высоте <I>h<SUB>i</SUB></I>,
+корень расположен на высоте 1. Высота вершины равна количеству
+операций сравнения, необходимых для поиска этой вершины. Определим
+средневзвешенную высоту дерева с <I>n</I>
+вершинами следующим образом: <I>h<SUB>ср</SUB>=(w<SUB>1</SUB>h<SUB>1</SUB>+w<SUB>2</SUB>h<SUB>2</SUB>+...+w<SUB>n</SUB>h<SUB>n</SUB>)/W</I>.
+Дерево поиска, имеющее минимальную средневзвешенную высоту,
+называется <I>деревом оптимального поиска</I> (ДОП).
+<P><B>Пример</B>.
+Рассмотрим множество из трех ключей <I>V<SUB>1</SUB></I>=1,
+<I>V<SUB>2</SUB></I>=2, <I>V<SUB>3</SUB></I>=3
+со следующими весами: <I>w<SUB>1</SUB></I>=60,
+<I>w<SUB>2</SUB></I>=30, <I>w<SUB>3</SUB></I>=10,
+<I>W</I>=100. Эти три ключа можно
+расставить в дереве поиска пятью различными способами.
+<P><IMG src="img_lec/saod_html_41c85ce1.gif"><IMG src="img_lec/saod_html_2cc66e90.gif">
+<P>1. h<SUB>ср</SUB>=1.7
+
+<P>2. h<SUB>ср</SUB>=1.5
+<P><IMG src="img_lec/saod_html_m4200764b.gif"><BR>
+
+<P><IMG src="img_lec/saod_html_mb980ee7.gif"><BR>
+
+<P>
+<P>3. h<SUB>ср</SUB>=1.7
+
+<P>4. h<SUB>ср</SUB>=2.5
+<P><IMG src="img_lec/saod_html_m3d52ea.gif"><BR>
+
+<P>	<P>5. h<SUB>ср</SUB>=2.2
+<P>Рисунок 31 - Различные деревья поиска с вершинами V<sub>1</sub>=1, V<sub>2</sub>=2,
+  V<sub>3</sub>=3
+<P><A NAME="_Ref69189094"></A>
+</p> <br>
+Легко видеть, что минимальной
+средневзвешенной высотой обладает дерево 1 на рисунке 57, которое
+представляет собой список или вырожденное дерево. Дерево 3 не
+является деревом оптимального поиска, хотя представляет собой
+идеально сбалансированное дерево. Очевидно, для минимизации средней
+длины пути поиска нужно стремится располагать наиболее часто
+используемые вершины ближе к корню дерева.
+<P>Задача
+построения ДОП может ставится в двух вариантах:
+<UL>
+	<LI><P>Известны вершины и их
+	веса.
+	<LI><P>Вес
+	вершины определяется в процессе работы. Например, после каждого
+	поиска вершины ее вес увеличивается на 1. В этом случае необходимо
+	перестраивать структуру дерева при изменении весов.
+</UL>
+<P>Далее
+будем рассматривать задачу<I> </I>построения ДОП с фиксированным
+набором ключей и их весов.</P>
+
+	
+<a name=2></a>
+		<h3>2 Точный алгоритм построения ДОП</h3>
+<P>Поскольку
+число возможных конфигураций из <I>n</I>
+вершин растет экспоненциально с ростом <I>n</I>,
+то решение задачи построения ДОП при больших <I>n</I>
+методом перебора нерационально. Однако деревья оптимального поиска
+обладают свойствами, которые позволяют получить алгоритм построения
+ДОП, начиная с отдельных вершин с последовательным включением новых
+вершин в дерево. Далее будем считать, что множество вершин, входящих
+в дерево, упорядочено. Поскольку вес дерева остается неизменным, то
+вместо средневзвешенной высоты будем рассматривать взвешенную высоту
+дерева: <I>P=h<SUB>1</SUB>w<SUB>1</SUB>+h<SUB>2</SUB>w<SUB>2</SUB>+...+h<SUB>n</SUB>w<SUB>n</SUB></I>
+<P >
+<U>Свойство 1.</U> <I>Для дерева поиска с
+весом W справедливо соотношение P=P<SUB>L</SUB>+W+P<SUB>R</SUB>,
+где P<SUB>L</SUB>, P<SUB>R</SUB>
+- взвешенные высоты левого и правого поддеревьев корня.</I>
+<P><U>Доказательство</U>.
+Пусть вершина <I>V<SUB>i</SUB></I> с весом
+<I>w<SUB>i</SUB> </I>является корневой для
+некоторого <I>i=1, ...n</I>.
+Поскольку левое и правое поддеревья являются деревьями поиска, то в
+левое поддерево входят вершины <I>V<SUB>1</SUB></I>,
+<I>V<SUB>2</SUB>, </I>..., <I>V<SUB>i</SUB><SUB>-1</SUB></I>,
+а в правое - <I>V<SUB>i</SUB><SUB>+1</SUB>,
+..., V<SUB>n</SUB></I>. Взвешенные
+высоты этих поддеревьев вычисляются следующим образом.
+<P><I>P<SUB>L</SUB>
+= (h<SUB>1</SUB>-1)w<SUB>1</SUB>+(h<SUB>2</SUB>-1)w<SUB>2</SUB>+...+(h<SUB>i-1</SUB>-1)w<SUB>i-1</SUB></I>
+<P><I>P<SUB>R</SUB>
+= (h<SUB>i+1</SUB>-1)w<SUB>i+1</SUB>+ ...+ (h<SUB>n</SUB>-1)w<SUB>n</SUB></I>
+<P>Рассмотрим
+выражение взвешенной высоты для всего дерева, замечая, что <I>h<SUB>i</SUB>=1</I>
+<P><I>P=h<SUB>1</SUB>w<SUB>1</SUB>+h<SUB>2</SUB>w<SUB>2</SUB>+...+h<SUB>n</SUB>w<SUB>n</SUB>=
+(h<SUB>1</SUB>-1)w<SUB>1
+</SUB>+ w<SUB>1</SUB>+(h<SUB>2</SUB>-1)w<SUB>2</SUB>+
+w<SUB>2</SUB>...+(h<SUB>i</SUB><SUB>-1</SUB>-1)w<SUB>i</SUB><SUB>-1</SUB>
++ w<SUB>i</SUB><SUB>-1 </SUB>+</I>
+<P><I>+
+w<SUB>i </SUB> + (h<SUB>i+1</SUB>-1)w<SUB>i+1</SUB>+ w<SUB>i+1</SUB> 
+...+ (h<SUB>n</SUB>-1)w<SUB>n </SUB>+ w<SUB>n </SUB>= P<SUB>L</SUB>+W+P<SUB>R</SUB></I>
+<P >
+<U>Свойство 2.</U> <I>Все поддеревья дерева
+оптимального поиска также являются деревьями оптимального поиска для
+соответствующих подмножеств вершин.</I>
+<P><U>Доказательство</U>.
+Предположим, что одно из поддеревьев, например, правое, не является
+ДОП, т.е. существует дерево поиска с тем же множеством вершин, но с
+меньшей взвешенной высотой. Тогда по свойству 1 взвешенная высота
+всего дерева также не является минимальной. Данное противоречие
+доказывает свойство 2.
+<P>На
+основе  приведенных свойств можно разработать точный алгоритм
+построения ДОП. Обозначим <I>T<SUB>ij</SUB></I>
+- оптимальное поддерево, состоящее из вершин <I>V<SUB>i</SUB><SUB>+1</SUB>,
+..., V<SUB>j</SUB></I>. Введем матрицу
+АR=||<I>Ar<SUB>ij</SUB></I>||,
+<I>0<img src=img_lec/arr4.gif align=absmiddle>i,j<img src=img_lec/arr4.gif align=absmiddle>n</I>
+элементы которой содержат номер корневой вершины поддерева <I>T<SUB>ij</SUB></I>,
+<I>0<img src=img_lec/arr4.gif align=absmiddle>i<j<img src=img_lec/arr4.gif align=absmiddle>n</I>.
+Взвешенную высоту поддерева <I>T<SUB>ij</SUB>
+</I>обозначим <I>Ap<SUB>ij</SUB>, </I>а вес
+поддерева <I>T<SUB>ij</SUB> </I>обозначим
+<I>Aw<SUB>ij</SUB></I>, <I>0<img src=img_lec/arr4.gif align=absmiddle>i<j<img src=img_lec/arr4.gif align=absmiddle>n.
+</I> Очевидно, что <I>P=Ap<SUB>o</SUB><SUB>,n</SUB>,
+W=Aw<SUB>o</SUB><SUB>,n</SUB>,
+Т<SUB>ii</SUB> </I>- пустые деревья
+(без вершин), <I>Aw<SUB>ii</SUB></I>=0,
+<I>Ap<SUB>ii</SUB></I>=0, <I>i=1,
+...n. </I>
+
+<P>Используя
+свойство 2, величины <I>Aw<SUB>ij</SUB>,
+Ap<SUB>ij</SUB></I> можно вычислить
+рекуррентно по следующим соотношениям (для всех возможных
+поддеревьев): 
+
+<P><I>Aw<SUB>ij</SUB>=Aw<SUB>i,j-1</SUB>+Aw<SUB>j</SUB>,
+               0<img src=img_lec/arr4.gif align=absmiddle> i < j <img src=img_lec/arr4.gif align=absmiddle> n 		</I>(1)
+<P><I>Ap<SUB>ij</SUB>=Aw<SUB>ij</SUB>+</I>min
+<I>(Ap<SUB>i,k-1</SUB>+Ap<SUB>k,j</SUB>), 0<img src=img_lec/arr4.gif align=absmiddle> i < j <img src=img_lec/arr4.gif align=absmiddle> n</I>
+		(2)
+<P>
+<I>i<k<img src=img_lec/arr4.gif align=absmiddle>j</I>
+<P>Во
+время вычислений будем запоминать индекс <I>k<SUP>*</SUP></I>,
+при котором достигается минимум во втором соотношении. Значение <I>k<SUP>*</SUP></I>
+является индексом корневой вершины поддерева <I>T<SUB>ij</SUB></I>
+во всем множестве вершин. Занесем в матрицу <I>АR
+</I> <I>k<SUP>*</SUP></I> -индекс
+корня <I>T<SUB>ij</SUB></I>, т.е. <I>Ar<SUB>ij</SUB>
+= k<SUP>*</SUP></I>, <I>0<img src=img_lec/arr4.gif align=absmiddle>i<j<img src=img_lec/arr4.gif align=absmiddle>n.</I>
+
+
+<P>Идея
+построения дерева состоит в следующем. В матрице <I>АR
+</I>берем значение <I>Ar<SUB>o</SUB><SUB>,n</SUB></I>
+(номер корневой вершины всего дерева в упорядоченном массиве вершин),
+пусть оно равно <I>k</I>. Добавляем вершину
+<I>V<SUB>k</SUB><SUB> </SUB> </I>в дерево,
+используя обычный алгоритм добавления вершин в дерево поиска. Затем
+из матрицы <I>АR </I>берем значения <I>Ar<SUB>o</SUB><SUB>,k-1</SUB></I>
+и добавляем вершину с этим номером в левое поддерево. Далее берем
+<I>Ar<SUB>k,n</SUB></I>
+и добавляем вершину с этим номером в правое поддерево и т.д. 
+
+<P><B>Пример.</B>
+Построить дерево оптимального поиска с вершинами <I>V<SUB>1</SUB></I>=1,
+<I>V<SUB>2</SUB></I>=2, <I>V<SUB>3</SUB></I>=3
+и весами <I>w<SUB>1</SUB></I>=60, <I>w<SUB>2</SUB></I>=30,
+<I>w<SUB>3</SUB></I>=10. Сначала вычислим
+<I>Aw<SUB>ij</SUB>, Ap<SUB>ij</SUB><SUB>,</SUB>
+Ar<SUB>ij</SUB>, 0<img src=img_lec/arr4.gif align=absmiddle>i<j<img src=img_lec/arr4.gif align=absmiddle>n.
+</I> Легко видеть, что 
+
+<P>
+<I>T<SUB>00</SUB>,
+T<SUB>11</SUB>, T<SUB>22</SUB>,
+T<SUB>33</SUB> </I>- пустые
+поддеревья
+<P>
+<I>T<SUB>01</SUB>,
+T<SUB>12</SUB>, T<SUB>23</SUB></I>
+- поддеревья из одной вершины (1), (2), (3)
+<P>
+<I>T<SUB>02</SUB>,
+T<SUB>13</SUB></I> - поддеревья из
+двух вершин (1,2) и (2,3)
+<P>
+<I>T<SUB>03</SUB></I>
+- поддерево из трех вершин (1,2,3)
+<P>По
+формулам (1) и (2) вычислим элементы матрицы весов <I>AW</I>
+и элементы матрицы взвешенных высот <I>AP</I>,
+значения матрицы <I>АR</I> запишем в
+верхних уголках ячеек матрицы <I>АP.</I>
+<P>
+<img src="img_lec/tables.gif" width="292" height="297"><BR>
+<P><img src="img_lec/formuls.gif" width="572" height="268"><BR>
+<P>Корневой
+вершиной будет вершина <I>V<SUB>1</SUB></I>,
+поскольку <I>Аr<SUB>0,3</SUB>=1. </I> Левое
+поддерево пустое, корень правого поддерева - вершина <I>V<SUB>2
+</SUB>(r<SUB>1,3</SUB>=2) </I>и т.д.
+Полученное дерево показано на рисунке.
+
+<P>
+<IMG src="img_lec/saod_html_41c85ce1.gif"><BR>
+
+Рисунок 32 - ДОП для <span class="style1">w</span><sub>1</sub>=60, <span class="style1">w</span><sub>2</sub>=30, <span class="style1">w</span><sub>3</sub>=10
+</p> <br>
+<P>Поскольку
+существует около <I>n</I><SUP>2</SUP>/2
+значений <I>Аp<SUB>ij</SUB></I><SUB> </SUB>,
+а вычисление (2) требует выбора одного из <I>0<i-j<img src=img_lec/arr4.gif align=absmiddle>
+n</I> значений, то весь процесс будет
+занимать О(<I>n</I><SUP>3</SUP>) операций при <I>n<img src=img_lec/rar.gif align=absmiddle><img src=img_lec/i18.gif align=absmiddle>.</I>
+Д. Кнут отмечает, что можно избавиться от одного множителя <I>n
+</I>и тем самым сохранить практическую ценность алгоритма. Поиск <I>Аr<SUB>ij</SUB>
+</I>можно ограничить, то есть сократить число вычислений до <I>j-i</I>
+(если найден корень оптимального поддерева <I>T<SUB>ij</SUB></I>,
+то ни добавление справа новой вершины, ни отбрасывание левой вершины
+не могут сдвинуть вправо этот оптимальный корень). Это свойство
+выражается соотношением <I>Аr<SUB>i,j-1
+</SUB><img src=img_lec/arr4.gif align=absmiddle> Аr<SUB>ij</SUB><SUB> </SUB><img src=img_lec/arr4.gif align=absmiddle>
+Аr<SUB>i</SUB><SUB>+1,j</SUB></I><SUB>
+</SUB>, что и ограничивает поиск <I>Аr<SUB>ij</SUB></I>
+диапазоном <I>Аr<SUB>i,j-1</SUB>...Аr<SUB>i</SUB><SUB>+1,j</SUB></I>.
+Это уменьшает трудоемкость алгоритма до О(<I>n</I><SUP>2</SUP>)
+операций при <I>n<img src=img_lec/rar.gif align=absmiddle><img src=img_lec/i18.gif align=absmiddle>.</I>
+<P>
+<I><B>Алгоритм на псевдокоде</B></I>
+<P>
+<I>Вычисление матрицы весов AW (формула 1).</I>
+<P>DO (i = 0,...,n)
+<P>&nbsp;&nbsp;&nbsp;DO (j = i+1,...,n)
+<P>&nbsp;&nbsp;&nbsp;&nbsp;Aw<SUB>ij</SUB> := Aw<SUB>i,j-1</SUB> + w<SUB>j</SUB>
+<P>&nbsp;&nbsp;&nbsp;OD
+<P>OD
+<P>
+<BR>
+
+<P>
+<I><B>Алгоритм на псевдокоде</B></I>
+<P>
+<I>Вычисление матриц AP и AR (формула 2).</I>
+<p>
+<img src=img_lec/a4.gif align=absmiddle>
+<P>
+<I><B>Алгоритм на псевдокоде</B></I>
+<P><I>Создание дерева (L,R - границы массива вершин V,</I>
+<P> <I>Root -указатель на корень дерева)</I>
+<P>IF (L < R) 
+<P>&nbsp;&nbsp;&nbsp;k:= Ar<SUB>L,R</SUB>
+<P>&nbsp;&nbsp;&nbsp;Добавить (Root, V<SUB>k</SUB>)
+<P>&nbsp;&nbsp;&nbsp;Создание дерева (L,k-1)
+<P>&nbsp;&nbsp;&nbsp;Создание дерева (k,R)
+<P>FI
+<P>
+NIL.
+<a name=3></a>
+<h3>3 Приближенные алгоритмы построения ДОП </h3>
+<P>Рассмотренный
+выше точный алгоритм имеет квадратичную трудоемкость. Однако при
+больших объемах деревьев такие алгоритмы становятся неэффективными.
+Известны быстрые алгоритмы, строящие почти оптимальные деревья.
+Рассмотрим два из них.
+<P><I>Первый
+алгоритм</I> (А1) предлагает в качестве корня использовать вершину с
+наибольшим весом. Затем среди оставшихся вершин снова выбирается
+вершина с наибольшим весом и помещается в левое или правое поддерево
+в зависимости от ее значения, и т.д. 
+
+<P>
+<BR>
+
+<P>
+<I><B>Алгоритм на псевдокоде</B></I>
+<P>
+<I>Алгоритм А1(Root
+- указатель на корень дерева)</I>
+<P>Обозначим 
+
+<P>V.use
+- логическая переменная в структуре вершины дерева, которая
+показывает, что данная вершина была использована при построении
+дерева;
+<P>V.w
+- вес вершины.
+<P>
+<BR>
+
+<P>
+Root : = NIL
+<P>
+DO (i = 1,...,n)
+<P>
+V[i].use = ЛОЖЬ
+
+
+<P>
+OD
+<P>
+DO (i = 1,...,n)
+<P >
+max:=0, Index:=0
+<P >
+DO (j = 1,...,n)
+<P STYLE="margin-left: 2.5cm; text-indent: 1.25cm">
+IF (V[j].w > max и
+V[j]. use=ЛОЖЬ)
+<P STYLE="margin-left: 3.75cm; text-indent: 1.25cm">
+max:=V[j].w
+<P STYLE="margin-left: 3.75cm; text-indent: 1.25cm">
+Index:=j
+<P STYLE="margin-left: 2.5cm; text-indent: 1.25cm">
+FI
+<P >
+OD
+<P >
+V [index].use :=ИСТИНА
+<P >
+Добавление в СДП (Root,
+V[index])
+<P>
+OD
+<P>Рассмотрим
+пример построения дерева почти оптимального поиска для символов
+строки К У Р А П О В А  Е Л Е Н А  В И К Т О Р О В Н А. Всего
+символов в строке 23, т.е. W=23. Различные
+символы определяют различные вершины дерева. Частоты вхождения
+символов (веса) приведены в таблице. 
+
+<P ALIGN=LEFT>Таблица
+1 - Частоты вхождения символов в строку
+<!--CENTER-->
+	<TABLE WIDTH=400 BORDER=1 CELLPADDING=7 CELLSPACING=0>
+		<TR VALIGN=TOP>
+			<TD >
+				<P>К
+			</TD>
+			<TD>
+				<P>У
+			</TD>
+			<TD>
+				<P>Р
+			</TD>
+			<TD>
+				<P>А
+			</TD>
+			<TD>
+				<P>П
+			</TD>
+			<TD>
+				<P>О
+			</TD>
+			<TD>
+				<P>В
+			</TD>
+			<TD>
+				<P>Е
+			</TD>
+			<TD>
+				<P>Л
+			</TD>
+			<TD>
+				<P>Н
+			</TD>
+			<TD>
+				<P>И
+			</TD>
+			<TD>
+				<P>Т
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD HEIGHT=10>
+				<P>2
+			</TD>
+			<TD>
+				<P>1
+			</TD>
+			<TD>
+				<P>2
+			</TD>
+			<TD>
+				<P>4
+			</TD>
+			<TD>
+				<P>1
+			</TD>
+			<TD>
+				<P>3
+			</TD>
+			<TD>
+				<P>3
+			</TD>
+			<TD>
+				<P>2
+			</TD>
+			<TD>
+				<P>1
+			</TD>
+			<TD>
+				<P>2
+			</TD>
+			<TD>
+				<P>1
+			</TD>
+			<TD>
+				<P>1
+			</TD>
+		</TR>
+	</TABLE>
+<!--/CENTER-->
+
+<P>Посчитаем
+средневзвешенную высоту построенного дерева
+<P>P=4<B><SUP>.</SUP></B>1+3<B><SUP>.</SUP></B>2+3<B><SUP>.</SUP></B>3+2<B><SUP>.</SUP></B>3+2<B><SUP>.</SUP></B>4+1<B><SUP>.</SUP></B>4+1<B><SUP>.</SUP></B>4+2<B><SUP>.</SUP></B>5+
++2<B><SUP>.</SUP></B>5+1<B><SUP>.</SUP></B>5+1<B><SUP>.</SUP></B>6+1<B><SUP>.</SUP></B>6=78
+<P>h<SUB>ср</SUB>=P/W=78/23=3,39
+<P>  <img src="img_lec/saod_html_77884a.gif">
+<P>Рисунок 33 - Дерево, построенное приближенным алгоритмом А1 </p>
+<br>
+<P><I>Второй
+алгоритм</I> (А2) использует предварительно упорядоченный набор
+вершин. В качестве корня выбирается такая вершина, что разность весов
+левого и правого поддеревьев была минимальна. Для этого путем
+последовательного суммирования весов определим вершину <I>V<SUB>k</SUB></I>,
+для которой справедливы неравенства:
+<P><IMG src="img_lec/saod_html_1a7210e.gif" ALIGN=ABSMIDDLE>
+и 
+<IMG src="img_lec/saod_html_71819251.gif" ALIGN=ABSMIDDLE >.
+<P>Тогда в
+качестве "центра тяжести" может быть выбрана вершина <I>V<SUB>k</SUB>,
+V<SUB>k</SUB><SUB>-1</SUB></I> или <I>V<SUB>k</SUB><SUB>+1</SUB></I>,
+т. е. вершина, для которой разность весов левого и правого поддерева
+минимальна. Далее действия повторяются для каждого поддерева
+<P><BR>
+
+<I><B>Алгоритм на псевдокоде</B></I>
+<P><I>Алгоритм А2(Root- указатель на корень дерева, </I>
+<P><I>L, R - левая и правая границы рабочей части массива)</I>
+<p>
+<img src=img_lec/a5.gif>
+<P><B>Пример.</B>
+Рассмотрим процесс построения приближенного ДОП алгоритмом А2 для
+строки символов из предыдущего примера. Предварительно упорядочим
+символы по алфавиту.
+<P>Таблица
+2 - Упорядоченный набор вершин
+<!--CENTER-->
+	<TABLE WIDTH=590 BORDER=1 BORDERCOLOR="#000000" CELLPADDING=7 CELLSPACING=0>
+		<TR VALIGN=TOP>
+			<TD WIDTH=34>
+				А
+			</TD>
+			<TD>
+				В
+			</TD>
+			<TD>
+				Е
+			</TD>
+			<TD>
+				И
+			</TD>
+			<TD>
+				К
+			</TD>
+			<TD>
+				Л
+			</TD>
+			<TD>
+				Н
+			</TD>
+			<TD>
+				О
+			</TD>
+			<TD>
+				П
+			</TD>
+			<TD>
+				Р
+			</TD>
+			<TD>
+				Т
+			</TD>
+			<TD>
+				У
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=34>
+				4
+			</TD>
+			<TD>
+				3
+			</TD>
+			<TD>
+				2
+			</TD>
+			<TD>
+				1
+			</TD>
+			<TD>
+				2
+			</TD>
+			<TD>
+				1
+			</TD>
+			<TD>
+				2
+			</TD>
+			<TD>
+				3
+			</TD>
+			<TD>
+				1
+			</TD>
+			<TD>
+				2
+			</TD>
+			<TD>
+				1
+			</TD>
+			<TD>
+				1
+			</TD>
+		</TR>
+	</TABLE>
+<!--/CENTER-->
+<P>В качестве
+корня дерева выбираем вершину <I>V<SUB>5</SUB>=</I>К,
+поскольку 
+
+<IMG src="img_lec/saod_html_179dcd91.gif" ALIGN=MIDDLE>,
+<IMG src="img_lec/saod_html_32e08eb8.gif" ALIGN=MIDDLE >.
+<P>Все
+вершины левее вершины <I>V<SUB>5  </SUB></I>образуют
+левое поддерево, вершины правее <I>V<SUB>5</SUB></I>
+- правое поддерево. Далее алгоритм применяется для каждого из
+поддеревьев в отдельности. Посчитаем средневзвешенную высоту
+построенного дерева.
+<P>P=2<B><SUP>.</SUP></B>1+3<B><SUP>.</SUP></B>2+3<B><SUP>.</SUP></B>2+4<B><SUP>.</SUP></B>3+2<B><SUP>.</SUP></B>3+2<B><SUP>.</SUP></B>3+2<B><SUP>.</SUP></B>3+1<B><SUP>.</SUP></B>4+1<B><SUP>.</SUP></B>4+1<B><SUP>.</SUP></B>4+1<B><SUP>.</SUP></B>4+1<B><SUP>.</SUP></B>5=65
+<P>h<SUB>ср</SUB>=65/23=2.82
+<P><BR>
+
+<P><BR>
+
+
+
+<P>
+<IMG src="img_lec/saod_html_m72ccc6a9.gif"><BR>
+Рисунок 34 - Дерево,
+построенное приближенным алгоритмом А2
+</P><BR>
+
+<P>Приведем некоторые
+свойства рассмотренных приближенных алгоритмов:
+<OL>
+	<LI><P>Сложность
+	алгоритмов как функция от <I>n </I>(количество
+	элементов) зависит следующим образом: время Т = О(<I>n</I>
+	log <I>n</I>),
+	память М = О(<I>n</I>) при<I> n<img src=img_lec/rar.gif align=absmiddle><img src=img_lec/i18.gif align=absmiddle>.
+	</I>(Время определяется трудоемкостью сортировки элементов, а память
+	- размером массива для хранения элементов)
+	<LI><P>Дерево,
+	построенное приближенным алгоритмом А1, равносильно случайному (с
+	точки зрения средней высоты) при <I>n<img src=img_lec/rar.gif align=absmiddle><img src=img_lec/i18.gif align=absmiddle>,
+	</I>т.е. алгоритм А1- плохой<I>.</I>
+	<LI><P>Дерево,
+	построенное приближенным алгоритмом А2, асимптотически приближается
+	к оптимальному (с точки зрения средней высоты) при <I>n<img src=img_lec/rar.gif align=absmiddle><img src=img_lec/i18.gif align=absmiddle>,
+	</I>т.е. алгоритм А2 является хорошим.
+	<LI><P>ИСДП
+	нельзя считать даже приближением к дереву оптимального поиска.
+</OL>
+
+<h3>Контрольные вопросы</h3>
+<OL>
+	<LI>Сформулируйте задачу построения ДОП. 
+	<LI>Что такое ДОП? 
+	<LI>Что такое средневзвешенная высота ДОП?
+	<LI>Сформулируйте основные свойства ДОП.
+	<LI>Назовите	приближенные алгоритмы построения ДОП.
+	<LI>Назовите основные свойства приближенных алгоритмов ДОП.
+</OL><hr>
+<!-- конец содержания-->	
+				
+				</div>
+			</div>
+			
+            </div>
+        </div>
+    </div>
+	
+	<!--Меню навигации по лекциям -->	
+	<div aria-label="..." class = "nav-menu">
+	  <ul class="pager  background-transition-slow" >
+		 <li title="Наверх" style = "margin-right:15px;	"><a class = "glyphicon glyphicon-menu-up page-scroll" href="#page-top" ></a></li>
+		 <li title="К предыдущей лекции"><a class = "glyphicon glyphicon-menu-left page-scroll" href="lec5.htm" ></a></li>
+		 <li title="В содержание"><a class = "glyphicon glyphicon-list-alt" href="lec_index.htm" ></a></li>
+		 <li title="К следующей лекции"><a class = "glyphicon glyphicon-menu-right page-scroll" href="prilA.htm" ></a></li>
+	  </ul>
+	</div>
+	<!---->
+	
+	</div>
+    <!-- jQuery -->
+    <script src="../lib/js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../lib/js/bootstrap.min.js"></script>
+
+    <!-- Scrolling Nav JavaScript -->
+    <script src="../lib/js/jquery.easing.min.js"></script>
+    <script src="../lib/js/scrolling-nav.js"></script>
+
+</body>
+
+</html>
