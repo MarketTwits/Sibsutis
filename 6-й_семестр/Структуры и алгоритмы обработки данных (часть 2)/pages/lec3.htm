@@ -1,0 +1,306 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="do.sibsutis.ru">
+
+    <title>Лекция 3. Конспект лекций</title>
+	
+	<link rel="icon" type="image/png" href="../lib/css/favicon.png">
+    <!-- Bootstrap Core CSS -->
+    <link href="../lib/css/bootstrap.css" rel="stylesheet">
+	
+    <!-- Custom CSS -->
+    <link href="../lib/css/scrolling-nav.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<!-- The #page-top ID is part of the scrolling feature - the data-spy and data-target are part of the built-in Bootstrap scrollspy function -->
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top" >
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <li class="hidden"> <a class="page-scroll" href="#page-top"></a> </li>
+	  
+	  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+	  
+      <a class="navbar-brand " href="../index.htm"> 
+   <text class = "hidden-xs">Структуры и алгоритмы обработки данных (часть 2)</text> 
+   <text class = "visible-xs">САОД2</text>
+	  </a>
+    </div>
+
+    <!-- Collect the nav links, forms, and glyphicon glyphicon-list-alt content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      
+	  <!-- <ul class="nav navbar-nav">
+		<li><a href="#"></a></li> 
+      </ul> -->
+	
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+		<button type="button" class="navbar-toggle dropdown-toggle hidden-xs" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" >
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		</button>	      
+		<a class = "dropdown-toggle visible-xs" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Материалы</a>
+          <ul class="dropdown-menu">
+            <li><a href="../index.htm">Аннотация курса</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="lec_index.htm">Теория</a></li>
+            <li><a href="questns.htm">Экзаменационное задание</a></li>
+           <li role="separator" class="divider"></li>
+            <li><a href="course_work.htm">Курсовой проект</a></li>
+                        <li role="separator" class="divider"></li>
+            <li><a href="labs.htm">Лабораторные работы</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="lit.htm">Литература</a></li>
+          </ul>
+ </li>
+  </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+
+    <!-- Intro Section -->
+	<!-- Секция с информацией "Уважаемый слушатель"	 -->
+    <div id="intro" class="section content-section ">
+        <div class="container">
+             <div class="row">
+                <div class="col-lg-12">	
+
+
+<!-- содержание -->	
+<div class="page-header">
+<h3>Глава 3 АВЛ-дерево</h3>
+<p><a href="lec3.htm#1" class=punkt>1 Определение АВЛ-дерева</a>
+<br><a href="lec3.htm#2" class=punkt>2 Добавление вершины в дерево</a>
+<br><a href="lec3.htm#3" class=punkt>3 Удаление вершины из дерева</a>
+</div>
+
+<!--начало--> 
+<a name=1></a>
+<h3>1 Определение случайного дерева поиска</h3>
+
+<P>
+При решении многих типов задач объем данных
+заранее неизвестен, но необходима такая структура данных, для которой
+достаточно быстро выполняются операции поиска, добавления и удаления
+вершин. Одно из решений этой проблемы построение <I>случайного дерева
+поиска<B> </B></I>(СДП). При построении СДП данные поступают
+последовательно в произвольном порядке и добавление нового элемента
+происходит в уже имеющееся дерево. 
+
+<P><B>Пример</B>
+случайного дерева поиска для последовательности  D:
+
+B  9  2  4  1  7  E  F 
+A  D  C  3  5  8  6
+<P>приведен
+на рисунке 6.
+<p>
+<IMG src="img_lec/saod_html_mccba3dc.gif"><BR>
+Рисунок 6 - Случайное дерево поиска </p>
+<br>
+<P>Это
+дерево не является ИСДП. В худшем случае СДП может выродиться в
+список.
+<P><B><IMG src="img_lec/saod_html_m31f3c96.gif" width="499" height="210"></B>
+<P>Рисунок 7 Плохие СДП </p>
+<BR>
+<P>Таким
+образом, средняя  высота случайного дерева поиска может изменяться в
+пределах log <I>n</I>
+< h<SUB>ср cд
+</SUB>< <I>n</I> при больших <I>n</I>.
+В [1] показано, что 
+
+<P>(
+h<SUB>ср сд</SUB> / h<SUB>ср
+исдп</SUB>) =<SUB> </SUB>2ln 2 = 1,386... 
+и h<SUB>ср сд</SUB> =О(log
+<I>n</I>) при <I>n<img src=img_lec/rar.gif align=middle> <img src=img_lec/i18.gif align=middle>.</I>
+<a name=2></a>
+<h3>2 Добавление вершины в дерево</h3>
+<P>
+Алгоритм добавления вершины в СДП
+заключается в следующем. Если дерево пустое, то создается корневая
+вершина, в которую записываются данные. В противном случае вершина
+добавляется к левому или правому поддереву в зависимости от
+результата сравнения с данными в текущей вершине.
+<P>
+При создании новой вершины нужно будет изменить значение
+указателя на нее, поэтому нам понадобиться указатель на указатель
+(двойная косвенность). На языках высокого уровня двойная косвенность
+обычно может быть реализована с помощью ссылки на указатель.
+<P>
+type pVertex = ^tVertex;
+<P>
+var p: ^pVertex;
+<P><I><B>Алгоритм на псевдокоде</B></I>
+<P><I>Добавление в СДП (D, *Root)</I>
+<P >Описание переменных: 	Root- указатель на корень дерева.
+<P >	D -данные, которые необходимо добавить.
+<P >	P -указатель на указатель на вершину дерева.
+<P>	p:= @Root
+<P>
+	DO (*p <img src=img_lec/no.gif align=absmiddle> NIL)
+<P>&nbsp;&nbsp;&nbsp;	IF (D < (*p)<img src=img_lec/rar.gif align=absmiddle>Data) p := @((*p)<img src=img_lec/rar.gif align=absmiddle>Left)
+<P>&nbsp;&nbsp;&nbsp;		ELSEIF (D > (*p)<img src=img_lec/rar.gif align=absmiddle>Data) p := @((*p)<img src=img_lec/rar.gif align=absmiddle>Right)
+<P>&nbsp;&nbsp;&nbsp;		ELSE 
+OD {данные с ключом D уже есть в дереве}	
+<P>
+OD
+<P>
+IF (*p = NIL)
+<P>&nbsp;&nbsp;&nbsp;	new(*p), (*p)<img src=img_lec/rar.gif align=absmiddle>Data := D,
+<P>&nbsp;&nbsp;&nbsp;	(*p)<img src=img_lec/rar.gif align=absmiddle>Right := NIL, (*p)<img src=img_lec/rar.gif align=absmiddle>Left := NIL
+<P>
+FI
+
+
+<P><B>Пример</B>.
+Построение дерева для последовательности  В  9 
+
+<P>
+1). D = B 							2). D = 9 
+
+<P>
+<IMG src="img_lec/saod_html_m5d780451.gif" HSPACE=12>
+<P>Рисунок 8 - Добавление вершины В </p>
+<BR>
+<P>
+<IMG src="img_lec/saod_html_m4a2fb7cc.gif" HSPACE=12>
+<P>Рисунок 9 - Добавление вершины 9 </p>
+<BR>
+<P>
+Нетрудно видеть, что
+трудоемкость добавления вершины в случайное дерево поиска сравнима по
+порядку величины с трудоемкостью поиска в двоичном дереве, т.е. С
+<SUB>ср </SUB>= О(>log <I>>n</I>),
+<I>n<img src=img_lec/rar.gif align=middle> <img src=img_lec/i18.gif align=middle>.</I></P>
+
+<a name=3></a>
+		<h3>3 Удаление вершины из дерева</h3>
+<P>
+Алгоритм удаления вершины с ключом равным X
+из случайного дерева поиска состоит в следующем. Сначала нужно найти
+вершину с ключом равными X. Если найденная
+вершина имеет не более одного поддерева, то её просто удаляем. На
+рисунке 10 показаны различные варианты расположения вершин. Удаляемая
+вершина выделена черным цветом.
+<P>
+<IMG src="img_lec/saod_html_3151c79e.gif" HSPACE=12> 
+<p> Рисунок 10 - Варианты удаления вершин</p>
+<BR>
+<P><A NAME="_Ref68680225"></A>
+Если найденная вершина имеет два поддерева
+(рис. 11), то тогда порядок действий следующий. На место удаляемой
+вершины ставится наибольшая вершина из левого поддерева (наименьшая
+из правого поддерева), т.е. самая правая вершина левого поддерева
+(самая левая из правого поддерева), которая не имеет правого
+поддерева (левого поддерева) (рис. 12).
+<P>
+<IMG src="img_lec/saod_html_m49969c29.gif" HSPACE=12><BR>
+Рисунок 11 - Удаляемая вершина с двумя поддеревьями </p>
+<br>
+<P><IMG src="img_lec/saod_html_m17b6052b.gif" HSPACE=12><BR>
+<P><A NAME="_Ref68680314"></A>
+<p>Рисунок 12 - Порядок изменения указателей при удалении
+вершины </p>
+<br>
+<P><I><B>Алгоритм на псевдокоде</B></I>
+<P><I>Удаление из СДП (Х, *Root)</I>
+<P>Обозначения 
+<P>	p:= @Root
+<P>	DO(*p <img src=img_lec/no.gif align=absmiddle> NIL)
+<P>	&nbsp;&nbsp;&nbsp;	IF((*p)<img src=img_lec/rar.gif align=absmiddle>Data < X) p := @((*p)<img src=img_lec/rar.gif align=absmiddle>Right)
+<P>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;		ELSEIF ((*p)<img src=img_lec/rar.gif align=absmiddle>Data > X) p := @((*p)<img src=img_lec/rar.gif align=absmiddle>Left)
+<P>&nbsp;&nbsp;&nbsp;		ELSE  OD
+<P>&nbsp;&nbsp;&nbsp;		FI
+<P>	OD
+<P>	IF (*p <img src=img_lec/no.gif align=absmiddle> NIL)
+<P>&nbsp;&nbsp;&nbsp;		q := *p
+<P > &nbsp;&nbsp;&nbsp;IF (q<img src=img_lec/rar.gif align=absmiddle>Left = NIL) *p := q<img src=img_lec/rar.gif align=absmiddle>Right
+<P> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; ELSEIF (q<img src=img_lec/rar.gif align=absmiddle>Right = NIL) *p :=q<img src=img_lec/rar.gif align=absmiddle>Left
+<P> &nbsp;&nbsp;&nbsp;ELSE r := q<img src=img_lec/rar.gif align=absmiddle>Left, s := q
+<P> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;	DO (r<img src=img_lec/rar.gif align=absmiddle>Right <img src=img_lec/no.gif align=absmiddle> NIL)
+<P> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; s := r, r := r<img src=img_lec/rar.gif align=absmiddle>Right 
+<P> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;	OD
+<P> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;	s<img src=img_lec/rar.gif align=absmiddle>Right := r<img src=img_lec/rar.gif align=absmiddle>Left           1)
+<P> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;  	r<img src=img_lec/rar.gif align=absmiddle>Left := q<img src=img_lec/rar.gif align=absmiddle>Left             2)
+<P> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 	r<img src=img_lec/rar.gif align=absmiddle>Right := q<img src=img_lec/rar.gif align=absmiddle>Right        3)
+<P> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 	*p := r                                     4)
+<P>&nbsp;&nbsp;&nbsp;		FI
+<P>
+	dispose(q)
+<P>
+FI
+<P>
+Трудоемкость удаления вершины складывается
+из конечного количества операций сравнения и присваивания на каждом
+шаге поиска в дереве. Таким образом, трудоемкость удаления такая же,
+как и в случае добавления в случайное дерево поиска.</P>
+
+		<h3>Контрольные вопросы</h3>
+<OL>
+	<LI>Что такое случайное дерево поиска?</li>
+	<LI>Какова 	средняя высота СДП?</li>
+	<LI>Какова 	трудоемкость добавления и удаления вершины в СДП?</li>
+	<LI>Каким 	образом вершина удаляется из СДП?</li>
+</OL><hr>
+
+<!-- конец содержания-->	
+				
+				</div>
+			</div>
+			
+            </div>
+        </div>
+    </div>
+	
+	<!--Меню навигации по лекциям -->	
+	<div aria-label="..." class = "nav-menu">
+	  <ul class="pager  background-transition-slow" >
+		 <li title="Наверх" style = "margin-right:15px;	"><a class = "glyphicon glyphicon-menu-up page-scroll" href="#page-top" ></a></li>
+		 <li title="К предыдущей лекции"><a class = "glyphicon glyphicon-menu-left page-scroll" href="lec2.htm" ></a></li>
+		 <li title="В содержание"><a class = "glyphicon glyphicon-list-alt" href="lec_index.htm" ></a></li>
+		 <li title="К следующей лекции"><a class = "glyphicon glyphicon-menu-right page-scroll" href="lec4.htm" ></a></li>
+	  </ul>
+	</div>
+	<!---->
+	
+	</div>
+    <!-- jQuery -->
+    <script src="../lib/js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../lib/js/bootstrap.min.js"></script>
+
+    <!-- Scrolling Nav JavaScript -->
+    <script src="../lib/js/jquery.easing.min.js"></script>
+    <script src="../lib/js/scrolling-nav.js"></script>
+
+</body>
+
+</html>

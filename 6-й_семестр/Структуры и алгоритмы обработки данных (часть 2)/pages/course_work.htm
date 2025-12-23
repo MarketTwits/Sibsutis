@@ -1,0 +1,1778 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="do.sibsutis.ru">
+
+    <title>Курсовой проект</title>
+	
+	<link rel="icon" type="image/png" href="../lib/css/favicon.png">
+    <!-- Bootstrap Core CSS -->
+    <link href="../lib/css/bootstrap.css" rel="stylesheet">
+	
+    <!-- Custom CSS -->
+    <link href="../lib/css/scrolling-nav.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<!-- The #page-top ID is part of the scrolling feature - the data-spy and data-target are part of the built-in Bootstrap scrollspy function -->
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top" >
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <li class="hidden"> <a class="page-scroll" href="#page-top"></a> </li>
+	  
+	  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+	  
+      <a class="navbar-brand " href="../index.htm"> 
+						<text class = "hidden-xs">Структуры и алгоритмы обработки данных (часть 2)</text> 
+						<text class = "visible-xs">САОД2</text>
+	  </a>
+    </div>
+
+    <!-- Collect the nav links, forms, and glyphicon glyphicon-list-alt content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      
+	  <!-- <ul class="nav navbar-nav">
+		<li><a href="#"></a></li> 
+      </ul> -->
+	
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+		<button type="button" class="navbar-toggle dropdown-toggle hidden-xs" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" >
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		</button>	      
+		<a class = "dropdown-toggle visible-xs" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Материалы</a>
+          <ul class="dropdown-menu">
+            <li><a href="../index.htm">Аннотация курса</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="lec_index.htm">Теория</a></li>
+                        <li><a href="questns.htm">Экзаменационное задание</a></li>
+            <li role="separator" class="divider"></li>			
+            <li><a href="course_work.htm">Курсовой проект</a></li>
+                        <li role="separator" class="divider"></li>
+            <li><a href="labs.htm">Лабораторные работы</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="lit.htm">Литература</a></li>
+          </ul>
+ </li>
+  </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+
+    <!-- Intro Section -->
+	<!-- Секция с информацией "Уважаемый слушатель"	 -->
+    <div id="intro" class="section content-section ">
+        <div class="container">
+             <div class="row">
+                <div class="col-lg-12">	
+
+
+<!-- содержание -->	
+<div class="page-header">
+<h3>Курсовой проект</h3>
+</div>
+
+<h3>Правила выполнения и оформления курсвового проекта</h3>
+
+<ol>
+<li>При выполнении курсового
+проекта необходимо строго придерживаться указанных ниже правил. Работы,
+выполненные без соблюдения этих правил, не засчитываются и возвращаются
+студенту для переработки.</li>
+
+<li>Курсовой проект выполняется
+только на языке программирования С/С++ в удобной для студента среде
+программирования.</li>
+
+<li>Работа должна быть выполнена
+строго по своему варианту. Курсовые проекты, содержащие не все заданияили задания
+не своего варианта, отправляются на доработку без проверки.</li>
+
+<li>В
+ходе выполнения курсового проекта должна быть создана пpогpамма,
+выполняющая поставленную задачу, и офоpмлен отчет,
+включающий в себя следующие pазделы:
+<ul>
+<li class="punkt2">титульный лист;</li>
+
+<li class="punkt2">постановка задачи для конкpетного ваpианта</li>
+
+<li class="punkt2">кpаткое изложение основных идей и хаpактеpистик пpименяемых алгоpитмов (соpтиpовка, поиск,
+построение дерева и пр.) и стpуктуp данных;</li>
+
+<li class="punkt2">pаспечатка текста  пpогpаммы  с комментариями;</li>
+
+<li class="punkt2">pаспечатка pезультатов  (в виде  скриншотов ). </li>
+</ul>
+<li>При выполнении заданий следует обеспечить вывод на экран
+данных на всех шагах алгоритма. Программа должна иметь дружественный,
+интуитивно понятный интерфейс (меню пользователя, вывод подсказок, комментарии
+при вводе/выводе данных и т.д.).</li>
+
+<li>В курсовой проект необходимо
+включить файлы с прокомментированным исходным кодом и исполняемые файлы
+программы.</li>
+</ol>
+<p>
+После получения
+прорецензированной работы с неудовлетворительной оценкой студент должен
+исправить все отмеченные ошибки и недочеты, выполнить все рекомендации и
+прислать для повторной проверки в короткий срок. При высылаемых исправленияхдолжны
+обязательно находиться прорецензированная работа и <u>рецензия к ней</u>. 
+</p>
+
+<p>Без выполненного курсового проекта студент к экзамену не допускается.</p>
+
+
+<h3>Задание
+для курсового проекта </h3>
+<ol>
+<li>Хранящуюся
+в файле базу данных, состоящую из 4000 записей (формат базы данных определяется
+вариантом) загрузить в оперативную память компьютера и построить дерево поиска
+заданного типа для решения задачи по поиску записей (задача определяется
+вариантом). Из найденных записей организовать список (очередь) и вывести их на
+экран.</li>
+
+<li>Созданное
+приложение должно иметь дружественный интерфейс, выводить подсказки при вводе и
+выводе данных, проверять корректность вводимых данных и пр. Операции,
+выражающие логически завершенные действия, рекомендуется оформлять в виде функций,
+грамотно выбирая параметры функций. Имена переменных подпрограмм, параметры подпрограмм,
+используемые языковые конструкции должны способствовать удобочитаемости
+программы.</li>
+
+<li>Протестировать 
+созданное приложение, скриншоты приложения включить в отчет </li>
+</ol>
+<h3>Ваpианты баз данных (БД) и заданий:</h3>
+
+<h3>Общие замечания:</h3>
+<ol>
+<li>Все
+текстовые поля следует pассматpивать как символьные массивы. Если длина поля пpевышает
+pазмеp хpанимой в нем  инфоpмации , то оно дополняется  пpобелами спpава. Каждое текстовое поле имеет свой  фоpмат, котоpый 
+ опpеделяет  смысл записанных в него данных.  Пpи  описании  фоpмата 
+в угловых скобках &lt; и &gt; указываются отдельные его элементы (сами угловые
+скобки в состав текста не входят);  пpобелы 
+обозначаются с помощью символа  подчеpкивания. Если
+поле включает только один текстовый элемент, то  фоpмат не указывается. </li>
+
+<li>Целочисленные
+поля пpедставляются 16-pазpядными положительными числами.</li>
+
+<li> При описании стpуктуpы записей в пpогpаммах необходимо точно соблюдать поpядок и pазмеp полей.</li>
+
+</ol>
+
+<p>ПРИМЕЧАНИЕ. Предварительный
+просмотр содержимого баз данных возможен с<span style='mso-spacerun:yes'> 
+</span>помощью программы <a href="dl/viewbase.zip">VIEWBASE.EXE</a><o:p></o:p></span></p>
+
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
+ style='margin-left:41.15pt;border-collapse:collapse;border:none;mso-border-alt:
+ solid windowtext .5pt;mso-padding-alt:0cm 5.4pt 0cm 5.4pt;mso-border-insideh:
+ .5pt solid windowtext;mso-border-insidev:.5pt solid windowtext'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;height:13.7pt'>
+  <td width=483 valign=top style='width:362.6pt;border:solid windowtext 1.0pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:13.7pt'>
+  <p class=MsoPlainText><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+  font-family:"Calibri";mso-fareast-font-family:"MS Mincho";mso-bidi-font-style:
+  italic'>Описание баз данных</span><span lang=EN-US style='font-size:14.0pt;
+  mso-bidi-font-size:10.0pt;font-family:"Calibri";mso-fareast-font-family:
+  "MS Mincho";mso-ansi-language:EN-US;mso-bidi-font-style:italic'><o:p></o:p></span></p>
+  </td>
+  <td width=514 valign=top style='width:385.75pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:13.7pt'>
+  <p class=MsoPlainText><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+  font-family:"Calibri";mso-fareast-font-family:"MS Mincho";mso-bidi-font-style:
+  italic'>Задания <o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1;height:48.2pt'>
+  <td width=483 rowspan=4 valign=top style='width:362.6pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:48.2pt'>
+  <p class=MsoPlainText><span lang=EN-US style='font-size:14.0pt;mso-bidi-font-size:
+  10.0pt;font-family:"Calibri";mso-fareast-font-family:"MS Mincho";
+  mso-ansi-language:EN-US'>A</span><span style='font-size:14.0pt;mso-bidi-font-size:
+  10.0pt;font-family:"Calibri";mso-fareast-font-family:"MS Mincho"'> =
+  1<span style='mso-spacerun:yes'>         </span>(<a href="dl/viewbase.zip">файл
+  <span lang=EN-US style='mso-ansi-language:EN-US'>base</span>1.<span
+  class=SpellE><span lang=EN-US style='mso-ansi-language:EN-US'>dat</span></span></a>)<o:p></o:p></span></p>
+  <p class=MsoPlainText><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+  font-family:"Calibri";mso-fareast-font-family:"MS Mincho"'><span
+  style='mso-spacerun:yes'>     </span><span class=SpellE>Библиог<span
+  class=GramE>p</span>афическая</span> база данных <o:p></o:p></span></p>
+  <p class=MsoPlainText><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+  font-family:"Calibri";mso-fareast-font-family:"MS Mincho"'>&quot;Жизнь
+  замечательных людей&quot;<o:p></o:p></span></p>
+  <p class=MsoPlainText><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+  font-family:"Calibri";mso-fareast-font-family:"MS Mincho"'><o:p>&nbsp;</o:p></span></p>
+  <p class=MsoPlainText><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+  font-family:"Calibri";mso-fareast-font-family:"MS Mincho"'><span
+  style='mso-spacerun:yes'>     </span><span class=SpellE>Ст<span class=GramE>p</span>уктуpа</span>
+  записи:<o:p></o:p></span></p>
+  <p class=MsoPlainText><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+  font-family:"Calibri";mso-fareast-font-family:"MS Mincho"'><span
+  style='mso-spacerun:yes'>        </span><span class=SpellE><b
+  style='mso-bidi-font-weight:normal'>Авто<span class=GramE>p</span></b></span>:<span
+  style='mso-spacerun:yes'>          </span>текстовое поле 12 символов<o:p></o:p></span></p>
+  <p class=MsoPlainText><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+  font-family:"Calibri";mso-fareast-font-family:"MS Mincho"'><span
+  style='mso-spacerun:yes'>                        </span><span class=SpellE>фоpмат</span>
+  &lt;Фамилия&gt;_&lt;буква&gt;_&lt;<span class=GramE>буква</span>&gt;<o:p></o:p></span></p>
+  <p class=MsoPlainText><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+  font-family:"Calibri";mso-fareast-font-family:"MS Mincho"'><span
+  style='mso-spacerun:yes'>        </span><b style='mso-bidi-font-weight:normal'>Заглавие</b>:<span
+  style='mso-spacerun:yes'>       </span>текстовое поле 32 символа<o:p></o:p></span></p>
+  <p class=MsoPlainText><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+  font-family:"Calibri";mso-fareast-font-family:"MS Mincho"'><span
+  style='mso-spacerun:yes'>                        </span><span class=SpellE>фо<span
+  class=GramE>p</span>мат</span> &lt;Имя&gt;_&lt;Отчество&gt;_&lt;Фамилия&gt;<o:p></o:p></span></p>
+  <p class=MsoPlainText><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+  font-family:"Calibri";mso-fareast-font-family:"MS Mincho"'><span
+  style='mso-spacerun:yes'>        </span><b style='mso-bidi-font-weight:normal'>Издательство</b>:<span
+  style='mso-spacerun:yes'>   </span>текстовое поле 16 символов<o:p></o:p></span></p>
+  <p class=MsoPlainText><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+  font-family:"Calibri";mso-fareast-font-family:"MS Mincho"'><span
+  style='mso-spacerun:yes'>        </span><b style='mso-bidi-font-weight:normal'>Год
+  издания</b>:<span style='mso-spacerun:yes'>    </span>целое число<o:p></o:p></span></p>
+  <p class=MsoPlainText><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+  font-family:"Calibri";mso-fareast-font-family:"MS Mincho"'><span
+  style='mso-spacerun:yes'>        </span><b style='mso-bidi-font-weight:normal'>Кол-во
+  <span class=SpellE>ст<span class=GramE>p</span>аниц</span></b>: целое число</span><span
+  lang=EN-US style='font-size:14.0pt;mso-bidi-font-size:10.0pt;font-family:
+  "Times New Roman";mso-fareast-font-family:"MS Mincho";mso-ansi-language:EN-US'><o:p></o:p></span></p>
+  <p class=MsoPlainText><span lang=EN-US style='font-size:14.0pt;mso-bidi-font-size:
+  10.0pt;font-family:"Calibri";mso-fareast-font-family:"MS Mincho";
+  mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+  <p class=MsoPlainText><span class=SpellE><span style='font-size:14.0pt;
+  mso-bidi-font-size:10.0pt;font-family:"Calibri";mso-fareast-font-family:
+  "MS Mincho"'>П<span class=GramE>p</span>имеp</span></span><span
+  style='font-size:14.0pt;mso-bidi-font-size:10.0pt;font-family:"Calibri";
+  mso-fareast-font-family:"MS Mincho"'> записи из БД:<o:p></o:p></span></p>
+  <p class=MsoPlainText><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+  font-family:"Calibri";mso-fareast-font-family:"MS Mincho"'><span
+  style='mso-spacerun:yes'>        </span><span class=SpellE>Кловский<span
+  class=GramE>_В</span>_Б</span><o:p></o:p></span></p>
+  <p class=MsoPlainText><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+  font-family:"Calibri";mso-fareast-font-family:"MS Mincho"'><span
+  style='mso-spacerun:yes'>        </span><span class=SpellE>Лев_<span
+  class=GramE>H</span>иколаевич_Толстой</span>_________<o:p></o:p></span></p>
+  <p class=MsoPlainText><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+  font-family:"Calibri";mso-fareast-font-family:"MS Mincho"'><span
+  style='mso-spacerun:yes'>        </span><span class=SpellE>Молодая_гва<span
+  class=GramE>p</span>дия</span>_<o:p></o:p></span></p>
+  <p class=MsoPlainText><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+  font-family:"Calibri";mso-fareast-font-family:"MS Mincho"'><span
+  style='mso-spacerun:yes'>        </span>1963<o:p></o:p></span></p>
+  <p class=MsoPlainText><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+  font-family:"Calibri";mso-fareast-font-family:"MS Mincho"'><span
+  style='mso-spacerun:yes'>    </span><span
+  style='mso-spacerun:yes'>    </span>864</span><span lang=EN-US
+  style='font-size:14.0pt;mso-bidi-font-size:10.0pt;font-family:"Calibri";
+  mso-fareast-font-family:"MS Mincho";mso-ansi-language:EN-US;mso-bidi-font-style:
+  italic'><o:p></o:p></span></p>
+  <p class=MsoPlainText><span lang=EN-US style='font-size:14.0pt;mso-bidi-font-size:
+  10.0pt;font-family:"Calibri";mso-fareast-font-family:"MS Mincho";
+  mso-ansi-language:EN-US;mso-bidi-font-style:italic'><o:p>&nbsp;</o:p></span></p>
+  </td>
+  <td width=514 valign=top style='width:385.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:48.2pt'>
+  <p class=MsoPlainText><span lang=EN-US style='font-size:14.0pt;mso-bidi-font-size:
+  10.0pt;font-family:"Calibri";mso-fareast-font-family:"MS Mincho";
+  mso-ansi-language:EN-US;mso-bidi-font-style:italic'>B</span><span
+  style='font-size:14.0pt;mso-bidi-font-size:10.0pt;font-family:"Calibri";
+  mso-fareast-font-family:"MS Mincho";mso-bidi-font-style:italic'>=1.1<o:p></o:p></span></p>
+  <p class=MsoPlainText><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+  font-family:"Calibri";mso-fareast-font-family:"MS Mincho";mso-bidi-font-style:
+  italic'>Найти <span style='mso-spacerun:yes'> </span>количество и названия
+  всех издательств, использованных в базе данных<o:p></o:p></span></p>
+  <p class=MsoPlainText><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+  font-family:"Calibri";mso-fareast-font-family:"MS Mincho";mso-bidi-font-style:
+  italic'>Найти и вывести в алфавитном порядке (по полю автор) записи книг,
+  которые издавались в заданном издательстве в заданном году<o:p></o:p></span></p>
+  <p class=MsoPlainText><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+  font-family:"Calibri";mso-fareast-font-family:"MS Mincho";mso-bidi-font-style:
+  italic'>Название издательства и год вводить с клавиатуры <o:p></o:p></span></p>
+  <p class=MsoPlainText><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+  font-family:"Calibri";mso-fareast-font-family:"MS Mincho";mso-bidi-font-style:
+  italic'><span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:2;height:103.3pt'>
+  <td width=514 valign=top style='width:385.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:103.3pt'>
+  <p class=MsoPlainText><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+  font-family:"Calibri";mso-fareast-font-family:"MS Mincho";mso-bidi-font-style:
+  italic'>В=1.2<o:p></o:p></span></p>
+  <p class=MsoPlainText><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+  font-family:"Calibri";mso-fareast-font-family:"MS Mincho";mso-bidi-font-style:
+  italic'>Вывести на экран количество и названия всех издательств,
+  использованных в базе данных<o:p></o:p></span></p>
+  <p class=MsoPlainText><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+  font-family:"Calibri";mso-fareast-font-family:"MS Mincho";mso-bidi-font-style:
+  italic'>Вывести в алфавитном порядке (по полю автор) <span class=GramE>записи
+  книг, изданные в заданном издательстве и имеют</span> автора, фамилия
+  которого начинается <span style='mso-spacerun:yes'> </span>на заданную
+  подстроку<o:p></o:p></span></p>
+  <p class=MsoPlainText><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+  font-family:"Calibri";mso-fareast-font-family:"MS Mincho";mso-bidi-font-style:
+  italic'>Название издательства и подстроку вводить в клавиатуры<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:3;height:93.5pt'>
+  <td width=514 valign=top style='width:385.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:93.5pt'>
+  <p class=MsoPlainText><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+  font-family:"Calibri";mso-fareast-font-family:"MS Mincho";mso-bidi-font-style:
+  italic'>В=1.3<o:p></o:p></span></p>
+  <p class=MsoPlainText><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+  font-family:"Calibri";mso-fareast-font-family:"MS Mincho";mso-bidi-font-style:
+  italic'>Вывести на экран количество и названия всех издательств,
+  использованных в базе данных<o:p></o:p></span></p>
+  <p class=MsoPlainText><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+  font-family:"Calibri";mso-fareast-font-family:"MS Mincho";mso-bidi-font-style:
+  italic'>Вывести в алфавитном порядке (по полю заглавие), <span class=GramE>изданные</span>
+  в заданном издательстве в заданный период.<o:p></o:p></span></p>
+  <p class=MsoPlainText><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+  font-family:"Calibri";mso-fareast-font-family:"MS Mincho";mso-bidi-font-style:
+  italic'>Название издательства, год начала периода, год конца периода вводить
+  с клавиатуры<o:p></o:p></span></p>
+  <p class=MsoPlainText><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+  font-family:"Calibri";mso-fareast-font-family:"MS Mincho";mso-bidi-font-style:
+  italic'><o:p>&nbsp;</o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:4;height:12.85pt'>
+  <td width=514 valign=top style='width:385.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:12.85pt'>
+  <p class=MsoPlainText><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+  font-family:"Calibri";mso-fareast-font-family:"MS Mincho";mso-bidi-font-style:
+  italic'>В=1.4<o:p></o:p></span></p>
+  <p class=MsoPlainText><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+  font-family:"Calibri";mso-fareast-font-family:"MS Mincho";mso-bidi-font-style:
+  italic'>Вывести на экран для автора с заданной фамилией список книг, изданных
+  в издательстве, где автор имеет наибольшее количество напечатанных книг. Вывести
+  на экран название этого издательства.<o:p></o:p></span></p>
+  <p class=MsoPlainText><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+  font-family:"Calibri";mso-fareast-font-family:"MS Mincho";mso-bidi-font-style:
+  italic'>Фамилию автора вводить с клавиатуры<o:p></o:p></span></p>
+  <p class=MsoPlainText><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+  font-family:"Calibri";mso-fareast-font-family:"MS Mincho";mso-bidi-font-style:
+  italic'><o:p>&nbsp;</o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:5;height:53.25pt'>
+  <td width=483 rowspan=4 valign=top style='width:362.6pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:53.25pt'>
+  <p class=MsoPlainText><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+  font-family:"Calibri";mso-fareast-font-family:"MS Mincho"'>А = 2<span
+  style='mso-spacerun:yes'>         </span>(<a href="dl/viewbase.zip">файл
+  base2.dat</a>)<o:p></o:p></span></p>
+  <p class=MsoPlainText><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+  font-family:"Calibri";mso-fareast-font-family:"MS Mincho"'><span
+  style='mso-spacerun:yes'>     </span>База данных &quot;<span class=SpellE>П<span
+  class=GramE>p</span>едпpиятие</span>&quot;<o:p></o:p></span></p>
+  <p class=MsoPlainText><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+  font-family:"Calibri";mso-fareast-font-family:"MS Mincho"'><span
+  style='mso-spacerun:yes'>     </span><span class=SpellE>Ст<span class=GramE>p</span>уктуpа</span>
+  записи:<o:p></o:p></span></p>
+  <p class=MsoPlainText><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+  font-family:"Calibri";mso-fareast-font-family:"MS Mincho"'><span
+  style='mso-spacerun:yes'>        </span>ФИО <span class=SpellE>сот<span
+  class=GramE>p</span>удника</span>: текстовое поле 32 символа<o:p></o:p></span></p>
+  <p class=MsoPlainText><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+  font-family:"Calibri";mso-fareast-font-family:"MS Mincho"'><span
+  style='mso-spacerun:yes'>                        </span><span class=SpellE>фо<span
+  class=GramE>p</span>мат</span> &lt;Фамилия&gt;_&lt;Имя&gt;_&lt;Отчество&gt;<o:p></o:p></span></p>
+  <p class=MsoPlainText><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+  font-family:"Calibri";mso-fareast-font-family:"MS Mincho"'><span
+  style='mso-spacerun:yes'>        </span><span class=SpellE><span class=GramE>H</span>омеp</span>
+  отдела:<span style='mso-spacerun:yes'>   </span>целое число<o:p></o:p></span></p>
+  <p class=MsoPlainText><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+  font-family:"Calibri";mso-fareast-font-family:"MS Mincho"'><span
+  style='mso-spacerun:yes'>        </span>Должность:<span
+  style='mso-spacerun:yes'>      </span>текстовое поле 22 символа<o:p></o:p></span></p>
+  <p class=MsoPlainText><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+  font-family:"Calibri";mso-fareast-font-family:"MS Mincho"'><span
+  style='mso-spacerun:yes'>        </span>Дата <span class=SpellE><span
+  class=GramE>p</span>ождения</span>:<span style='mso-spacerun:yes'> 
+  </span>текстовое поле 8 символов<o:p></o:p></span></p>
+  <p class=MsoPlainText><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+  font-family:"Calibri";mso-fareast-font-family:"MS Mincho"'><span
+  style='mso-spacerun:yes'>                        </span><span class=SpellE>фо<span
+  class=GramE>p</span>мат</span> <span class=SpellE>дд-мм-гг</span><o:p></o:p></span></p>
+  <p class=MsoPlainText><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+  font-family:"Calibri";mso-fareast-font-family:"MS Mincho"'><span
+  style='mso-spacerun:yes'>     </span><span class=SpellE>П<span class=GramE>p</span>имеp</span>
+  записи из БД:<o:p></o:p></span></p>
+  <p class=MsoPlainText><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+  font-family:"Calibri";mso-fareast-font-family:"MS Mincho"'><span
+  style='mso-spacerun:yes'>        </span><span class=SpellE>Пет<span
+  class=GramE>p</span>ов_Иван_Иванович</span>____________<o:p></o:p></span></p>
+  <p class=MsoPlainText><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+  font-family:"Calibri";mso-fareast-font-family:"MS Mincho"'><span
+  style='mso-spacerun:yes'>        </span>130<o:p></o:p></span></p>
+  <p class=MsoPlainText><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+  font-family:"Calibri";mso-fareast-font-family:"MS Mincho"'><span
+  style='mso-spacerun:yes'>        </span><span class=SpellE>начальник_отдела</span>______<o:p></o:p></span></p>
+  <p class=MsoPlainText><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+  font-family:"Calibri";mso-fareast-font-family:"MS Mincho"'><span
+  style='mso-spacerun:yes'>        </span>15-03-46<o:p></o:p></span></p>
+  <p class=MsoPlainText><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+  font-family:"Calibri";mso-fareast-font-family:"MS Mincho";mso-bidi-font-style:
+  italic'><o:p>&nbsp;</o:p></span></p>
+  </td>
+  <td width=514 valign=top style='width:385.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:53.25pt'>
+  <p class=MsoPlainText><span lang=EN-US style='font-size:14.0pt;mso-bidi-font-size:
+  10.0pt;font-family:"Calibri";mso-fareast-font-family:"MS Mincho";
+  mso-ansi-language:EN-US;mso-bidi-font-style:italic'>B</span><span
+  style='font-size:14.0pt;mso-bidi-font-size:10.0pt;font-family:"Calibri";
+  mso-fareast-font-family:"MS Mincho";mso-bidi-font-style:italic'>=2.1<o:p></o:p></span></p>
+  <p class=MsoPlainText><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+  font-family:"Calibri";mso-fareast-font-family:"MS Mincho";mso-bidi-font-style:
+  italic'>Вывести на экран количество и номера всех отделов, использованных в
+  базе данных<o:p></o:p></span></p>
+  <p class=MsoPlainText><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+  font-family:"Calibri";mso-fareast-font-family:"MS Mincho";mso-bidi-font-style:
+  italic'>Вывести в алфавитном порядке (по полю ФИО сотрудника) список сотрудников,
+  которые работают <span style='mso-spacerun:yes'> </span>в заданном <span
+  style='mso-spacerun:yes'> </span>отделе и старше заданного возраста<o:p></o:p></span></p>
+  <p class=MsoPlainText><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+  font-family:"Calibri";mso-fareast-font-family:"MS Mincho";mso-bidi-font-style:
+  italic'>Номер отдела и возраст вводить с клавиатуры <o:p></o:p></span></p>
+  <p class=MsoPlainText><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+  font-family:"Calibri";mso-fareast-font-family:"MS Mincho";mso-bidi-font-style:
+  italic'><o:p>&nbsp;</o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:6;height:53.25pt'>
+  <td width=514 valign=top style='width:385.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:53.25pt'>
+  <p class=MsoPlainText><span lang=EN-US style='font-size:14.0pt;mso-bidi-font-size:
+  10.0pt;font-family:"Calibri";mso-fareast-font-family:"MS Mincho";
+  mso-ansi-language:EN-US;mso-bidi-font-style:italic'>B</span><span
+  style='font-size:14.0pt;mso-bidi-font-size:10.0pt;font-family:"Calibri";
+  mso-fareast-font-family:"MS Mincho";mso-bidi-font-style:italic'>=2.2<o:p></o:p></span></p>
+  <p class=MsoPlainText><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+  font-family:"Calibri";mso-fareast-font-family:"MS Mincho";mso-bidi-font-style:
+  italic'>Вывести на экран список сотрудников заданного отдела. Список
+  упорядочен по возрасту сотрудников<o:p></o:p></span></p>
+  <p class=MsoPlainText><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+  font-family:"Calibri";mso-fareast-font-family:"MS Mincho";mso-bidi-font-style:
+  italic'>Номер отдела вводить с клавиатуры <o:p></o:p></span></p>
+  <p class=MsoPlainText><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+  font-family:"Calibri";mso-fareast-font-family:"MS Mincho";mso-bidi-font-style:
+  italic'><o:p>&nbsp;</o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:7;height:62.25pt'>
+  <td width=514 valign=top style='width:385.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:62.25pt'>
+  <p class=MsoPlainText><span lang=EN-US style='font-size:14.0pt;mso-bidi-font-size:
+  10.0pt;font-family:"Calibri";mso-fareast-font-family:"MS Mincho";
+  mso-ansi-language:EN-US;mso-bidi-font-style:italic'>B</span><span
+  style='font-size:14.0pt;mso-bidi-font-size:10.0pt;font-family:"Calibri";
+  mso-fareast-font-family:"MS Mincho";mso-bidi-font-style:italic'>=2.3<o:p></o:p></span></p>
+  <p class=MsoPlainText><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+  font-family:"Calibri";mso-fareast-font-family:"MS Mincho";mso-bidi-font-style:
+  italic'>Вывести на экран упорядоченный список (по полю ФИО сотрудника) сотрудников
+  самого многочисленного отдела<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:8;height:65.25pt'>
+  <td width=514 valign=top style='width:385.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:65.25pt'>
+  <p class=MsoPlainText><span lang=EN-US style='font-size:14.0pt;mso-bidi-font-size:
+  10.0pt;font-family:"Calibri";mso-fareast-font-family:"MS Mincho";
+  mso-ansi-language:EN-US;mso-bidi-font-style:italic'>B</span><span
+  style='font-size:14.0pt;mso-bidi-font-size:10.0pt;font-family:"Calibri";
+  mso-fareast-font-family:"MS Mincho";mso-bidi-font-style:italic'>=2.4<o:p></o:p></span></p>
+  <p class=MsoPlainText><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+  font-family:"Calibri";mso-fareast-font-family:"MS Mincho";mso-bidi-font-style:
+  italic'>Для сотрудника с заданной фамилией из заданного отдела вывести список
+  всех более молодых сотрудников того же отдела. Если сотрудников с заданной
+  фамилией больше одного, выбирать с более ранней датой рождения<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:9;height:50.25pt'>
+  <td width=483 rowspan=4 valign=top style='width:362.6pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:50.25pt'>
+  <p class=MsoPlainText><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+  font-family:"Calibri";mso-fareast-font-family:"MS Mincho"'><span
+  style='mso-spacerun:yes'> </span>А = 3<span style='mso-spacerun:yes'>        
+  </span>(<a href="dl/viewbase.zip">файл <span lang=EN-US style='mso-ansi-language:
+  EN-US'>base</span>3.<span class=SpellE><span lang=EN-US style='mso-ansi-language:
+  EN-US'>dat</span></span></a>)<o:p></o:p></span></p>
+  <p class=MsoPlainText><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+  font-family:"Calibri";mso-fareast-font-family:"MS Mincho"'><span
+  style='mso-spacerun:yes'>     </span>База данных &quot;Обманутые
+  вкладчики&quot;<o:p></o:p></span></p>
+  <p class=MsoPlainText><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+  font-family:"Calibri";mso-fareast-font-family:"MS Mincho"'><span
+  style='mso-spacerun:yes'>     </span><span class=SpellE>Ст<span class=GramE>p</span>уктуpа</span>
+  записи:<o:p></o:p></span></p>
+  <p class=MsoPlainText><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+  font-family:"Calibri";mso-fareast-font-family:"MS Mincho"'><span
+  style='mso-spacerun:yes'>        </span>ФИО вкладчика: текстовое поле 32
+  символа<o:p></o:p></span></p>
+  <p class=MsoPlainText><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+  font-family:"Calibri";mso-fareast-font-family:"MS Mincho"'><span
+  style='mso-spacerun:yes'>                       </span><span class=SpellE>фо<span
+  class=GramE>p</span>мат</span> &lt;Фамилия&gt;_&lt;Имя&gt;_&lt;Отчество&gt;<o:p></o:p></span></p>
+  <p class=MsoPlainText><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+  font-family:"Calibri";mso-fareast-font-family:"MS Mincho"'><span
+  style='mso-spacerun:yes'>        </span>Сумма вклада:<span
+  style='mso-spacerun:yes'>  </span>целое число<o:p></o:p></span></p>
+  <p class=MsoPlainText><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+  font-family:"Calibri";mso-fareast-font-family:"MS Mincho"'><span
+  style='mso-spacerun:yes'>        </span>Дата вклада:<span
+  style='mso-spacerun:yes'>   </span>текстовое поле 8 символов<o:p></o:p></span></p>
+  <p class=MsoPlainText><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+  font-family:"Calibri";mso-fareast-font-family:"MS Mincho"'><span
+  style='mso-spacerun:yes'>                       </span><span class=SpellE>фо<span
+  class=GramE>p</span>мат</span> <span class=SpellE>дд-мм-гг</span><o:p></o:p></span></p>
+  <p class=MsoPlainText><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+  font-family:"Calibri";mso-fareast-font-family:"MS Mincho"'><span
+  style='mso-spacerun:yes'>        </span>ФИО адвоката:<span
+  style='mso-spacerun:yes'>  </span>текстовое поле 22 символа<o:p></o:p></span></p>
+  <p class=MsoPlainText><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+  font-family:"Calibri";mso-fareast-font-family:"MS Mincho"'><span
+  style='mso-spacerun:yes'>                       </span><span class=SpellE>фоpмат</span>
+  &lt;Фамилия&gt;_&lt;буква&gt;_&lt;<span class=GramE>буква</span>&gt;<o:p></o:p></span></p>
+  <p class=MsoPlainText><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+  font-family:"Calibri";mso-fareast-font-family:"MS Mincho"'><span
+  style='mso-spacerun:yes'>     </span><span class=SpellE>П<span class=GramE>p</span>имеp</span>
+  записи из БД:<o:p></o:p></span></p>
+  <p class=MsoPlainText><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+  font-family:"Calibri";mso-fareast-font-family:"MS Mincho"'><span
+  style='mso-spacerun:yes'>        </span><span class=SpellE>Пет<span
+  class=GramE>p</span>ов_Иван_Федоpович</span>___________<o:p></o:p></span></p>
+  <p class=MsoPlainText><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+  font-family:"Calibri";mso-fareast-font-family:"MS Mincho"'><span
+  style='mso-spacerun:yes'>        </span>130<o:p></o:p></span></p>
+  <p class=MsoPlainText><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+  font-family:"Calibri";mso-fareast-font-family:"MS Mincho"'><span
+  style='mso-spacerun:yes'>        </span>15-03-46<o:p></o:p></span></p>
+  <p class=MsoPlainText><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+  font-family:"Calibri";mso-fareast-font-family:"MS Mincho"'><span
+  style='mso-spacerun:yes'>        </span><span class=SpellE>Иванова<span
+  class=GramE>_И</span>_В</span>___________<o:p></o:p></span></p>
+  <p class=MsoPlainText><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+  font-family:"Calibri";mso-fareast-font-family:"MS Mincho"'><o:p>&nbsp;</o:p></span></p>
+  <p class=MsoPlainText><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+  font-family:"Calibri";mso-fareast-font-family:"MS Mincho";mso-bidi-font-style:
+  italic'><o:p>&nbsp;</o:p></span></p>
+  </td>
+  <td width=514 valign=top style='width:385.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:50.25pt'>
+  <p class=MsoPlainText><span lang=EN-US style='font-size:14.0pt;mso-bidi-font-size:
+  10.0pt;font-family:"Calibri";mso-fareast-font-family:"MS Mincho";
+  mso-ansi-language:EN-US;mso-bidi-font-style:italic'>B</span><span
+  style='font-size:14.0pt;mso-bidi-font-size:10.0pt;font-family:"Calibri";
+  mso-fareast-font-family:"MS Mincho";mso-bidi-font-style:italic'>=3.1<o:p></o:p></span></p>
+  <p class=MsoPlainText><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+  font-family:"Calibri";mso-fareast-font-family:"MS Mincho";mso-bidi-font-style:
+  italic'>Вывести на экран количество и фамилии всех адвокатов из базы данных <o:p></o:p></span></p>
+  <p class=MsoPlainText><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+  font-family:"Calibri";mso-fareast-font-family:"MS Mincho";mso-bidi-font-style:
+  italic'>Вывести в алфавитном порядке (по полю ФИО вкладчика) список вкладчиков,
+  которые имеют адвоката с заданной фамилией <span
+  style='mso-spacerun:yes'> </span>и вклад больше заданной суммы<o:p></o:p></span></p>
+  <p class=MsoPlainText><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+  font-family:"Calibri";mso-fareast-font-family:"MS Mincho";mso-bidi-font-style:
+  italic'>Фамилию адвоката и сумму вводить с клавиатуры <o:p></o:p></span></p>
+  <p class=MsoPlainText><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+  font-family:"Calibri";mso-fareast-font-family:"MS Mincho";mso-bidi-font-style:
+  italic'><o:p>&nbsp;</o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:10;height:80.25pt'>
+  <td width=514 valign=top style='width:385.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:80.25pt'>
+  <p class=MsoPlainText><span lang=EN-US style='font-size:14.0pt;mso-bidi-font-size:
+  10.0pt;font-family:"Calibri";mso-fareast-font-family:"MS Mincho";
+  mso-ansi-language:EN-US;mso-bidi-font-style:italic'>B</span><span
+  style='font-size:14.0pt;mso-bidi-font-size:10.0pt;font-family:"Calibri";
+  mso-fareast-font-family:"MS Mincho";mso-bidi-font-style:italic'>=3.2<o:p></o:p></span></p>
+  <p class=MsoPlainText><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+  font-family:"Calibri";mso-fareast-font-family:"MS Mincho";mso-bidi-font-style:
+  italic'>Вывести упорядоченный список вкладчиков (по <span class=GramE>полю</span>
+  сумма вклада), которые сделали вклад ранее заданного года на сумму не менее
+  заданной величины<o:p></o:p></span></p>
+  <p class=MsoPlainText><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+  font-family:"Calibri";mso-fareast-font-family:"MS Mincho";mso-bidi-font-style:
+  italic'>Год и сумму вводить с клавиатуры<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:11;height:62.25pt'>
+  <td width=514 valign=top style='width:385.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:62.25pt'>
+  <p class=MsoPlainText><span lang=EN-US style='font-size:14.0pt;mso-bidi-font-size:
+  10.0pt;font-family:"Calibri";mso-fareast-font-family:"MS Mincho";
+  mso-ansi-language:EN-US;mso-bidi-font-style:italic'>B</span><span
+  style='font-size:14.0pt;mso-bidi-font-size:10.0pt;font-family:"Calibri";
+  mso-fareast-font-family:"MS Mincho";mso-bidi-font-style:italic'>=3.3<o:p></o:p></span></p>
+  <p class=MsoPlainText><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+  font-family:"Calibri";mso-fareast-font-family:"MS Mincho";mso-bidi-font-style:
+  italic'>Вывести на экран количество и фамилии всех адвокатов из базы данных <o:p></o:p></span></p>
+  <p class=MsoPlainText><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+  font-family:"Calibri";mso-fareast-font-family:"MS Mincho";mso-bidi-font-style:
+  italic'>Вывести упорядоченный (по полю ФИО вкладчика) список вкладчиков,
+  которые имеют заданного адвоката, и их фамилии начинаются на заданную подстроку<o:p></o:p></span></p>
+  <p class=MsoPlainText><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+  font-family:"Calibri";mso-fareast-font-family:"MS Mincho";mso-bidi-font-style:
+  italic'>Фамилию адвоката и подстроку вводить с клавиатуры<o:p></o:p></span></p>
+  <p class=MsoPlainText><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+  font-family:"Calibri";mso-fareast-font-family:"MS Mincho";mso-bidi-font-style:
+  italic'><o:p>&nbsp;</o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:12;height:72.75pt'>
+  <td width=514 valign=top style='width:385.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:72.75pt'>
+  <p class=MsoPlainText><span lang=EN-US style='font-size:14.0pt;mso-bidi-font-size:
+  10.0pt;font-family:"Calibri";mso-fareast-font-family:"MS Mincho";
+  mso-ansi-language:EN-US;mso-bidi-font-style:italic'>B</span><span
+  style='font-size:14.0pt;mso-bidi-font-size:10.0pt;font-family:"Calibri";
+  mso-fareast-font-family:"MS Mincho";mso-bidi-font-style:italic'>=3.4<o:p></o:p></span></p>
+  <p class=MsoPlainText><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+  font-family:"Calibri";mso-fareast-font-family:"MS Mincho";mso-bidi-font-style:
+  italic'>Вывести упорядоченный (по <span class=GramE>полю</span> сумма вклада)
+  список вкладчиков, которые сделали вклад в заданный период времени<o:p></o:p></span></p>
+  <p class=MsoPlainText><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+  font-family:"Calibri";mso-fareast-font-family:"MS Mincho";mso-bidi-font-style:
+  italic'>Дату начала периода и дату конца периода вводить с клавиатуры<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:13;height:61.5pt'>
+  <td width=483 rowspan=4 valign=top style='width:362.6pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:61.5pt'>
+  <p class=MsoPlainText><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+  font-family:"Calibri";mso-fareast-font-family:"MS Mincho"'><span
+  style='mso-spacerun:yes'> </span><span style='mso-spacerun:yes'> </span>А =
+  4<span style='mso-spacerun:yes'>         </span>(<a href="dl/viewbase.zip">файл
+  <span lang=EN-US style='mso-ansi-language:EN-US'>base</span>4.<span
+  class=SpellE><span lang=EN-US style='mso-ansi-language:EN-US'>dat</span></span></a>)<o:p></o:p></span></p>
+  <p class=MsoPlainText><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+  font-family:"Calibri";mso-fareast-font-family:"MS Mincho"'><span
+  style='mso-spacerun:yes'>     </span>База данных &quot;Населенный пункт&quot;<o:p></o:p></span></p>
+  <p class=MsoPlainText><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+  font-family:"Calibri";mso-fareast-font-family:"MS Mincho"'><span
+  style='mso-spacerun:yes'>     </span><span class=SpellE>Ст<span class=GramE>p</span>уктуpа</span>
+  записи:<o:p></o:p></span></p>
+  <p class=MsoPlainText><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+  font-family:"Calibri";mso-fareast-font-family:"MS Mincho"'><span
+  style='mso-spacerun:yes'>     </span><span
+  style='mso-spacerun:yes'>   </span>ФИО гражданина: текстовое поле 32 символа<o:p></o:p></span></p>
+  <p class=MsoPlainText><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+  font-family:"Calibri";mso-fareast-font-family:"MS Mincho"'><span
+  style='mso-spacerun:yes'>                        </span><span class=SpellE>фо<span
+  class=GramE>p</span>мат</span> &lt;Фамилия&gt;_&lt;Имя&gt;_&lt;Отчество&gt;<o:p></o:p></span></p>
+  <p class=MsoPlainText><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+  font-family:"Calibri";mso-fareast-font-family:"MS Mincho"'><span
+  style='mso-spacerun:yes'>        </span>Название улицы: текстовое поле 20
+  символов<o:p></o:p></span></p>
+  <p class=MsoPlainText><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+  font-family:"Calibri";mso-fareast-font-family:"MS Mincho"'><span
+  style='mso-spacerun:yes'>        </span>Номер дома:<span
+  style='mso-spacerun:yes'>     </span>целое число<o:p></o:p></span></p>
+  <p class=MsoPlainText><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+  font-family:"Calibri";mso-fareast-font-family:"MS Mincho"'><span
+  style='mso-spacerun:yes'>        </span>Номер квартиры: целое число<o:p></o:p></span></p>
+  <p class=MsoPlainText><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+  font-family:"Calibri";mso-fareast-font-family:"MS Mincho"'><span
+  style='mso-spacerun:yes'>        </span>Дата поселения: текстовое поле 8
+  символов<o:p></o:p></span></p>
+  <p class=MsoPlainText><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+  font-family:"Calibri";mso-fareast-font-family:"MS Mincho"'><span
+  style='mso-spacerun:yes'>                        </span><span class=SpellE>фо<span
+  class=GramE>p</span>мат</span> <span class=SpellE>дд-мм-гг</span><o:p></o:p></span></p>
+  <p class=MsoPlainText><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+  font-family:"Calibri";mso-fareast-font-family:"MS Mincho"'><span
+  style='mso-spacerun:yes'>     </span><span class=SpellE>П<span class=GramE>p</span>имеp</span>
+  записи из БД:<o:p></o:p></span></p>
+  <p class=MsoPlainText><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+  font-family:"Calibri";mso-fareast-font-family:"MS Mincho"'><span
+  style='mso-spacerun:yes'>        </span><span class=SpellE>Пет<span
+  class=GramE>p</span>ов_Иван_Федоpович</span>___________<o:p></o:p></span></p>
+  <p class=MsoPlainText><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+  font-family:"Calibri";mso-fareast-font-family:"MS Mincho"'><span
+  style='mso-spacerun:yes'>        </span>Ленина______________<o:p></o:p></span></p>
+  <p class=MsoPlainText><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+  font-family:"Calibri";mso-fareast-font-family:"MS Mincho"'><span
+  style='mso-spacerun:yes'>        </span>10<o:p></o:p></span></p>
+  <p class=MsoPlainText><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+  font-family:"Calibri";mso-fareast-font-family:"MS Mincho"'><span
+  style='mso-spacerun:yes'>        </span>67<o:p></o:p></span></p>
+  <p class=MsoPlainText><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+  font-family:"Calibri";mso-fareast-font-family:"MS Mincho"'><span
+  style='mso-spacerun:yes'>        </span>29-02-65<o:p></o:p></span></p>
+  <p class=MsoPlainText><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+  font-family:"Calibri";mso-fareast-font-family:"MS Mincho"'><o:p>&nbsp;</o:p></span></p>
+  <p class=MsoPlainText><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+  font-family:"Calibri";mso-fareast-font-family:"MS Mincho"'><o:p>&nbsp;</o:p></span></p>
+  </td>
+  <td width=514 valign=top style='width:385.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:61.5pt'>
+  <p class=MsoPlainText><span lang=EN-US style='font-size:14.0pt;mso-bidi-font-size:
+  10.0pt;font-family:"Calibri";mso-fareast-font-family:"MS Mincho";
+  mso-ansi-language:EN-US;mso-bidi-font-style:italic'>B</span><span
+  style='font-size:14.0pt;mso-bidi-font-size:10.0pt;font-family:"Calibri";
+  mso-fareast-font-family:"MS Mincho";mso-bidi-font-style:italic'>=4.1<o:p></o:p></span></p>
+  <p class=MsoPlainText><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+  font-family:"Calibri";mso-fareast-font-family:"MS Mincho";mso-bidi-font-style:
+  italic'>Вывести на экран количество и названия всех улиц из базы данных <o:p></o:p></span></p>
+  <p class=MsoPlainText><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+  font-family:"Calibri";mso-fareast-font-family:"MS Mincho";mso-bidi-font-style:
+  italic'>Вывести упорядоченный (по полю ФИО гражданина) список граждан
+  проживающих на заданной улице не ранее, чем <span
+  style='mso-spacerun:yes'> </span>заданная дата поселения<o:p></o:p></span></p>
+  <p class=MsoPlainText><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+  font-family:"Calibri";mso-fareast-font-family:"MS Mincho";mso-bidi-font-style:
+  italic'>Название улицы и дату поселения вводить с клавиатуры<o:p></o:p></span></p>
+  <p class=MsoPlainText><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+  font-family:"Calibri";mso-fareast-font-family:"MS Mincho";mso-bidi-font-style:
+  italic'><o:p>&nbsp;</o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:14;height:80.25pt'>
+  <td width=514 valign=top style='width:385.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:80.25pt'>
+  <p class=MsoPlainText><span lang=EN-US style='font-size:14.0pt;mso-bidi-font-size:
+  10.0pt;font-family:"Calibri";mso-fareast-font-family:"MS Mincho";
+  mso-ansi-language:EN-US;mso-bidi-font-style:italic'>B</span><span
+  style='font-size:14.0pt;mso-bidi-font-size:10.0pt;font-family:"Calibri";
+  mso-fareast-font-family:"MS Mincho";mso-bidi-font-style:italic'>=4.2<o:p></o:p></span></p>
+  <p class=MsoPlainText><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+  font-family:"Calibri";mso-fareast-font-family:"MS Mincho";mso-bidi-font-style:
+  italic'>Вывести на экран количество и названия всех улиц из базы данных <o:p></o:p></span></p>
+  <p class=MsoPlainText><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+  font-family:"Calibri";mso-fareast-font-family:"MS Mincho";mso-bidi-font-style:
+  italic'>Вывести на экран список граждан, которые проживают на самой
+  многочисленной улице в домах с номерами домов из заданного диапазона.<o:p></o:p></span></p>
+  <p class=MsoPlainText><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+  font-family:"Calibri";mso-fareast-font-family:"MS Mincho";mso-bidi-font-style:
+  italic'>Номер начала диапазона, номер конца диапазона вводить с клавиатуры<o:p></o:p></span></p>
+  <p class=MsoPlainText><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+  font-family:"Calibri";mso-fareast-font-family:"MS Mincho";mso-bidi-font-style:
+  italic'><o:p>&nbsp;</o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:15;height:71.25pt'>
+  <td width=514 valign=top style='width:385.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:71.25pt'>
+  <p class=MsoPlainText><span lang=EN-US style='font-size:14.0pt;mso-bidi-font-size:
+  10.0pt;font-family:"Calibri";mso-fareast-font-family:"MS Mincho";
+  mso-ansi-language:EN-US;mso-bidi-font-style:italic'>B</span><span
+  style='font-size:14.0pt;mso-bidi-font-size:10.0pt;font-family:"Calibri";
+  mso-fareast-font-family:"MS Mincho";mso-bidi-font-style:italic'>=4.3<o:p></o:p></span></p>
+  <p class=MsoPlainText><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+  font-family:"Calibri";mso-fareast-font-family:"MS Mincho";mso-bidi-font-style:
+  italic'>Вывести на экран количество и названия всех улиц из базы данных <o:p></o:p></span></p>
+  <p class=MsoPlainText><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+  font-family:"Calibri";mso-fareast-font-family:"MS Mincho";mso-bidi-font-style:
+  italic'>Для заданной улицы вывести упорядоченный список (по полю номер дома)
+  граждан, проживающих на этой улице, и фамилии которых начинаются на заданную
+  подстроку<o:p></o:p></span></p>
+  <p class=MsoPlainText><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+  font-family:"Calibri";mso-fareast-font-family:"MS Mincho";mso-bidi-font-style:
+  italic'>Название улицы и подстроку вводить с клавиатуры<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:16;mso-yfti-lastrow:yes;height:68.25pt'>
+  <td width=514 valign=top style='width:385.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:68.25pt'>
+  <p class=MsoPlainText><span lang=EN-US style='font-size:14.0pt;mso-bidi-font-size:
+  10.0pt;font-family:"Calibri";mso-fareast-font-family:"MS Mincho";
+  mso-ansi-language:EN-US;mso-bidi-font-style:italic'>B</span><span
+  style='font-size:14.0pt;mso-bidi-font-size:10.0pt;font-family:"Calibri";
+  mso-fareast-font-family:"MS Mincho";mso-bidi-font-style:italic'>=4.4<o:p></o:p></span></p>
+  <p class=MsoPlainText><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+  font-family:"Calibri";mso-fareast-font-family:"MS Mincho";mso-bidi-font-style:
+  italic'>Для заданного названия улицы найти <span
+  style='mso-spacerun:yes'> </span>жителей самой густонаселенной квартиры на
+  этой улице<o:p></o:p></span></p>
+  <p class=MsoPlainText><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+  font-family:"Calibri";mso-fareast-font-family:"MS Mincho";mso-bidi-font-style:
+  italic'>Название улицы вводить с клавиатуры.<o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<h2>ПРАВИЛА ВЫБОРА ВАРИАНТА</h2>
+
+<p>Вариант задания задается с помощью чисел<b> А, B и D</b>, где </p>
+<ul>
+<li>А – номер базы данных</li>
+
+<li>B – номер задания;</li>
+
+<li>D - тип дерева поиска. (D = 1 АВЛ-дерево, D = 2 Двоичное Б-дерево)</li>
+
+
+
+<p>Числа<b> А, B, D</b>
+определяются с помощью таблицы соответствия вариантов, приведенной ниже. Каждый студент разрабатывает программу для одного
+варианта. Допускаются различные творческие дополнения, ведущие в сторону развития. Выполнение работы по чужому
+варианту не допускается. </p>
+
+
+<h3>Таблица соответствия вариантов</h3>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
+ style='margin-left:-12.6pt;border-collapse:collapse;border:none;mso-border-alt:
+ solid windowtext .5pt;mso-yfti-tbllook:1184;mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+ mso-border-insideh:.5pt solid windowtext;mso-border-insidev:.5pt solid windowtext'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;height:31.5pt'>
+  <td width=169 valign=top style='width:126.75pt;border:solid windowtext 1.0pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:31.5pt'>
+  <p class=MsoPlainText style='margin-left:18.0pt'><span style='font-size:14.0pt;
+  mso-bidi-font-size:10.0pt;font-family:"Calibri",serif;mso-fareast-font-family:
+  "MS Mincho"'>Последние две цифры пароля<o:p></o:p></span></p>
+  </td>
+  <td width=51 valign=top style='width:38.55pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:31.5pt'>
+  <p class=MsoPlainText style='margin-left:18.0pt'><span style='font-size:14.0pt;
+  mso-bidi-font-size:10.0pt;font-family:"Calibri",serif;mso-fareast-font-family:
+  "MS Mincho"'>А<o:p></o:p></span></p>
+  </td>
+  <td width=51 valign=top style='width:38.25pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:31.5pt'>
+  <p class=MsoPlainText style='margin-left:18.0pt'><span style='font-size:14.0pt;
+  mso-bidi-font-size:10.0pt;font-family:"Calibri",serif;mso-fareast-font-family:
+  "MS Mincho"'>В<o:p></o:p></span></p>
+  </td>
+  <td width=60 valign=top style='width:45.0pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:31.5pt'>
+  <p class=MsoPlainText style='margin-left:18.0pt'><span style='font-size:14.0pt;
+  mso-bidi-font-size:10.0pt;font-family:"Calibri",serif;mso-fareast-font-family:
+  "MS Mincho"'>D<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1;page-break-inside:avoid;height:12.25pt'>
+  <td width=169 valign=top style='width:126.75pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:12.25pt'>
+  <p class=MsoPlainText style='margin-left:18.0pt'><span style='font-size:14.0pt;
+  mso-bidi-font-size:10.0pt;font-family:"Calibri",serif;mso-fareast-font-family:
+  "MS Mincho"'>1<o:p></o:p></span></p>
+  </td>
+  <td width=51 valign=top style='width:38.55pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:12.25pt'>
+  <p class=MsoPlainText style='margin-left:18.0pt'><span style='font-size:14.0pt;
+  mso-bidi-font-size:10.0pt;font-family:"Calibri",serif;mso-fareast-font-family:
+  "MS Mincho"'>1<o:p></o:p></span></p>
+  </td>
+  <td width=51 valign=top style='width:38.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:12.25pt'>
+  <p class=MsoPlainText style='margin-left:18.0pt'><span style='font-size:14.0pt;
+  mso-bidi-font-size:10.0pt;font-family:"Calibri",serif;mso-fareast-font-family:
+  "MS Mincho"'>1.2<o:p></o:p></span></p>
+  </td>
+  <td width=60 valign=top style='width:45.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:12.25pt'>
+  <p class=MsoPlainText style='margin-left:18.0pt'><span style='font-size:14.0pt;
+  mso-bidi-font-size:10.0pt;font-family:"Calibri",serif;mso-fareast-font-family:
+  "MS Mincho"'>1<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:2;page-break-inside:avoid;height:12.25pt'>
+  <td width=169 valign=top style='width:126.75pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:12.25pt'>
+  <p class=MsoPlainText style='margin-left:18.0pt'><span style='font-size:14.0pt;
+  mso-bidi-font-size:10.0pt;font-family:"Calibri",serif;mso-fareast-font-family:
+  "MS Mincho"'>2<o:p></o:p></span></p>
+  </td>
+  <td width=51 valign=top style='width:38.55pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:12.25pt'>
+  <p class=MsoPlainText style='margin-left:18.0pt'><span style='font-size:14.0pt;
+  mso-bidi-font-size:10.0pt;font-family:"Calibri",serif;mso-fareast-font-family:
+  "MS Mincho"'>2<o:p></o:p></span></p>
+  </td>
+  <td width=51 valign=top style='width:38.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:12.25pt'>
+  <p class=MsoPlainText style='margin-left:18.0pt'><span style='font-size:14.0pt;
+  mso-bidi-font-size:10.0pt;font-family:"Calibri",serif;mso-fareast-font-family:
+  "MS Mincho"'>2.1<o:p></o:p></span></p>
+  </td>
+  <td width=60 valign=top style='width:45.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:12.25pt'>
+  <p class=MsoPlainText style='margin-left:18.0pt'><span style='font-size:14.0pt;
+  mso-bidi-font-size:10.0pt;font-family:"Calibri",serif;mso-fareast-font-family:
+  "MS Mincho"'>2<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:3;page-break-inside:avoid;height:12.25pt'>
+  <td width=169 valign=top style='width:126.75pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:12.25pt'>
+  <p class=MsoPlainText style='margin-left:18.0pt'><span style='font-size:14.0pt;
+  mso-bidi-font-size:10.0pt;font-family:"Calibri",serif;mso-fareast-font-family:
+  "MS Mincho"'>3<o:p></o:p></span></p>
+  </td>
+  <td width=51 valign=top style='width:38.55pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:12.25pt'>
+  <p class=MsoPlainText style='margin-left:18.0pt'><span style='font-size:14.0pt;
+  mso-bidi-font-size:10.0pt;font-family:"Calibri",serif;mso-fareast-font-family:
+  "MS Mincho"'>3<o:p></o:p></span></p>
+  </td>
+  <td width=51 valign=top style='width:38.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:12.25pt'>
+  <p class=MsoPlainText style='margin-left:18.0pt'><span style='font-size:14.0pt;
+  mso-bidi-font-size:10.0pt;font-family:"Calibri",serif;mso-fareast-font-family:
+  "MS Mincho"'>3.3<o:p></o:p></span></p>
+  </td>
+  <td width=60 valign=top style='width:45.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:12.25pt'>
+  <p class=MsoPlainText style='margin-left:18.0pt'><span style='font-size:14.0pt;
+  mso-bidi-font-size:10.0pt;font-family:"Calibri",serif;mso-fareast-font-family:
+  "MS Mincho"'>1<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:4;page-break-inside:avoid;height:12.25pt'>
+  <td width=169 valign=top style='width:126.75pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:12.25pt'>
+  <p class=MsoPlainText style='margin-left:18.0pt'><span style='font-size:14.0pt;
+  mso-bidi-font-size:10.0pt;font-family:"Calibri",serif;mso-fareast-font-family:
+  "MS Mincho"'>4<o:p></o:p></span></p>
+  </td>
+  <td width=51 valign=top style='width:38.55pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:12.25pt'>
+  <p class=MsoPlainText style='margin-left:18.0pt'><span style='font-size:14.0pt;
+  mso-bidi-font-size:10.0pt;font-family:"Calibri",serif;mso-fareast-font-family:
+  "MS Mincho"'>4<o:p></o:p></span></p>
+  </td>
+  <td width=51 valign=top style='width:38.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:12.25pt'>
+  <p class=MsoPlainText style='margin-left:18.0pt'><span style='font-size:14.0pt;
+  mso-bidi-font-size:10.0pt;font-family:"Calibri",serif;mso-fareast-font-family:
+  "MS Mincho"'>4.2<o:p></o:p></span></p>
+  </td>
+  <td width=60 valign=top style='width:45.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:12.25pt'>
+  <p class=MsoPlainText style='margin-left:18.0pt'><span style='font-size:14.0pt;
+  mso-bidi-font-size:10.0pt;font-family:"Calibri",serif;mso-fareast-font-family:
+  "MS Mincho"'>2<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:5;page-break-inside:avoid;height:12.25pt'>
+  <td width=169 valign=top style='width:126.75pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:12.25pt'>
+  <p class=MsoPlainText style='margin-left:18.0pt'><span style='font-size:14.0pt;
+  mso-bidi-font-size:10.0pt;font-family:"Calibri",serif;mso-fareast-font-family:
+  "MS Mincho"'>5<o:p></o:p></span></p>
+  </td>
+  <td width=51 valign=top style='width:38.55pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:12.25pt'>
+  <p class=MsoPlainText style='margin-left:18.0pt'><span style='font-size:14.0pt;
+  mso-bidi-font-size:10.0pt;font-family:"Calibri",serif;mso-fareast-font-family:
+  "MS Mincho"'>1<o:p></o:p></span></p>
+  </td>
+  <td width=51 valign=top style='width:38.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:12.25pt'>
+  <p class=MsoPlainText style='margin-left:18.0pt'><span style='font-size:14.0pt;
+  mso-bidi-font-size:10.0pt;font-family:"Calibri",serif;mso-fareast-font-family:
+  "MS Mincho"'>1.1<o:p></o:p></span></p>
+  </td>
+  <td width=60 valign=top style='width:45.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:12.25pt'>
+  <p class=MsoPlainText style='margin-left:18.0pt'><span style='font-size:14.0pt;
+  mso-bidi-font-size:10.0pt;font-family:"Calibri",serif;mso-fareast-font-family:
+  "MS Mincho"'>1<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:6;page-break-inside:avoid;height:12.25pt'>
+  <td width=169 valign=top style='width:126.75pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:12.25pt'>
+  <p class=MsoPlainText style='margin-left:18.0pt'><span style='font-size:14.0pt;
+  mso-bidi-font-size:10.0pt;font-family:"Calibri",serif;mso-fareast-font-family:
+  "MS Mincho"'>6<o:p></o:p></span></p>
+  </td>
+  <td width=51 valign=top style='width:38.55pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:12.25pt'>
+  <p class=MsoPlainText style='margin-left:18.0pt'><span style='font-size:14.0pt;
+  mso-bidi-font-size:10.0pt;font-family:"Calibri",serif;mso-fareast-font-family:
+  "MS Mincho"'>2<o:p></o:p></span></p>
+  </td>
+  <td width=51 valign=top style='width:38.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:12.25pt'>
+  <p class=MsoPlainText style='margin-left:18.0pt'><span style='font-size:14.0pt;
+  mso-bidi-font-size:10.0pt;font-family:"Calibri",serif;mso-fareast-font-family:
+  "MS Mincho"'>2.2<o:p></o:p></span></p>
+  </td>
+  <td width=60 valign=top style='width:45.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:12.25pt'>
+  <p class=MsoPlainText style='margin-left:18.0pt'><span style='font-size:14.0pt;
+  mso-bidi-font-size:10.0pt;font-family:"Calibri",serif;mso-fareast-font-family:
+  "MS Mincho"'>2<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:7;page-break-inside:avoid;height:12.25pt'>
+  <td width=169 valign=top style='width:126.75pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:12.25pt'>
+  <p class=MsoPlainText style='margin-left:18.0pt'><span style='font-size:14.0pt;
+  mso-bidi-font-size:10.0pt;font-family:"Calibri",serif;mso-fareast-font-family:
+  "MS Mincho"'>7<o:p></o:p></span></p>
+  </td>
+  <td width=51 valign=top style='width:38.55pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:12.25pt'>
+  <p class=MsoPlainText style='margin-left:18.0pt'><span style='font-size:14.0pt;
+  mso-bidi-font-size:10.0pt;font-family:"Calibri",serif;mso-fareast-font-family:
+  "MS Mincho"'>3<o:p></o:p></span></p>
+  </td>
+  <td width=51 valign=top style='width:38.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:12.25pt'>
+  <p class=MsoPlainText style='margin-left:18.0pt'><span style='font-size:14.0pt;
+  mso-bidi-font-size:10.0pt;font-family:"Calibri",serif;mso-fareast-font-family:
+  "MS Mincho"'>3.2<o:p></o:p></span></p>
+  </td>
+  <td width=60 valign=top style='width:45.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:12.25pt'>
+  <p class=MsoPlainText style='margin-left:18.0pt'><span style='font-size:14.0pt;
+  mso-bidi-font-size:10.0pt;font-family:"Calibri",serif;mso-fareast-font-family:
+  "MS Mincho"'>1<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:8;page-break-inside:avoid;height:12.25pt'>
+  <td width=169 valign=top style='width:126.75pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:12.25pt'>
+  <p class=MsoPlainText style='margin-left:18.0pt'><span style='font-size:14.0pt;
+  mso-bidi-font-size:10.0pt;font-family:"Calibri",serif;mso-fareast-font-family:
+  "MS Mincho"'>8<o:p></o:p></span></p>
+  </td>
+  <td width=51 valign=top style='width:38.55pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:12.25pt'>
+  <p class=MsoPlainText style='margin-left:18.0pt'><span style='font-size:14.0pt;
+  mso-bidi-font-size:10.0pt;font-family:"Calibri",serif;mso-fareast-font-family:
+  "MS Mincho"'>4<o:p></o:p></span></p>
+  </td>
+  <td width=51 valign=top style='width:38.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:12.25pt'>
+  <p class=MsoPlainText style='margin-left:18.0pt'><span style='font-size:14.0pt;
+  mso-bidi-font-size:10.0pt;font-family:"Calibri",serif;mso-fareast-font-family:
+  "MS Mincho"'>4.1<o:p></o:p></span></p>
+  </td>
+  <td width=60 valign=top style='width:45.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:12.25pt'>
+  <p class=MsoPlainText style='margin-left:18.0pt'><span style='font-size:14.0pt;
+  mso-bidi-font-size:10.0pt;font-family:"Calibri",serif;mso-fareast-font-family:
+  "MS Mincho"'>2<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:9;page-break-inside:avoid;height:12.25pt'>
+  <td width=169 valign=top style='width:126.75pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:12.25pt'>
+  <p class=MsoPlainText style='margin-left:18.0pt'><span style='font-size:14.0pt;
+  mso-bidi-font-size:10.0pt;font-family:"Calibri",serif;mso-fareast-font-family:
+  "MS Mincho"'>9<o:p></o:p></span></p>
+  </td>
+  <td width=51 valign=top style='width:38.55pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:12.25pt'>
+  <p class=MsoPlainText style='margin-left:18.0pt'><span style='font-size:14.0pt;
+  mso-bidi-font-size:10.0pt;font-family:"Calibri",serif;mso-fareast-font-family:
+  "MS Mincho"'>1<o:p></o:p></span></p>
+  </td>
+  <td width=51 valign=top style='width:38.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:12.25pt'>
+  <p class=MsoPlainText style='margin-left:18.0pt'><span style='font-size:14.0pt;
+  mso-bidi-font-size:10.0pt;font-family:"Calibri",serif;mso-fareast-font-family:
+  "MS Mincho"'>1.3<o:p></o:p></span></p>
+  </td>
+  <td width=60 valign=top style='width:45.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:12.25pt'>
+  <p class=MsoPlainText style='margin-left:18.0pt'><span style='font-size:14.0pt;
+  mso-bidi-font-size:10.0pt;font-family:"Calibri",serif;mso-fareast-font-family:
+  "MS Mincho"'>1<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:10;page-break-inside:avoid;height:12.25pt'>
+  <td width=169 valign=top style='width:126.75pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:12.25pt'>
+  <p class=MsoPlainText style='margin-left:18.0pt'><span style='font-size:14.0pt;
+  mso-bidi-font-size:10.0pt;font-family:"Calibri",serif;mso-fareast-font-family:
+  "MS Mincho"'>10<o:p></o:p></span></p>
+  </td>
+  <td width=51 valign=top style='width:38.55pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:12.25pt'>
+  <p class=MsoPlainText style='margin-left:18.0pt'><span style='font-size:14.0pt;
+  mso-bidi-font-size:10.0pt;font-family:"Calibri",serif;mso-fareast-font-family:
+  "MS Mincho"'>2<o:p></o:p></span></p>
+  </td>
+  <td width=51 valign=top style='width:38.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:12.25pt'>
+  <p class=MsoPlainText style='margin-left:18.0pt'><span style='font-size:14.0pt;
+  mso-bidi-font-size:10.0pt;font-family:"Calibri",serif;mso-fareast-font-family:
+  "MS Mincho"'>2.3<o:p></o:p></span></p>
+  </td>
+  <td width=60 valign=top style='width:45.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:12.25pt'>
+  <p class=MsoPlainText style='margin-left:18.0pt'><span style='font-size:14.0pt;
+  mso-bidi-font-size:10.0pt;font-family:"Calibri",serif;mso-fareast-font-family:
+  "MS Mincho"'>1<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:11;page-break-inside:avoid;height:12.25pt'>
+  <td width=169 valign=top style='width:126.75pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:12.25pt'>
+  <p class=MsoPlainText style='margin-left:18.0pt'><span style='font-size:14.0pt;
+  mso-bidi-font-size:10.0pt;font-family:"Calibri",serif;mso-fareast-font-family:
+  "MS Mincho"'>11<o:p></o:p></span></p>
+  </td>
+  <td width=51 valign=top style='width:38.55pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:12.25pt'>
+  <p class=MsoPlainText style='margin-left:18.0pt'><span style='font-size:14.0pt;
+  mso-bidi-font-size:10.0pt;font-family:"Calibri",serif;mso-fareast-font-family:
+  "MS Mincho"'>3<o:p></o:p></span></p>
+  </td>
+  <td width=51 valign=top style='width:38.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:12.25pt'>
+  <p class=MsoPlainText style='margin-left:18.0pt'><span style='font-size:14.0pt;
+  mso-bidi-font-size:10.0pt;font-family:"Calibri",serif;mso-fareast-font-family:
+  "MS Mincho"'>3.4<o:p></o:p></span></p>
+  </td>
+  <td width=60 valign=top style='width:45.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:12.25pt'>
+  <p class=MsoPlainText style='margin-left:18.0pt'><span style='font-size:14.0pt;
+  mso-bidi-font-size:10.0pt;font-family:"Calibri",serif;mso-fareast-font-family:
+  "MS Mincho"'>2<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:12;page-break-inside:avoid;height:12.25pt'>
+  <td width=169 valign=top style='width:126.75pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:12.25pt'>
+  <p class=MsoPlainText style='margin-left:18.0pt'><span style='font-size:14.0pt;
+  mso-bidi-font-size:10.0pt;font-family:"Calibri",serif;mso-fareast-font-family:
+  "MS Mincho"'>12<o:p></o:p></span></p>
+  </td>
+  <td width=51 valign=top style='width:38.55pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:12.25pt'>
+  <p class=MsoPlainText style='margin-left:18.0pt'><span style='font-size:14.0pt;
+  mso-bidi-font-size:10.0pt;font-family:"Calibri",serif;mso-fareast-font-family:
+  "MS Mincho"'>4<o:p></o:p></span></p>
+  </td>
+  <td width=51 valign=top style='width:38.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:12.25pt'>
+  <p class=MsoPlainText style='margin-left:18.0pt'><span style='font-size:14.0pt;
+  mso-bidi-font-size:10.0pt;font-family:"Calibri",serif;mso-fareast-font-family:
+  "MS Mincho"'>4.3<o:p></o:p></span></p>
+  </td>
+  <td width=60 valign=top style='width:45.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:12.25pt'>
+  <p class=MsoPlainText style='margin-left:18.0pt'><span style='font-size:14.0pt;
+  mso-bidi-font-size:10.0pt;font-family:"Calibri",serif;mso-fareast-font-family:
+  "MS Mincho"'>1<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:13;page-break-inside:avoid;height:12.25pt'>
+  <td width=169 valign=top style='width:126.75pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:12.25pt'>
+  <p class=MsoPlainText style='margin-left:18.0pt'><span style='font-size:14.0pt;
+  mso-bidi-font-size:10.0pt;font-family:"Calibri",serif;mso-fareast-font-family:
+  "MS Mincho"'>13<o:p></o:p></span></p>
+  </td>
+  <td width=51 valign=top style='width:38.55pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:12.25pt'>
+  <p class=MsoPlainText style='margin-left:18.0pt'><span style='font-size:14.0pt;
+  mso-bidi-font-size:10.0pt;font-family:"Calibri",serif;mso-fareast-font-family:
+  "MS Mincho"'>1<o:p></o:p></span></p>
+  </td>
+  <td width=51 valign=top style='width:38.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:12.25pt'>
+  <p class=MsoPlainText style='margin-left:18.0pt'><span style='font-size:14.0pt;
+  mso-bidi-font-size:10.0pt;font-family:"Calibri",serif;mso-fareast-font-family:
+  "MS Mincho"'>1.3<o:p></o:p></span></p>
+  </td>
+  <td width=60 valign=top style='width:45.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:12.25pt'>
+  <p class=MsoPlainText style='margin-left:18.0pt'><span style='font-size:14.0pt;
+  mso-bidi-font-size:10.0pt;font-family:"Calibri",serif;mso-fareast-font-family:
+  "MS Mincho"'>2<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:14;page-break-inside:avoid;height:12.25pt'>
+  <td width=169 valign=top style='width:126.75pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:12.25pt'>
+  <p class=MsoPlainText style='margin-left:18.0pt'><span style='font-size:14.0pt;
+  mso-bidi-font-size:10.0pt;font-family:"Calibri",serif;mso-fareast-font-family:
+  "MS Mincho"'>14<o:p></o:p></span></p>
+  </td>
+  <td width=51 valign=top style='width:38.55pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:12.25pt'>
+  <p class=MsoPlainText style='margin-left:18.0pt'><span style='font-size:14.0pt;
+  mso-bidi-font-size:10.0pt;font-family:"Calibri",serif;mso-fareast-font-family:
+  "MS Mincho"'>2<o:p></o:p></span></p>
+  </td>
+  <td width=51 valign=top style='width:38.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:12.25pt'>
+  <p class=MsoPlainText style='margin-left:18.0pt'><span style='font-size:14.0pt;
+  mso-bidi-font-size:10.0pt;font-family:"Calibri",serif;mso-fareast-font-family:
+  "MS Mincho"'>2.3<o:p></o:p></span></p>
+  </td>
+  <td width=60 valign=top style='width:45.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:12.25pt'>
+  <p class=MsoPlainText style='margin-left:18.0pt'><span style='font-size:14.0pt;
+  mso-bidi-font-size:10.0pt;font-family:"Calibri",serif;mso-fareast-font-family:
+  "MS Mincho"'>2<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:15;page-break-inside:avoid;height:12.25pt'>
+  <td width=169 valign=top style='width:126.75pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:12.25pt'>
+  <p class=MsoPlainText style='margin-left:18.0pt'><span style='font-size:14.0pt;
+  mso-bidi-font-size:10.0pt;font-family:"Calibri",serif;mso-fareast-font-family:
+  "MS Mincho"'>15<o:p></o:p></span></p>
+  </td>
+  <td width=51 valign=top style='width:38.55pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:12.25pt'>
+  <p class=MsoPlainText style='margin-left:18.0pt'><span style='font-size:14.0pt;
+  mso-bidi-font-size:10.0pt;font-family:"Calibri",serif;mso-fareast-font-family:
+  "MS Mincho"'>3<o:p></o:p></span></p>
+  </td>
+  <td width=51 valign=top style='width:38.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:12.25pt'>
+  <p class=MsoPlainText style='margin-left:18.0pt'><span style='font-size:14.0pt;
+  mso-bidi-font-size:10.0pt;font-family:"Calibri",serif;mso-fareast-font-family:
+  "MS Mincho"'>3.1<o:p></o:p></span></p>
+  </td>
+  <td width=60 valign=top style='width:45.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:12.25pt'>
+  <p class=MsoPlainText style='margin-left:18.0pt'><span style='font-size:14.0pt;
+  mso-bidi-font-size:10.0pt;font-family:"Calibri",serif;mso-fareast-font-family:
+  "MS Mincho"'>1<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:16;page-break-inside:avoid;height:12.25pt'>
+  <td width=169 valign=top style='width:126.75pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:12.25pt'>
+  <p class=MsoPlainText style='margin-left:18.0pt'><span style='font-size:14.0pt;
+  mso-bidi-font-size:10.0pt;font-family:"Calibri",serif;mso-fareast-font-family:
+  "MS Mincho"'>16<o:p></o:p></span></p>
+  </td>
+  <td width=51 valign=top style='width:38.55pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:12.25pt'>
+  <p class=MsoPlainText style='margin-left:18.0pt'><span style='font-size:14.0pt;
+  mso-bidi-font-size:10.0pt;font-family:"Calibri",serif;mso-fareast-font-family:
+  "MS Mincho"'>4<o:p></o:p></span></p>
+  </td>
+  <td width=51 valign=top style='width:38.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:12.25pt'>
+  <p class=MsoPlainText style='margin-left:18.0pt'><span style='font-size:14.0pt;
+  mso-bidi-font-size:10.0pt;font-family:"Calibri",serif;mso-fareast-font-family:
+  "MS Mincho"'>4.4<o:p></o:p></span></p>
+  </td>
+  <td width=60 valign=top style='width:45.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:12.25pt'>
+  <p class=MsoPlainText style='margin-left:18.0pt'><span style='font-size:14.0pt;
+  mso-bidi-font-size:10.0pt;font-family:"Calibri",serif;mso-fareast-font-family:
+  "MS Mincho"'>2<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:17;page-break-inside:avoid;height:12.25pt'>
+  <td width=169 valign=top style='width:126.75pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:12.25pt'>
+  <p class=MsoPlainText style='margin-left:18.0pt'><span style='font-size:14.0pt;
+  mso-bidi-font-size:10.0pt;font-family:"Calibri",serif;mso-fareast-font-family:
+  "MS Mincho"'>17<o:p></o:p></span></p>
+  </td>
+  <td width=51 valign=top style='width:38.55pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:12.25pt'>
+  <p class=MsoPlainText style='margin-left:18.0pt'><span style='font-size:14.0pt;
+  mso-bidi-font-size:10.0pt;font-family:"Calibri",serif;mso-fareast-font-family:
+  "MS Mincho"'>1<o:p></o:p></span></p>
+  </td>
+  <td width=51 valign=top style='width:38.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:12.25pt'>
+  <p class=MsoPlainText style='margin-left:18.0pt'><span style='font-size:14.0pt;
+  mso-bidi-font-size:10.0pt;font-family:"Calibri",serif;mso-fareast-font-family:
+  "MS Mincho"'>1.4<o:p></o:p></span></p>
+  </td>
+  <td width=60 valign=top style='width:45.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:12.25pt'>
+  <p class=MsoPlainText style='margin-left:18.0pt'><span style='font-size:14.0pt;
+  mso-bidi-font-size:10.0pt;font-family:"Calibri",serif;mso-fareast-font-family:
+  "MS Mincho"'>1<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:18;page-break-inside:avoid;height:12.25pt'>
+  <td width=169 valign=top style='width:126.75pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:12.25pt'>
+  <p class=MsoPlainText style='margin-left:18.0pt'><span style='font-size:14.0pt;
+  mso-bidi-font-size:10.0pt;font-family:"Calibri",serif;mso-fareast-font-family:
+  "MS Mincho"'>18<o:p></o:p></span></p>
+  </td>
+  <td width=51 valign=top style='width:38.55pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:12.25pt'>
+  <p class=MsoPlainText style='margin-left:18.0pt'><span style='font-size:14.0pt;
+  mso-bidi-font-size:10.0pt;font-family:"Calibri",serif;mso-fareast-font-family:
+  "MS Mincho"'>2<o:p></o:p></span></p>
+  </td>
+  <td width=51 valign=top style='width:38.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:12.25pt'>
+  <p class=MsoPlainText style='margin-left:18.0pt'><span style='font-size:14.0pt;
+  mso-bidi-font-size:10.0pt;font-family:"Calibri",serif;mso-fareast-font-family:
+  "MS Mincho"'>2.4<o:p></o:p></span></p>
+  </td>
+  <td width=60 valign=top style='width:45.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:12.25pt'>
+  <p class=MsoPlainText style='margin-left:18.0pt'><span style='font-size:14.0pt;
+  mso-bidi-font-size:10.0pt;font-family:"Calibri",serif;mso-fareast-font-family:
+  "MS Mincho"'>1<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:19;page-break-inside:avoid;height:12.25pt'>
+  <td width=169 valign=top style='width:126.75pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:12.25pt'>
+  <p class=MsoPlainText style='margin-left:18.0pt'><span style='font-size:14.0pt;
+  mso-bidi-font-size:10.0pt;font-family:"Calibri",serif;mso-fareast-font-family:
+  "MS Mincho"'>19<o:p></o:p></span></p>
+  </td>
+  <td width=51 valign=top style='width:38.55pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:12.25pt'>
+  <p class=MsoPlainText style='margin-left:18.0pt'><span style='font-size:14.0pt;
+  mso-bidi-font-size:10.0pt;font-family:"Calibri",serif;mso-fareast-font-family:
+  "MS Mincho"'>3<o:p></o:p></span></p>
+  </td>
+  <td width=51 valign=top style='width:38.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:12.25pt'>
+  <p class=MsoPlainText style='margin-left:18.0pt'><span style='font-size:14.0pt;
+  mso-bidi-font-size:10.0pt;font-family:"Calibri",serif;mso-fareast-font-family:
+  "MS Mincho"'>3.1<o:p></o:p></span></p>
+  </td>
+  <td width=60 valign=top style='width:45.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:12.25pt'>
+  <p class=MsoPlainText style='margin-left:18.0pt'><span style='font-size:14.0pt;
+  mso-bidi-font-size:10.0pt;font-family:"Calibri",serif;mso-fareast-font-family:
+  "MS Mincho"'>2<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:20;page-break-inside:avoid;height:12.25pt'>
+  <td width=169 valign=top style='width:126.75pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:12.25pt'>
+  <p class=MsoPlainText style='margin-left:18.0pt'><span style='font-size:14.0pt;
+  mso-bidi-font-size:10.0pt;font-family:"Calibri",serif;mso-fareast-font-family:
+  "MS Mincho"'>20<o:p></o:p></span></p>
+  </td>
+  <td width=51 valign=top style='width:38.55pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:12.25pt'>
+  <p class=MsoPlainText style='margin-left:18.0pt'><span style='font-size:14.0pt;
+  mso-bidi-font-size:10.0pt;font-family:"Calibri",serif;mso-fareast-font-family:
+  "MS Mincho"'>4<o:p></o:p></span></p>
+  </td>
+  <td width=51 valign=top style='width:38.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:12.25pt'>
+  <p class=MsoPlainText style='margin-left:18.0pt'><span style='font-size:14.0pt;
+  mso-bidi-font-size:10.0pt;font-family:"Calibri",serif;mso-fareast-font-family:
+  "MS Mincho"'>4.2<o:p></o:p></span></p>
+  </td>
+  <td width=60 valign=top style='width:45.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:12.25pt'>
+  <p class=MsoPlainText style='margin-left:18.0pt'><span style='font-size:14.0pt;
+  mso-bidi-font-size:10.0pt;font-family:"Calibri",serif;mso-fareast-font-family:
+  "MS Mincho"'>1<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:21;page-break-inside:avoid;height:12.25pt'>
+  <td width=169 valign=top style='width:126.75pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:12.25pt'>
+  <p class=MsoPlainText style='margin-left:18.0pt'><span style='font-size:14.0pt;
+  mso-bidi-font-size:10.0pt;font-family:"Calibri",serif;mso-fareast-font-family:
+  "MS Mincho"'>21<o:p></o:p></span></p>
+  </td>
+  <td width=51 valign=top style='width:38.55pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:12.25pt'>
+  <p class=MsoPlainText style='margin-left:18.0pt'><span style='font-size:14.0pt;
+  mso-bidi-font-size:10.0pt;font-family:"Calibri",serif;mso-fareast-font-family:
+  "MS Mincho"'>1<o:p></o:p></span></p>
+  </td>
+  <td width=51 valign=top style='width:38.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:12.25pt'>
+  <p class=MsoPlainText style='margin-left:18.0pt'><span style='font-size:14.0pt;
+  mso-bidi-font-size:10.0pt;font-family:"Calibri",serif;mso-fareast-font-family:
+  "MS Mincho"'>1.2<o:p></o:p></span></p>
+  </td>
+  <td width=60 valign=top style='width:45.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:12.25pt'>
+  <p class=MsoPlainText style='margin-left:18.0pt'><span style='font-size:14.0pt;
+  mso-bidi-font-size:10.0pt;font-family:"Calibri",serif;mso-fareast-font-family:
+  "MS Mincho"'>2<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:22;page-break-inside:avoid;height:12.25pt'>
+  <td width=169 valign=top style='width:126.75pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:12.25pt'>
+  <p class=MsoPlainText style='margin-left:18.0pt'><span style='font-size:14.0pt;
+  mso-bidi-font-size:10.0pt;font-family:"Calibri",serif;mso-fareast-font-family:
+  "MS Mincho"'>22<o:p></o:p></span></p>
+  </td>
+  <td width=51 valign=top style='width:38.55pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:12.25pt'>
+  <p class=MsoPlainText style='margin-left:18.0pt'><span style='font-size:14.0pt;
+  mso-bidi-font-size:10.0pt;font-family:"Calibri",serif;mso-fareast-font-family:
+  "MS Mincho"'>2<o:p></o:p></span></p>
+  </td>
+  <td width=51 valign=top style='width:38.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:12.25pt'>
+  <p class=MsoPlainText style='margin-left:18.0pt'><span style='font-size:14.0pt;
+  mso-bidi-font-size:10.0pt;font-family:"Calibri",serif;mso-fareast-font-family:
+  "MS Mincho"'>2.4<o:p></o:p></span></p>
+  </td>
+  <td width=60 valign=top style='width:45.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:12.25pt'>
+  <p class=MsoPlainText style='margin-left:18.0pt'><span style='font-size:14.0pt;
+  mso-bidi-font-size:10.0pt;font-family:"Calibri",serif;mso-fareast-font-family:
+  "MS Mincho"'>2<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:23;page-break-inside:avoid;height:12.25pt'>
+  <td width=169 valign=top style='width:126.75pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:12.25pt'>
+  <p class=MsoPlainText style='margin-left:18.0pt'><span style='font-size:14.0pt;
+  mso-bidi-font-size:10.0pt;font-family:"Calibri",serif;mso-fareast-font-family:
+  "MS Mincho"'>23<o:p></o:p></span></p>
+  </td>
+  <td width=51 valign=top style='width:38.55pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:12.25pt'>
+  <p class=MsoPlainText style='margin-left:18.0pt'><span style='font-size:14.0pt;
+  mso-bidi-font-size:10.0pt;font-family:"Calibri",serif;mso-fareast-font-family:
+  "MS Mincho"'>3<o:p></o:p></span></p>
+  </td>
+  <td width=51 valign=top style='width:38.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:12.25pt'>
+  <p class=MsoPlainText style='margin-left:18.0pt'><span style='font-size:14.0pt;
+  mso-bidi-font-size:10.0pt;font-family:"Calibri",serif;mso-fareast-font-family:
+  "MS Mincho"'>3.4<o:p></o:p></span></p>
+  </td>
+  <td width=60 valign=top style='width:45.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:12.25pt'>
+  <p class=MsoPlainText style='margin-left:18.0pt'><span style='font-size:14.0pt;
+  mso-bidi-font-size:10.0pt;font-family:"Calibri",serif;mso-fareast-font-family:
+  "MS Mincho"'>1<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:24;page-break-inside:avoid;height:12.25pt'>
+  <td width=169 valign=top style='width:126.75pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:12.25pt'>
+  <p class=MsoPlainText style='margin-left:18.0pt'><span style='font-size:14.0pt;
+  mso-bidi-font-size:10.0pt;font-family:"Calibri",serif;mso-fareast-font-family:
+  "MS Mincho"'>24<o:p></o:p></span></p>
+  </td>
+  <td width=51 valign=top style='width:38.55pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:12.25pt'>
+  <p class=MsoPlainText style='margin-left:18.0pt'><span style='font-size:14.0pt;
+  mso-bidi-font-size:10.0pt;font-family:"Calibri",serif;mso-fareast-font-family:
+  "MS Mincho"'>4<o:p></o:p></span></p>
+  </td>
+  <td width=51 valign=top style='width:38.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:12.25pt'>
+  <p class=MsoPlainText style='margin-left:18.0pt'><span style='font-size:14.0pt;
+  mso-bidi-font-size:10.0pt;font-family:"Calibri",serif;mso-fareast-font-family:
+  "MS Mincho"'>4.1<o:p></o:p></span></p>
+  </td>
+  <td width=60 valign=top style='width:45.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:12.25pt'>
+  <p class=MsoPlainText style='margin-left:18.0pt'><span style='font-size:14.0pt;
+  mso-bidi-font-size:10.0pt;font-family:"Calibri",serif;mso-fareast-font-family:
+  "MS Mincho"'>1<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:25;mso-yfti-lastrow:yes;page-break-inside:avoid;
+  height:12.25pt'>
+  <td width=169 valign=top style='width:126.75pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:12.25pt'>
+  <p class=MsoPlainText style='margin-left:18.0pt'><span style='font-size:14.0pt;
+  mso-bidi-font-size:10.0pt;font-family:"Calibri",serif;mso-fareast-font-family:
+  "MS Mincho"'>25<o:p></o:p></span></p>
+  </td>
+  <td width=51 valign=top style='width:38.55pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:12.25pt'>
+  <p class=MsoPlainText style='margin-left:18.0pt'><span style='font-size:14.0pt;
+  mso-bidi-font-size:10.0pt;font-family:"Calibri",serif;mso-fareast-font-family:
+  "MS Mincho"'>1<o:p></o:p></span></p>
+  </td>
+  <td width=51 valign=top style='width:38.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:12.25pt'>
+  <p class=MsoPlainText style='margin-left:18.0pt'><span style='font-size:14.0pt;
+  mso-bidi-font-size:10.0pt;font-family:"Calibri",serif;mso-fareast-font-family:
+  "MS Mincho"'>1.1<o:p></o:p></span></p>
+  </td>
+  <td width=60 valign=top style='width:45.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:12.25pt'>
+  <p class=MsoPlainText style='margin-left:18.0pt'><span style='font-size:14.0pt;
+  mso-bidi-font-size:10.0pt;font-family:"Calibri",serif;mso-fareast-font-family:
+  "MS Mincho"'>2<o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+
+<!-- конец содержания-->	
+				
+				</div>
+			</div>
+			
+            </div>
+        </div>
+    </div>
+	
+	<!--Меню навигации по лекциям -->	
+ <div aria-label="..." class = "nav-menu">
+   <ul class="pager  background-transition-slow" >
+   <li title="Наверх" style = "margin-right:15px; "><a class = "glyphicon glyphicon-menu-up page-scroll" href="#page-top" ></a></li>
+   </ul>
+ </div>
+	<!---->
+	
+	</div>
+    <!-- jQuery -->
+    <script src="../lib/js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../lib/js/bootstrap.min.js"></script>
+
+    <!-- Scrolling Nav JavaScript -->
+    <script src="../lib/js/jquery.easing.min.js"></script>
+    <script src="../lib/js/scrolling-nav.js"></script>
+
+</body>
+
+</html>

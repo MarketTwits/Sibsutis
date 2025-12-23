@@ -1,0 +1,288 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="do.sibsutis.ru">
+
+    <title>Лекция 2. Конспект лекций</title>
+	
+	<link rel="icon" type="image/png" href="../lib/css/favicon.png">
+    <!-- Bootstrap Core CSS -->
+    <link href="../lib/css/bootstrap.css" rel="stylesheet">
+	
+    <!-- Custom CSS -->
+    <link href="../lib/css/scrolling-nav.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<!-- The #page-top ID is part of the scrolling feature - the data-spy and data-target are part of the built-in Bootstrap scrollspy function -->
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top" >
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <li class="hidden"> <a class="page-scroll" href="#page-top"></a> </li>
+	  
+	  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+	  
+      <a class="navbar-brand " href="../index.htm"> 
+   <text class = "hidden-xs">Структуры и алгоритмы обработки данных (часть 2)</text> 
+   <text class = "visible-xs">САОД2</text>
+	  </a>
+    </div>
+
+    <!-- Collect the nav links, forms, and glyphicon glyphicon-list-alt content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      
+	  <!-- <ul class="nav navbar-nav">
+		<li><a href="#"></a></li> 
+      </ul> -->
+	
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+		<button type="button" class="navbar-toggle dropdown-toggle hidden-xs" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" >
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		</button>	      
+		<a class = "dropdown-toggle visible-xs" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Материалы</a>
+          <ul class="dropdown-menu">
+            <li><a href="../index.htm">Аннотация курса</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="lec_index.htm">Теория</a></li>
+            <li><a href="questns.htm">Экзаменационное задание</a></li>
+           <li role="separator" class="divider"></li>
+            <li><a href="course_work.htm">Курсовой проект</a></li>
+                        <li role="separator" class="divider"></li>
+            <li><a href="labs.htm">Лабораторные работы</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="lit.htm">Литература</a></li>
+          </ul>
+ </li>
+  </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+
+    <!-- Intro Section -->
+	<!-- Секция с информацией "Уважаемый слушатель"	 -->
+    <div id="intro" class="section content-section ">
+        <div class="container">
+             <div class="row">
+                <div class="col-lg-12">	
+
+
+<!-- содержание -->	
+<div class="page-header">
+<h3>Глава 2 Деревья поиска</h3>			
+<p><a href="lec2.htm#1" class=punkt>1 Поиск в дереве</a>
+<br><a href="lec2.htm#2" class=punkt>2 Идеально сбалансированное дерево поиска</a>
+</div>
+<!--начало--> 
+<a name=1></a>
+<h3>1 Поиск в дереве</h3>
+<P>
+Двоичные деревья часто употребляются для
+представления множества данных, среди которых идет поиск элементов по
+уникальному ключу. Будем считать, что 
+
+<OL>
+	<LI>часть
+	данных, хранящихся в каждой вершине дерева, является <b>ключом для
+	поиска</b>;</li>
+	<LI>для
+	всех ключей определены операции сравнения <, >, =;</li>
+	<LI>в
+	дереве нет элементов с одинаковыми ключами.</li>
+</OL>
+<P>
+Двоичное дерево называется <I>деревом
+поиска</I>, если ключ в каждой его вершине больше ключа любой вершины
+в левом поддереве и меньше ключа любой вершины в правом поддереве.
+Пример такого дерева приведен на рисунке.
+<P>
+<IMG src="img_lec/saod_html_m1c344a61.gif">
+<P>Рисунок  3 - Дерево поиска </p>
+<BR>
+<P>
+Чтобы определить является ли двоичное
+дерево деревом поиска приведем описание на псевдокоде следующей
+функции. Функция возвращает значение ИСТИНА в случае, если дерево
+является деревом поиска, и значение ЛОЖЬ в противном случае.
+<P><I><B>Алгоритм на псевдокоде</B></I>
+<P><I>Дерево поиска(p: pVertex)</I>
+<P>Дерево поиска = ИСТИНА
+<P>IF(p <img src=img_lec/no.gif align=absmiddle> NIL и ((p<img src=img_lec/rar.gif align=absmiddle>Left <img src=img_lec/no.gif align=absmiddle>NIL и (p<img src=img_lec/rar.gif align=absmiddle>Data<img src=img_lec/arr4.gif align=absmiddle> p<img src=img_lec/rar.gif align=absmiddle>Left<img src=img_lec/rar.gif align=absmiddle>Data или  Дерево поиска (p<img src=img_lec/rar.gif align=absmiddle>Left))) или (р<img src=img_lec/rar.gif align=absmiddle>Right <img src=img_lec/no.gif align=absmiddle> NIL
+и <IMG src="img_lec/saod_html_a94688.gif" HSPACE=12>(p<img src=img_lec/rar.gif align=absmiddle>Data
+<img src=img_lec/arr6.gif align=absmiddle> p <img src=img_lec/rar.gif align=absmiddle>Right<img src=img_lec/rar.gif align=absmiddle>Data
+или  не Дерево поиска (p<img src=img_lec/rar.gif align=absmiddle>Right)))))
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;				Дерево поиска := ЛОЖЬ
+<P>
+FI
+<P>
+В основном деревья поиска используются для
+организации быстрого и удобного поиска элемента с заданным ключом во
+множестве данных, которое динамически изменяется. Приведенная ниже
+процедура поиска элемента в дереве поиска возвращает указатель на
+вершину с заданным ключом, в противном случае возвращаемое значение
+равно пустому указателю.
+
+<BR>
+
+<P><I><B>Алгоритм на псевдокоде</B></I>
+<P><I>Поиск вершины с ключом Х</I>
+<P>p: = Root
+<P>	DO(p <img src=img_lec/no.gif align=absmiddle> NIL)
+<P>&nbsp;&nbsp;&nbsp;		IF(p<img src=img_lec/rar.gif align=absmiddle>Data < x) p:= p<img src=img_lec/rar.gif align=absmiddle>Right
+<P>&nbsp;&nbsp;&nbsp;		ELSEIF (p<img src=img_lec/rar.gif align=absmiddle>Data >x) p: = p<img src=img_lec/rar.gif align=absmiddle>Left
+<P>&nbsp;&nbsp;&nbsp;		ELSE
+<P>       OD   { p<img src=img_lec/rar.gif align=absmiddle>Data = x }
+<P>
+	OD
+<P>&nbsp;&nbsp;&nbsp;	IF (p <img src=img_lec/no.gif align=absmiddle> NIL) <вершина найдена> 
+<P>&nbsp;&nbsp;&nbsp;	ELSE <вершина не найдена>
+<P>OD
+Нетрудно видеть, что максимальное количество сравнений при поиске равно С<SUB>max</SUB>
+= 2<I>h</I>, где <I>h
+</I>высота дерева.</P>
+
+<a name=2></a>
+		<h3>2 Идеально сбалансированное дерево поиска</h3>
+
+<P>
+Двоичное дерево называется <I>идеально
+сбалансированным</I> (ИСД), если для каждой его вершины размеры
+левого и правого поддеревьев отличаются не более чем на 1.
+<P>
+На рисунке приведены примеры деревьев, одно
+из которых является идеально сбалансированным, а другое - нет.
+<P>
+<BR>
+
+<P>
+<IMG src="img_lec/saod_html_6712f44f.gif" HSPACE=12><BR>
+
+<p>Рисунок 4 - Примеры ИСД и неИСД</p>
+<br>
+<P>
+Отметим некоторые свойства идеально сбалансированного
+дерева.
+<P><U>Свойство
+1.</U> <I>Высота ИСД с n вершинами
+минимальна и равна</I>
+<P><I>h<SUB>ИСД(n)</SUB>
+= h<SUB>min</SUB> (n) =</I>[log<I>(n+1)</I>].
+<P>
+<U>Свойство 2<I>.</I></U> <I>Если дерево
+идеально сбалансировано, то все его поддеревья также идеально
+сбалансированы.</I>
+<P>
+Задача построения идеально
+сбалансированного дерева поиска из элементов массива А = (а<SUB>1</SUB>,
+а<SUB>2</SUB>, ... , а<SUB>n</SUB>)
+решается в два этапа:
+<OL>
+	<LI><P>Сортировка
+	массива А.
+	<LI><P>В
+	качестве корня дерева возьмем средний элемент отсортированного
+	массива, из меньших элементов массива строим левое поддерево, из
+	больших - правое поддерево. Далее процесс построения
+	продолжается до тех пор, пока левое или правое поддерево не станет
+	пустым.
+</OL>
+<P><B>Пример.</B>
+Построить ИСДП из элементов массива А. Пусть n
+= 16, а элементы массива это числа в 16-ричной системе счисления.
+
+
+<P>А<IMG src="img_lec/saod_html_m1ae190cb.gif" width="585" height="277">
+
+<p>Рисунок 5 - Построение ИСДП </p>
+<br>
+<P>
+Приведем на псевдокоде алгоритм построения
+ИСДП. Функция ИСДП (L, R)
+возвращает указатель на построенное дерево, где L,
+R - левая и правая границы той части
+массива, из элементов которой строится дерево.
+<P>
+<P><I><B>Алгоритм на псевдокоде</B></I>
+<P><I>ИСДП(L, R)</I>
+<P>IF (L > R) ИСДП:=NIL
+<P>ELSE
+<P>&nbsp;&nbsp;&nbsp; m : = [(L+R) / 2]
+<P >&nbsp;&nbsp;&nbsp;<Выделяем память для p>
+<P >&nbsp;&nbsp;&nbsp;p <img src=img_lec/rar.gif align=absmiddle>Data : = A[m]
+<P >&nbsp;&nbsp;&nbsp;p <img src=img_lec/rar.gif align=absmiddle>Left : = ИСДП ( L, m-1)
+<P >&nbsp;&nbsp;&nbsp;p <img src=img_lec/rar.gif align=absmiddle>Right : = ИСДП ( m+1, R)
+<P>&nbsp;&nbsp;&nbsp;ИСДП:= p
+<P>
+FI
+<P>
+Для идеально сбалансированного дерева С<SUB>max</SUB>
+= 2[log(n+1)].
+Если считать, что поиск любой вершины происходит одинаково часто, то
+ИСДП обеспечивает минимальное среднее время поиска. К существенным
+недостаткам ИСДП можно отнести то, что при добавлении нового элемента
+к множеству данных необходимо строить заново ИСДП.<P>
+
+<h3> Контрольные вопросы</h3>
+<OL>
+	<LI>Дайте определение двоичного дерева поиска.</li>
+	<LI>Что такое идеально сбалансированное дерево поиска?</li>
+	<LI>Какова высота ИСДП?</li>
+	<LI>Каким образом строится ИДСП?</li>
+</OL>
+<hr>
+
+				</div>
+			</div>
+			
+            </div>
+        </div>
+    </div>
+	
+	<!--Меню навигации по лекциям -->	
+	<div aria-label="..." class = "nav-menu">
+	  <ul class="pager  background-transition-slow" >
+		 <li title="Наверх" style = "margin-right:15px;	"><a class = "glyphicon glyphicon-menu-up page-scroll" href="#page-top" ></a></li>
+		 <li title="К предыдущей лекции"><a class = "glyphicon glyphicon-menu-left page-scroll" href="lec1.htm" ></a></li>
+		 <li title="В содержание"><a class = "glyphicon glyphicon-list-alt" href="lec_index.htm" ></a></li>
+		 <li title="К следующей лекции"><a class = "glyphicon glyphicon-menu-right page-scroll" href="lec3.htm" ></a></li>
+	  </ul>
+	</div>
+	<!---->
+	
+	</div>
+    <!-- jQuery -->
+    <script src="../lib/js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../lib/js/bootstrap.min.js"></script>
+
+    <!-- Scrolling Nav JavaScript -->
+    <script src="../lib/js/jquery.easing.min.js"></script>
+    <script src="../lib/js/scrolling-nav.js"></script>
+
+</body>
+
+</html>

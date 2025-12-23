@@ -1,0 +1,566 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="do.sibsutis.ru">
+
+    <title>Лекция 4. Конспект лекций</title>
+	
+	<link rel="icon" type="image/png" href="../lib/css/favicon.png">
+    <!-- Bootstrap Core CSS -->
+    <link href="../lib/css/bootstrap.css" rel="stylesheet">
+	
+    <!-- Custom CSS -->
+    <link href="../lib/css/scrolling-nav.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<!-- The #page-top ID is part of the scrolling feature - the data-spy and data-target are part of the built-in Bootstrap scrollspy function -->
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top" >
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <li class="hidden"> <a class="page-scroll" href="#page-top"></a> </li>
+	  
+	  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+	  
+      <a class="navbar-brand " href="../index.htm"> 
+   <text class = "hidden-xs">Структуры и алгоритмы обработки данных (часть 2)</text> 
+   <text class = "visible-xs">САОД2</text>
+	  </a>
+    </div>
+
+    <!-- Collect the nav links, forms, and glyphicon glyphicon-list-alt content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      
+	  <!-- <ul class="nav navbar-nav">
+		<li><a href="#"></a></li> 
+      </ul> -->
+	
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+		<button type="button" class="navbar-toggle dropdown-toggle hidden-xs" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" >
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		</button>	      
+		<a class = "dropdown-toggle visible-xs" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Материалы</a>
+          <ul class="dropdown-menu">
+            <li><a href="../index.htm">Аннотация курса</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="lec_index.htm">Теория</a></li>
+            <li><a href="questns.htm">Экзаменационное задание</a></li>
+           <li role="separator" class="divider"></li>
+            <li><a href="course_work.htm">Курсовой проект</a></li>
+                        <li role="separator" class="divider"></li>
+            <li><a href="labs.htm">Лабораторные работы</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="lit.htm">Литература</a></li>
+          </ul>
+ </li>
+  </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+
+    <!-- Intro Section -->
+	<!-- Секция с информацией "Уважаемый слушатель"	 -->
+    <div id="intro" class="section content-section ">
+        <div class="container">
+             <div class="row">
+                <div class="col-lg-12">	
+
+
+<!-- содержание -->	
+<div class="page-header">
+<h3>Глава 4 Б-дерево</h3>
+<p><a href="lec4.htm#1" class=punkt>1 Определение и свойства АВЛ-дерева</a>
+<br><a href="lec4.htm#2" class=punkt>2 Повороты при балансировке</a>
+<br><a href="lec4.htm#3" class=punkt>3 Добавление вершины в дерево</a>
+<br><a href="lec4.htm#4" class=punkt>4 Удаление вершины из дерева</a>
+</div>
+
+<!--начало--> 
+<a name=1></a>
+<h3>1 Определение и свойства АВЛ-дерева</h3>
+<P>
+Как было показано выше, ИСДП обеспечивает
+минимальное среднее время поиска. Однако перестройка дерева после
+случайного включения вершины - довольно сложная операция. СДП
+дает среднее время поиска на 40 % больше, но процедура построения
+достаточно проста. Возможное промежуточное решение - введение
+менее строгого определения сбалансированности. Одно из таких
+определений было предложено Г. М. Адельсон - Вельским и Е. М.
+Ландисом (1962).
+<P>
+Дерево поиска называется <I>сбалансированным
+по высоте</I>, или <I>АВЛ - деревом</I>, если для каждой его
+вершины высоты левого и правого поддеревьев отличаются не более чем
+на 1.
+<P>
+На рисунке 13 - приведены примеры деревьев,
+одно из которых является АВЛ-деревом, а другое - нет. В
+выделенной вершине нарушается баланс высот левого и правого
+поддеревьев.
+
+<P>
+<IMG src="img_lec/saod_html_5c5cbb0d.gif"><BR>
+
+Рисунок 13 - Пример АВЛ-дерева и не АВЛ-дерева </p>
+<br>
+<P><A NAME="_Ref68681089"></A>
+Заметим, что ИСДП является также и АВЛ -
+деревом. Обратное утверждение не верно.
+<P>
+Адельсон - Вельский и Ландис доказали
+теорему, гарантирующую, что АВЛ-дерево никогда не будет в среднем по
+высоте превышать ИСДП более, чем на 45% независимо от количества
+вершин:
+
+log(<I>n</I>+1)
+<img src=img_lec/arr4.gif align=absmiddle> h<SUB>АВЛ</SUB>(<I>n</I>)
+< 1,44 log(<I>n</I>+2)
+- 0,328 при <I>n<img src=img_lec/rar.gif align=absmiddle><img src=img_lec/i18.gif align=absmiddle>.</I>
+
+
+<P>
+Таким
+образом, лучший случай сбалансированного по высоте дерева -
+ИСДП, худший случай - плохое АВЛ - дерево. <I>Плохое АВЛ
+- дерево<B> </B></I>это АВЛ-дерево, которое имеет наименьшее
+число вершин при фиксированной высоте. Рассмотрим процесс построения
+плохого АВЛ-дерева. Возьмём фиксированную высоту h
+и построим АВЛ - дерево с минимальным количеством вершин.
+Обозначим такое дерево через T<SUB>h</SUB>.
+Ясно, что Т<SUB>0</SUB> - пустое дерево, Т<SUB>1</SUB> -
+дерево с одной вершиной. Для построения Т<SUB>h</SUB>
+при h > 1 будем брать корень и два
+поддерева с минимальным количеством вершин.
+<P>
+<IMG src="img_lec/saod_html_31cb3488.gif" HSPACE=12><BR>
+Рисунок 14 - Деревья Фибоначчи </p>
+<br>
+<P>
+Одно поддерево должно быть высотой <I>h</I>-1,
+а другое высотой <I>h</I>-2.
+Поскольку принцип их построения очень напоминает построение чисел
+Фибоначчи, то такие деревья называют <I>деревьями Фибоначчи</I>: T<SUB>h</SUB>
+= < T<SUB>h</SUB><SUB>-1</SUB>, x,
+T<SUB>h</SUB><SUB>-2</SUB> >. Число
+вершин в T<SUB>h</SUB> определяется
+следующим образом: 
+
+<P>
+<I>n</I><SUB>0</SUB> =
+0, <I>n</I><SUB>1</SUB> = 1, <I>n<SUB>h</SUB> </I>= <I>n<SUB>h-</SUB></I><SUB>1</SUB>
++ 1 + <I>n<SUB>h</SUB></I><SUB>-2</SUB>
+<P>
+<BR>
+<a name=2></a>
+<h3>2 Повороты при балансировке</h3>
+<P>
+Рассмотрим, что может произойти при
+включении новой вершины в сбалансированное по высоте дерево. Пусть r
+- корень АВЛ-дерева, у которого имеется левое поддерево (Т<SUB>L</SUB>)
+и правое поддерево (T<SUB>R</SUB>). Если
+добавление новой вершины в левое поддерево приведет к увеличению его
+высоты на 1, то возможны три случая:
+<OL>
+	<LI><P>если
+	h<SUB>L</SUB> = h<SUB>R</SUB>,
+	то Т<SUB>L</SUB> и T<SUB>R</SUB>
+	станут разной высоты, но баланс не будет нарушен;
+	<LI><P>если
+	h<SUB>L</SUB><SUB> </SUB>< h<SUB>R</SUB>,
+	то Т<SUB>L</SUB> и T<SUB>R</SUB>
+	станут равной высоты, т. е. баланс даже улучшится;
+	<LI><P>если
+	h<SUB>L</SUB> > h<SUB>R</SUB>,
+	то баланс нарушиться и дерево необходимо перестраивать.
+</OL>
+<P>
+Введём в каждую вершину дополнительный
+параметр Balance (показатель баланса),
+принимающий следующие значения:
+<P>
+-1, если левое поддерево на единицу выше правого;
+<P>
+0, если высоты обоих поддеревьев одинаковы;
+<P>
+1, если правое поддерево на единицу выше левого.
+<P>
+Если в какой-либо вершине баланс высот
+нарушается, то необходимо так перестроить имеющееся дерево, чтобы
+восстановить баланс в каждой вершине. Для восстановления баланса
+будем использовать процедуры поворотов АВЛ-дерева.
+<P>
+<IMG src="img_lec/saod_html_1d867aff.gif"><BR>
+
+Рисунок 15 - LL - поворот </p>
+<br>
+<P><I><B>Алгоритм на псевдокоде</B></I>
+<P><I>LL - поворот</I>
+<P>q := p<img src=img_lec/rar.gif align=absmiddle>Left
+<P>q<img src=img_lec/rar.gif align=absmiddle>Balance := 0
+<P>p<img src=img_lec/rar.gif align=absmiddle>Balance := 0
+<P>p<img src=img_lec/rar.gif align=absmiddle>Left := q<img src=img_lec/rar.gif align=absmiddle>Right
+<P>q<img src=img_lec/rar.gif align=absmiddle>Right := p
+<P>p := q
+<P>
+<BR>
+<P>
+<IMG src="img_lec/saod_html_2bda9356.gif"><BR>
+Рисунок 16 - LR – поворот </p>
+<br>
+<P><I><B>Алгоритм на псевдокоде</B></I>
+<P><I>LR- поворот</I>
+<P>q := p<img src=img_lec/rar.gif align=absmiddle>Left,r := q<img src=img_lec/rar.gif align=absmiddle>Right
+<P>IF (r<img src=img_lec/rar.gif align=absmiddle>Balance<0) p<img src=img_lec/rar.gif align=absmiddle>Balance := +1 ELSE
+ &nbsp;&nbsp;&nbsp; p<img src=img_lec/rar.gif align=absmiddle>Balance := 0 FI
+<P>IF (r<img src=img_lec/rar.gif align=absmiddle>Balance>0)
+ &nbsp;&nbsp;&nbsp;q<img src=img_lec/rar.gif align=absmiddle>Balance := -1 
+ELSE q<img src=img_lec/rar.gif align=absmiddle>Balance := 0 FI
+<P> &nbsp;&nbsp;&nbsp;r<img src=img_lec/rar.gif align=absmiddle>Balance := 0
+<P> &nbsp;&nbsp;&nbsp;p<img src=img_lec/rar.gif align=absmiddle>Left := r<img src=img_lec/rar.gif align=absmiddle>Right, q<img src=img_lec/rar.gif align=absmiddle>Right := r<img src=img_lec/rar.gif align=absmiddle>Left
+<P> &nbsp;&nbsp;&nbsp;r<img src=img_lec/rar.gif align=absmiddle>Left := q, r<img src=img_lec/rar.gif align=absmiddle>Right := p, p := r
+<P><IMG src="img_lec/saod_html_69b19d30.gif" width="32" height="31"> <U>RR	- поворот</U>
+
+<P>
+<IMG src="img_lec/saod_html_m6edc35be.gif" HSPACE=12><BR>
+Рисунок 17 - RR – поворот </p>
+<br>
+<P><I><B>Алгоритм на псевдокоде</B></I>
+<P><I>RR- поворот</I>
+<P>q := p<img src=img_lec/rar.gif align=absmiddle>Right
+<P>q<img src=img_lec/rar.gif align=absmiddle>Balance := 0
+<P>p<img src=img_lec/rar.gif align=absmiddle>Balance := 0
+<P>p<img src=img_lec/rar.gif align=absmiddle> Right:= q<img src=img_lec/rar.gif align=absmiddle> Left 
+<P>q<img src=img_lec/rar.gif align=absmiddle> Left := p
+<P>p
+<P><U>RL- поворот</U> := q
+<P>
+<BR>
+
+<P>
+<IMG src="img_lec/saod_html_35d0870b.gif"><IMG src="img_lec/saod_html_m26ea94e5.gif"><BR>
+Рисунок 18 - RL – поворот </p>
+<br>
+<P><I><B>Алгоритм на псевдокоде</B></I>
+<P><I>RL- поворот</I>
+<P>q := p<img src=img_lec/rar.gif align=absmiddle>Right, r := q<img src=img_lec/rar.gif align=absmiddle>Left 
+<P>IF (r<img src=img_lec/rar.gif align=absmiddle>Balance>0) p<img src=img_lec/rar.gif align=absmiddle>Balance := -1 
+<P>&nbsp;&nbsp;&nbsp; ELSE p<img src=img_lec/rar.gif align=absmiddle>Balance := 0 
+<P>FI
+<P>IF (r<img src=img_lec/rar.gif align=absmiddle>Balance<0) q<img src=img_lec/rar.gif align=absmiddle>Balance := 1 
+<P>&nbsp;&nbsp;&nbsp;ELSE q<img src=img_lec/rar.gif align=absmiddle>Balance := 0 
+<P>FI
+<P>r<img src=img_lec/rar.gif align=absmiddle>Balance := 0
+<P>p<img src=img_lec/rar.gif align=absmiddle> Right:= r<img src=img_lec/rar.gif align=absmiddle> Left, q<img src=img_lec/rar.gif align=absmiddle> Left:= r<img src=img_lec/rar.gif align=absmiddle>
+Right 
+<P>r<img src=img_lec/rar.gif align=middle> Left := p, r<img src=img_lec/rar.gif align=middle>Right := q, p := r
+<a name=3></a>
+<h3>3 Добавление вершины в дерево</h3>
+<P>
+Добавление новой вершины в АВЛ-дерево
+происходит следующим образом. Вначале добавим новую вершину в дерево
+так же как в случайное дерево поиска (проход по пути поиска до
+нужного места). Затем, двигаясь назад по пути поиска от новой вершины
+к корню дерева, будем искать вершину, в которой нарушился баланс (т.
+е. высоты левого и правого поддеревьев стали отличаться более чем на
+1). Если такая вершина найдена, то изменим структуру дерева для
+восстановления баланса с помощью процедур поворотов.
+
+
+<P><I><B>Алгоритм на псевдокоде</B></I>
+<P><I>Добавление в АВЛ - дерево (D: данные; Var
+p: pVertex);</I>
+<P>Обозначим
+<P>	Рост- логическая переменная, которая показывает выросло дерево илинет.
+<P>	IF(p = NIL)
+<P>	 &nbsp;&nbsp;&nbsp;new(p), p<img src=img_lec/rar.gif align=absmiddle>Data := D, p<img src=img_lec/rar.gif align=absmiddle>Left := NIL, p<img src=img_lec/rar.gif align=absmiddle>Right
+:= NIL
+<P> &nbsp;&nbsp;&nbsp;		p<img src=img_lec/rar.gif align=absmiddle>Balance:= 0, Рост := ИСТИНА
+<P>	ELSE
+<P> &nbsp;&nbsp;&nbsp;		IF (p<img src=img_lec/rar.gif align=absmiddle>Data > D)
+<P> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;			Добавление в АВЛ - дерево (D, p<img src=img_lec/rar.gif align=absmiddle>Left)
+<P> &nbsp;&nbsp;&nbsp;		IF (Рост = ИСТИНА)     {выросла левая ветвь}
+<P> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;				IF(p<img src=img_lec/rar.gif align=absmiddle>Balance > 0) p<img src=img_lec/rar.gif align=absmiddle>Balance := 0, Рост:= ЛОЖЬ
+<P> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;				ELSE IF (p<img src=img_lec/rar.gif align=absmiddle>Balance = 0) p<img src=img_lec/rar.gif align=absmiddle>Balance := -1
+<P> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;				ELSE 
+<P> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;IF(p<img src=img_lec/rar.gif align=absmiddle>Left<img src=img_lec/rar.gif align=absmiddle>Balance < 0)  <LL - поворот>
+<P> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;ELSE  <LR - поворот>  FI
+<P> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;	Рост:= ЛОЖЬ
+<P> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;	FI
+<P> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;			FI
+<P> &nbsp;&nbsp;&nbsp;		ELSE IF (p<img src=img_lec/rar.gif align=absmiddle>Data < D)
+<P>	 &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;		<аналогичные действия для правого поддерева
+<P> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;			ELSE{p<img src=img_lec/rar.gif align=absmiddle>Data = D,
+такая вершина уже есть}
+<P> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;			FI
+<P> &nbsp;&nbsp;&nbsp;		FI
+<P>	FI
+<P><B>Пример:</B>
+  Построение АВЛ-дерева с вершинами B 9 2 4
+1 7 E F A
+D C 3 5 8 6
+
+
+<P>
+<IMG src="img_lec/saod_html_m6bd95279.gif"><IMG src="img_lec/saod_html_692b8da4.gif"><BR>
+
+<IMG src="img_lec/saod_html_3b837ef6.gif"><BR>
+<P>
+<IMG src="img_lec/saod_html_1975a94e.gif"><BR>
+
+<P><IMG src="img_lec/saod_html_4415100c.gif"><BR>
+Рисунок 19 - Построение АВЛ-дерева </p>
+<br>
+<P>
+<a name=4></a>
+<h3>4 Удаление вершины из дерева</h3>
+Очевидно, удаление вершины - процесс
+намного более сложный, чем добавление. Хотя алгоритм операции
+балансировки остаётся тем же самым, что и при включении вершины.
+Балансировка по-прежнему выполняется с помощью одного из четырёх уже
+рассмотренных поворотов вершин.
+<P>
+Удаление из АВЛ-дерева происходит следующим
+образом. Удалим вершину так же, как это делалось для СДП. Затем
+двигаясь назад от удалённой вершины к корню дерева, будем
+восстанавливать баланс в каждой вершине (с помощью поворотов). При
+этом нарушение баланса возможно в нескольких вершинах в отличие от
+операции включения вершины в дерево.
+<P>
+Как и в случае добавления вершин, введём
+логическую переменную <I>Уменьшение</I>, показывающую уменьшилась ли
+высота поддерева. Балансировка идёт, только если<I> Уменьшение</I> =
+истина. Это значение присваивается переменной <I>Уменьшение</I>, если
+обнаружена и удалена вершина или высота поддерева уменьшилась в
+процессе балансировки.
+<P>
+Введём две симметричные процедуры
+балансировки, т. к. они будут использоваться несколько раз в
+алгоритме удаления:
+<P>
+BL -
+используется при уменьшении высоты левого поддерева,
+<P>
+BR -
+используется при уменьшении высоты правого поддерева.
+<P>Рисунки
+46 и 47 иллюстрируют три случая, возникающие при удалении вершины из
+левого (для BL) или правого (для BR)
+поддерева, в зависимости от исходного состояния баланса в вершине по
+адресу p.
+<P><I><B>Алгоритм
+на псевдокоде</B></I>
+<P>BL
+(p: pVertex,
+Уменьшение: boolean)
+<P>
+IF (p<img src=img_lec/rar.gif align=absmiddle>Bal = -1) p<img src=img_lec/rar.gif align=absmiddle>Bal := 0  
+
+<P>ELSE
+<P> &nbsp;&nbsp;&nbsp;IF (p<img src=img_lec/rar.gif align=absmiddle>Bal =  0) p<img src=img_lec/rar.gif align=absmiddle>Bal := 1, Уменьшение:= ЛОЖЬ
+<P>  &nbsp;&nbsp;&nbsp;ELSE
+<P>  &nbsp;&nbsp;&nbsp;IF (p<img src=img_lec/rar.gif align=absmiddle>Bal =  1)
+<P> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;			IF(p<img src=img_lec/rar.gif align=absmiddle>Right<img src=img_lec/rar.gif align=absmiddle>Bal <img src=img_lec/arr6.gif align=absmiddle> 0)  <RR1-поворот>
+<P> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;			ELSE
+ <RL - поворот>  <P>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;FI
+<P> &nbsp;&nbsp;&nbsp;FI
+<P><A NAME="_Ref68680412"></A>
+<IMG src="img_lec/saod_html_7e2b17c8.gif">
+<P>Рисунок 20 - Три случая при удалении вершины из левого (для BL) поддерева 
+<P><br>
+  
+  <I><B>Алгоритм на псевдокоде</B></I>
+<P>BR(p: pVertex, Уменьшение: boolean)
+<P>IF (p<img src=img_lec/rar.gif align=absmiddle>Bal =  1) p<img src=img_lec/rar.gif align=absmiddle>Bal := 0 
+<P>ELSE
+<P> &nbsp;&nbsp;&nbsp;IF(p<img src=img_lec/rar.gif align=absmiddle>Bal =  0) p<img src=img_lec/rar.gif align=absmiddle>Bal := -1, Уменьш:= ЛОЖЬ
+<P> &nbsp;&nbsp;&nbsp;ELSE
+<P> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;IF (p<img src=img_lec/rar.gif align=absmiddle>Bal = -1) 
+<P> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;	IF(p<img src=img_lec/rar.gif align=absmiddle>Left<img src=img_lec/rar.gif align=absmiddle>Bal <img src=img_lec/arr4.gif align=absmiddle> 0)  <LL1 - поворот>
+<P> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;	ELSE
+<p> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;<LR - поворот> 
+<p> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;FI
+<P> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;FI<P>
+<IMG src="img_lec/saod_html_55b02ad2.gif">
+<P>Рисунок 21 - Три случая при удалении вершины правого (для BR) поддерева</p>
+<BR>
+
+<P><A NAME="_Ref68680415"></A>
+При добавлении вершины не может быть
+случая, когда p<img src=img_lec/rar.gif align=absmiddle>left<img src=img_lec/rar.gif align=absmiddle>Bal
+= 0, поэтому LL - поворот необходимо
+изменить, чтобы учесть эту ситуацию.
+<P><I><B>Алгоритм на псевдокоде</B></I>
+<P><I>LL1- поворот</I>
+<P>	q:= p<img src=img_lec/rar.gif align=absmiddle>Left
+<P>	IF(q<img src=img_lec/rar.gif align=absmiddle>Bal = 0) p<img src=img_lec/rar.gif align=absmiddle>Bal := -1, q<img src=img_lec/rar.gif align=absmiddle>Bal := 1, Уменьш:= false
+<P>	ELSE p<img src=img_lec/rar.gif align=absmiddle>Bal := 0, q<img src=img_lec/rar.gif align=absmiddle>Bal := 0
+<P>	p<img src=img_lec/rar.gif align=absmiddle>Left := q<img src=img_lec/rar.gif align=absmiddle>Right
+<P>	q<img src=img_lec/rar.gif align=absmiddle>Right := p
+<P>	p := q
+<P>Аналогичноизменяется RR - поворот, LR и RL - повороты не изменяются.
+
+<P><I><B>Алгоритм на псевдокоде</B></I>
+<P><I>RR1- поворот</I>
+<P>	q:= p<img src=img_lec/rar.gif align=absmiddle>Right
+<P>	IF(q<img src=img_lec/rar.gif align=absmiddle>Bal = 0) 
+<p> &nbsp;&nbsp;&nbsp; p<img src=img_lec/rar.gif align=absmiddle>Bal := 1,
+<p>  &nbsp;&nbsp;&nbsp;q<img src=img_lec/rar.gif align=absmiddle>Bal := -1,
+<p> &nbsp;&nbsp;&nbsp;Уменьшение := ЛОЖЬ
+<P>	ELSE 
+<p>  &nbsp;&nbsp;&nbsp;p<img src=img_lec/rar.gif align=absmiddle>Bal := 0, q<img src=img_lec/rar.gif align=absmiddle>Bal := 0
+<P>	FI
+<P>p<img src=img_lec/rar.gif align=absmiddle> Right:= q<img src=img_lec/rar.gif align=absmiddle> Left 
+<P>	q<img src=img_lec/rar.gif align=absmiddle> Left := p
+<P>	p := q
+<P>
+<BR>
+
+<P><I><B>Алгоритм на псевдокоде</B></I>
+<P><I>Удаление из АВЛ-дерева (x: Данные, p:pVertex, Уменьшение: boolean)</I>
+<P>IF(p = NIL) {ключа в дереве нет}
+<P>ELSE
+<P>  &nbsp;&nbsp;&nbsp;IF (p<img src=img_lec/rar.gif align=absmiddle>Data> x) Удаление (x,p<img src=img_lec/rar.gif align=absmiddle>Left,Уменьшение)
+<P> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;		IF Уменьшение BL (p,Уменьш) 
+<p> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;FI
+<P> &nbsp;&nbsp;&nbsp;ELSE
+<p> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;IF (p<img src=img_lec/rar.gif align=absmiddle>Data< x) Удаление (x,p<img src=img_lec/rar.gif align=absmiddle>Right,Уменьшение)
+<P> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;		IF Уменьшение BR (p,Уменьшение) FI
+<P> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;ELSE
+<p> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;IF {удаление вершины по адресу p}
+<P> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;	q:= p
+<P> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;	IF(q<img src=img_lec/rar.gif align=absmiddle>Right =NIL) p := q<img src=img_lec/rar.gif align=absmiddle>Left,Уменьшение := ИСТИНА
+<P> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;	ELSE
+<p> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;IF (q<img src=img_lec/rar.gif align=absmiddle>Left= NIL) p :=q<img src=img_lec/rar.gif align=absmiddle>Right,Уменьшение := ИСТИНА
+<P> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;ELSE 
+<p> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;del (q<img src=img_lec/rar.gif align=absmiddle>Left,Уменьшение)
+<P> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;	IF Уменьшение  BL (p,Уменьшение) FI
+<P> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;FI
+<P> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;	dispose(q)
+<P> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;FI
+<p> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;FI
+<p> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;FI
+<P>Используемая
+при удалении процедура del удаляет вершину,
+имеющую 2 поддерева, т. е. заменяет её на самую правую вершину из
+левого поддерева.
+
+
+<P><I><B>Алгоритм на псевдокоде</B></I>
+<P><I>del (r: pVertex,Уменьшение: boolean)</I>
+<P>	IF(r<img src=img_lec/rar.gif align=absmiddle>right <img src=img_lec/no.gif align=absmiddle> NIL)
+<P>	 &nbsp;&nbsp;&nbsp;	del(r<img src=img_lec/rar.gif align=absmiddle>right,Уменьшение)
+<P>	 &nbsp;&nbsp;&nbsp;	IFУменьшение BR (r,Уменьшение) FI
+<P>	ELSE q<img src=img_lec/rar.gif align=absmiddle>Data := r<img src=img_lec/rar.gif align=absmiddle>Data
+<P>		q := r
+<P>		r := r<img src=img_lec/rar.gif align=absmiddle>Left
+<P>		Уменьшение := ИСТИНА
+<P>	FI
+<P><B>Пример</B>:
+Удаление из АВЛ-дерева вершин B  9  2  4  1
+ 7  E  F
+
+
+<P>
+<IMG src="img_lec/saod_html_m50435240.gif"><BR>
+<P>
+<IMG src="img_lec/saod_html_6cdff76.gif">
+<P>
+
+<P>
+<IMG src="img_lec/saod_html_7d3a03d8.gif"><BR>
+<IMG src="img_lec/saod_html_2a30d451.gif"><BR>
+
+<P>
+<IMG src="img_lec/saod_html_m5131f272.gif"><BR>
+<P>
+<IMG src="img_lec/saod_html_24d6e33f.gif"><IMG src="img_lec/saod_html_52c578e3.gif"><BR>
+
+<P>
+<IMG src="img_lec/saod_html_m4181460a.gif"><BR>
+Рисунок 22 - Удаление из АВЛ-дерева </p>
+<br>
+<P>
+Поиск элемента с заданным ключом, включения
+нового элемента, удаления элемента - каждое из этих действий в
+АВЛ-дереве можно произвести в худшем случае за О(log
+<I>n</I>) операций.
+<P>
+Отличие между процедурами включения и
+удаления заключается в следующем. Включение может привести самое
+большое к одному повороту, исключение может потребовать поворот во
+всех вершинах вдоль пути поиска. Наихудшим случаем с точки зрения
+количества балансировок является удаление самой правой вершины у
+плохого АВЛ-дерева (дерева Фибоначчи). По экспериментальным оценкам
+на каждые два включения встречается один поворот, а при исключении
+поворот происходит в одном случае из пяти.
+<P>
+
+<h3>Контрольные вопросы</h3>
+<OL>
+	<LI>Дайте 	определение АВЛ-дерева.</li>
+	<LI>Является 	ли АВЛ-дерево ИСДП? </li>
+	
+	<LI>Является 	ли АВЛ-дерево деревом поиска?</li>
+	<LI>Какова 	высота АВЛ-дерева?</li>
+	<LI>Для 	чего нужны повороты АВЛ-дерева?</li>
+	<LI>Какова 	трудоемкость включения и исключения вершины АВЛ-дерева?</li>
+	<LI>Что 	такое показатель баланса вершины?</li>
+</OL><hr>
+<!-- конец содержания-->	
+				
+				</div>
+			</div>
+			
+            </div>
+        </div>
+    </div>
+	
+	<!--Меню навигации по лекциям -->	
+	<div aria-label="..." class = "nav-menu">
+	  <ul class="pager  background-transition-slow" >
+		 <li title="Наверх" style = "margin-right:15px;	"><a class = "glyphicon glyphicon-menu-up page-scroll" href="#page-top" ></a></li>
+		 <li title="К предыдущей лекции"><a class = "glyphicon glyphicon-menu-left page-scroll" href="lec3.htm" ></a></li>
+		 <li title="В содержание"><a class = "glyphicon glyphicon-list-alt" href="lec_index.htm" ></a></li>
+		 <li title="К следующей лекции"><a class = "glyphicon glyphicon-menu-right page-scroll" href="lec5.htm" ></a></li>
+	  </ul>
+	</div>
+	<!---->
+	
+	</div>
+    <!-- jQuery -->
+    <script src="../lib/js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../lib/js/bootstrap.min.js"></script>
+
+    <!-- Scrolling Nav JavaScript -->
+    <script src="../lib/js/jquery.easing.min.js"></script>
+    <script src="../lib/js/scrolling-nav.js"></script>
+
+</body>
+
+</html>

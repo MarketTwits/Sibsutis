@@ -1,0 +1,310 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="do.sibsutis.ru">
+
+    <title>Лекция 1. Конспект лекций</title>
+	
+	<link rel="icon" type="image/png" href="../lib/css/favicon.png">
+    <!-- Bootstrap Core CSS -->
+    <link href="../lib/css/bootstrap.css" rel="stylesheet">
+	
+    <!-- Custom CSS -->
+    <link href="../lib/css/scrolling-nav.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<!-- The #page-top ID is part of the scrolling feature - the data-spy and data-target are part of the built-in Bootstrap scrollspy function -->
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top" >
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <li class="hidden"> <a class="page-scroll" href="#page-top"></a> </li>
+	  
+	  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+	  
+      <a class="navbar-brand " href="../index.htm"> 
+   <text class = "hidden-xs">Структуры и алгоритмы обработки данных (часть 2)</text> 
+   <text class = "visible-xs">САОД2</text>
+	  </a>
+    </div>
+
+    <!-- Collect the nav links, forms, and glyphicon glyphicon-list-alt content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      
+	  <!-- <ul class="nav navbar-nav">
+		<li><a href="#"></a></li> 
+      </ul> -->
+	
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+		<button type="button" class="navbar-toggle dropdown-toggle hidden-xs" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" >
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		</button>	      
+		<a class = "dropdown-toggle visible-xs" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Материалы</a>
+          <ul class="dropdown-menu">
+            <li><a href="../index.htm">Аннотация курса</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="lec_index.htm">Теория</a></li>
+            <li><a href="questns.htm">Экзаменационное задание</a></li>
+           <li role="separator" class="divider"></li>
+            <li><a href="course_work.htm">Курсовой проект</a></li>
+                        <li role="separator" class="divider"></li>
+            <li><a href="labs.htm">Лабораторные работы</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="lit.htm">Литература</a></li>
+          </ul>
+ </li>
+  </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+
+    <!-- Intro Section -->
+	<!-- Секция с информацией "Уважаемый слушатель"	 -->
+    <div id="intro" class="section content-section ">
+        <div class="container">
+             <div class="row">
+                <div class="col-lg-12">	
+
+
+
+<!-- содержание -->
+<div class="page-header">
+<h3>Глава 1 Двоичные деревья</h3>
+<p><a href="lec1.htm#1" class=punkt>1 Основные определения и понятия</a>
+<br><a href="lec1.htm#2" class=punkt>2 Различные обходы двоичных деревьев</a>
+<br><a href="lec1.htm#3" class=punkt>3 Вычисление основных характеристик дерева</a>
+</div>
+<!--начало--> 
+
+<a name=1></a>
+<h3>1 Основные определения и понятия</h3>
+
+<P>
+Определим двоичное дерево следующим образом :
+<OL>
+	<LI><b>Отдельная
+	вершина V</b> является  двоичным деревом.
+	<LI><b>Двоичное
+	дерево </b>- это вершина V, соединенная
+	с (возможно пустыми) левым (Т<SUB>L</SUB>)
+	и правым (Т<SUB>R</SUB>) двоичными
+	деревьями.
+</OL>
+<P>
+Пример
+двоичного дерева приведен на следующем рисунке.
+<P> <img src="img_lec/saod_html_m3de5ffd5.gif" width="559" height="183">
+<P>Рисунок  1 - Пример двоичного дерева Б </p>
+<br>
+<P>Вершины дерева
+  обозначаются кружочками, связи между вершинами стрелками.
+<P>Каждая
+вершина дерева может содержать какую-либо информацию. Выделенная
+вершина дерева называется <I>корнем.<B> </B></I>Концевые вершины
+дерева, не имеющие поддеревьев, называются <I>листьями<B>. </B></I>Дуги
+ориентированы по направлению от корня к листьям. Путь от корня к
+листу называется <I>ветвью<B>.</B></I> Под <I>длиной ветви</I> будем
+понимать число входящих в неё вершин. <I>Высота дерева</I> <I>h</I>
+определяется как число вершин в самой длинной ветви дерева. <I>Размер
+дерева</I> - число входящих в него вершин. Средней высотой
+дерева называется усредненная по количеству вершин в дереве сумма
+длин  путей от корня к каждой вершине.
+<P>
+Приведем некоторые свойства двоичных деревьев.
+<P><U>Свойство
+1<I>.</I></U> <I>Максимальное число вершин в двоичном дереве высоты h
+равно</I>
+<P><I>n<SUB>max</SUB>(h)=
+</I>2<I><SUP>h</SUP> - 1</I>
+<P>
+<U>Свойство 2<I>.</I></U> <I>Минимально
+возможная высота двоичного дерева с n
+вершинами равна </I>	<I>h<SUB>min</SUB></I>(<I>n</I>)
+= [log(<I>n</I>+1)]
+
+		
+<a name=2></a>
+<h3>2  Различные обходы двоичных деревьев</h3>
+
+<P>
+При разработке алгоритмов для работы с
+деревьями будем считать, что каждая вершина содержит некоторые данные
+и указатели на вершины слева и справа. Поэтому вершина дерева  это
+переменная специального типа. В качестве заголовка для дерева
+используем переменную Root, указывающую на
+корень.
+<P>type pVertex = ^tVertex;
+<P>
+Vertex =record;	tData: integer;
+<P>
+		&nbsp;&nbsp;&nbsp;	Left: pVertex;
+<P>
+		&nbsp;&nbsp;&nbsp;			Right: pVertex;
+<P>
+			end;
+<P>
+VAR		Root: pVertex;
+<P>
+При решении многих задач, связанных с
+деревьями, часто возникает необходимость перебрать все вершины дерева
+или совершить <I>обход дерева</I>, чтобы выполнить некоторые действия
+с каждой вершиной дерева.
+<P>Существуют три основных порядка обхода дерева:
+<OL>
+	<LI>Сверху
+	вниз (<img src=img_lec/dar.gif align=absmiddle>): корень,
+	левое поддерево, правое поддерево.
+	<LI>Слева
+	направо (<img src=img_lec/rar.gif align=absmiddle>): левое
+	поддерево, корень, правое поддерево.
+	<LI>Снизу
+	вверх (<img src=img_lec/uar.gif align=absmiddle>): левое
+	поддерево, правое поддерево, корень.
+</OL>
+<P><B>
+<p><IMG src="img_lec/saod_html_4585f286.gif" width="256" height="157"></p>
+<p>Рисунок 2 </p>
+<br>
+<P>Пример: </B>.
+Совершить обход слева направо для двоичного дерева, изображенного на
+рисунке 28.
+<P>Результат
+обхода:  4  2  5  1  3  6
+
+Обходы легко программируются с помощью рекурсивных
+процедур.
+<P><I><B>Алгоритм на псевдокоде</B></I>
+<P><I>Обход слева направо(p: pVertex)</I>
+<P>		IF(p <img src=img_lec/no.gif align=absmiddle> NIL)
+<P>		              	&nbsp;&nbsp;&nbsp Обход слева направо (p<img src=img_lec/rar.gif align=absmiddle>Left)
+<P>              	&nbsp;&nbsp;&nbsp			Печать(p<img src=img_lec/rar.gif align=absmiddle>Data)
+<P>              	&nbsp;&nbsp;&nbsp			Обход слева направо (p<img src=img_lec/rar.gif align=absmiddle>Right)
+<P>		FI
+<P>
+<a name=3></a>
+<h3>
+3 Вычисление основных характеристик дерева</h3>
+<p>
+Приведем алгоритмы для вычисления различных
+характеристик двоичных деревьев.
+<br><br>
+<P><U>Определение размера дерева</U>
+
+<P><I><B>Алгоритм на псевдокоде</B></I>
+<P><I>Размер(p:pVertex)</I>
+<P>	IF(p = NIL) := 0
+<P>	              	&nbsp;&nbsp;&nbspELSE Размер := 1 + Размер (p<img src=img_lec/rar.gif align=absmiddle>Left)+ Размер (p<img src=img_lec/rar.gif align=absmiddle>Right)
+<P>	FI
+<br><br>
+<p><U>Определение высоты дерева</U></p>
+
+<P><I><B>Алгоритм
+на псевдокоде</B></I>
+<P><I>Высота(p:pVertex)</I>
+<P>		IF(p = NIL) Высота := 0
+<P>	              	&nbsp;&nbsp;&nbsp	ELSE Высота := 1+ max(Высота(p<img src=img_lec/rar.gif align=absmiddle>Left), Высота(p<img src=img_lec/rar.gif align=absmiddle>Right))
+<P>		FI
+<br><br>
+<p><U>Определение	средней высоты дерева</U></p>
+
+<P>
+Для определения средней высоты дерева
+понадобится функция вычисления суммы длин путей от корня до каждой
+вершины на L-том уровне.
+<P><I><B>Алгоритм
+на псевдокоде</B></I>
+<P>
+<I>СДП (p:
+pVertex;</I> <I>L:
+уровень вершины)</I>
+<P>	IF
+(p = NIL) СДП:= 0
+<P>              	&nbsp;&nbsp;&nbsp	ELSE
+СДП:= L + СДП(p <img src=img_lec/rar.gif align=absmiddle>
+Left, L+1) + СДП(p <img src=img_lec/rar.gif align=absmiddle>
+Right, L+1)
+<P>
+	FI
+<P>Тогда
+средняя высота вычисляется следующим образом 
+
+<P>h<SUB>cp</SUB>
+:= СДП(Root, 1)/ Размер(Root)
+<br><br>
+<p><U>Определение контрольной суммы для дерева</U></p>
+
+<P><I><B>Алгоритм на псевдокоде</B></I>
+<P>
+<I>Сумма (p:pVertex)</I>
+<P>
+	IF (p = NIL) Сумма:= 0
+<P>              	&nbsp;&nbsp;&nbsp	ELSE Сумма:=p<img src=img_lec/rar.gif align=absmiddle>Data + Сумма(p<img src=img_lec/rar.gif align=absmiddle>Left)+ Сумма(p<img src=img_lec/rar.gif align=absmiddle>Right
+)
+<P>
+	FI
+
+<h3>Контрольные вопросы</h3>
+
+<OL>
+	<LI>Дайте определение двоичного дерева.</li>
+	<LI>Что такое высота дерева? Средняя высота?</li>
+	<LI>Что такое обход дерева? </li>
+	<LI>Назовите основные обходы дерева.</li>
+</OL><hr>
+
+				</div>
+			</div>
+			
+            </div>
+        </div>
+    </div>
+	
+	<!--Меню навигации по лекциям -->	
+	<div aria-label="..." class = "nav-menu">
+	  <ul class="pager  background-transition-slow" >
+		 <li title="Наверх" style = "margin-right:15px;	"><a class = "glyphicon glyphicon-menu-up page-scroll" href="#page-top" ></a></li>
+		 <li title="К предыдущей лекции"><a class = "glyphicon glyphicon-menu-left page-scroll" href="lec_index.htm" ></a></li>
+		 <li title="В содержание"><a class = "glyphicon glyphicon-list-alt" href="lec_index.htm" ></a></li>
+		 <li title="К следующей лекции"><a class = "glyphicon glyphicon-menu-right page-scroll" href="lec2.htm" ></a></li>
+	  </ul>
+	</div>
+	<!---->
+	
+	</div>
+    <!-- jQuery -->
+    <script src="../lib/js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../lib/js/bootstrap.min.js"></script>
+
+    <!-- Scrolling Nav JavaScript -->
+    <script src="../lib/js/jquery.easing.min.js"></script>
+    <script src="../lib/js/scrolling-nav.js"></script>
+
+</body>
+
+</html>
