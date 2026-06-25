@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="do.sibsutis.ru">
+
+    <title>Лабораторная работа 1</title>
+	
+	<link rel="icon" type="image/png" href="../lib/css/favicon.png">
+    <!-- Bootstrap Core CSS -->
+    <link href="../lib/css/bootstrap.css" rel="stylesheet">
+	
+    <!-- Custom CSS -->
+    <link href="../lib/css/scrolling-nav.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<!-- The #page-top ID is part of the scrolling feature - the data-spy and data-target are part of the built-in Bootstrap scrollspy function -->
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top" >
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <li class="hidden"> <a class="page-scroll" href="#page-top"></a> </li>
+	  
+	  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+	  
+      <a class="navbar-brand " href="../index.htm"> 
+   <text class = "hidden-xs">Архитектура ЭВМ</text> 
+   <text class = "visible-xs">Архитектура ЭВМ</text>
+	  </a>
+    </div>
+
+    <!-- Collect the nav links, forms, and glyphicon glyphicon-list-alt content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      
+	  <!-- <ul class="nav navbar-nav">
+		<li><a href="#"></a></li> 
+      </ul> -->
+	
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+		<button type="button" class="navbar-toggle dropdown-toggle hidden-xs" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" >
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		</button>	      
+		<a class = "dropdown-toggle visible-xs" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Материалы</a>
+          <ul class="dropdown-menu">
+            <li><a href="../index.htm">Аннотация курса</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="lec_index.htm">Теория</a></li>
+                        <li><a href="questns.htm">Контрольные вопросы</a></li>
+           <li role="separator" class="divider"></li>
+            <li><a href="course_work.htm">Контрольная работа</a></li>
+                        <li role="separator" class="divider"></li>
+            <li><a href="labs.htm">Лабораторные работы</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="lit.htm">Литература</a></li>
+          </ul>
+ </li>
+  </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+
+    <!-- Intro Section -->
+	<!-- Секция с информацией "Уважаемый слушатель"	 -->
+    <div id="intro" class="section content-section ">
+        <div class="container">
+             <div class="row">
+                <div class="col-lg-12">	
+
+    <div class="page-header">
+	<h3>Лабораторная работа №1</h3>
+    </div>
+
+<h3><b>Изучение основ программирования на языке ассемблера</b></h3>
+<br>
+<p>1.<u> ЦЕЛЬ РАБОТЫ</u></p>
+
+<p>Практическое освоение составления простейших программ на
+языке Ассемблера и работы с программами TASM и TLINK.</p>
+<br>
+
+<p>2.<u>
+РЕКОМЕНДУЕМАЯ ЛИТЕРАТУРА</u></p>
+
+<p class=MsoNormalCxSpFirst><font size=3 face=Arial><span style='font-size:
+12.0pt;line-height:115%'>2.1. Абель П. Язык Ассемблера для IBM PC и программирования
+/Пер. c англ.- М.:Высш.шк., 1992.с 51-75.</span></font></p>
+
+<p class=MsoNormalCxSpMiddle><font size=3 face=Arial><span style='font-size:
+12.0pt;line-height:115%'>2.2. Уокерли Дж. Архитектура и программирование
+микро-ЭВМ: В 2-х книгах.  Пер. с англ.-М.: Мир, 1984.-Кн. 2. с 215-284.</span></font></p>
+
+<p class=MsoNormalCxSpLast><font size=3 face=Arial><span style='font-size:12.0pt;
+line-height:115%'>2.3. Белецкий Я. Энциклопедия языка Си: Пер. c польск.-М.:Мир,1992.с
+218-229, 233, 665, 669.</span></font></p>
+<br>
+
+<p>3.<u> ПОДГОТОВКА К РАБОТЕ</u></p>
+
+<p>3.1. Изучить методические указания.</p>
+
+<p>3.2. Подготовить ответы на контрольные вопросы.</p>
+
+<p>3.3. Проанализировать приведенную ниже программу <span
+lang=EN-US>HELLO</span>.<span lang=EN-US>ASM</span> и вставить в нее фрагмент,
+реализующий вывод на экран Вашей фамилии, имени, отчества с помощью символьной
+переменной <span lang=EN-US>STUDENT</span>.</p>
+<br>
+
+<p>4.<u> КОНТРОЛЬНЫЕ
+ВОПРОСЫ</u></p>
+
+<p class=MsoNormalCxSpFirst><font size=3 face=Arial><span style='font-size:
+12.0pt;line-height:115%'>4.1. Какова цель сегментации памяти? </span></font></p>
+
+<p class=MsoNormalCxSpMiddle><font size=3 face=Arial><span style='font-size:
+12.0pt;line-height:115%'>4.2. Что такое базовый адрес сегмента?</span></font></p>
+
+<p class=MsoNormalCxSpMiddle><font size=3 face=Arial><span style='font-size:
+12.0pt;line-height:115%'>4.3. Какие значения может принимать базовый адрес сегмента?</span></font></p>
+
+<p class=MsoNormalCxSpMiddle><font size=3 face=Arial><span style='font-size:
+12.0pt;line-height:115%'>4.4. Каков максимальный размер сегмента и почему?</span></font></p>
+
+<p class=MsoNormalCxSpMiddle><font size=3 face=Arial><span style='font-size:
+12.0pt;line-height:115%'>4.5. Какие типы сегментов использует ассемблерная программа?</span></font></p>
+
+<p class=MsoNormalCxSpMiddle><font size=3 face=Arial><span style='font-size:
+12.0pt;line-height:115%'>4.6. Какими директивами описывается сегмент?</span></font></p>
+
+<p class=MsoNormalCxSpMiddle><font size=3 face=Arial><span style='font-size:
+12.0pt;line-height:115%'>4.7. Каково назначение директивы </span></font><span
+lang=EN-US>ASSUME</span>?</p>
+
+<p class=MsoNormalCxSpMiddle><font size=3 face=Arial><span style='font-size:
+12.0pt;line-height:115%'>4.8. Каково назначение директив </span></font><span
+lang=EN-US>TITLE</span> и <span lang=EN-US>PAGE</span>?</p>
+
+<p class=MsoNormalCxSpMiddle><font size=3 face=Arial><span style='font-size:
+12.0pt;line-height:115%'>4.9. Что такое процедура и какими директивами она определяется?</span></font></p>
+
+<p class=MsoNormalCxSpMiddle><font size=3 face=Arial><span style='font-size:
+12.0pt;line-height:115%'>4.10. Что такое ассемблирование и компоновка программы?</span></font></p>
+
+<p class=MsoNormalCxSpLast><font size=3 face=Arial><span style='font-size:12.0pt;
+line-height:115%'>4.11. Каково содержание файлов с расширениями *.ASM, *.LST,
+*.OBJ, *.MAP, *.EXE?</span></font></p>
+<br>
+
+<p>5.<u> ПОРЯДОК
+ВЫПОЛНЕНИЯ РАБОТЫ</u></p>
+
+<p>5.1. Используя текстовый редактор, создайте исходный модуль
+программы HELLO.ASM:</p>
+
+<pre><font size=2 face="Courier New"><span style='font-size:11.0pt'>Data  SEGMENT</span></font></pre><pre><font
+size=2 face="Courier New"><span style='font-size:11.0pt'>Greet DB 'Привет, Маша!',13,10,'$'</span></font></pre><pre><font
+size=2 face="Courier New"><span style='font-size:11.0pt'>Data  ENDS</span></font></pre><pre><font
+size=2 face="Courier New"><span style='font-size:11.0pt'>Stack SEGMENT Stack</span></font></pre><pre><font
+size=2 face="Courier New"><span style='font-size:11.0pt'>      DB 100H DUP(?)      ;стек размером 256 байтов.</span></font></pre><pre><font
+size=2 face="Courier New"><span style='font-size:11.0pt'>Stack ENDS</span></font></pre><pre><font
+size=2 face="Courier New"><span style='font-size:11.0pt'>ASSUME CS:Code,DS:Data,SS:Stack</span></font></pre><pre><font
+size=2 face="Courier New"><span style='font-size:11.0pt'>Code  SEGMENT</span></font></pre><pre><font
+size=2 face="Courier New"><span style='font-size:11.0pt'>Start:</span></font></pre><pre><font
+size=2 face="Courier New"><span style='font-size:11.0pt'>      MOV AX,DATA        ;загрузка номера сегмента          (1)</span></font></pre><pre><font
+size=2 face="Courier New"><span style='font-size:11.0pt'>      MOV DS,AX          ;  в регистр DS.                   (2)</span></font></pre><pre><font
+size=2 face="Courier New"><span style='font-size:11.0pt'>      MOV DX,OFFSET Greet;загрузка в DX адреса симв. строки.(3)</span></font></pre><pre><font
+size=2 face="Courier New"><span style='font-size:11.0pt'>      MOV AH,9           ;задание функции вывода строки.    (4)</span></font></pre><pre><font
+size=2 face="Courier New"><span style='font-size:11.0pt'>      INT 21H            ;вывод строки.                     (5)</span></font></pre><pre><font
+size=2 face="Courier New"><span style='font-size:11.0pt'>      MOV AL,0           ;завершение программы через        (6)</span></font></pre><pre><font
+size=2 face="Courier New"><span style='font-size:11.0pt'>      MOV AH,4CH         ;  системную функцию возврата      (7)</span></font></pre><pre><font
+size=2 face="Courier New"><span style='font-size:11.0pt'>      INT 21H            ;  в диспетчер MS DOS.             (8)</span></font></pre><pre><font
+size=2 face="Courier New"><span style='font-size:11.0pt'>Code  ENDS</span></font></pre><pre><font
+size=2 face="Courier New"><span style='font-size:11.0pt'>      END Start          ;адрес начала программы.</span></font></pre>
+
+<p>5.2. Используя компилятор Турбо Ассемблер, создайте
+файлы HELLO.OBJ и HELLO.LST. Выведите на экран текст HELLO.LST и проанализируйте
+его.</p>
+
+<p>5.3. Используя компоновщик TLINK, создайте файлы
+HELLO.EXE и HELLO.MAP.</p>
+
+<p>5.4. Выведите на экран файл HELLO.MAP и ознакомьтесь с
+ним.</p>
+
+<p>5.5. Убедитесь в работоспособности программы HELLO.</p>
+<br>
+
+<p>6.<u> ОБЩИЕ СВЕДЕНИЯ</u></p>
+
+<p>Несмотря на то, что современные языки программирования
+высокого уровня обеспечивают не только удобное, но и эффективное системное программирование,
+в тех случаях, когда особенно важно получить оптимальный объектный код, необходимо
+использовать Ассемблер.</p>
+
+<p>Исходный модуль программы на Ассемблере представляет собой
+последовательность строк, имеющих следующий формат:</p>
+
+<pre><font size=2 face="Courier New"><span style='font-size:11.0pt'>[метка] команда [операнд(ы)] [комментарий]</span></font></pre>
+
+<p>После метки ставится двоеточие, команда и операнд
+разделяются по крайней мере одним пробелом; если операндов несколько, то они
+разделяются запятыми; перед комментарием ставится точка с запятой. В квадратные
+скобки заключены необязательные компоненты.</p>
+
+<p>Ассемблер имеет ряд операторов, которые позволяют
+управлять процессом ассемблирования и формирования листинга. Эти операторы
+называются псевдокомандами или директивами. Они действуют только в процессе
+ассемблирования программы и не генерируют машинных кодов.</p>
+
+<p>Любые ассемблерные программы содержат по крайней мере один
+сегмент-сегмент кода. В некоторых программах используются сегмент для стековой
+памяти и сегмент данных для определения данных. Сегмент описывается директивой
+SEGMENT следующим образом:</p>
+
+<pre><font size=2 face="Courier New"><span style='font-size:11.0pt'>имя   SEGMENT [параметры]</span></font></pre><pre><font
+size=2 face="Courier New"><span style='font-size:11.0pt'>..........</span></font></pre><pre><font
+size=2 face="Courier New"><span style='font-size:11.0pt'>имя   ENDS</span></font></pre>
+
+<p>Сегмент кода содержит одну или несколько процедур,
+определяемых директивой PROC:</p>
+
+<pre><font size=2 face="Courier New"><span style='font-size:11.0pt'>имя сегмента  SEGMENT</span></font></pre><pre><font
+size=2 face="Courier New"><span style='font-size:11.0pt'>имя процедуры PROC</span></font></pre><pre><font
+size=2 face="Courier New"><span style='font-size:11.0pt'>.....................</span></font></pre><pre><font
+size=2 face="Courier New"><span style='font-size:11.0pt'>              RET</span></font></pre><pre><font
+size=2 face="Courier New"><span style='font-size:11.0pt'>имя процедуры ENDP</span></font></pre><pre><font
+size=2 face="Courier New"><span style='font-size:11.0pt'>имя сегмента  ENDS</span></font></pre>
+
+<p class=MsoNormal><font size=3 face=Arial><span style='font-size:12.0pt;
+line-height:115%'>Пример простой исходной программы на Ассемблере представлен
+ниже:  </span></font></p>
+
+<pre><font size=2 face="Courier New"><span style='font-size:11.0pt'>      TITLE PROG1   ПРИМЕР РЕГИСТРОВЫХ ОПЕРАЦИЙ</span></font></pre><pre><font
+size=2 face="Courier New"><span style='font-size:11.0pt'>;---------------------------------------------------</span></font></pre><pre><font
+size=2 face="Courier New"><span style='font-size:11.0pt'>STACKSG SEGMENT PARA STACK 'Stack'</span></font></pre><pre><font
+size=2 face="Courier New"><span style='font-size:11.0pt'>      DB 12 DUP(?)</span></font></pre><pre><font
+size=2 face="Courier New"><span style='font-size:11.0pt'>STACKSG ENDS</span></font></pre><pre><font
+size=2 face="Courier New"><span style='font-size:11.0pt'>CODESG SEGMENT PARA 'Code'</span></font></pre><pre><font
+size=2 face="Courier New"><span style='font-size:11.0pt'>BEGIN PROC FAR</span></font></pre><pre><font
+size=2 face="Courier New"><span style='font-size:11.0pt'>      ASSUME SS:STACKSG,CS:CODESG,DS:NOTHING</span></font></pre><pre><font
+size=2 face="Courier New"><span style='font-size:11.0pt'>      PUSH DS         ;cохранение DS в стеке.          (1)</span></font></pre><pre><font
+size=2 face="Courier New"><span style='font-size:11.0pt'>      SUB AX,AX       ;формирование нуля в АХ.         (2)</span></font></pre><pre><font
+size=2 face="Courier New"><span style='font-size:11.0pt'>      PUSH AX         ;cохранение  АХ  в стеке.        (3)</span></font></pre><pre><font
+size=2 face="Courier New"><span style='font-size:11.0pt'>      MOV AX,0123H    ;передача константы в регистр.   (4)</span></font></pre><pre><font
+size=2 face="Courier New"><span style='font-size:11.0pt'>      ADD AX,0025H    ;сложение регистра с константой. (5)</span></font></pre><pre><font
+size=2 face="Courier New"><span style='font-size:11.0pt'>      MOV BX,AX       ;передача из регистра в регистр. (6)</span></font></pre><pre><font
+size=2 face="Courier New"><span style='font-size:11.0pt'>      ADD BX,AX       ;сложение содержимого регистров. (7)</span></font></pre><pre><font
+size=2 face="Courier New"><span style='font-size:11.0pt'>      MOV CX,BX       ;передача из регистра в регистр. (8)</span></font></pre><pre><font
+size=2 face="Courier New"><span style='font-size:11.0pt'>      SUB CX,AX       ;вычитание содержимого регистров.(9)</span></font></pre><pre><font
+size=2 face="Courier New"><span style='font-size:11.0pt'>      SUB AX,AX       ;формирование нуля в АХ.        (10)</span></font></pre><pre><font
+size=2 face="Courier New"><span style='font-size:11.0pt'>      NOP             ;нет операции (задержка).       (11)</span></font></pre><pre><font
+size=2 face="Courier New"><span style='font-size:11.0pt'>      RET             ;возврат из процедуры.          (12)</span></font></pre><pre><font
+size=2 face="Courier New"><span style='font-size:11.0pt'>      BEGIN ENDP            ;КОНЕЦ ПРОЦЕДУРЫ.</span></font></pre><pre><font
+size=2 face="Courier New"><span style='font-size:11.0pt'>CODESG ENDS           ;КОНЕЦ СЕГМЕНТА.</span></font></pre><pre><font
+size=2 face="Courier New"><span style='font-size:11.0pt'>END BEGIN       ;КОНЕЦ ПРОГРАММЫ.</span></font></pre>
+<br>
+
+<p>В приведенном примере директива ASSUME сообщает Ассемблеру
+соответствие между сегментными регистрами и именами сегментов.</p>
+
+<p>Исходный текст программы на Ассемблере создается с
+использованием любого доступного текстового редактора и сохраняется на
+магнитном диске под именем *.ASM или *. <span lang=EN-US>TXT</span>.
+Компилятор Турбо Ассемблер является программой в виде загрузочного файла
+TASM.EXE, работающей в режиме командной строки. Он вызывается командой</p>
+
+<pre><font size=2 face="Courier New"><span style='font-size:11.0pt'>TASM имя,</span></font></pre>
+
+<p class=MsoNormal><font size=3 face=Arial><span style='font-size:12.0pt;
+line-height:115%'>где <i><span style='font-style:italic'>имя</span></i>
+является именем исходного файла . Предполагается, что TASM и исходный файл сохраняются
+в одном каталоге. При вызове компилятора могут задаваться режимы его работы.
+Например, запись в командной строке:</span></font></p>
+
+<pre><font size=2 face="Courier New"><span style='font-size:11.0pt'>TASM/ZI PROG1 PROG1 PROG1</span></font></pre>
+
+<p class=MsoNormalCxSpFirst><font size=3 face=Arial><span style='font-size:
+12.0pt;line-height:115%'>приводит к созданию из исходного файла </span></font><span
+lang=EN-US>PROG</span>1.<span lang=EN-US>ASM</span> объектного модуля <span
+lang=EN-US>PROG</span>1.OBJ и файла листинга <span lang=EN-US>PROG</span>1.LST.
+Параметр /ZI приводит к внесению в файл листинга полных сведений о номерах
+строк и именах исходного модуля.</p>
+
+<p>С целью создания исполнительной программы необходимо
+произвести компоновку объектных модулей с библиотечными модулями. Компоновщик
+является программой с именем TLINK.EXE. Он может быть вызван командой </p>
+
+<pre><font size=2 face="Courier New"><span style='font-size:11.0pt'>TLINK имя объектного модуля</span></font></pre>
+
+<p class=MsoNormalCxSpFirst><font size=3 face=Arial><span style='font-size:
+12.0pt;line-height:115%'>После компоновки создается загрузочный файл </span></font><span
+lang=EN-US>PROG</span>1.EXE, а также файл карты сборки <span lang=EN-US>PROG</span>1.МАР.
+</p>
+
+<p class=MsoNormalCxSpMiddle><font size=3 face=Arial><span style='font-size:
+12.0pt;line-height:115%'>Компоновка в режиме </span></font><span lang=EN-US>TLINK</span>
+/<span lang=EN-US>t</span> приводит к созданию исполняемого *.СОМ файла, а
+компоновка в режиме <span lang=EN-US>TLINK</span> /<span lang=EN-US>v</span>
+включает в файл исполняемой программы информацию, необходимую для ее
+инициализации и отладки.</p>
+	
+ <!--Меню навигации-->
+ <div aria-label="..." class = "nav-menu">
+   <ul class="pager  background-transition-slow" >
+   <li title="Наверх" style = "margin-right:15px; "><a class = "glyphicon glyphicon-menu-up page-scroll" href="#page-top" ></a></li>
+   </ul>
+ </div>
+	
+	</div>
+    <!-- jQuery -->
+    <script src="../lib/js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../lib/js/bootstrap.min.js"></script>
+
+    <!-- Scrolling Nav JavaScript -->
+    <script src="../lib/js/jquery.easing.min.js"></script>
+    <script src="../lib/js/scrolling-nav.js"></script>
+
+</body>
+
+</html>

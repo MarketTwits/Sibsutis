@@ -1,0 +1,2573 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="do.sibsutis.ru">
+
+    <title>Приложение</title>
+	
+	<link rel="icon" type="image/png" href="../lib/css/favicon.png">
+    <!-- Bootstrap Core CSS -->
+    <link href="../lib/css/bootstrap.css" rel="stylesheet">
+	
+    <!-- Custom CSS -->
+    <link href="../lib/css/scrolling-nav.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<!-- The #page-top ID is part of the scrolling feature - the data-spy and data-target are part of the built-in Bootstrap scrollspy function -->
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top" >
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <li class="hidden"> <a class="page-scroll" href="#page-top"></a> </li>
+	  
+	  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+	  
+      <a class="navbar-brand " href="../index.htm"> 
+   <text class = "hidden-xs">Архитектура ЭВМ</text> 
+   <text class = "visible-xs">Архитектура ЭВМ</text>
+	  </a>
+    </div>
+
+    <!-- Collect the nav links, forms, and glyphicon glyphicon-list-alt content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      
+	  <!-- <ul class="nav navbar-nav">
+		<li><a href="#"></a></li> 
+      </ul> -->
+	
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+		<button type="button" class="navbar-toggle dropdown-toggle hidden-xs" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" >
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		</button>	      
+		<a class = "dropdown-toggle visible-xs" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Материалы</a>
+          <ul class="dropdown-menu">
+            <li><a href="../index.htm">Аннотация курса</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="lec_index.htm">Теория</a></li>
+                        <li><a href="questns.htm">Контрольные вопросы</a></li>
+           <li role="separator" class="divider"></li>
+            <li><a href="course_work.htm">Контрольная работа</a></li>
+                        <li role="separator" class="divider"></li>
+            <li><a href="labs.htm">Лабораторные работы</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="lit.htm">Литература</a></li>
+          </ul>
+ </li>
+  </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+
+    <!-- Intro Section -->
+	<!-- Секция с информацией "Уважаемый слушатель"	 -->
+    <div id="intro" class="section content-section ">
+        <div class="container">
+             <div class="row">
+                <div class="col-lg-12">	
+
+    <div class="page-header">
+	<h3>Приложение. Кодировки символов</h3>
+    </div>
+
+<p class=MsoNormalCxSpFirst><font size=3 face=Arial><span style='font-size:
+12.0pt;line-height:115%'>Компьютер может обрабатывать только информацию, представленную
+в цифровом коде. При вводе текстовой информации буквы и символы кодируются
+определенными числами, а при выводе их на экран или принтер по каждому коду
+символа строится изображение символа. Соответствие между набором символов и их
+кодами называется кодировкой символов.</span></font></p>
+
+<p class=MsoNormalCxSpMiddle><font size=3 face=Arial><span style='font-size:
+12.0pt;line-height:115%'>Как правило, коды имеют длину один байт и принимают
+значения от 0 до 255 (в настоящее время приобретает распространение и
+двухбайтная кодировка Unicode). Программы, работающие под DOS, используют ту
+кодировку, которая имеется в знакогенераторах адаптеров мониторов. На импортных
+компьютерах IBM PC используется Американский национальный стандартный код для
+обмена информацией ASCII (American Standard Code for Information Interchange).</span></font></p>
+
+<p class=MsoNormalCxSpMiddle><font size=3 face=Arial><span style='font-size:
+12.0pt;line-height:115%'> В нашей стране разработаны кодировки, имеющие символы
+кириллицы. При этом символы с кодами 0...127 обычно совпадают с кодами ASCII,
+так что программа, выводящая сообщение на английском языке, будет работать
+одинаково на любом персональном компьютере. Альтернативная кодировка ГОСТа </span></font></p>
+
+<p class=MsoNormalCxSpMiddle><font size=3 face=Arial><span style='font-size:
+12.0pt;line-height:115%'>(Табл. П1) имеет символы кириллицы в тех позициях, где
+в кодировке ASCII находятся относительно редко используемые символы
+национальных европейских алфавитов. Коды представлены в десятичной (<b><span
+style='font-weight:bold'>D</span></b>) и шестнадцатеричной (<b><span
+style='font-weight:bold'>H</span></b>) системах.</span></font></p>
+
+<p class=MsoNormalCxSpMiddle><font size=3 face=Arial><span style='font-size:
+12.0pt;line-height:115%'>Первые 32 кода (1...32) имеют два значения:
+управляющие символы и изобразительные символы. Когда DOS пересылает эти коды на
+монитор или принтер, они выполняют управляющие функции, а не отображают символы,
+например:</span></font></p>
+
+<p class=MsoNormalCxSpMiddle><font size=3 face=Arial><span style='font-size:
+12.0pt;line-height:115%'>8-возврат на одну позицию; 9-горизонтальная табуляция;
+10- перевод строки; 13- возврат каретки; 32- пробел.</span></font></p>
+
+<p class=MsoNormalCxSpMiddle><font size=3 face=Arial><span style='font-size:
+12.0pt;line-height:115%'>Для получения изображения символов эти коды необходимо
+занести в буфер экрана (начальный адрес 0В800:0000Н).</span></font></p>
+
+<p class=MsoNormalCxSpMiddle><font size=3 face=Arial><span style='font-size:
+12.0pt;line-height:115%'>Программы, работающие в Windows, не используют для
+вывода средства знакогенератора адаптера монитора. Windows предоставляет более
+удобные средства, поддерживая масштабируемые шрифты. В кодировке текстовых
+шрифтов для Windows отсутствуют символы псевдографики, т.к. Windows
+поддерживает настоящую графику, но имеется большое количество букв европейских
+языков и полиграфических символов. В русской версии кодировки для Windows
+символы русского алфавита имеют коды от 192 до 255.</span></font></p>
+
+<p class=MsoNormalCxSpMiddle><font size=3 face=Arial><span style='font-size:
+12.0pt;line-height:115%'>Табл. П1</span></font></p>
+
+<p class=MsoNormalCxSpMiddle align=center style='text-align:center'><b><font
+size=3 face=Arial><span style='font-size:12.0pt;line-height:115%;font-weight:
+bold'>Таблица кодировки символов для DOS</span></font></b></p>
+
+<p class=MsoNormalCxSpMiddle align=center style='text-align:center'><b><font
+size=3 face=Arial><span style='font-size:12.0pt;line-height:115%;font-weight:
+bold'>(Альтернативная кодировка ГОСТа)</span></font></b></p>
+
+<p class=MsoNormalCxSpMiddle><font size=3 face=Arial><span style='font-size:
+12.0pt;line-height:115%'>                       с т а р ш а я    ч а с т ь   к
+о д а</span></font></p>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 width=684
+ style='border-collapse:collapse;border:none'>
+ <tr height=18 style='height:13.5pt'>
+  <td width=33 height=18 style='width:24.4pt;border:none;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>&nbsp;</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>&nbsp;</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><b><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%;font-weight:bold'>D</span></font></b></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>0</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>16</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>32</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>48</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>64</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>80</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>96</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>112</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>128</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>144</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>160</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>176</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>192</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>208</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>224</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>240</span></font></p>
+  </td>
+ </tr>
+ <tr height=18 style='height:13.5pt'>
+  <td width=33 height=18 style='width:24.4pt;border:none;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><b><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%;font-weight:bold'>&nbsp;</span></font></b></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><b><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%;font-weight:bold'>D</span></font></b></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><b><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%;font-weight:bold'>H</span></font></b></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border:none;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>0</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border:none;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>1</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>2</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>3</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>4</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>5</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>6</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>7</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>8</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>9</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>A</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>B</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>C</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>D</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>E</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>F</span></font></p>
+  </td>
+ </tr>
+ <tr height=18 style='height:13.5pt'>
+  <td width=33 height=18 style='width:24.4pt;border:none;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>&nbsp;</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>0</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>0</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>&nbsp;</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>&#9658;</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>&nbsp;</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>0</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>@</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>P</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>'</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>p</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>А</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>Р</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>а</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>&#9617;</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>&#9492;</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>&#9576;</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>р</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>&Euml;</span></font></p>
+  </td>
+ </tr>
+ <tr height=18 style='height:13.5pt'>
+  <td width=33 height=18 style='width:24.4pt;border:none;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>м</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>1</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>1</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border:none;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>&#9786;</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>&#9668;</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>!</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>1</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>A</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>Q</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>a</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>q</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>Б</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>С</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>б</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>&#9618;</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>&#9524;</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>&#9572;</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>с</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>&euml;</span></font></p>
+  </td>
+ </tr>
+ <tr height=18 style='height:13.5pt'>
+  <td width=33 height=18 style='width:24.4pt;border:none;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>л</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>2</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>2</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:solid windowtext 1.0pt;
+  border-left:none;border-bottom:none;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>&#9787;</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>&#8597;</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>&quot;</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>2</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>B</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>R</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>b</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>r</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>В</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>Т</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>в</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>&#9619;</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>&#9516;</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>&#9573;</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>т</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>Є</span></font></p>
+  </td>
+ </tr>
+ <tr height=18 style='height:13.5pt'>
+  <td width=33 height=18 style='width:24.4pt;border:none;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>а</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>3</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>3</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:solid windowtext 1.0pt;
+  border-left:none;border-bottom:none;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>&#9829;</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>&#8252;</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>#</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>3</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>C</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>S</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>c</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>s</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>Г</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>У</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>г</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>&#9474;</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>&#9500;</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>&#9561;</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>у</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>є</span></font></p>
+  </td>
+ </tr>
+ <tr height=18 style='height:13.5pt'>
+  <td width=33 height=18 style='width:24.4pt;border:none;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>д</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>4</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>4</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:solid windowtext 1.0pt;
+  border-left:none;border-bottom:none;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>&#9830;</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>¶</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>$</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>4</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>D</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>T</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>d</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>t</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>Д</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>Ф</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>д</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>&#9508;</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>&#9472;</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>&#9560;</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>ф</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>&Iuml;</span></font></p>
+  </td>
+ </tr>
+ <tr height=18 style='height:13.5pt'>
+  <td width=33 height=18 style='width:24.4pt;border:none;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>ш</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>5</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>5</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>&#9827;</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>§</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>%</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>5</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>E</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>U</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>e</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>u</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>Е</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>Х</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>е</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>&#9569;</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>&#9532;</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>&#9554;</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>х</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>&iuml;</span></font></p>
+  </td>
+ </tr>
+ <tr height=18 style='height:13.5pt'>
+  <td width=33 height=18 style='width:24.4pt;border:none;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>а</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>6</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>6</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>&#9824;</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>&#9644;</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>&amp;</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>6</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>F</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>V</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>f</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>v</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>Ж</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>Ц</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>ж</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>&#9570;</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>&#9566;</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>&#9555;</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>ц</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>Ў</span></font></p>
+  </td>
+ </tr>
+ <tr height=18 style='height:13.5pt'>
+  <td width=33 height=18 style='width:24.4pt;border:none;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>я</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>7</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>7</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Symbol><span style='font-size:
+  11.0pt;line-height:115%;font-family:Symbol'>·</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>&#8616;</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>'</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>7</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>G</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>W</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>g</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>w</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>З</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>Ч</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>з</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>&#9558;</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>&#9567;</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>&#9579;</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>ч</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>ў</span></font></p>
+  </td>
+ </tr>
+ <tr height=18 style='height:13.5pt'>
+  <td width=33 height=18 style='width:24.4pt;border:none;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>&nbsp;</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>8</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border:none;border-bottom:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>8</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>&nbsp;</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>&#8593;</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>(</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>8</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>H</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>X</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>h</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>x</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>И</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>Ш</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>и</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>&#9557;</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>&#9562;</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>&#9578;</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>ш</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>°</span></font></p>
+  </td>
+ </tr>
+ <tr height=18 style='height:13.5pt'>
+  <td width=33 height=18 style='width:24.4pt;border:none;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>ч</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>9</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>9</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>&#9675;</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>&#8595;</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>)</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>9</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>I</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>Y</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>i</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>y</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>Й</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>Щ</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>й</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>&#9571;</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>&#9556;</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>&#9496;</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>щ</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>&#9679;</span></font></p>
+  </td>
+ </tr>
+ <tr height=18 style='height:13.5pt'>
+  <td width=33 height=18 style='width:24.4pt;border:none;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>а</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>10</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>A</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>&#9689;</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>&#8594;</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>*</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>:</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>J</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>Z</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>j</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>z</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>К</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>Ъ</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>к</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>&#9553;</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>&#9577;</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>&#9484;</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>ъ</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>&#8729;</span></font></p>
+  </td>
+ </tr>
+ <tr height=18 style='height:13.5pt'>
+  <td width=33 height=18 style='width:24.4pt;border:none;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>с</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>11</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>B</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>&#9794;</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>&#8592;</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>+</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>;</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>K</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>[</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>k</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>{</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>Л</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>Ы</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>л</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>&#9559;</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>&#9574;</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>&#9608;</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>ы</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Symbol><span style='font-size:
+  11.0pt;line-height:115%;font-family:Symbol'>&Ouml;</span></font></p>
+  </td>
+ </tr>
+ <tr height=18 style='height:13.5pt'>
+  <td width=33 height=18 style='width:24.4pt;border:none;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>т</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>12</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>C</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>&#9792;</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>&#8735;</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>,</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>&lt;&nbsp;</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>L</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>\</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>l</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>|</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>М</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>Ь</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>м</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>&#9565;</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>&#9568;</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>&#9604;</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>ь</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>№</span></font></p>
+  </td>
+ </tr>
+ <tr height=18 style='height:13.5pt'>
+  <td width=33 height=18 style='width:24.4pt;border:none;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>ь</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>13</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>D</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>&#9834;</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>&#8596;</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>-</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>=</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>M</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>]</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>m</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>}</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>Н</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>Э</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>н</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>&#9564;</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>&#9552;</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>&#9612;</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>э</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>¤</span></font></p>
+  </td>
+ </tr>
+ <tr height=18 style='height:13.5pt'>
+  <td width=33 height=18 style='width:24.4pt;border:none;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>&nbsp;</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>14</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>E</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>&#9835;</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>&#9650;</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>.</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>&gt;&nbsp;</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>N</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>^</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>n</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>~</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>О</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>Ю</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>о</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>&#9563;</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>&#9580;</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>&#9616;</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>ю</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>&#9632;</span></font></p>
+  </td>
+ </tr>
+ <tr height=18 style='height:13.5pt'>
+  <td width=33 height=18 style='width:24.4pt;border:none;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>&nbsp;</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>15</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>F</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>&#9788;</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>&#9660;</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>/</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>?</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>O</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>_</span></font></p>
+  </td>
+  <td width=34 height=18 style='width:25.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>o</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>&nbsp;</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>П</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>Я</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>п</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>&#9488;</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>&#9575;</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>&#9600;</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>я</span></font></p>
+  </td>
+  <td width=36 height=18 style='width:27.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt'>
+  <p class=MsoNormalCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 face=Arial><span style='font-size:
+  11.0pt;line-height:115%'>&nbsp;</span></font></p>
+  </td>
+ </tr>
+</table>
+
+	
+ <!--Меню навигации-->
+ <div aria-label="..." class = "nav-menu">
+   <ul class="pager  background-transition-slow" >
+   <li title="Наверх" style = "margin-right:15px; "><a class = "glyphicon glyphicon-menu-up page-scroll" href="#page-top" ></a></li>
+   </ul>
+ </div>
+	
+	</div>
+    <!-- jQuery -->
+    <script src="../lib/js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../lib/js/bootstrap.min.js"></script>
+
+    <!-- Scrolling Nav JavaScript -->
+    <script src="../lib/js/jquery.easing.min.js"></script>
+    <script src="../lib/js/scrolling-nav.js"></script>
+
+</body>
+
+</html>

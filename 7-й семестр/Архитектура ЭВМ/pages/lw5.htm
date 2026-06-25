@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="do.sibsutis.ru">
+
+    <title>Лабораторная работа 5</title>
+	
+	<link rel="icon" type="image/png" href="../lib/css/favicon.png">
+    <!-- Bootstrap Core CSS -->
+    <link href="../lib/css/bootstrap.css" rel="stylesheet">
+	
+    <!-- Custom CSS -->
+    <link href="../lib/css/scrolling-nav.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<!-- The #page-top ID is part of the scrolling feature - the data-spy and data-target are part of the built-in Bootstrap scrollspy function -->
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top" >
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <li class="hidden"> <a class="page-scroll" href="#page-top"></a> </li>
+	  
+	  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+	  
+      <a class="navbar-brand " href="../index.htm"> 
+   <text class = "hidden-xs">Архитектура ЭВМ</text> 
+   <text class = "visible-xs">Архитектура ЭВМ</text>
+	  </a>
+    </div>
+
+    <!-- Collect the nav links, forms, and glyphicon glyphicon-list-alt content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      
+	  <!-- <ul class="nav navbar-nav">
+		<li><a href="#"></a></li> 
+      </ul> -->
+	
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+		<button type="button" class="navbar-toggle dropdown-toggle hidden-xs" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" >
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		</button>	      
+		<a class = "dropdown-toggle visible-xs" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Материалы</a>
+          <ul class="dropdown-menu">
+            <li><a href="../index.htm">Аннотация курса</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="lec_index.htm">Теория</a></li>
+                        <li><a href="questns.htm">Контрольные вопросы</a></li>
+           <li role="separator" class="divider"></li>
+            <li><a href="course_work.htm">Контрольная работа</a></li>
+                        <li role="separator" class="divider"></li>
+            <li><a href="labs.htm">Лабораторные работы</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="lit.htm">Литература</a></li>
+          </ul>
+ </li>
+  </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+
+    <!-- Intro Section -->
+	<!-- Секция с информацией "Уважаемый слушатель"	 -->
+    <div id="intro" class="section content-section ">
+        <div class="container">
+             <div class="row">
+                <div class="col-lg-12">	
+
+    <div class="page-header">
+	<h3>Лабораторная работа №5</h3>
+    </div>
+
+<h3><b>Исследование организации переходов в программе</b></h3>
+<br>
+<p>1.<u> ЦЕЛЬ РАБОТЫ</u></p>
+
+<p>Изучение механизма передачи управления в программе; получение
+практических навыков отладки разветвляющихся программ.</p>
+<br>
+
+<p>2.<u>
+РЕКОМЕНДУЕМАЯ ЛИТЕРАТУРА</u></p>
+
+<p class=MsoNormalCxSpFirst><font size=3 face=Arial><span style='font-size:
+12.0pt;line-height:115%'>2.1. Абель П. Язык Ассемблера для IBM PC и программирования
+/Пер. c англ. М.:Высш.</span></font> шк., 1992,c 93-115.</p>
+
+<p class=MsoNormalCxSpLast><font size=3 face=Arial><span style='font-size:12.0pt;
+line-height:115%'>2.2. Белецкий Я. Энциклопедия языка Си: Пер. c
+польск.-М.:Мир,1992,с 394-406.</span></font></p>
+<br>
+
+<p>3.<u> ПОДГОТОВКА К РАБОТЕ</u></p>
+
+<p class=MsoNormalCxSpFirst><font size=3 face=Arial><span style='font-size:
+12.0pt;line-height:115%'>3.1. Изучить методические указания.</span></font></p>
+
+<p class=MsoNormalCxSpMiddle><font size=3 face=Arial><span style='font-size:
+12.0pt;line-height:115%'>3.2. Подготовить ответы на контрольные вопросы.</span></font></p>
+
+<p class=MsoNormalCxSpMiddle><font size=3 face=Arial><span style='font-size:
+12.0pt;line-height:115%'>3.3. Проанализировать приведенную ниже программу
+CHANGE, дополнить каждую команду комментарием.</span></font></p>
+
+<p class=MsoNormalCxSpMiddle><font size=3 face=Arial><span style='font-size:
+12.0pt;line-height:115%'>3.4. Ввести свой собственный текст на английском
+языке, содержащий строчные и заглавные буквы.</span></font></p>
+
+<p class=MsoNormalCxSpMiddle><font size=3 face=Arial><span style='font-size:
+12.0pt;line-height:115%'>3.5. Изменить программу так, чтобы в соответствии с
+вариантом задания (Таб. 5.1.) она обеспечивала:</span></font></p>
+
+<p class=MsoNormalCxSpLast><font size=3 face=Arial><span style='font-size:12.0pt;
+line-height:115%'>Таблица 5.1.</span></font></p>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=83 style='width:62.1pt;border:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpFirst align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>№<br>
+  варианта</span></font></p>
+  </td>
+  <td width=397 style='width:297.4pt;border:solid windowtext 1.0pt;border-left:
+  none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpLast align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>Заменить</span></font></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=83 valign=top style='width:62.1pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpFirst align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>1</span></font></p>
+  </td>
+  <td width=397 valign=top style='width:297.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpMiddle align=left style='margin:0cm;margin-bottom:
+  .0001pt;text-align:left'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>а)
+  ‘a’ на ‘A’</span></font></p>
+  <p class=MsoPlainTextCxSpLast align=left style='margin:0cm;margin-bottom:
+  .0001pt;text-align:left'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>б)
+  все заглавные строчными</span></font></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=83 valign=top style='width:62.1pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpFirst align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>2</span></font></p>
+  </td>
+  <td width=397 valign=top style='width:297.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpMiddle align=left style='margin:0cm;margin-bottom:
+  .0001pt;text-align:left'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>а)
+  строчные от ‘a’ до ‘f’ заглавными</span></font></p>
+  <p class=MsoPlainTextCxSpLast align=left style='margin:0cm;margin-bottom:
+  .0001pt;text-align:left'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>б)
+  все заглавные строчными</span></font></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=83 valign=top style='width:62.1pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpFirst align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>3</span></font></p>
+  </td>
+  <td width=397 valign=top style='width:297.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpMiddle align=left style='margin:0cm;margin-bottom:
+  .0001pt;text-align:left'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>а)
+  строчные ‘b’и’c’ заглавными</span></font></p>
+  <p class=MsoPlainTextCxSpLast align=left style='margin:0cm;margin-bottom:
+  .0001pt;text-align:left'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>б)
+  все заглавные строчными</span></font></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=83 valign=top style='width:62.1pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpFirst align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>4</span></font></p>
+  </td>
+  <td width=397 valign=top style='width:297.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpMiddle align=left style='margin:0cm;margin-bottom:
+  .0001pt;text-align:left'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>а)
+  строчные от ‘f’ до’z’ заглавными</span></font></p>
+  <p class=MsoPlainTextCxSpLast align=left style='margin:0cm;margin-bottom:
+  .0001pt;text-align:left'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>б)
+  все заглавные строчными</span></font></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=83 valign=top style='width:62.1pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpFirst align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>5</span></font></p>
+  </td>
+  <td width=397 valign=top style='width:297.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpMiddle align=left style='margin:0cm;margin-bottom:
+  .0001pt;text-align:left'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>а)
+  символ ’( ’ на символ ‘) ’</span></font></p>
+  <p class=MsoPlainTextCxSpLast align=left style='margin:0cm;margin-bottom:
+  .0001pt;text-align:left'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>б)
+  все заглавные строчными</span></font></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=83 valign=top style='width:62.1pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpFirst align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>6</span></font></p>
+  </td>
+  <td width=397 valign=top style='width:297.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpMiddle align=left style='margin:0cm;margin-bottom:
+  .0001pt;text-align:left'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>а)
+  ‘Z’ на ‘z’</span></font></p>
+  <p class=MsoPlainTextCxSpLast align=left style='margin:0cm;margin-bottom:
+  .0001pt;text-align:left'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>б)
+  все заглавные строчными</span></font></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=83 valign=top style='width:62.1pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpFirst align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>7</span></font></p>
+  </td>
+  <td width=397 valign=top style='width:297.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpMiddle align=left style='margin:0cm;margin-bottom:
+  .0001pt;text-align:left'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>а)
+  символ ’/ ’ на символ ‘\ ’</span></font></p>
+  <p class=MsoPlainTextCxSpLast align=left style='margin:0cm;margin-bottom:
+  .0001pt;text-align:left'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>б)
+  все заглавные строчными</span></font></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=83 valign=top style='width:62.1pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpFirst align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>8</span></font></p>
+  </td>
+  <td width=397 valign=top style='width:297.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpMiddle align=left style='margin:0cm;margin-bottom:
+  .0001pt;text-align:left'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>а)
+  ‘a’ на ‘A’</span></font></p>
+  <p class=MsoPlainTextCxSpLast align=left style='margin:0cm;margin-bottom:
+  .0001pt;text-align:left'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>б)
+  все заглавные строчными</span></font></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=83 valign=top style='width:62.1pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpFirst align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>9</span></font></p>
+  </td>
+  <td width=397 valign=top style='width:297.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpMiddle align=left style='margin:0cm;margin-bottom:
+  .0001pt;text-align:left'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>а)
+  строчные от ‘a’ до ‘f’ заглавными</span></font></p>
+  <p class=MsoPlainTextCxSpLast align=left style='margin:0cm;margin-bottom:
+  .0001pt;text-align:left'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>б)
+  все заглавные строчными</span></font></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=83 valign=top style='width:62.1pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpFirst align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>0</span></font></p>
+  </td>
+  <td width=397 valign=top style='width:297.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpMiddle align=left style='margin:0cm;margin-bottom:
+  .0001pt;text-align:left'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>а)
+  строчные ‘b’и’c’ заглавными</span></font></p>
+  <p class=MsoPlainTextCxSpLast align=left style='margin:0cm;margin-bottom:
+  .0001pt;text-align:left'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>б)
+  все заглавные строчными</span></font></p>
+  </td>
+ </tr>
+</table>
+
+<br>
+
+<p>4.<u> КОНТРОЛЬНЫЕ
+ВОПРОСЫ</u></p>
+
+<p class=MsoNormalCxSpFirst><font size=3 face=Arial><span style='font-size:
+12.0pt;line-height:115%'>4.1. Назовите три типа команды безусловного перехода.</span></font></p>
+
+<p class=MsoNormalCxSpMiddle><font size=3 face=Arial><span style='font-size:
+12.0pt;line-height:115%'>4.2. Какой может быть длина перехода в разных типах
+команды JMP?</span></font></p>
+
+<p class=MsoNormalCxSpMiddle><font size=3 face=Arial><span style='font-size:
+12.0pt;line-height:115%'>4.3. Содержимое каких регистров модифицируется при
+выполнении безусловных переходов разных типов?</span></font></p>
+
+<p class=MsoNormalCxSpMiddle><font size=3 face=Arial><span style='font-size:
+12.0pt;line-height:115%'>4.4. Какова максимальная длина условного перехода?</span></font></p>
+
+<p class=MsoNormalCxSpMiddle><font size=3 face=Arial><span style='font-size:
+12.0pt;line-height:115%'>4.5. Каким образом может быть указан адрес перехода?</span></font></p>
+
+<p class=MsoNormalCxSpMiddle><font size=3 face=Arial><span style='font-size:
+12.0pt;line-height:115%'>4.6. Какие флаги могут быть использованы в командах
+условного перехода после выполнения команды сложения?</span></font></p>
+
+<p class=MsoNormalCxSpMiddle><font size=3 face=Arial><span style='font-size:
+12.0pt;line-height:115%'>4.7. Приведите возможные команды условных переходов,
+если после сравнения беззнаковых чисел D1иD2 оказалось: а)D1=D2,  б) D1</span></font><font
+face=Symbol><span style='font-family:Symbol'>&pound;</span></font> D2 , в)
+D1&gt;D2.</p>
+
+<p class=MsoNormalCxSpMiddle><font size=3 face=Arial><span style='font-size:
+12.0pt;line-height:115%'>4.8. Приведите возможные команды условных переходов,
+если после сравнения чисел со знаками P1иP2 оказалось: а) Р1 </span></font><font
+face=Symbol><span style='font-family:Symbol'>&sup1;</span></font>Р2, б)
+Р1&lt;Р2, в) Р1 <font face=Symbol><span style='font-family:Symbol'>&sup3;</span></font>
+Р2.</p>
+
+<p class=MsoNormalCxSpMiddle><font size=3 face=Arial><span style='font-size:
+12.0pt;line-height:115%'>4.9. Какие команды могут использоваться для организации
+циклов?</span></font></p>
+
+<p class=MsoNormalCxSpMiddle><font size=3 face=Arial><span style='font-size:
+12.0pt;line-height:115%'>4.10. Какова максимальная длина переходов при организации
+циклов?</span></font></p>
+
+<p class=MsoNormalCxSpMiddle><font size=3 face=Arial><span style='font-size:
+12.0pt;line-height:115%'>4.11. Какие признаки, кроме СХ=0, могут быть использованы
+при организации циклов?</span></font></p>
+
+<p class=MsoNormalCxSpMiddle><font size=3 face=Arial><span style='font-size:
+12.0pt;line-height:115%'>4.12. Как осуществляется переход к процедурам разных
+типов?</span></font></p>
+
+<p class=MsoNormalCxSpLast><font size=3 face=Arial><span style='font-size:12.0pt;
+line-height:115%'>4.13. Назовите варианты команды возврата из процедуры.</span></font></p>
+<br>
+
+<p>5.<u> ПОРЯДОК
+ВЫПОЛНЕНИЯ РАБОТЫ</u></p>
+
+<p class=MsoNormalCxSpFirst><font size=3 face=Arial><span style='font-size:
+12.0pt;line-height:115%'>Ниже приведена программа CHANGE, которая в заданной
+текстовой строке заменяет латинские строчные буквы заглавными.</span></font></p>
+
+<p class=MsoNormalCxSpMiddle><font size=3 face=Arial><span style='font-size:
+12.0pt;line-height:115%'>Коды строчных и заглавных букв английского алфавита
+можно найти в Таблице кодировки символов (Приложение, с 23).</span></font></p>
+
+<p class=MsoNormalCxSpMiddle><font size=3 face=Arial><span style='font-size:
+12.0pt;line-height:115%'>5.1. Введите программу, используя текстовый редактор.
+Оттранслируйте и скомпонуйте программу в режимах TASM/ZI, TLINK/V.</span></font></p>
+
+<p class=MsoNormalCxSpMiddle><font size=3 face=Arial><span style='font-size:
+12.0pt;line-height:115%'>5.2. Загрузите отладчик и программу. Произведите ее
+пошаговое выполнение. Наблюдайте результаты выполнения команд.</span></font></p>
+
+<p class=MsoNormalCxSpMiddle><font size=3 face=Arial><span style='font-size:
+12.0pt;line-height:115%'>5.3. Установите ловушку на одной из команд подпрограммы.
+В точке останова отройте в окне CPU локальное меню и выберите пункт CALLER.
+Пронаблюдайте исполнение этой инструкции.</span></font></p>
+
+<p class=MsoNormalCxSpMiddle><font size=3 face=Arial><span style='font-size:
+12.0pt;line-height:115%'>5.4. Пронаблюдайте результат выполнения программы в
+окне WINDOW (режим USER SCREEN).</span></font></p>
+
+<p class=MsoNormalCxSpMiddle><font size=3 face=Arial><span style='font-size:
+12.0pt;line-height:115%'>5.5. Введите вариант программы из домашнего задания,
+обеспечивающий замену заглавных букв строчными.</span></font></p>
+
+<p class=MsoNormalCxSpLast><font size=3 face=Arial><span style='font-size:12.0pt;
+line-height:115%'>5.6. Убедитесь в работоспособности второго варианта
+программы.</span></font></p>
+<br>
+
+<p>6.<u> ПРИМЕР
+ПРОГРАММЫ</u></p>
+
+<pre><font size=2 face="Courier New"><span style='font-size:11.0pt'>      TITLE CHANGE   - ЗАМЕНА СТРОЧНЫХ БУКВ ЗАГЛАВНЫМИ</span></font></pre><pre><font
+size=2 face="Courier New"><span style='font-size:11.0pt'>;---------------------------------------------------------</span></font></pre><pre><font
+size=2 face="Courier New"><span style='font-size:11.0pt'>DATASG SEGMENT PARA</span></font></pre><pre><font
+size=2 face="Courier New"><span style='font-size:11.0pt'>MYTEXT DB 'Our Native Town',13,10,'$'</span></font></pre><pre><font
+size=2 face="Courier New"><span style='font-size:11.0pt'>DATASG ENDS</span></font></pre><pre><font
+size=2 face="Courier New"><span style='font-size:11.0pt'>      </span></font></pre><pre><font
+size=2 face="Courier New"><span style='font-size:11.0pt'>STACKSG SEGMENT 'Stack'</span></font></pre><pre><font
+size=2 face="Courier New"><span style='font-size:11.0pt'>      DB 12 DUP(?)</span></font></pre><pre><font
+size=2 face="Courier New"><span style='font-size:11.0pt'>STACKSG ENDS</span></font></pre><pre><font
+size=2 face="Courier New"><span style='font-size:11.0pt'>      </span></font></pre><pre><font
+size=2 face="Courier New"><span style='font-size:11.0pt'>CODESG SEGMENT PARA 'Code'</span></font></pre><pre><font
+size=2 face="Courier New"><span style='font-size:11.0pt'>BEGIN PROC FAR</span></font></pre><pre><font
+size=2 face="Courier New"><span style='font-size:11.0pt'>ASSUME SS:STACKSG,CS:CODESG,DS:DATASG</span></font></pre><pre><font
+size=2 face="Courier New"><span style='font-size:11.0pt'>      PUSH DS</span></font></pre><pre><font
+size=2 face="Courier New"><span style='font-size:11.0pt'>      SUB AX,AX</span></font></pre><pre><font
+size=2 face="Courier New"><span style='font-size:11.0pt'>      PUSH AX</span></font></pre><pre><font
+size=2 face="Courier New"><span style='font-size:11.0pt'>      MOV AX,DATASG</span></font></pre><pre><font
+size=2 face="Courier New"><span style='font-size:11.0pt'>      MOV DS,AX</span></font></pre><pre><font
+size=2 face="Courier New"><span style='font-size:11.0pt'>      LEA BX,MYTEXT</span></font></pre><pre><font
+size=2 face="Courier New"><span style='font-size:11.0pt'>      MOV CX,10H</span></font></pre><pre><font
+size=2 face="Courier New"><span style='font-size:11.0pt'>MT1:  MOV AH,[BX]</span></font></pre><pre><font
+size=2 face="Courier New"><span style='font-size:11.0pt'>      CMP AH,61H</span></font></pre><pre><font
+size=2 face="Courier New"><span style='font-size:11.0pt'>      JB MT2</span></font></pre><pre><font
+size=2 face="Courier New"><span style='font-size:11.0pt'>      CMP AH,7AH</span></font></pre><pre><font
+size=2 face="Courier New"><span style='font-size:11.0pt'>      JA MT2</span></font></pre><pre><font
+size=2 face="Courier New"><span style='font-size:11.0pt'>      CALL COR</span></font></pre><pre><font
+size=2 face="Courier New"><span style='font-size:11.0pt'>MT2:  INC BX</span></font></pre><pre><font
+size=2 face="Courier New"><span style='font-size:11.0pt'>      LOOP MT1</span></font></pre><pre><font
+size=2 face="Courier New"><span style='font-size:11.0pt'>      LEA DX,MYTEXT</span></font></pre><pre><font
+size=2 face="Courier New"><span style='font-size:11.0pt'>      MOV AH,09H</span></font></pre><pre><font
+size=2 face="Courier New"><span style='font-size:11.0pt'>      INT 21H</span></font></pre><pre><font
+size=2 face="Courier New"><span style='font-size:11.0pt'>      RET</span></font></pre><pre><font
+size=2 face="Courier New"><span style='font-size:11.0pt'>BEGIN ENDP</span></font></pre><pre><font
+size=2 face="Courier New"><span style='font-size:11.0pt'>COR   PROC NEAR</span></font></pre><pre><font
+size=2 face="Courier New"><span style='font-size:11.0pt'>      NOP</span></font></pre><pre><font
+size=2 face="Courier New"><span style='font-size:11.0pt'>      AND AH,0DFH</span></font></pre><pre><font
+size=2 face="Courier New"><span style='font-size:11.0pt'>      MOV [BX],AH</span></font></pre><pre><font
+size=2 face="Courier New"><span style='font-size:11.0pt'>      RET</span></font></pre><pre><font
+size=2 face="Courier New"><span style='font-size:11.0pt'>COR   ENDP</span></font></pre><pre><font
+size=2 face="Courier New"><span style='font-size:11.0pt'>CODESG ENDS</span></font></pre><pre><font
+size=2 face="Courier New"><span style='font-size:11.0pt'>END BEGIN</span></font></pre>
+<br>
+<p>7.<u> КРАТКАЯ
+ИНФОРМАЦИЯ О РАБОТЕ ТУРБО ОТЛАДЧИКА</u></p>
+
+<p class=MsoNormalCxSpFirst><font size=3 face=Arial><span style='font-size:
+12.0pt;line-height:115%'>Там, где это возможно, команды JMP и CALL выводятся в
+символическом виде. Если CS:IP указывают на команду JMP или команду условного перехода,
+то стрелка (стрелка вверх или вниз), показывающая направление перехода, будет
+выводиться только в том случае, если выполнение команды приведет к переходу.</span></font></p>
+
+<p class=MsoNormalCxSpMiddle><font size=3 face=Arial><span style='font-size:
+12.0pt;line-height:115%'>Для перехода в локальное меню области Code окна CPU
+нужно нажать клавиши Alt-F10.</span></font></p>
+
+<p class=MsoNormalCxSpLast><font size=3 face=Arial><span style='font-size:12.0pt;
+line-height:115%'>Локальное меню имеет вид:</span></font></p>
+
+<p class=MsoPlainText align=center style='text-align:center'><font face=Arial><span
+style='font-family:"Arial","sans-serif"'><img width=285 height=167
+src="img_lec/lw5.files/image001.png"></span></font></p>
+
+<p class=MsoNormalCxSpFirst><font size=3 face=Arial><span style='font-size:
+12.0pt;line-height:115%'>Команда Follow (Следующая) позиционирует по целевому
+адресу подсвеченной в данный момент инструкции. Область кода позиционируется заново,
+чтобы вывести код по адресу, указанному в подсвеченной в данный момент
+инструкции, по которому будет передано управление. Для условных переходов адрес
+показывается в случае выполнения перехода. Эту команду можно использовать с
+инструкциями CALL, JMP, инструкциями условных переходов и инструкциями INT.</span></font></p>
+
+<p class=MsoNormalCxSpMiddle><font size=3 face=Arial><span style='font-size:
+12.0pt;line-height:115%'>Команда Previous (Предыдущий) восстанавливает область
+кода в то состояние (позицию), которое она имела до выполнения команды Follow.</span></font></p>
+
+<p class=MsoNormalCxSpMiddle><font size=3 face=Arial><span style='font-size:
+12.0pt;line-height:115%'>Команда Caller (Вызывающая программа) позиционирует
+вас на инструкцию, по которой была вызвана текущая подпрограмма или прерывание.</span></font></p>
+
+<p class=MsoNormalCxSpMiddle><font size=3 face=Arial><span style='font-size:
+12.0pt;line-height:115%'>Данная команда будет работать не всегда. Если
+процедура обработки прерывания или подпрограмма занесла в стек элементы данных,
+иногда Турбо отладчик не может определить, откуда был выполнен вызов.</span></font></p>
+
+<p class=MsoNormalCxSpMiddle><font size=3 face=Arial><span style='font-size:
+12.0pt;line-height:115%'>Команда Previous (Предыдущий) восстанавливает область
+кода в то состояние (позицию), которое она имела до выполнения команды Caller.</span></font></p>
+	
+ <!--Меню навигации-->
+ <div aria-label="..." class = "nav-menu">
+   <ul class="pager  background-transition-slow" >
+   <li title="Наверх" style = "margin-right:15px; "><a class = "glyphicon glyphicon-menu-up page-scroll" href="#page-top" ></a></li>
+   </ul>
+ </div>
+	
+	</div>
+    <!-- jQuery -->
+    <script src="../lib/js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../lib/js/bootstrap.min.js"></script>
+
+    <!-- Scrolling Nav JavaScript -->
+    <script src="../lib/js/jquery.easing.min.js"></script>
+    <script src="../lib/js/scrolling-nav.js"></script>
+
+</body>
+
+</html>
