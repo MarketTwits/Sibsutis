@@ -1,0 +1,1129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="do.sibsutis.ru">
+
+    <title>Лабораторная работа 3</title>
+	
+	<link rel="icon" type="image/png" href="../lib/css/favicon.png">
+    <!-- Bootstrap Core CSS -->
+    <link href="../lib/css/bootstrap.css" rel="stylesheet">
+	
+    <!-- Custom CSS -->
+    <link href="../lib/css/scrolling-nav.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<!-- The #page-top ID is part of the scrolling feature - the data-spy and data-target are part of the built-in Bootstrap scrollspy function -->
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top" >
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <li class="hidden"> <a class="page-scroll" href="#page-top"></a> </li>
+	  
+	  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+	  
+      <a class="navbar-brand " href="../index.htm"> 
+   <text class = "hidden-xs">Архитектура ЭВМ</text> 
+   <text class = "visible-xs">Архитектура ЭВМ</text>
+	  </a>
+    </div>
+
+    <!-- Collect the nav links, forms, and glyphicon glyphicon-list-alt content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      
+	  <!-- <ul class="nav navbar-nav">
+		<li><a href="#"></a></li> 
+      </ul> -->
+	
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+		<button type="button" class="navbar-toggle dropdown-toggle hidden-xs" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" >
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		</button>	      
+		<a class = "dropdown-toggle visible-xs" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Материалы</a>
+          <ul class="dropdown-menu">
+            <li><a href="../index.htm">Аннотация курса</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="lec_index.htm">Теория</a></li>
+                        <li><a href="questns.htm">Контрольные вопросы</a></li>
+           <li role="separator" class="divider"></li>
+            <li><a href="course_work.htm">Контрольная работа</a></li>
+                        <li role="separator" class="divider"></li>
+            <li><a href="labs.htm">Лабораторные работы</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="lit.htm">Литература</a></li>
+          </ul>
+ </li>
+  </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+
+    <!-- Intro Section -->
+	<!-- Секция с информацией "Уважаемый слушатель"	 -->
+    <div id="intro" class="section content-section ">
+        <div class="container">
+             <div class="row">
+                <div class="col-lg-12">	
+
+    <div class="page-header">
+	<h3>Лабораторная работа №3</h3>
+    </div>
+
+<h3><b>Исследование способов адресации операндов</b></h3>
+<br>
+<p>1.<u> ЦЕЛЬ РАБОТЫ</u></p>
+
+<p>Получение практических навыков использования различных
+способов адресации и отладки программ с использованием ловушек программы TURBO
+DEBUGGER.</p>
+<br>
+
+<p>2.<u>
+РЕКОМЕНДУЕМАЯ ЛИТЕРАТУРА</u></p>
+
+<p class=MsoNormalCxSpFirst><font size=3 face=Arial><span style='font-size:
+12.0pt;line-height:115%'>2.1. В.Л. Григорьев. Программирование однокристальных
+микропроцессоров. М.: Энергоиздат, 1987, с.72-88.</span></font></p>
+
+<p class=MsoNormalCxSpMiddle><font size=3 face=Arial><span style='font-size:
+12.0pt;line-height:115%'>2.2. В.Л. Григорьев. Микропроцессор i486. Архитектура
+и программирование (в 4-х книгах) - М.,ГРАНАЛ,1993, кн.1 стр.27-32, 44-49.</span></font></p>
+
+<p class=MsoNormalCxSpLast><font size=3 face=Arial><span style='font-size:12.0pt;
+line-height:115%'>2.3. Белецкий Я. Энциклопедия языка Си: Пер. c
+польск.-М.:Мир,1992, с 394-406.</span></font></p>
+<br>
+
+<p>3.<u> ПОДГОТОВКА К РАБОТЕ</u></p>
+
+<p class=MsoNormalCxSpFirst><font size=3 face=Arial><span style='font-size:
+12.0pt;line-height:115%'>3.1. Изучить методические указания.</span></font></p>
+
+<p class=MsoNormalCxSpMiddle><font size=3 face=Arial><span style='font-size:
+12.0pt;line-height:115%'>3.2. Подготовить ответы на контрольные вопросы.</span></font></p>
+
+<p class=MsoNormalCxSpMiddle><font size=3 face=Arial><span style='font-size:
+12.0pt;line-height:115%'>3.3. Написать комментарии к командам приведенной ниже
+программы PROG3. </span></font></p>
+
+<p class=MsoNormalCxSpMiddle><font size=3 face=Arial><span style='font-size:
+12.0pt;line-height:115%'>3.4. Используя примеры из PROG3, в соответствии с
+вариантом задания из Таб.&nbsp;3.1 написать фрагмент программы для выполнения
+указанных в таблице операций, определив в сегменте данных необходимые
+переменные. (В таблице <b><span style='font-weight:bold'>ЯП</span></b> означает
+«ячейка памяти»).</span></font></p>
+
+<p class=MsoNormalCxSpLast><font size=3 face=Arial><span style='font-size:12.0pt;
+line-height:115%'>Таблица 3.1.</span></font></p>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=45 style='width:33.75pt;border:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpFirst align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>№
+  вар.</span></font></p>
+  </td>
+  <td width=85 style='width:63.8pt;border:solid windowtext 1.0pt;border-left:
+  none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>операция</span></font></p>
+  </td>
+  <td width=180 style='width:134.65pt;border:solid windowtext 1.0pt;border-left:
+  none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>1-ый
+  операнд</span></font></p>
+  </td>
+  <td width=170 style='width:127.2pt;border:solid windowtext 1.0pt;border-left:
+  none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpLast align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>2-ой
+  операнд</span></font></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=45 valign=top style='width:33.75pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpFirst align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>&nbsp;</span></font></p>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>1</span></font></p>
+  </td>
+  <td width=85 valign=top style='width:63.8pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>пересылка</span></font></p>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>пересылка</span></font></p>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>сложение</span></font></p>
+  </td>
+  <td width=180 valign=top style='width:134.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>регистр</span></font></p>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>регистр</span></font></p>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>переменная
+  в памяти</span></font></p>
+  </td>
+  <td width=170 valign=top style='width:127.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>константа
+  байт</span></font></p>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>регистр</span></font></p>
+  <p class=MsoPlainTextCxSpLast align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>константа
+  слово</span></font></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=45 valign=top style='width:33.75pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpFirst align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>&nbsp;</span></font></p>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>2</span></font></p>
+  </td>
+  <td width=85 valign=top style='width:63.8pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>пересылка</span></font></p>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>пересылка</span></font></p>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>сложение</span></font></p>
+  </td>
+  <td width=180 valign=top style='width:134.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>переменная
+  в памяти</span></font></p>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>регистр</span></font></p>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>регистр</span></font></p>
+  </td>
+  <td width=170 valign=top style='width:127.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>регистр</span></font></p>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>переменная
+  в памяти</span></font></p>
+  <p class=MsoPlainTextCxSpLast align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>ЯП-
+  базовая адресация.</span></font></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=45 valign=top style='width:33.75pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpFirst align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>&nbsp;</span></font></p>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>3</span></font></p>
+  </td>
+  <td width=85 valign=top style='width:63.8pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>пересылка</span></font></p>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>пересылка</span></font></p>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>вычитание</span></font></p>
+  </td>
+  <td width=180 valign=top style='width:134.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>регистр</span></font></p>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>регистр</span></font></p>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>3-ий
+  эл-т блока данных</span></font></p>
+  </td>
+  <td width=170 valign=top style='width:127.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>адрес
+  блока данных</span></font></p>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>2-ой
+  эл-т блока данных</span></font></p>
+  <p class=MsoPlainTextCxSpLast align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>регистр</span></font></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=45 valign=top style='width:33.75pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpFirst align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>&nbsp;</span></font></p>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>4</span></font></p>
+  </td>
+  <td width=85 valign=top style='width:63.8pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>пересылка</span></font></p>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>пересылка</span></font></p>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>сложение</span></font></p>
+  </td>
+  <td width=180 valign=top style='width:134.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>регистр</span></font></p>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>индексный
+  регистр</span></font></p>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>элемент
+  блока данных Z</span></font></p>
+  </td>
+  <td width=170 valign=top style='width:127.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>адрес
+  блока данных</span></font></p>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>ноль</span></font></p>
+  <p class=MsoPlainTextCxSpLast align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>элемент
+  блока данных Z</span></font></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=45 valign=top style='width:33.75pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpFirst align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>&nbsp;</span></font></p>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>5</span></font></p>
+  </td>
+  <td width=85 valign=top style='width:63.8pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>пересылка</span></font></p>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>сложение</span></font></p>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>пересылка</span></font></p>
+  </td>
+  <td width=180 valign=top style='width:134.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>переменная
+  в памяти</span></font></p>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>переменная
+  в памяти</span></font></p>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>регистр</span></font></p>
+  </td>
+  <td width=170 valign=top style='width:127.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>константа
+  байт</span></font></p>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>регистр</span></font></p>
+  <p class=MsoPlainTextCxSpLast align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>ЯП-
+  базово-инд. адресация</span></font></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=45 valign=top style='width:33.75pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpFirst align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>&nbsp;</span></font></p>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>6</span></font></p>
+  </td>
+  <td width=85 valign=top style='width:63.8pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>пересылка</span></font></p>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>пересылка</span></font></p>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>сложение</span></font></p>
+  </td>
+  <td width=180 valign=top style='width:134.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>регистр</span></font></p>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>регистр</span></font></p>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>регистр</span></font></p>
+  </td>
+  <td width=170 valign=top style='width:127.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>константа
+  слово</span></font></p>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>константа
+  байт</span></font></p>
+  <p class=MsoPlainTextCxSpLast align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>переменная
+  в памяти</span></font></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=45 valign=top style='width:33.75pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpFirst align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>&nbsp;</span></font></p>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>7</span></font></p>
+  </td>
+  <td width=85 valign=top style='width:63.8pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>пересылка</span></font></p>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>пересылка</span></font></p>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>вычитание</span></font></p>
+  </td>
+  <td width=180 valign=top style='width:134.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>регистр</span></font></p>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>ЯП-
+  косвенная адресация</span></font></p>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>переменная
+  в памяти</span></font></p>
+  </td>
+  <td width=170 valign=top style='width:127.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>константа
+  слово</span></font></p>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>константа
+  байт</span></font></p>
+  <p class=MsoPlainTextCxSpLast align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>регистр</span></font></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=45 valign=top style='width:33.75pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpFirst align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>&nbsp;</span></font></p>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>8</span></font></p>
+  </td>
+  <td width=85 valign=top style='width:63.8pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>пересылка</span></font></p>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>сложение</span></font></p>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>пересылка</span></font></p>
+  </td>
+  <td width=180 valign=top style='width:134.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>регистр</span></font></p>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>регистр</span></font></p>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>5-ый
+  эл-т блока данных</span></font></p>
+  </td>
+  <td width=170 valign=top style='width:127.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>5-ый
+  эл-т блока данных</span></font></p>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>регистр</span></font></p>
+  <p class=MsoPlainTextCxSpLast align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>регистр</span></font></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=45 valign=top style='width:33.75pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpFirst align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>&nbsp;</span></font></p>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>9</span></font></p>
+  </td>
+  <td width=85 valign=top style='width:63.8pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>пересылка</span></font></p>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>пересылка</span></font></p>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>вычитание</span></font></p>
+  </td>
+  <td width=180 valign=top style='width:134.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>регистр</span></font></p>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>регистр</span></font></p>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>регистр</span></font></p>
+  </td>
+  <td width=170 valign=top style='width:127.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>адрес
+  блока данных</span></font></p>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>3-ий
+  эл-т блока данных</span></font></p>
+  <p class=MsoPlainTextCxSpLast align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>регистр</span></font></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=45 valign=top style='width:33.75pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpFirst align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>&nbsp;</span></font></p>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>10</span></font></p>
+  </td>
+  <td width=85 valign=top style='width:63.8pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>пересылка</span></font></p>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>сложение</span></font></p>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>пересылка</span></font></p>
+  </td>
+  <td width=180 valign=top style='width:134.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>переменная
+  в памяти</span></font></p>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>регистр</span></font></p>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>переменная
+  в памяти</span></font></p>
+  </td>
+  <td width=170 valign=top style='width:127.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>константа
+  слово</span></font></p>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>переменная
+  в памяти</span></font></p>
+  <p class=MsoPlainTextCxSpLast align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>регистр</span></font></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=45 valign=top style='width:33.75pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpFirst align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>&nbsp;</span></font></p>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>11</span></font></p>
+  </td>
+  <td width=85 valign=top style='width:63.8pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>пересылка</span></font></p>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>пересылка</span></font></p>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>вычитание</span></font></p>
+  </td>
+  <td width=180 valign=top style='width:134.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>сегментный
+  регистр</span></font></p>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>регистр</span></font></p>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>индексный
+  регистр</span></font></p>
+  </td>
+  <td width=170 valign=top style='width:127.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>переменная
+  в памяти</span></font></p>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>константа
+  слово</span></font></p>
+  <p class=MsoPlainTextCxSpLast align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>регистр</span></font></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=45 valign=top style='width:33.75pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpFirst align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>&nbsp;</span></font></p>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>12</span></font></p>
+  </td>
+  <td width=85 valign=top style='width:63.8pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>пересылка</span></font></p>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>пересылка</span></font></p>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>сложение</span></font></p>
+  </td>
+  <td width=180 valign=top style='width:134.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>ЯП-
+  косвенная адресация</span></font></p>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>регистр</span></font></p>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>ЯП-
+  косвенная адресация</span></font></p>
+  </td>
+  <td width=170 valign=top style='width:127.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>константа
+  байт</span></font></p>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>константа
+  слово</span></font></p>
+  <p class=MsoPlainTextCxSpLast align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>регистр</span></font></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=45 valign=top style='width:33.75pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpFirst align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>&nbsp;</span></font></p>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>13</span></font></p>
+  </td>
+  <td width=85 valign=top style='width:63.8pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>пересылка</span></font></p>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>пересылка</span></font></p>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>сложение</span></font></p>
+  </td>
+  <td width=180 valign=top style='width:134.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>0-ой
+  эл-т блока данных</span></font></p>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>регистр</span></font></p>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>регистр</span></font></p>
+  </td>
+  <td width=170 valign=top style='width:127.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>константа
+  байт</span></font></p>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>константа
+  слово</span></font></p>
+  <p class=MsoPlainTextCxSpLast align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>0-ой
+  эл-т блока данных</span></font></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=45 valign=top style='width:33.75pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpFirst align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>&nbsp;</span></font></p>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>14</span></font></p>
+  </td>
+  <td width=85 valign=top style='width:63.8pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>пересылка</span></font></p>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>пересылка</span></font></p>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>сложение</span></font></p>
+  </td>
+  <td width=180 valign=top style='width:134.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>регистр</span></font></p>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>регистр</span></font></p>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>регистр</span></font></p>
+  </td>
+  <td width=170 valign=top style='width:127.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>ноль</span></font></p>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>смещение
+  перем. Х</span></font></p>
+  <p class=MsoPlainTextCxSpLast align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>регистр</span></font></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=45 valign=top style='width:33.75pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpFirst align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>&nbsp;</span></font></p>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>15</span></font></p>
+  </td>
+  <td width=85 valign=top style='width:63.8pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>пересылка</span></font></p>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>пересылка</span></font></p>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>вычитание</span></font></p>
+  </td>
+  <td width=180 valign=top style='width:134.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>переменная
+  в памяти</span></font></p>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>переменная
+  в памяти</span></font></p>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>регистр</span></font></p>
+  </td>
+  <td width=170 valign=top style='width:127.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>1-ый
+  эл-т блока данных</span></font></p>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>константа
+  байт</span></font></p>
+  <p class=MsoPlainTextCxSpLast align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>константа
+  слово</span></font></p>
+  </td>
+ </tr>
+</table>
+
+<br>
+
+<p>4.<u> КОНТРОЛЬНЫЕ
+ВОПРОСЫ</u></p>
+
+<p class=MsoNormalCxSpFirst><font size=3 face=Arial><span style='font-size:
+12.0pt;line-height:115%'>4.1. Где располагаются операнды при непосредственной
+адресации?</span></font></p>
+
+<p class=MsoNormalCxSpMiddle><font size=3 face=Arial><span style='font-size:
+12.0pt;line-height:115%'>4.2. Каков минимальный объем адресуемого участка памяти?</span></font></p>
+
+<p class=MsoNormalCxSpMiddle><font size=3 face=Arial><span style='font-size:
+12.0pt;line-height:115%'>4.3. Что означает адрес слова и двойного слова?</span></font></p>
+
+<p class=MsoNormalCxSpMiddle><font size=3 face=Arial><span style='font-size:
+12.0pt;line-height:115%'>4.4. Что такое регистровая адресация операндов?</span></font></p>
+
+<p class=MsoNormalCxSpMiddle><font size=3 face=Arial><span style='font-size:
+12.0pt;line-height:115%'>4.5. Что используется для косвенной адресации ячеек памяти?</span></font></p>
+
+<p class=MsoNormalCxSpMiddle><font size=3 face=Arial><span style='font-size:
+12.0pt;line-height:115%'>4.6. Чем отличается базовая адресация от косвенной?</span></font></p>
+
+<p class=MsoNormalCxSpMiddle><font size=3 face=Arial><span style='font-size:
+12.0pt;line-height:115%'>4.7. Какие регистры используются для косвенной и для
+базовой адресации?</span></font></p>
+
+<p class=MsoNormalCxSpMiddle><font size=3 face=Arial><span style='font-size:
+12.0pt;line-height:115%'>4.8. Для каких переменных используется индексная адресация?</span></font></p>
+
+<p class=MsoNormalCxSpMiddle><font size=3 face=Arial><span style='font-size:
+12.0pt;line-height:115%'>4.9. Чем отличается индексная адресация от базовой?</span></font></p>
+
+<p class=MsoNormalCxSpMiddle><font size=3 face=Arial><span style='font-size:
+12.0pt;line-height:115%'>4.10. Что используется для прямой адресации ячеек памяти?</span></font></p>
+
+<p class=MsoNormalCxSpMiddle><font size=3 face=Arial><span style='font-size:
+12.0pt;line-height:115%'>4.11. Как вычисляется адрес ячейки памяти при регистровой
+адресации?</span></font></p>
+
+<p class=MsoNormalCxSpMiddle><font size=3 face=Arial><span style='font-size:
+12.0pt;line-height:115%'>4.12. Как вычисляется адрес ячейки памяти при индексной
+адресации?</span></font></p>
+
+<p class=MsoNormalCxSpMiddle><font size=3 face=Arial><span style='font-size:
+12.0pt;line-height:115%'>4.13. Какой способ адресации операндов обеспечивает
+самый короткий формат команды?</span></font></p>
+
+<p class=MsoNormalCxSpMiddle><font size=3 face=Arial><span style='font-size:
+12.0pt;line-height:115%'>4.14. Какой способ адресации является самым сложным?</span></font></p>
+
+<p class=MsoNormalCxSpLast><font size=3 face=Arial><span style='font-size:12.0pt;
+line-height:115%'>4.15. Каким образом процессоры I80х86 обращаются к портам
+ввода/вывода?</span></font></p>
+<br>
+
+<p>5.<u> ПОРЯДОК
+ВЫПОЛНЕНИЯ РАБОТЫ</u></p>
+
+<p class=MsoNormalCxSpFirst><font size=3 face=Arial><span style='font-size:
+12.0pt;line-height:115%'>5.1. Вставьте в приведенную ниже программу PROG3
+вместо многоточия фрагмент программы из домашнего задания.</span></font></p>
+
+<p class=MsoNormalCxSpMiddle><font size=3 face=Arial><span style='font-size:
+12.0pt;line-height:115%'>5.2. В сегменте данных определите необходимые переменные.</span></font></p>
+
+<p class=MsoNormalCxSpMiddle><font size=3 face=Arial><span style='font-size:
+12.0pt;line-height:115%'>5.3. Введите программу, оттранслируйте и скомпонуйте
+ее.</span></font></p>
+
+<p class=MsoNormalCxSpMiddle><font size=3 face=Arial><span style='font-size:
+12.0pt;line-height:115%'>5.4. Загрузите отладчик и программу. Проведите ее
+трассировку. На каждом шаге контролируйте результаты выполнения команды по
+изменению содержимого регистров и ячеек памяти. Пронаблюдайте работу стека.</span></font></p>
+
+<p class=MsoNormalCxSpLast><font size=3 face=Arial><span style='font-size:12.0pt;
+line-height:115%'>5.5. Перезагрузите программу. В меню View выберите режим
+Breakpoints (точки останова, ловушки). Введите номера строк программы, в
+которых необходимо проконтролировать промежуточные результаты. Запускайте
+программу на исполнение (клавиша F9).</span></font></p>
+<br>
+
+<p>6.<u> ПРИМЕР
+ПРОГРАММЫ</u></p>
+
+<pre><font size=2 face="Courier New"><span style='font-size:11.0pt'>      TITLE PROG3  СПОСОБЫ АДРЕСАЦИИ ОПЕРАНДОВ</span></font></pre><pre><font
+size=2 face="Courier New"><span style='font-size:11.0pt'>;--------------------------------------------------</span></font></pre><pre><font
+size=2 face="Courier New"><span style='font-size:11.0pt'>DATASG SEGMENT PARA</span></font></pre><pre><font
+size=2 face="Courier New"><span style='font-size:11.0pt'>      DB 16 DUP(‘@’)</span></font></pre><pre><font
+size=2 face="Courier New"><span style='font-size:11.0pt'>DATASG ENDS</span></font></pre><pre><font
+size=2 face="Courier New"><span style='font-size:11.0pt'>      </span></font></pre><pre><font
+size=2 face="Courier New"><span style='font-size:11.0pt'>STACKSG SEGMENT PARA 'Stack'</span></font></pre><pre><font
+size=2 face="Courier New"><span style='font-size:11.0pt'>      DB 12 DUP(?)</span></font></pre><pre><font
+size=2 face="Courier New"><span style='font-size:11.0pt'>STACKSG ENDS</span></font></pre><pre><font
+size=2 face="Courier New"><span style='font-size:11.0pt'>      </span></font></pre><pre><font
+size=2 face="Courier New"><span style='font-size:11.0pt'>CODESG SEGMENT PARA 'Code'</span></font></pre><pre><font
+size=2 face="Courier New"><span style='font-size:11.0pt'>ASSUME SS:STACKSG,CS:CODESG,DS:DATASG</span></font></pre><pre><font
+size=2 face="Courier New"><span style='font-size:11.0pt'>BEGIN PROC FAR</span></font></pre><pre><font
+size=2 face="Courier New"><span style='font-size:11.0pt'>      PUSH DS        ;организация корректного выхода</span></font></pre><pre><font
+size=2 face="Courier New"><span style='font-size:11.0pt'>      SUB AX,AX      ;  после завершения программы, оформ-</span></font></pre><pre><font
+size=2 face="Courier New"><span style='font-size:11.0pt'>      PUSH AX        ;  ленной в виде процедуры типа FAR.</span></font></pre><pre><font
+size=2 face="Courier New"><span style='font-size:11.0pt'>      CMC</span></font></pre><pre><font
+size=2 face="Courier New"><span style='font-size:11.0pt'>      CLC</span></font></pre><pre><font
+size=2 face="Courier New"><span style='font-size:11.0pt'>      MOV AX,11</span></font></pre><pre><font
+size=2 face="Courier New"><span style='font-size:11.0pt'>      MOV BX,6</span></font></pre><pre><font
+size=2 face="Courier New"><span style='font-size:11.0pt'>      SUB AX,BX</span></font></pre><pre><font
+size=2 face="Courier New"><span style='font-size:11.0pt'>      MOV SI,DATASG</span></font></pre><pre><font
+size=2 face="Courier New"><span style='font-size:11.0pt'>      DEC BYTE PTR [SI]</span></font></pre><pre><font
+size=2 face="Courier New"><span style='font-size:11.0pt'>      SUB [SI+1],AX</span></font></pre><pre><font
+size=2 face="Courier New"><span style='font-size:11.0pt'>      MOV DI,[SI+1]</span></font></pre><pre><font
+size=2 face="Courier New"><span style='font-size:11.0pt'>      MOV DI,3</span></font></pre><pre><font
+size=2 face="Courier New"><span style='font-size:11.0pt'>      SUB BYTE PTR DATASG[DI],2</span></font></pre><pre><font
+size=2 face="Courier New"><span style='font-size:11.0pt'>      ;..................</span></font></pre><pre><font
+size=2 face="Courier New"><span style='font-size:11.0pt'>      PUSH AX</span></font></pre><pre><font
+size=2 face="Courier New"><span style='font-size:11.0pt'>      PUSH DATASG+2</span></font></pre><pre><font
+size=2 face="Courier New"><span style='font-size:11.0pt'>      POP AX</span></font></pre><pre><font
+size=2 face="Courier New"><span style='font-size:11.0pt'>      POP [SI+2]</span></font></pre><pre><font
+size=2 face="Courier New"><span style='font-size:11.0pt'>      RET</span></font></pre><pre><font
+size=2 face="Courier New"><span style='font-size:11.0pt'>BEGIN ENDP          ;КОНЕЦ ПРОЦЕДУРЫ</span></font></pre><pre><font
+size=2 face="Courier New"><span style='font-size:11.0pt'>CODESG ENDS         ;КОНЕЦ СЕГМЕНТА</span></font></pre><pre><font
+size=2 face="Courier New"><span style='font-size:11.0pt'>END   BEGIN         ;КОНЕЦ ПРОГРАММЫ</span></font></pre>
+
+<p>7.<u> КРАТКАЯ
+ИНФОРМАЦИЯ</u></p>
+
+<p >Выбор режима Breakpoints вызывает высвечивание окна
+ловушек. Это окно состоит из двух рамок. Левая содержит список ловушек, а в
+правой высвечивается информация о выбранной ловушке. Ловушки можно ставить с
+помощью клавиши F2. Повторное нажатие клавиши F2 приводит к снятию данной
+ловушки. Активация/дезактивация ловушки также производится из локального меню
+(Alt-F10) в пункте Enable/disable, а ее снятие в пункте Remove. Снятие всех ловушек
+- Delete all.</p>
+	
+ <!--Меню навигации-->
+ <div aria-label="..." class = "nav-menu">
+   <ul class="pager  background-transition-slow" >
+   <li title="Наверх" style = "margin-right:15px; "><a class = "glyphicon glyphicon-menu-up page-scroll" href="#page-top" ></a></li>
+   </ul>
+ </div>
+	
+	</div>
+    <!-- jQuery -->
+    <script src="../lib/js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../lib/js/bootstrap.min.js"></script>
+
+    <!-- Scrolling Nav JavaScript -->
+    <script src="../lib/js/jquery.easing.min.js"></script>
+    <script src="../lib/js/scrolling-nav.js"></script>
+
+</body>
+
+</html>

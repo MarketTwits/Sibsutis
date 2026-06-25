@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+ <meta charset="utf-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <meta name="description" content="">
+ <meta name="author" content="do.sibsutis.ru">
+
+ <title>Операционные системы</title>
+ 
+ <link rel="icon" type="image/png" href="../lib/css/favicon.png">
+ <!-- Bootstrap Core CSS -->
+ <link href="../lib/css/bootstrap.css" rel="stylesheet">
+ 
+ <!-- Custom CSS -->
+ <link href="../lib/css/scrolling-nav.css" rel="stylesheet">
+
+ <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+ <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+ <!--[if lt IE 9]>
+ <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+ <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+ <![endif]-->
+</head>
+
+<!-- The #page-top ID is part of the scrolling feature - the data-spy and data-target are part of the built-in Bootstrap scrollspy function -->
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+ <!-- Navigation -->
+<nav class="navbar navbar-default navbar-fixed-top">
+ <div class="container">
+ <!-- Brand and toggle get grouped for better mobile display -->
+ <div class="navbar-header">
+ <li class="hidden"> <a class="page-scroll" href="#page-top"></a> </li>
+  
+  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+ <span class="icon-bar"></span>
+ <span class="icon-bar"></span>
+ <span class="icon-bar"></span>
+ </button>
+  
+ <a class="navbar-brand " href="../index.htm"> 
+  <text class = "hidden-xs">Операционные системы</text> 
+  <text class = "visible-xs">Операционные системы</text>
+  </a>
+ </div>
+
+ <!-- Collect the nav links, forms, and glyphicon glyphicon-list-alt content for toggling -->
+ <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+ 
+  <!-- <ul class="nav navbar-nav">
+ <li><a href="#"></a></li> 
+ </ul> -->
+ 
+ <ul class="nav navbar-nav navbar-right">
+ <li class="dropdown">
+ <button type="button" class="navbar-toggle dropdown-toggle hidden-xs" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+  <span class="icon-bar"></span>
+  <span class="icon-bar"></span>
+  <span class="icon-bar"></span>
+ </button>  
+ <a class = "dropdown-toggle visible-xs" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Материалы</a>
+	<ul class="dropdown-menu">
+	
+		<li><a href="../index.htm">Аннотация курса</a></li>
+	   
+		<li role="separator" class="divider"></li>
+	   
+		<li><a href="lec_index.htm">Конспект лекций</a></li>
+	   
+		<li><a href="labs.htm">Лабораторные работы</a></li>
+		 
+		<li><a href="c_work.htm">Контрольная работа</a></li>
+			
+		<li role="separator" class="divider"></li>
+		 
+		<li><a href="questions.htm">Вопросы к экзамену</a></li>
+		
+		<li><a href="lit.htm">Литература</a></li>
+       
+    
+    </ul>
+ </li>
+ </ul>
+ </div><!-- /.navbar-collapse -->
+ </div><!-- /.container-fluid -->
+</nav>
+	<div id="intro" class="section content-section ">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12"> 
+
+				<div class="page-header">
+				<h3>Контрольная работа. Методические указания по выполнению</h3>
+				</div>
+				
+				<p>
+					Контрольная работа должна выполняться после изучения всего теоретического  материала и выполнения всех лабораторных работ, поскольку основывается на  программах, написанных в ходе выполнения лабораторных работ. <br>
+					Каждый студент выполняет несколько задач из приведенного ниже списка в  соответствии со своим номером варианта. На проверку преподавателю необходимо  высылать:
+				</p>
+				<ol>
+				  <li>Исходный текст программы.</li>
+				  <li>Откомпилированный модуль – exe-файл.</li>
+				  <li>Отчет по выполненной работе.</li>
+				</ol>
+				
+				<p>Отчет должен  содержать:</p>
+				<ol>
+				  <li>титульный  лист (обязательно указывать номер варианта);</li>
+				  <li>текст  задания;</li>
+				  <li>описание  основных алгоритмов, использованных в программе;</li>
+				  <li>описание  основных переменных;</li>
+				  <li>описание  основных блоков (подпрограмм) программы;</li>
+				  <li>текст  программы;</li>
+				  <li>результаты  (копия экрана).</li>
+				</ol>
+				
+				<h3>Задание:</h3>
+				<p>Необходимо написать программу, реализующую параллельную работу нескольких  процессов. Каждый процесс может состоять из одного или нескольких потоков. <u>Любой  из потоков</u>, работающих в составе этих процессов, может быть <u>приостановлен</u> и вновь <u>запущен</u> некоторой определенной клавишей (можно использовать  буквенные или цифровые клавиши). Нажатия клавиш обрабатывать с помощью  прерывания от клавиатуры (по материалам лаб. работы №1). <br>
+				  Окончание работы программы должно происходить при приостановке всех  потоков их ключевыми клавишами либо при нажатии клавиши ESC. При окончании  работы необходимо выполнить корректное завершение, т.е. «дочитать» всю  информацию из буфера каждого процесса (при его наличии), закрыть все открытые  файлы и т.п. – по материалам лаб. работы №3.<br>
+				  Те потоки, которые выводят информацию на экран, должны использовать для  этого каждый свое отдельное окно, обрамленное рамкой – экран визуально делится на  несколько окон, в каждом из которых отображается один процесс.<br>
+				  Дополнительное информационное окно должно содержать описание  управляющих клавиш и краткое сообщение о тех действиях, которые выполняются в  программе: номер потока, его статус в текущий момент времени (активен,  приостановлен, ожидает), другую информацию (указание величины выделенного  потоку кванта времени, процент заполненности буфера и т.п.) в зависимости от  конкретного потока.</p>
+				<div><br>
+				  Программа должна  работать устойчиво, без «зависаний» и непредвиденных зрительных эффектов. В  случае необходимости указания параметров при запуске программы необходимо предусмотреть  и обработать все возможные ошибки (с выводом диагностики на экран). </div>
+				<p>Задачи 1, 3, 6  предполагают наличие <u>управляющего блока</u>, который, используя прерывания  таймера, случайным образом определяет очередной активный поток и выделяет ему  кванты времени (возможно, в рамках большего кванта, выделенного всему процессу). <u>Кванты времени</u> – как для процесса в целом, так и для его потоков –  изначально задавать некоторой фиксированной величины, но предусмотреть  возможность её изменения во время работы путем нажатия некоторых ключевых  клавиш (для каждого из потоков предусмотреть свою клавишу) – т.е. можно,  например, увеличить или уменьшить квант только потока-пpоизводителя. При этом допустимы  разные варианты реализации – «общий» квант может либо меняться, либо оставаться  постоянным (тогда при ускорении одного потока другой автоматически замедлится,  т.к. величина его кванта уменьшится). <br>
+				  Потоки этого  класса задач могут иметь три статуса: «активен», «ожидает» или «приостановлен».  В процессе работы может возникнуть, например, следующая ситуация.  Поток-потребитель приостановлен своей ключевой клавишей, следовательно, буфер  не освобождается. Поток-производитель активен, он заполнит буфер информацией и  перейдёт в состояние ожидания. Из этого состояния он сможет выйти только после  того, как будет возобновлена (нажатием клавиши) работа потока-потребителя,  который освободит место в буфере для помещения новой информации. В случае  приостановки производителя возникнет аналогичная ситуация, только с пустым  буфером. Приостановка/возобновление потока возможны в любом его состоянии – как  в активном, так и в состоянии ожидания.<br>
+				  Задачи 2, 4, 5, 7  должны выполняться равномерно, независимо от степени загрузки системы. Для этого  каждой из них необходимо получать управление через фиксированное количество «тиков»  системного таймера, во время которого они выполнят какое-то свое элементарное  действие («бегущая строка» или «летающий объект» сместится на одну позицию, сменится  нота в музыке…). При такой реализации скорость каждого потока будет  определяться количеством «тиков» таймера между его запусками. Для уменьшения  скорости такого потока достаточно после нажатия ключевой клавиши предоставлять  ему управление реже, через большее число «тиков», соответственно для ускорения  такого потока – опять же после нажатия ключевой клавиши – ему предоставляется  управление чаще, в пределе – на каждом «тике». Так, «бегущая строка» должна  двигаться равномерно с постоянной скоростью (если она не приостановлена ключевой  клавишей) независимо от количества активных процессов в системе, музыка – тоже  играть равномерно… Потоки этого класса задач могут иметь два статуса: «активен»  и «приостановлен».</p>
+				<b>ЗАДАЧИ:</b>
+				<p>1. Два потока: первый читает информацию из файла (например, стихи или  текст программы) в буфер, второй эту информацию из буфера выдаёт на экран. При  заполнении окна вывода до конца его содержимое не должно обновляться полностью  – вывод новой информации должен осуществляться в последнюю строку, а все  остальные строки смещаться вверх (по материалам лаб. работы №3). Имя читаемого  файла задавать как параметр командной строки. После окончания файла он начинает  считываться заново.<br>
+				  2. Музыкальное сопровождение – как минимум несколько нот различной длительности,  образующие мелодию. Во включённом состоянии мелодия должна играть в фоновом  режиме (по материалам лаб. работы №2).<br>
+				  3. Два потока: один выполняет поиск всех последовательных простых чисел  и заносит их в буфер, второй осуществляет их вывод из буфера на экран (по  материалам лаб. работы №3).<br>
+				  4. Вывод заголовка работы (фамилия и имя автора и название работы) постоянно  меняющегося цвета. Место вывода (верхняя или нижняя строка экрана) задавать в  качестве параметра командной строки.<br>
+				  5. Вывод заголовка работы (фамилия и имя автора и название работы) в  виде «бегущей строки». Место вывода (верхняя или нижняя строка экрана) задавать  параметром командной строки.<br>
+				  6. Два потока: один генерирует случайные числа и выбирает в буфер те,  которые являются полным квадратом, второй выводит их из буфера на экран (по  материалам лаб. раб. №3).<br>
+				  7. Движущийся объект (в простейшем случае, например, летающий и отражающийся  от границ окна шарик). Движение может осуществляться свободно или при  управлении с клавиатуры. <br>
+				  8. В углу экрана с заданными в качестве параметров координатами поместить  часы, показания которых должны соответствовать системному времени. Обновлять  показания часов каждую секунду (по материалам лаб. работы №2).</p>
+				
+				
+				
+				<b>ВАРИАНТЫ  заданий:</b>
+				<br></br>
+				<table border="1" cellspacing="0" cellpadding="0">
+				  <tr>
+					<td width="107" valign="top"><p align="center"><strong><em>номер <br>
+					  варианта</em></strong></p></td>
+					<td width="107" valign="top"><p align="center"><strong><em>номера <br>
+					  задач</em></strong></p></td>
+					<td width="107" valign="top"><p align="center"><strong><em>номер <br>
+					  варианта</em></strong></p></td>
+					<td width="107" valign="top"><p align="center"><strong><em>номера <br>
+					  задач</em></strong></p></td>
+					<td width="107" valign="top"><p align="center"><strong><em>номер <br>
+					  варианта</em></strong></p></td>
+					<td width="107" valign="top"><p align="center"><strong><em>номера <br>
+					  задач</em></strong></p></td>
+				  </tr>
+				  <tr>
+					<td width="107" valign="top"><p align="center"><strong>1</strong></p></td>
+					<td width="107" valign="top"><p align="center">1, 2, 3, 5</p></td>
+					<td width="107" valign="top"><p align="center"><strong>9</strong></p></td>
+					<td width="107" valign="top"><p align="center">1, 3, 5, 8</p></td>
+					<td width="107" valign="top"><p align="center"><strong>17</strong></p></td>
+					<td width="107" valign="top"><p align="center">2, 3, 5, 7</p></td>
+				  </tr>
+				  <tr>
+					<td width="107" valign="top"><p align="center"><strong>2</strong></p></td>
+					<td width="107" valign="top"><p align="center">1, 2, 5, 7</p></td>
+					<td width="107" valign="top"><p align="center"><strong>10</strong></p></td>
+					<td width="107" valign="top"><p align="center">1, 5, 6, 8</p></td>
+					<td width="107" valign="top"><p align="center"><strong>18</strong></p></td>
+					<td width="107" valign="top"><p align="center">2, 3, 4, 6</p></td>
+				  </tr>
+				  <tr>
+					<td width="107" valign="top"><p align="center"><strong>3</strong></p></td>
+					<td width="107" valign="top"><p align="center">1, 2, 5, 6</p></td>
+					<td width="107" valign="top"><p align="center"><strong>11</strong></p></td>
+					<td width="107" valign="top"><p align="center">1, 5, 7, 8</p></td>
+					<td width="107" valign="top"><p align="center"><strong>19</strong></p></td>
+					<td width="107" valign="top"><p align="center">3, 4, 6, 7</p></td>
+				  </tr>
+				  <tr>
+					<td width="107" valign="top"><p align="center"><strong>4</strong></p></td>
+					<td width="107" valign="top"><p align="center">1, 2, 5, 8</p></td>
+					<td width="107" valign="top"><p align="center"><strong>12</strong></p></td>
+					<td width="107" valign="top"><p align="center">2, 3, 4, 7</p></td>
+					<td width="107" valign="top"><p align="center"><strong>20</strong></p></td>
+					<td width="107" valign="top"><p align="center">3, 5, 7, 8</p></td>
+				  </tr>
+				  <tr>
+					<td width="107" valign="top"><p align="center"><strong>5</strong></p></td>
+					<td width="107" valign="top"><p align="center">1, 2, 4, 7</p></td>
+					<td width="107" valign="top"><p align="center"><strong>13</strong></p></td>
+					<td width="107" valign="top"><p align="center">2, 4, 6, 7</p></td>
+					<td width="107" valign="top"><p align="center"><strong>21</strong></p></td>
+					<td width="107" valign="top"><p align="center">3, 5, 6, 7</p></td>
+				  </tr>
+				  <tr>
+					<td width="107" valign="top"><p align="center"><strong>6</strong></p></td>
+					<td width="107" valign="top"><p align="center">1, 4, 7, 8</p></td>
+					<td width="107" valign="top"><p align="center"><strong>14</strong></p></td>
+					<td width="107" valign="top"><p align="center">2, 5, 6, 7</p></td>
+					<td width="107" valign="top"><p align="center"><strong>22</strong></p></td>
+					<td width="107" valign="top"><p align="center">3, 5, 6, 8</p></td>
+				  </tr>
+				  <tr>
+					<td width="107" valign="top"><p align="center"><strong>7</strong></p></td>
+					<td width="107" valign="top"><p align="center">1, 3, 4, 7</p></td>
+					<td width="107" valign="top"><p align="center"><strong>15</strong></p></td>
+					<td width="107" valign="top"><p align="center">2, 3, 5, 8</p></td>
+					<td width="107" valign="top"><p align="center"><strong>23</strong></p></td>
+					<td width="107" valign="top"><p align="center">5, 6, 7, 8</p></td>
+				  </tr>
+				  <tr>
+					<td width="107" valign="top"><p align="center"><strong>8</strong></p></td>
+					<td width="107" valign="top"><p align="center">1, 4, 6, 7</p></td>
+					<td width="107" valign="top"><p align="center"><strong>16</strong></p></td>
+					<td width="107" valign="top"><p align="center">2, 5, 6, 8</p></td>
+					<td width="107" valign="top"><p align="center"><strong>24</strong></p></td>
+					<td width="107" valign="top"><p align="center">4, 6, 7, 8</p></td>
+				  </tr>
+				</table>
+				
+
+
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+ <br>
+ <br>
+ 
+ <!--Меню навигации по Темам-->
+ <div aria-label="..." class = "nav-menu">
+  <ul class="pager background-transition-slow">
+  <li title="Наверх" style = "margin-right:15px; "><a class = "glyphicon glyphicon-menu-up page-scroll" href="#page-top"></a></li>
+  </ul>
+ </div>
+ 
+
+ <!-- jQuery -->
+ <script src="../lib/js/jquery.js"></script>
+
+ <!-- Bootstrap Core JavaScript -->
+ <script src="../lib/js/bootstrap.min.js"></script>
+
+ <!-- Scrolling Nav JavaScript -->
+ <script src="../lib/js/jquery.easing.min.js"></script>
+ <script src="../lib/js/scrolling-nav.js"></script>
+
+</body>
+
+</html>

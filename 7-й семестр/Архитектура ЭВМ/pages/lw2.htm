@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="do.sibsutis.ru">
+
+    <title>Лабораторная работа 2</title>
+	
+	<link rel="icon" type="image/png" href="../lib/css/favicon.png">
+    <!-- Bootstrap Core CSS -->
+    <link href="../lib/css/bootstrap.css" rel="stylesheet">
+	
+    <!-- Custom CSS -->
+    <link href="../lib/css/scrolling-nav.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<!-- The #page-top ID is part of the scrolling feature - the data-spy and data-target are part of the built-in Bootstrap scrollspy function -->
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top" >
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <li class="hidden"> <a class="page-scroll" href="#page-top"></a> </li>
+	  
+	  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+	  
+      <a class="navbar-brand " href="../index.htm"> 
+   <text class = "hidden-xs">Архитектура ЭВМ</text> 
+   <text class = "visible-xs">Архитектура ЭВМ</text>
+	  </a>
+    </div>
+
+    <!-- Collect the nav links, forms, and glyphicon glyphicon-list-alt content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      
+	  <!-- <ul class="nav navbar-nav">
+		<li><a href="#"></a></li> 
+      </ul> -->
+	
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+		<button type="button" class="navbar-toggle dropdown-toggle hidden-xs" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" >
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		</button>	      
+		<a class = "dropdown-toggle visible-xs" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Материалы</a>
+          <ul class="dropdown-menu">
+            <li><a href="../index.htm">Аннотация курса</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="lec_index.htm">Теория</a></li>
+                        <li><a href="questns.htm">Контрольные вопросы</a></li>
+           <li role="separator" class="divider"></li>
+            <li><a href="course_work.htm">Контрольная работа</a></li>
+                        <li role="separator" class="divider"></li>
+            <li><a href="labs.htm">Лабораторные работы</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="lit.htm">Литература</a></li>
+          </ul>
+ </li>
+  </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+
+    <!-- Intro Section -->
+	<!-- Секция с информацией "Уважаемый слушатель"	 -->
+    <div id="intro" class="section content-section ">
+        <div class="container">
+             <div class="row">
+                <div class="col-lg-12">	
+
+    <div class="page-header">
+	<h3>Лабораторная работа №2</h3>
+    </div>
+
+<h3><b>Изучение основ работы с турбо отладчиком</b></h3>
+<br>
+<p>1.<u> ЦЕЛЬ РАБОТЫ</u></p>
+
+<p>Практическое освоение основных функций TURBO DEBUGGER.</p>
+<br>
+
+<p>2.<u>
+РЕКОМЕНДУЕМАЯ ЛИТЕРАТУРА</u></p>
+
+<p class=MsoNormal><font size=3 face=Arial><span style='font-size:12.0pt;
+line-height:115%'>Белецкий Я. Энциклопедия языка Си: Пер. c
+польск.-М.:Мир,1992.с 347-408.</span></font></p>
+<br>
+
+<p>3.<u> ПОДГОТОВКА К РАБОТЕ</u></p>
+
+<p class=MsoNormalCxSpFirst><font size=3 face=Arial><span style='font-size:
+12.0pt;line-height:115%'>3.1. Изучить методические указания.</span></font></p>
+
+<p class=MsoNormalCxSpMiddle><font size=3 face=Arial><span style='font-size:
+12.0pt;line-height:115%'>3.2. Подготовить ответы на контрольные вопросы.</span></font></p>
+
+<p class=MsoNormalCxSpMiddle><font size=3 face=Arial><span style='font-size:
+12.0pt;line-height:115%'>3.3. В соответствии с вариантом задания (Таб. 2.1.)
+указать содержимое каждого из восьми РОН после выполнения двух заданных команд
+в программах HELLO и PROG1 из Лабораторной работы №1 (номер строки команды
+помещен в поле комментариев программы и заключен в скобки). </span></font></p>
+
+<p class=MsoNormalCxSpLast><font size=3 face=Arial><span style='font-size:12.0pt;
+line-height:115%'>Таблица 2.1.</span></font></p>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=80 style='width:59.9pt;border:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpFirst align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>№
+  варианта</span></font></p>
+  </td>
+  <td width=80 style='width:59.9pt;border:solid windowtext 1.0pt;border-left:
+  none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>строка
+  HELLO</span></font></p>
+  </td>
+  <td width=80 style='width:59.9pt;border:solid windowtext 1.0pt;border-left:
+  none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>строка</span></font></p>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>PROG1</span></font></p>
+  </td>
+  <td width=80 style='width:59.9pt;border:solid windowtext 1.0pt;border-left:
+  none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>№
+  варианта</span></font></p>
+  </td>
+  <td width=80 style='width:59.9pt;border:solid windowtext 1.0pt;border-left:
+  none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>строка
+  HELLO</span></font></p>
+  </td>
+  <td width=80 style='width:59.9pt;border:solid windowtext 1.0pt;border-left:
+  none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>строка</span></font></p>
+  <p class=MsoPlainTextCxSpLast align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>PROG1</span></font></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=80 style='width:59.9pt;border:solid windowtext 1.0pt;border-top:
+  none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpFirst align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>1</span></font></p>
+  </td>
+  <td width=80 style='width:59.9pt;border-top:none;border-left:none;border-bottom:
+  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>2</span></font></p>
+  </td>
+  <td width=80 style='width:59.9pt;border-top:none;border-left:none;border-bottom:
+  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>2</span></font></p>
+  </td>
+  <td width=80 style='width:59.9pt;border-top:none;border-left:none;border-bottom:
+  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>9</span></font></p>
+  </td>
+  <td width=80 style='width:59.9pt;border-top:none;border-left:none;border-bottom:
+  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>4</span></font></p>
+  </td>
+  <td width=80 style='width:59.9pt;border-top:none;border-left:none;border-bottom:
+  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpLast align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>10</span></font></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=80 style='width:59.9pt;border:solid windowtext 1.0pt;border-top:
+  none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpFirst align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>2</span></font></p>
+  </td>
+  <td width=80 style='width:59.9pt;border-top:none;border-left:none;border-bottom:
+  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>3</span></font></p>
+  </td>
+  <td width=80 style='width:59.9pt;border-top:none;border-left:none;border-bottom:
+  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>4</span></font></p>
+  </td>
+  <td width=80 style='width:59.9pt;border-top:none;border-left:none;border-bottom:
+  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>10</span></font></p>
+  </td>
+  <td width=80 style='width:59.9pt;border-top:none;border-left:none;border-bottom:
+  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>6</span></font></p>
+  </td>
+  <td width=80 style='width:59.9pt;border-top:none;border-left:none;border-bottom:
+  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpLast align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>4</span></font></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=80 style='width:59.9pt;border:solid windowtext 1.0pt;border-top:
+  none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpFirst align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>3</span></font></p>
+  </td>
+  <td width=80 style='width:59.9pt;border-top:none;border-left:none;border-bottom:
+  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>4</span></font></p>
+  </td>
+  <td width=80 style='width:59.9pt;border-top:none;border-left:none;border-bottom:
+  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>5</span></font></p>
+  </td>
+  <td width=80 style='width:59.9pt;border-top:none;border-left:none;border-bottom:
+  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>11</span></font></p>
+  </td>
+  <td width=80 style='width:59.9pt;border-top:none;border-left:none;border-bottom:
+  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>7</span></font></p>
+  </td>
+  <td width=80 style='width:59.9pt;border-top:none;border-left:none;border-bottom:
+  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpLast align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>5</span></font></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=80 style='width:59.9pt;border:solid windowtext 1.0pt;border-top:
+  none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpFirst align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>4</span></font></p>
+  </td>
+  <td width=80 style='width:59.9pt;border-top:none;border-left:none;border-bottom:
+  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>6</span></font></p>
+  </td>
+  <td width=80 style='width:59.9pt;border-top:none;border-left:none;border-bottom:
+  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>6</span></font></p>
+  </td>
+  <td width=80 style='width:59.9pt;border-top:none;border-left:none;border-bottom:
+  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>12</span></font></p>
+  </td>
+  <td width=80 style='width:59.9pt;border-top:none;border-left:none;border-bottom:
+  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>7</span></font></p>
+  </td>
+  <td width=80 style='width:59.9pt;border-top:none;border-left:none;border-bottom:
+  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpLast align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>6</span></font></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=80 style='width:59.9pt;border:solid windowtext 1.0pt;border-top:
+  none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpFirst align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>5</span></font></p>
+  </td>
+  <td width=80 style='width:59.9pt;border-top:none;border-left:none;border-bottom:
+  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>7</span></font></p>
+  </td>
+  <td width=80 style='width:59.9pt;border-top:none;border-left:none;border-bottom:
+  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>7</span></font></p>
+  </td>
+  <td width=80 style='width:59.9pt;border-top:none;border-left:none;border-bottom:
+  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>13</span></font></p>
+  </td>
+  <td width=80 style='width:59.9pt;border-top:none;border-left:none;border-bottom:
+  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>3</span></font></p>
+  </td>
+  <td width=80 style='width:59.9pt;border-top:none;border-left:none;border-bottom:
+  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpLast align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>8</span></font></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=80 style='width:59.9pt;border:solid windowtext 1.0pt;border-top:
+  none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpFirst align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>6</span></font></p>
+  </td>
+  <td width=80 style='width:59.9pt;border-top:none;border-left:none;border-bottom:
+  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>2</span></font></p>
+  </td>
+  <td width=80 style='width:59.9pt;border-top:none;border-left:none;border-bottom:
+  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>8</span></font></p>
+  </td>
+  <td width=80 style='width:59.9pt;border-top:none;border-left:none;border-bottom:
+  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>14</span></font></p>
+  </td>
+  <td width=80 style='width:59.9pt;border-top:none;border-left:none;border-bottom:
+  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>4</span></font></p>
+  </td>
+  <td width=80 style='width:59.9pt;border-top:none;border-left:none;border-bottom:
+  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpLast align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>7</span></font></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=80 style='width:59.9pt;border:solid windowtext 1.0pt;border-top:
+  none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpFirst align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>7</span></font></p>
+  </td>
+  <td width=80 style='width:59.9pt;border-top:none;border-left:none;border-bottom:
+  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>6</span></font></p>
+  </td>
+  <td width=80 style='width:59.9pt;border-top:none;border-left:none;border-bottom:
+  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>5</span></font></p>
+  </td>
+  <td width=80 style='width:59.9pt;border-top:none;border-left:none;border-bottom:
+  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>15</span></font></p>
+  </td>
+  <td width=80 style='width:59.9pt;border-top:none;border-left:none;border-bottom:
+  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>6</span></font></p>
+  </td>
+  <td width=80 style='width:59.9pt;border-top:none;border-left:none;border-bottom:
+  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpLast align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>9</span></font></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=80 style='width:59.9pt;border:solid windowtext 1.0pt;border-top:
+  none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpFirst align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>8</span></font></p>
+  </td>
+  <td width=80 style='width:59.9pt;border-top:none;border-left:none;border-bottom:
+  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>3</span></font></p>
+  </td>
+  <td width=80 style='width:59.9pt;border-top:none;border-left:none;border-bottom:
+  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>9</span></font></p>
+  </td>
+  <td width=80 style='width:59.9pt;border-top:none;border-left:none;border-bottom:
+  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>&nbsp;</span></font></p>
+  </td>
+  <td width=80 style='width:59.9pt;border-top:none;border-left:none;border-bottom:
+  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpMiddle align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>&nbsp;</span></font></p>
+  </td>
+  <td width=80 style='width:59.9pt;border-top:none;border-left:none;border-bottom:
+  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoPlainTextCxSpLast align=center style='margin:0cm;margin-bottom:
+  .0001pt;text-align:center'><font size=2 color=black face=Arial><span
+  style='font-size:11.0pt;line-height:115%;font-family:"Arial","sans-serif"'>&nbsp;</span></font></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoPlainTextCxSpFirst><font face=Arial><span style='font-family:"Arial","sans-serif"'>&nbsp;</span></font></p>
+
+<br>
+
+<p>4.<u> КОНТРОЛЬНЫЕ
+ВОПРОСЫ</u></p>
+
+<p class=MsoNormalCxSpFirst><font size=3 face=Arial><span style='font-size:
+12.0pt;line-height:115%'>4.1. Для чего предназначен отладчик?</span></font></p>
+
+<p class=MsoNormalCxSpMiddle><font size=3 face=Arial><span style='font-size:
+12.0pt;line-height:115%'>4.2. Объясните смысл пунктов Главного меню в верхней
+строке отладчика.</span></font></p>
+
+<p class=MsoNormalCxSpMiddle><font size=3 face=Arial><span style='font-size:
+12.0pt;line-height:115%'>4.3. Как загрузить отлаживаемую программу?</span></font></p>
+
+<p class=MsoNormalCxSpMiddle><font size=3 face=Arial><span style='font-size:
+12.0pt;line-height:115%'>4.4. Сколько окон можно открыть из пункта Главного
+меню View?</span></font></p>
+
+<p class=MsoNormalCxSpMiddle><font size=3 face=Arial><span style='font-size:
+12.0pt;line-height:115%'>4.5. Из каких фрагментов состоит окно CPU?</span></font></p>
+
+<p class=MsoNormalCxSpMiddle><font size=3 face=Arial><span style='font-size:
+12.0pt;line-height:115%'>4.6. Что такое локальное окно и как его открыть?</span></font></p>
+
+<p class=MsoNormalCxSpMiddle><font size=3 face=Arial><span style='font-size:
+12.0pt;line-height:115%'>4.7. Какие функции обеспечивает локальное окно
+фрагмента кода (CODE) окна CPU?</span></font></p>
+
+<p class=MsoNormalCxSpMiddle><font size=3 face=Arial><span style='font-size:
+12.0pt;line-height:115%'>4.8.Каким образом можно редактировать ассемблерную
+программу?</span></font></p>
+
+<p class=MsoNormalCxSpMiddle><font size=3 face=Arial><span style='font-size:
+12.0pt;line-height:115%'>4.9. Как осуществляется изменение содержимого
+оперативной памяти и регистров средствами отладчика?</span></font></p>
+
+<p class=MsoNormalCxSpMiddle><font size=3 face=Arial><span style='font-size:
+12.0pt;line-height:115%'>4.10. Как через меню отладчика запустить программу на
+выполнение?</span></font></p>
+
+<p class=MsoNormalCxSpMiddle><font size=3 face=Arial><span style='font-size:
+12.0pt;line-height:115%'>4.11. В каком окне можно наблюдать результат выполнения
+программы?</span></font></p>
+
+<p class=MsoNormalCxSpLast><font size=3 face=Arial><span style='font-size:12.0pt;
+line-height:115%'>4.12. Что такое трассировка программы и как она
+осуществляется в отладчике?</span></font></p>
+<br>
+
+<p>5.<u> ПОРЯДОК
+ВЫПОЛНЕНИЯ РАБОТЫ</u></p>
+
+<p class=MsoNormalCxSpFirst><font size=3 face=Arial><span style='font-size:
+12.0pt;line-height:115%'>5.1. Ассемблируйте исходный текст программы HELLO.ASM в
+режиме /zi , произведите его компоновку в режиме /v . Поместите полученные
+файлы в том же каталоге, что и TD.EXE.</span></font></p>
+
+<p class=MsoNormalCxSpMiddle><font size=3 face=Arial><span style='font-size:
+12.0pt;line-height:115%'>5.2. Запустите программу TD на выполнение. После
+появления визитной карточки отладчика нажмите клавишу ENTER. Обратите внимание
+на то, что в нижней строке расположена подсказка о назначении функциональных
+клавиш, в верхней строке перечислены меню отладчика, а в основном поле экрана открыто
+окно CPU (ЦП). Клавишей ZOOM измените размер открытого окна.</span></font></p>
+
+<p class=MsoNormalCxSpMiddle><font size=3 face=Arial><span style='font-size:
+12.0pt;line-height:115%'>5.3. Обратите внимание на то, что окно CPU разделено
+рамками на части, относящиеся к сегментам кода, стека, данных и РОНам. В
+сегменте кода команда по смещению, равному содержимому регистра IP, а в
+сегменте стека данные по смещению, равному содержимому регистра SP, отмечены
+стрелками. Клавишей TAB измените положение выделяющей информацию цветной рамки.</span></font></p>
+
+<p class=MsoNormalCxSpMiddle><font size=3 face=Arial><span style='font-size:
+12.0pt;line-height:115%'>5.4. Нажатием комбинации клавиш alt-F10, попробуйте
+открыть окна локальных меню в каждой рамке окна CPU. Ознакомьтесь с их
+содержанием. Закрывайте окна клавишей ESC.</span></font></p>
+
+<p class=MsoNormalCxSpMiddle><font size=3 face=Arial><span style='font-size:
+12.0pt;line-height:115%'>5.5. Используя клавишу F10, перейдите в главное меню. Откройте
+окно FILE. Включите режим OPEN... . Клавишей TAB выделите окно FILES.
+Курсорными клавишами выберите имя файла hello.exe и загрузите его. Сравните
+информацию, содержащуюся в рамке кода с листингом вашей программы.</span></font></p>
+
+<p class=MsoNormalCxSpMiddle><font size=3 face=Arial><span style='font-size:
+12.0pt;line-height:115%'>5.6. В окне CPU произведите трассировку программы
+(пошаговое выполнение) нажатием клавиши F8. На каждом шаге контролируйте содержимое
+регистров, флагов и состояние стека. После завершения программы перейдите в
+окно WINDOW главного меню и установите режим USER SCREEN. Убедитесь, что
+программа выполнила свою задачу. Клавишей ESC верните изображение окна CPU.</span></font></p>
+
+<p class=MsoNormalCxSpMiddle><font size=3 face=Arial><span style='font-size:
+12.0pt;line-height:115%'>5.7. Через окно FILE повторите загрузку программы
+HELLO. Перейдите в рамку сегмента данных. Откройте его локальное меню. Перейдите
+на смещение 100Н, используйте для этого режим GOTO. Для удобства анализа
+сегмента данных войдите в окно VIEW главного меню. Установите режим DAMP.
+Клавишей ZOOM увеличьте размеры рамки сегмента данных. Просмотрите содержимое
+ячеек памяти. Подводя курсор к элементам данных Вашей программы, редактируйте
+их шестнадцатеричные значения, используйте для этого клавиши 0-9 и a-f. Произведите
+запуск программы (F9). Проанализируйте результат ее работы.</span></font></p>
+
+<p class=MsoNormalCxSpMiddle><font size=3 face=Arial><span style='font-size:
+12.0pt;line-height:115%'>5.8. Произведите проверку работы программы PROG1 из
+Лабораторной работы №1.</span></font></p>
+
+<p class=MsoNormalCxSpLast><font size=3 face=Arial><span style='font-size:12.0pt;
+line-height:115%'>5.9. Завершите работу отладчика. Воспользуйтесь пунктом EXIT
+окна FILE.</span></font></p>
+<br>
+
+<p>6.<u> КРАТКАЯ
+ИНФОРМАЦИЯ</u></p>
+
+<p class=MsoNormalCxSpFirst><font size=3 face=Arial><span style='font-size:
+12.0pt;line-height:115%'>Турбо отладчик (Turbo Debugger) - это современный
+отладчик, позволяющий отлаживать программы на уровне исходного текста и
+предназначенный для программистов, работающих на Турбо языках фирмы Borland.
+Многочисленные перекрывающие друг друга окна, а также сочетание спускающихся и
+раскрывающихся меню обеспечивают быстрый, интерактивный пользовательский интерфейс.
+Интерактивная, контекстно-зависимая система подсказки обеспечит вас подсказкой
+на всех стадиях работы. Непосредственно после запуска отладчика открыто окно
+CPU. В окне CPU (ЦП) показано все состояние центрального процессора. С его
+помощью вы можете проверять и изменять биты и байты, составляющие код и данные
+программы. В окне Code (Код) для временной коррекции своей программы вы можете
+использовать встроенный Ассемблер. При этом инструкции вводятся точно так же,
+как при наборе исходных операторов Ассемблера. Можно также получить доступ к
+соответствующим данным любой структуры данных, выводя и изменяя их в различных
+форматах.</span></font></p>
+
+<p class=MsoNormalCxSpMiddle><font size=3 face=Arial><span style='font-size:
+12.0pt;line-height:115%'>В области регистров (верхняя область справа от области
+кода) выводится содержимое регистров центрального процессора.</span></font></p>
+
+<p class=MsoNormalCxSpMiddle><font size=3 face=Arial><span style='font-size:
+12.0pt;line-height:115%'>Верхней правой областью является область флагов, где
+показано содержимое восьми флагов центрального процессора. В области флагов показано
+значение каждого флага ЦП.</span></font></p>
+
+<p class=MsoNormalCxSpMiddle><font size=3 face=Arial><span style='font-size:
+12.0pt;line-height:115%'>В области данных показано непосредственное содержимое выбранной
+области памяти. В левой части каждой строки показан адрес данных, выводимых на
+данной строке. Адрес выводится в виде шестнадцатеричного значения сегмента и
+смещения. Значение сегмента заменяется именем сегмента DS, если значение сегмента
+совпадает с текущим содержимым регистра DS.</span></font></p>
+
+<p class=MsoNormalCxSpMiddle><font size=3 face=Arial><span style='font-size:
+12.0pt;line-height:115%'>В правой части каждой строки выводятся символы,
+соответствующие показанным байтам. Турбо отладчик выводит все печатаемые
+значения, соответствующие байтовым эквивалентам, поэтому не удивляйтесь, если
+на экране вы увидите странные символы - просто это символьный эквивалент шестнадцатеричных
+значений байтов данных.</span></font></p>
+
+<p class=MsoNormalCxSpMiddle><font size=3 face=Arial><span style='font-size:
+12.0pt;line-height:115%'>В нижнем правом углу окна CPU показано содержимое
+стека.</span></font></p>
+	
+ <!--Меню навигации-->
+ <div aria-label="..." class = "nav-menu">
+   <ul class="pager  background-transition-slow" >
+   <li title="Наверх" style = "margin-right:15px; "><a class = "glyphicon glyphicon-menu-up page-scroll" href="#page-top" ></a></li>
+   </ul>
+ </div>
+	
+	</div>
+    <!-- jQuery -->
+    <script src="../lib/js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../lib/js/bootstrap.min.js"></script>
+
+    <!-- Scrolling Nav JavaScript -->
+    <script src="../lib/js/jquery.easing.min.js"></script>
+    <script src="../lib/js/scrolling-nav.js"></script>
+
+</body>
+
+</html>
